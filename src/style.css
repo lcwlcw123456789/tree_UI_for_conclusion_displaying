@@ -1,0 +1,57 @@
+/* CSS 变量 - 支持亮/暗主题 */
+:root {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 亮色主题 */
+  --color-bg: #f5f6f8;
+  --color-bg-panel: #ffffff;
+  --color-bg-muted: #f0f1f4;
+  --color-bg-hover: #e8eaef;
+  --color-text: #1a1d24;
+  --color-text-muted: #6b7280;
+  --color-primary: #2563eb;
+  --color-accent: #2563eb;
+  --color-accent-light: #dbeafe;
+  --color-border: #e5e7eb;
+  --color-info: #1976d2;
+  --color-info-light: #e3f2fd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1d24;
+    --color-bg-panel: #23262e;
+    --color-bg-muted: #2d3139;
+    --color-bg-hover: #363b45;
+    --color-text: #f3f4f6;
+    --color-text-muted: #9ca3af;
+    --color-primary: #60a5fa;
+    --color-accent: #60a5fa;
+    --color-accent-light: rgba(96, 165, 250, 0.2);
+    --color-border: #374151;
+    --color-info: #64b5f6;
+    --color-info-light: rgba(100, 181, 246, 0.15);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+#app {
+  min-height: 100vh;
+}
