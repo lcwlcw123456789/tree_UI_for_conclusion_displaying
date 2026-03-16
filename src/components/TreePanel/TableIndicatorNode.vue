@@ -48,21 +48,50 @@ watch(
 //     return Array.from(cols) 
 //   })
 
+// const tableColumns = computed(() => {
+//   if (!props.task.sub_indicators.length) return []
+
+//   const firstSubIndicator = props.task.sub_indicators[0]
+//   if (!firstSubIndicator?.values) return []
+
+//   const keys = Object.keys(firstSubIndicator.values)
+
+//   const itemIndex = keys.indexOf('Item')
+//   if (itemIndex === -1) return keys
+
+//   const item = keys.splice(itemIndex, 1)
+//   return [...item, ...keys]
+// })
+
 const tableColumns = computed(() => {
   if (!props.task.sub_indicators.length) return []
 
-  const firstSubIndicator = props.task.sub_indicators[0]
-  if (!firstSubIndicator?.values) return []
+  const firstSub = props.task.sub_indicators[0]
+  if (!firstSub || !firstSub.values) return []
 
-  const keys = Object.keys(firstSubIndicator.values)
+  const cols = Object.keys(firstSub.values)
 
-  const itemIndex = keys.indexOf('Item')
-  if (itemIndex === -1) return keys
+  return cols.sort((a, b) => {
+    // Item 永远第一
+    if (a === 'Item') return -1
+    if (b === 'Item') return 1
 
-  const item = keys.splice(itemIndex, 1)
-  return [...item, ...keys]
+    const aNum = /^\d+$/.test(a)
+    const bNum = /^\d+$/.test(b)
+
+    // 文字在数字前
+    if (!aNum && bNum) return -1
+    if (aNum && !bNum) return 1
+
+    // 数字列按降序
+    if (aNum && bNum) {
+      return Number(b) - Number(a)
+    }
+
+    // 其他文字列保持原顺序（稳定排序）
+    return 0
+  })
 })
-
 function onMouseEnter() {
   emit('hover', key.value)
 }
