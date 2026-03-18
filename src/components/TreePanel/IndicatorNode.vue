@@ -54,6 +54,7 @@ function onMouseLeave() {
   <div
     class="indicator-node narrative"
     :class="{ hovered: isHovered, collapsed }"
+    :data-indicator-key="JSON.stringify(key)"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
@@ -82,15 +83,18 @@ function onMouseLeave() {
   margin: 0.25rem 0;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .indicator-node:hover {
   background: var(--color-bg-hover);
+  transform: translateX(2px);
 }
 
 .indicator-node.hovered {
   background: var(--color-accent-light);
   border-left: 3px solid var(--color-accent);
+  transform: scale(1.02);
 }
 
 .indicator-header {
@@ -128,6 +132,18 @@ function onMouseLeave() {
 
 .indicator-body {
   padding: 0 0.5rem 0.5rem 1.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .factoid {

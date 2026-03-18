@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { watch, nextTick } from 'vue'
 import type { IntermediateResult } from '../../types/intermediate'
 import type { IndicatorKey } from '../../composables/useIndicatorLink'
 import TreeNode from './TreeNode.vue'
 
-defineProps<{
+const props = defineProps<{
   data: IntermediateResult | null
   indicatorToExpand: IndicatorKey | null
   isIndicatorHovered: (key: IndicatorKey) => boolean
@@ -13,6 +14,20 @@ const emit = defineEmits<{
   indicatorHover: [key: IndicatorKey]
   indicatorUnhover: []
 }>()
+
+watch(
+  () => props.indicatorToExpand,
+  async (newKey) => {
+    if (newKey) {
+      await nextTick()
+      const selector = `[data-indicator-key='${JSON.stringify(newKey)}']`
+      const element = document.querySelector(selector) as HTMLElement
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    }
+  }
+)
 </script>
 
 <template>

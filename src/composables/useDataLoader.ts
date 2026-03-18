@@ -5,8 +5,8 @@ import { ref, computed } from 'vue'
 import type { IntermediateResult } from '../types/intermediate'
 import type { FinalConclusion } from '../types/conclusion'
 
-const INTERMEDIATE_URL = '/data/final_qed_with_retrieval_microsoft.json'
-const CONCLUSION_URL = '/data/final_conclusion_microsoft_labeled.json'
+const INTERMEDIATE_URL = '/data_2/final_qed_with_retrieval_microsoft.json'
+const CONCLUSION_URL = '/data_2/final_conclusion_microsoft_labeled.json'
 
 export function useDataLoader() {
   const intermediateData = ref<IntermediateResult | null>(null)

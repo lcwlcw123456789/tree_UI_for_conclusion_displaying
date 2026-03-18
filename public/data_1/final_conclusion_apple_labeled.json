@@ -1,0 +1,186 @@
+{
+  "original_question": "How is the overall sales of Apple's products in 2025?",
+  "final_answer": "Apple’s 2025 sales performance reached a record $416.2 billion, representing a 6% increase driven by a successful strategic pivot toward high-margin iPhone Pro models and double-digit expansion in Services and Mac segments that effectively neutralized revenue contraction in Greater China and the Wearables category. This conclusion emerges from a synthesis of the analyses across the financial performance, business model and ecosystem, and macroeconomic and geopolitical environment pillars.",
+  "pillar_analysis": [
+    {
+      "pillar": "Financial Performance and Results of Operations",
+      "paragraph": "In terms of Financial Performance and Results of Operations, Apple achieved a total net sales figure of $416,161 million in fiscal year 2025, reflecting a 6% year-over-year increase (IND_1). The iPhone remained the primary revenue driver, contributing $209,586 million due to strong demand for Pro models (IND_2). Significant growth was observed in the Mac segment, which saw a 12% increase in net sales to $33,708 million driven by laptop and desktop performance (IND_3). The iPad segment also experienced growth, reaching $28,023 million in sales as gains in the Air and mini models outweighed lower iPad Pro sales (IND_4). Conversely, the Wearables, Home and Accessories category faced a decline, ending the year at $35,686 million (IND_5). Within the broader revenue mix, product sales specifically accounted for $307,003 million of the total (IND_6). Efficiency in managing the cost of sales for these products, which totaled $194,116 million, supported overall margins (IND_7). Profitability remained robust as the company generated a total gross margin of $195,201 million (IND_8). Strategic expense management further resulted in an operating income of $133,050 million for the period (IND_9). Finally, the company concluded the fiscal year with a net income of $112,010 million, demonstrating strong overall bottom-line results (IND_10).",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_1",
+          "indicator_name": "Products net sales (2025)"
+        },
+        {
+          "indicator_id": "IND_2",
+          "indicator_name": "iPhone net sales 2025"
+        },
+        {
+          "indicator_id": "IND_3",
+          "indicator_name": "Mac net sales 2025"
+        },
+        {
+          "indicator_id": "IND_4",
+          "indicator_name": "iPad net sales 2025"
+        },
+        {
+          "indicator_id": "IND_5",
+          "indicator_name": "Wearables, Home and Accessories net sales 2025"
+        },
+        {
+          "indicator_id": "IND_6",
+          "indicator_name": "net_sales_table"
+        },
+        {
+          "indicator_id": "IND_7",
+          "indicator_name": "cost_of_sales_table"
+        },
+        {
+          "indicator_id": "IND_8",
+          "indicator_name": "gross_margin_table"
+        },
+        {
+          "indicator_id": "IND_9",
+          "indicator_name": "operating_results_table"
+        },
+        {
+          "indicator_id": "IND_10",
+          "indicator_name": "consolidated_statements_of_comprehensive_income"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Products net sales (2025)",
+        "IND_2": "iPhone net sales 2025",
+        "IND_3": "Mac net sales 2025",
+        "IND_4": "iPad net sales 2025",
+        "IND_5": "Wearables, Home and Accessories net sales 2025",
+        "IND_6": "net_sales_table",
+        "IND_7": "cost_of_sales_table",
+        "IND_8": "gross_margin_table",
+        "IND_9": "operating_results_table",
+        "IND_10": "consolidated_statements_of_comprehensive_income"
+      }
+    },
+    {
+      "pillar": "Business Model, Products, Services and Integrated Ecosystem",
+      "paragraph": "In terms of Business Model, Products, Services and Integrated Ecosystem, Apple’s consolidated net sales grew to $416,161 million in fiscal 2025 (IND_1). The iPhone remains the cornerstone of the hardware strategy, generating $209,586 million in sales behind strong performance from Pro models (IND_2). Growth was further bolstered by the Mac segment, which saw net sales increase by 12% to $33,708 million (IND_3). iPad sales contributed $28,023 million to the total, showing a 5% increase compared to the previous year (IND_4). However, the Wearables, Home and Accessories category faced headwinds, with net sales dropping 4% to $35,686 million (IND_5). From a geographic perspective, performance was mixed as Greater China experienced a 4% revenue contraction despite growth in other regions like Europe and Japan (IND_11). The Services segment continues to be a high-growth pillar, expanding 14% to reach $109,158 million (IND_12). Profitability remains robust with a total gross margin of 46.9%, supported by the exceptional 75.4% margin in Services (IND_13). To sustain this ecosystem, the company increased its research and development spend by 10% to $34,550 million (IND_14).",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_1",
+          "indicator_name": "Total net sales 2025 (category table)"
+        },
+        {
+          "indicator_id": "IND_2",
+          "indicator_name": "iPhone net sales 2025"
+        },
+        {
+          "indicator_id": "IND_3",
+          "indicator_name": "Mac net sales 2025"
+        },
+        {
+          "indicator_id": "IND_4",
+          "indicator_name": "iPad net sales 2025"
+        },
+        {
+          "indicator_id": "IND_5",
+          "indicator_name": "Wearables, Home and Accessories net sales 2025"
+        },
+        {
+          "indicator_id": "IND_11",
+          "indicator_name": "segment_operating_performance_table"
+        },
+        {
+          "indicator_id": "IND_12",
+          "indicator_name": "products_and_services_performance_table"
+        },
+        {
+          "indicator_id": "IND_13",
+          "indicator_name": "gross_margin_table"
+        },
+        {
+          "indicator_id": "IND_14",
+          "indicator_name": "operating_expenses_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Total net sales 2025 (category table)",
+        "IND_2": "iPhone net sales 2025",
+        "IND_3": "Mac net sales 2025",
+        "IND_4": "iPad net sales 2025",
+        "IND_5": "Wearables, Home and Accessories net sales 2025",
+        "IND_6": "2025 sales mix: direct vs. indirect",
+        "IND_7": "2025 Americas net sales",
+        "IND_8": "2025 Europe net sales",
+        "IND_9": "2025 Greater China net sales",
+        "IND_10": "2025 Rest of Asia Pacific net sales",
+        "IND_11": "segment_operating_performance_table",
+        "IND_12": "products_and_services_performance_table",
+        "IND_13": "gross_margin_table",
+        "IND_14": "operating_expenses_table",
+        "IND_15": "provision_for_income_taxes_table"
+      }
+    },
+    {
+      "pillar": "Macroeconomic, Geopolitical and Trade Environment",
+      "paragraph": "In terms of Macroeconomic, Geopolitical and Trade Environment, Apple demonstrated global operational resilience by reaching $416,161 million in total net sales for 2025 (IND_1). The company’s performance was bolstered by a 7% growth in the Americas segment, which contributed $178,353 million to the top line (IND_2). European markets showed strong expansion with a 10% year-over-year increase in revenue primarily through Services and iPhone demand (IND_3). However, the Greater China segment faced challenges with net sales dropping 4% to $64,377 million, suggesting a shifting competitive and geopolitical landscape (IND_4). Japan emerged as a significant high-growth area with a 15% surge in net sales compared to the prior year (IND_5). Geographic diversification was further supported by the Rest of Asia Pacific region, which grew by 10% to reach $33,696 million (IND_6). The company’s broad international footprint is confirmed by its statement that a majority of total net sales are generated outside the U.S. (IND_10). Product demand remained anchored by the iPhone, which generated $209,586 million in sales specifically through higher-end Pro models (IND_7). Services revenue also acted as a major macroeconomic buffer, increasing 14% to $109,158 million (IND_8). Finally, Apple navigated global fiscal and trade environments to maintain an effective tax rate of 15.6% (IND_15).",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_1",
+          "indicator_name": "2025 total net sales (segment table)"
+        },
+        {
+          "indicator_id": "IND_2",
+          "indicator_name": "2025 Americas net sales"
+        },
+        {
+          "indicator_id": "IND_3",
+          "indicator_name": "2025 Europe net sales"
+        },
+        {
+          "indicator_id": "IND_4",
+          "indicator_name": "2025 Greater China net sales"
+        },
+        {
+          "indicator_id": "IND_5",
+          "indicator_name": "2025 Japan net sales"
+        },
+        {
+          "indicator_id": "IND_6",
+          "indicator_name": "2025 Rest of Asia Pacific net sales"
+        },
+        {
+          "indicator_id": "IND_10",
+          "indicator_name": "Majority of sales outside the U.S."
+        },
+        {
+          "indicator_id": "IND_7",
+          "indicator_name": "iPhone net sales 2025"
+        },
+        {
+          "indicator_id": "IND_8",
+          "indicator_name": "Services net sales 2025"
+        },
+        {
+          "indicator_id": "IND_15",
+          "indicator_name": "provision_for_income_taxes_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "2025 total net sales (segment table)",
+        "IND_2": "2025 Americas net sales",
+        "IND_3": "2025 Europe net sales",
+        "IND_4": "2025 Greater China net sales",
+        "IND_5": "2025 Japan net sales",
+        "IND_6": "2025 Rest of Asia Pacific net sales",
+        "IND_7": "iPhone net sales 2025",
+        "IND_8": "Services net sales 2025",
+        "IND_9": "iPhone YoY change 2025 vs 2024",
+        "IND_10": "Majority of sales outside the U.S.",
+        "IND_11": "segment_operating_performance_table",
+        "IND_12": "products_and_services_performance_table",
+        "IND_13": "gross_margin_table",
+        "IND_14": "operating_expenses_table",
+        "IND_15": "provision_for_income_taxes_table"
+      }
+    }
+  ]
+}

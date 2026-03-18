@@ -41,28 +41,6 @@ watch(
   { immediate: true }
 )
 
-// const tableColumns = computed(() => { 
-//   const cols = new Set<string>() 
-//     for (const sub of props.task.sub_indicators) 
-//     { Object.keys(sub.values).forEach((k) => cols.add(k)) } 
-//     return Array.from(cols) 
-//   })
-
-// const tableColumns = computed(() => {
-//   if (!props.task.sub_indicators.length) return []
-
-//   const firstSubIndicator = props.task.sub_indicators[0]
-//   if (!firstSubIndicator?.values) return []
-
-//   const keys = Object.keys(firstSubIndicator.values)
-
-//   const itemIndex = keys.indexOf('Item')
-//   if (itemIndex === -1) return keys
-
-//   const item = keys.splice(itemIndex, 1)
-//   return [...item, ...keys]
-// })
-
 const tableColumns = computed(() => {
   if (!props.task.sub_indicators.length) return []
 
@@ -92,6 +70,7 @@ const tableColumns = computed(() => {
     return 0
   })
 })
+
 function onMouseEnter() {
   emit('hover', key.value)
 }
@@ -109,6 +88,7 @@ function getCellValue(sub: SubIndicator, col: string): string {
   <div
     class="indicator-node table"
     :class="{ hovered: isHovered, collapsed }"
+    :data-indicator-key="JSON.stringify(key)"
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
@@ -204,6 +184,18 @@ function getCellValue(sub: SubIndicator, col: string): string {
 
 .indicator-body {
   padding: 0 0.5rem 0.5rem 1.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .table-wrapper {

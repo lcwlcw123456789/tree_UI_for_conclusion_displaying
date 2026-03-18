@@ -36,7 +36,7 @@ watch(
       <span class="expand-icon">{{ expanded ? '▼' : '▶' }}</span>
       <span class="pillar-name">{{ pillar.pillar }}</span>
     </div>
-    <div v-if="expanded" class="pillar-children">
+    <div v-if="expanded" class="pillar-children expanded">
       <IndicatorNode
         v-for="(task, i) in pillar.narrative_tasks"
         :key="'n-' + i"
@@ -91,10 +91,12 @@ watch(
   color: var(--color-primary);
   cursor: pointer;
   border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .pillar-header:hover {
   background: var(--color-bg-hover);
+  transform: translateX(2px);
 }
 
 .expand-icon {
@@ -109,5 +111,17 @@ watch(
   margin-left: 1rem;
   padding-left: 0.75rem;
   border-left: 2px solid var(--color-border);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

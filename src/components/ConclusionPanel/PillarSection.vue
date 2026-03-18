@@ -33,6 +33,7 @@ const emit = defineEmits<{
 <style scoped>
 .pillar-section {
   margin-bottom: 1.5rem;
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .pillar-title {
@@ -40,9 +41,25 @@ const emit = defineEmits<{
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+.pillar-title:hover {
+  color: var(--color-accent);
 }
 
 .pillar-section:last-child {
   margin-bottom: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

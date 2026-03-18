@@ -68,15 +68,33 @@ function onCitedClick(ids: string[]) {
   cursor: pointer;
   border-radius: 2px;
   padding: 0 0.05rem;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 .cited-text:hover {
   background: var(--color-accent-light);
+  transform: scale(1.05);
+}
+
+.cited-text:active {
+  transform: scale(0.95);
 }
 
 .cited-text.highlighted {
   background: var(--color-accent-light);
   color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-light);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px var(--color-accent-light);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.3);
+  }
 }
 
 .plain-text {

@@ -104,8 +104,9 @@ function handleTreeIndicatorUnhover() {
 .result-view {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  height: 100vh;
   background: var(--color-bg);
+  animation: fadeIn 0.5s ease-out;
 }
 
 .tree-aside {
@@ -113,11 +114,13 @@ function handleTreeIndicatorUnhover() {
   background: var(--color-bg-panel);
   min-width: 0;
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .conclusion-main {
   min-width: 0;
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .loading-state,
@@ -144,6 +147,15 @@ function handleTreeIndicatorUnhover() {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 </style>
