@@ -1,11 +1,243 @@
 <script setup lang="ts">
-import ResultView from './components/ResultView.vue'
+import { computed, ref } from 'vue'
+import StartPage from './components/StartPage.vue'
+import DocumentView from './components/DocumentView.vue'
+import DynamicResultView from './components/DynamicResultView.vue'
+import type { IntermediateResult } from './types/intermediate'
+import type { FinalConclusion } from './types/conclusion'
+
+type Step = 'select' | 'document' | 'result'
+
+const currentStep = ref<Step>('select')
+const selectedCompanyId = ref<string | null>(null)
+const documentStructure = ref<any | null>(null)
+
+const qaIntermediate = ref<IntermediateResult | null>(null)
+const qaConclusion = ref<FinalConclusion | null>(null)
+const qaLogs = ref<string[]>([])
+
+const stepIndex = computed(() => {
+  switch (currentStep.value) {
+    case 'select':
+      return 1
+    case 'document':
+      return 2
+    case 'result':
+      return 3
+    default:
+      return 1
+  }
+})
+
+function handleCompanyReady(payload: { companyId: string; structure: any }) {
+  selectedCompanyId.value = payload.companyId
+  documentStructure.value = payload.structure
+  currentStep.value = 'document'
+}
+
+function handleQuestionComplete(payload: {
+  intermediate: IntermediateResult
+  conclusion: FinalConclusion
+  logs?: string[]
+}) {
+  qaIntermediate.value = payload.intermediate
+  qaConclusion.value = payload.conclusion
+  qaLogs.value = payload.logs ?? []
+  currentStep.value = 'result'
+}
+
+function backToDocument() {
+  if (selectedCompanyId.value) {
+    currentStep.value = 'document'
+  } else {
+    currentStep.value = 'select'
+  }
+}
+
+function backToStart() {
+  currentStep.value = 'select'
+}
 </script>
 
 <template>
-  <ResultView />
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-title-block">
+        <h1 class="app-title">Cross-Modal Document Insight</h1>
+        <p class="app-subtitle">跨模态文档洞察与问答系统</p>
+      </div>
+      <div class="stepper">
+        <div class="step" :class="{ active: stepIndex >= 1 }">
+          <span class="step-index">1</span>
+          <span class="step-label">选择 / 上传文档</span>
+        </div>
+        <div class="step-line" :class="{ active: stepIndex >= 2 }" />
+        <div class="step" :class="{ active: stepIndex >= 2 }">
+          <span class="step-index">2</span>
+          <span class="step-label">文档与指标浏览</span>
+        </div>
+        <div class="step-line" :class="{ active: stepIndex >= 3 }" />
+        <div class="step" :class="{ active: stepIndex >= 3 }">
+          <span class="step-index">3</span>
+          <span class="step-label">问答与推理结果</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <StartPage
+        v-if="currentStep === 'select'"
+        @ready="handleCompanyReady"
+      />
+
+      <DocumentView
+        v-else-if="currentStep === 'document' && selectedCompanyId"
+        :company-id="selectedCompanyId"
+        :initial-structure="documentStructure"
+        @back="backToStart"
+        @question-complete="handleQuestionComplete"
+      />
+
+      <section v-else-if="currentStep === 'result' && qaIntermediate && qaConclusion" class="result-section">
+        <div class="result-toolbar">
+          <button class="ghost-button" type="button" @click="backToDocument">
+            ← 返回文档
+          </button>
+          <div class="logs-summary" v-if="qaLogs.length">
+            后端执行步骤：{{ qaLogs.length }} 条
+          </div>
+        </div>
+        <DynamicResultView
+          :intermediate="qaIntermediate"
+          :conclusion="qaConclusion"
+        />
+      </section>
+    </main>
+  </div>
 </template>
 
-<style>
-/* 全局样式由 style.css 提供 */
+<style scoped>
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.app-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.app-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.app-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.step-index {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.step-label {
+  white-space: nowrap;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  border-radius: 999px;
+}
+
+.step.active {
+  color: var(--color-primary);
+}
+
+.step.active .step-index {
+  border-color: var(--color-primary);
+  background: var(--color-accent-light);
+}
+
+.step-line.active {
+  background: var(--color-primary);
+}
+
+.app-main {
+  flex: 1;
+  min-height: 0;
+}
+
+.result-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-toolbar {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--color-bg-panel);
+}
+
+.ghost-button {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.ghost-button:hover {
+  background: var(--color-bg-hover);
+}
+
+.logs-summary {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
 </style>
