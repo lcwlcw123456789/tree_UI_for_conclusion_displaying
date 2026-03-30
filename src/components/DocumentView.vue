@@ -24,6 +24,9 @@ const hoveredPillarName = ref<string | null>(null)
 
 const hoveredIndicatorIndex = ref<number | null>(null)
 
+const currentPdfPage = ref<number | null>(null)
+const activeTableIndex = ref<number | null>(null)
+
 const question = ref('')
 const asking = ref(false)
 const askLogs = ref<string[]>([])
@@ -31,7 +34,14 @@ const qaController = ref<AbortController | null>(null)
 
 const pdfUrl = computed(() => {
   if (!structure.value || !structure.value.pdf_url) return null
-  return buildUrl(structure.value.pdf_url)
+  const base = buildUrl(structure.value.pdf_url)
+  const page = currentPdfPage.value
+  if (page && page > 0) {
+    const sep = base.includes('?') ? '&' : '?'
+    // 同时加上 query 和 hash，尽量兼容不同浏览器 / 查看器
+    return `${base}${sep}page=${page}#page=${page}`
+  }
+  return base
 })
 
 const pillars = computed(() => structure.value?.pillars ?? [])
@@ -275,6 +285,24 @@ function handleIndicatorHover(index: number | null) {
   hoveredIndicatorIndex.value = index
 }
 
+function jumpToPdfPage(page: number | null | undefined) {
+  if (!page || page <= 0) return
+  if (!structure.value || !structure.value.pdf_url) return
+  currentPdfPage.value = page
+}
+
+function handleIndicatorClick(ind: any, index?: number) {
+  jumpToPdfPage(ind?.source_page)
+  if (ind?.is_table || ind?.indicator_type === 'super_table') {
+    const key = typeof index === 'number' ? index : null
+    if (activeTableIndex.value === key) {
+      activeTableIndex.value = null
+    } else {
+      activeTableIndex.value = key
+    }
+  }
+}
+
 function handleKeydown(e: KeyboardEvent) {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault()
@@ -351,17 +379,77 @@ function handleKeydown(e: KeyboardEvent) {
                 v-for="(ind, i) in indicatorsForActivePillar"
                 :key="i"
                 class="indicator-item"
-                :class="{ hovered: i === hoveredIndicatorIndex }"
+                :class="{ hovered: i === hoveredIndicatorIndex, 'is-table': ind.is_table || ind.indicator_type === 'super_table' }"
+                @click="handleIndicatorClick(ind, i as number)"
                 @mouseenter="handleIndicatorHover(i as number)"
                 @mouseleave="handleIndicatorHover(null)"
               >
-                <div class="indicator-name">{{ ind.indicator_name }}</div>
+                <div class="indicator-name">
+                  {{ ind.indicator_name }}
+                </div>
                 <div class="indicator-meta">
-                  <span>来源页：{{ ind.source_page }}</span>
-                  <span v-if="ind.is_quantitative">定量</span>
+                  <span class="meta-link" @click.stop="jumpToPdfPage(ind.source_page)">
+                    来源页：{{ ind.source_page }}
+                  </span>
+                  <span v-if="ind.is_table || ind.indicator_type === 'super_table'" class="badge-table">表格</span>
+                  <span v-else-if="ind.is_quantitative">定量</span>
                   <span v-else>定性</span>
                 </div>
-                <p v-if="ind.relevance_rationale" class="indicator-rationale">
+                <template v-if="ind.is_table || ind.indicator_type === 'super_table'">
+                  <div class="table-summary">
+                    <div class="table-tags">
+                      <span class="tag">行数：{{ (ind.sub_indicators && ind.sub_indicators.length) || 0 }}</span>
+                    </div>
+                    <div v-if="ind.table_schema && ind.table_schema.length" class="table-columns">
+                      <span
+                        v-for="(col, idx) in ind.table_schema.slice(0, 4)"
+                        :key="idx"
+                        class="col-chip"
+                      >
+                        {{ col }}
+                      </span>
+                      <span
+                        v-if="ind.table_schema.length > 4"
+                        class="col-more"
+                      >
+                        +{{ ind.table_schema.length - 4 }}
+                      </span>
+                    </div>
+                    <div
+                      v-if="activeTableIndex === i && ind.sub_indicators && ind.table_schema && ind.table_schema.length"
+                      class="table-detail"
+                    >
+                      <div class="table-detail-scroll">
+                        <table class="mini-table">
+                          <thead>
+                            <tr>
+                              <th
+                                v-for="col in ind.table_schema.slice(0, 4)"
+                                :key="col"
+                              >
+                                {{ col }}
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr
+                              v-for="(row, rIdx) in ind.sub_indicators.slice(0, 3)"
+                              :key="rIdx"
+                            >
+                              <td
+                                v-for="col in ind.table_schema.slice(0, 4)"
+                                :key="col"
+                              >
+                                {{ row.values && row.values[col] }}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+                <p v-else-if="ind.relevance_rationale" class="indicator-rationale">
                   {{ ind.relevance_rationale }}
                 </p>
               </div>
@@ -643,6 +731,7 @@ function handleKeydown(e: KeyboardEvent) {
   padding: 0.4rem 0.5rem;
   background: var(--color-bg-muted);
   transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  cursor: pointer;
 }
 
 .indicator-name {
@@ -656,6 +745,95 @@ function handleKeydown(e: KeyboardEvent) {
   color: var(--color-text-muted);
   display: flex;
   justify-content: space-between;
+}
+
+.meta-link {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.meta-link:hover {
+  color: var(--color-primary);
+}
+
+.badge-table {
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  background: var(--color-accent-light);
+}
+
+.indicator-item.is-table {
+  border-style: dashed;
+}
+
+.table-summary {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.table-tags {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.tag {
+  padding: 0.05rem 0.3rem;
+  border-radius: 999px;
+  background: var(--color-bg-panel);
+}
+
+.table-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.col-chip {
+  padding: 0.05rem 0.3rem;
+  border-radius: 999px;
+  background: var(--color-bg-panel);
+  font-size: 0.7rem;
+}
+
+.col-more {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.table-detail {
+  margin-top: 0.3rem;
+}
+
+.table-detail-scroll {
+  max-height: 140px;
+  overflow: auto;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-panel);
+}
+
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.mini-table th,
+.mini-table td {
+  padding: 0.2rem 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mini-table thead {
+  background: var(--color-bg-muted);
 }
 
 .indicator-rationale {
