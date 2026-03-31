@@ -72,6 +72,12 @@ function backToDocument() {
 function backToStart() {
   currentStep.value = 'select'
 }
+
+function backToLastResult() {
+  if (qaIntermediate.value && qaConclusion.value) {
+    currentStep.value = 'result'
+  }
+}
 </script>
 
 <template>
@@ -118,8 +124,10 @@ function backToStart() {
         :company-id="selectedCompanyId"
         :initial-structure="documentStructure"
         :upload-logs="uploadLogs"
+        :can-open-last-result="!!qaIntermediate && !!qaConclusion"
         @back="backToStart"
         @question-complete="handleQuestionComplete"
+        @open-last-result="backToLastResult"
       />
 
       <section v-else-if="currentStep === 'result' && qaIntermediate && qaConclusion" class="result-section">

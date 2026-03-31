@@ -6,10 +6,12 @@ const props = defineProps<{
   companyId: string
   initialStructure?: any | null
   uploadLogs?: string[]
+  canOpenLastResult?: boolean
 }>()
 
 const emit = defineEmits<{
   back: []
+  openLastResult: []
   questionComplete: [payload: { intermediate: any; conclusion: any; logs?: string[] }]
 }>()
 
@@ -320,6 +322,14 @@ function handleKeydown(e: KeyboardEvent) {
       <div class="toolbar-right">
         <span class="company-tag">{{ props.companyId }}</span>
         <button
+          v-if="props.canOpenLastResult"
+          type="button"
+          class="ghost-button"
+          @click="emit('openLastResult')"
+        >
+          查看上次问答结果
+        </button>
+        <button
           type="button"
           class="primary-button"
           :disabled="!hasQuestionResult"
@@ -424,7 +434,7 @@ function handleKeydown(e: KeyboardEvent) {
                           <thead>
                             <tr>
                               <th
-                                v-for="col in ind.table_schema.slice(0, 4)"
+                                v-for="col in ind.table_schema"
                                 :key="col"
                               >
                                 {{ col }}
@@ -433,11 +443,11 @@ function handleKeydown(e: KeyboardEvent) {
                           </thead>
                           <tbody>
                             <tr
-                              v-for="(row, rIdx) in ind.sub_indicators.slice(0, 3)"
+                              v-for="(row, rIdx) in ind.sub_indicators"
                               :key="rIdx"
                             >
                               <td
-                                v-for="col in ind.table_schema.slice(0, 4)"
+                                v-for="col in ind.table_schema"
                                 :key="col"
                               >
                                 {{ row.values && row.values[col] }}
