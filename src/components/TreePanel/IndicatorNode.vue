@@ -2,6 +2,7 @@
 import { ref, computed, watch } from 'vue'
 import type { NarrativeTask } from '../../types/intermediate'
 import type { IndicatorKey } from '../../composables/useIndicatorLink'
+import type { OperatorPillarResult } from '../../types/operator'
 import EvidenceList from './EvidenceList.vue'
 
 const props = defineProps<{
@@ -9,6 +10,7 @@ const props = defineProps<{
   pillarIndex: number
   indicatorIndex: number
   pillarName: string
+  operatorItem?: OperatorPillarResult | null
   indicatorToExpand: IndicatorKey | null
   isHovered: boolean
 }>()
@@ -28,6 +30,37 @@ const key = computed<IndicatorKey>(() => ({
   indicatorType: 'narrative',
   indicatorIndex: props.indicatorIndex,
 }))
+
+const indicatorRef = computed(() => `narrative:${props.task.indicator_name}`)
+
+const operatorCausal = computed(() => {
+  const items = props.operatorItem?.operators?.causal_anchoring || []
+  return items.find((x) => x.indicator_ref === indicatorRef.value)
+})
+
+const operatorAlignment = computed(() => {
+  const items = props.operatorItem?.operators?.entity_alignment || []
+  return items.find((x) => x.indicator_ref === indicatorRef.value)
+})
+
+const operatorRelations = computed(() => {
+  const items = props.operatorItem?.operators?.narrative_relations || []
+  return items.filter((x) => x.indicator_ref === indicatorRef.value)
+})
+
+const operatorConflicts = computed(() => {
+  const items = props.operatorItem?.operators?.conflict_audit?.conflicts || []
+  return items.filter((c) => (c.involved_indicator_refs || []).includes(indicatorRef.value))
+})
+
+const hasOperatorData = computed(() => {
+  return !!(
+    operatorCausal.value ||
+    operatorAlignment.value ||
+    operatorRelations.value.length ||
+    operatorConflicts.value.length
+  )
+})
 
 watch(
   () => props.indicatorToExpand,
@@ -68,6 +101,32 @@ function onMouseLeave() {
       <div v-if="task.factoid_question" class="factoid">
         <span class="label">问题：</span>{{ task.factoid_question }}
       </div>
+
+      <div v-if="hasOperatorData" class="operator-box">
+        <div class="operator-title">算子关系</div>
+        <div v-if="operatorAlignment" class="operator-row">
+          <span class="op-tag">实体对齐</span>
+          <span>
+            域：{{ operatorAlignment.query_domain || '-' }} / {{ operatorAlignment.alignment_relation || '-' }}
+            <span v-if="operatorAlignment.confidence !== undefined">
+              / conf={{ operatorAlignment.confidence }}
+            </span>
+          </span>
+        </div>
+        <div v-if="operatorCausal" class="operator-row">
+          <span class="op-tag">因果锚定</span>
+          <span>{{ operatorCausal.trend_or_claim_sentence || '—' }}</span>
+        </div>
+        <div v-if="operatorRelations.length" class="operator-row">
+          <span class="op-tag">叙述关系</span>
+          <span>{{ operatorRelations[0].relation_type || '-' }} · {{ operatorRelations[0].connective || '-' }}</span>
+        </div>
+        <div v-if="operatorConflicts.length" class="operator-row conflict">
+          <span class="op-tag">冲突审计</span>
+          <span>{{ operatorConflicts[0].description || '存在冲突' }}</span>
+        </div>
+      </div>
+
       <EvidenceList :evidence="task.retrieved_evidence" />
     </div>
     <!-- 折叠时显示缩略图 -->
@@ -150,6 +209,47 @@ function onMouseLeave() {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
+}
+
+.operator-box {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 0.4rem 0.5rem;
+}
+
+.operator-title {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.operator-row {
+  display: flex;
+  gap: 0.35rem;
+  align-items: flex-start;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.operator-row:last-child {
+  margin-bottom: 0;
+}
+
+.operator-row.conflict {
+  color: #b45309;
+}
+
+.op-tag {
+  font-size: 0.68rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.02rem 0.35rem;
+  white-space: nowrap;
+  background: #fff;
 }
 
 .label {

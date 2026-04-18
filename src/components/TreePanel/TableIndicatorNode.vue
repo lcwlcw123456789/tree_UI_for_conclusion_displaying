@@ -2,6 +2,7 @@
 import { ref, computed, watch } from 'vue'
 import type { TableStructuredTask, SubIndicator } from '../../types/intermediate'
 import type { IndicatorKey } from '../../composables/useIndicatorLink'
+import type { OperatorPillarResult } from '../../types/operator'
 import EvidenceList from './EvidenceList.vue'
 
 const props = defineProps<{
@@ -9,6 +10,7 @@ const props = defineProps<{
   pillarIndex: number
   indicatorIndex: number
   pillarName: string
+  operatorItem?: OperatorPillarResult | null
   indicatorToExpand: IndicatorKey | null
   isHovered: boolean
 }>()
@@ -28,6 +30,33 @@ const key = computed<IndicatorKey>(() => ({
   indicatorType: 'table',
   indicatorIndex: props.indicatorIndex,
 }))
+
+const tableRefPrefix = computed(() => `table:${props.task.indicator_name}`)
+
+const operatorCausalItems = computed(() => {
+  const items = props.operatorItem?.operators?.causal_anchoring || []
+  return items.filter((x) => x.indicator_ref?.startsWith(tableRefPrefix.value))
+})
+
+const operatorAlignmentItems = computed(() => {
+  const items = props.operatorItem?.operators?.entity_alignment || []
+  return items.filter((x) => x.indicator_ref?.startsWith(tableRefPrefix.value))
+})
+
+const operatorConflictItems = computed(() => {
+  const items = props.operatorItem?.operators?.conflict_audit?.conflicts || []
+  return items.filter((c) =>
+    (c.involved_indicator_refs || []).some((ref) => ref?.startsWith(tableRefPrefix.value))
+  )
+})
+
+const hasOperatorData = computed(() => {
+  return !!(
+    operatorCausalItems.value.length ||
+    operatorAlignmentItems.value.length ||
+    operatorConflictItems.value.length
+  )
+})
 
 watch(
   () => props.indicatorToExpand,
@@ -98,6 +127,24 @@ function getCellValue(sub: SubIndicator, col: string): string {
       <span class="badge table-badge">表格</span>
     </div>
     <div v-if="!collapsed" class="indicator-body">
+      <div v-if="hasOperatorData" class="operator-box">
+        <div class="operator-title">算子关系</div>
+        <div v-if="operatorAlignmentItems.length" class="operator-row">
+          <span class="op-tag">实体对齐</span>
+          <span>
+            {{ operatorAlignmentItems.slice(0, 2).map((a) => `${a.query_domain || '-'}(${a.alignment_relation || '-'})`).join(' ; ') }}
+          </span>
+        </div>
+        <div v-if="operatorCausalItems.length" class="operator-row">
+          <span class="op-tag">因果锚定</span>
+          <span>关联行数：{{ operatorCausalItems.length }}</span>
+        </div>
+        <div v-if="operatorConflictItems.length" class="operator-row conflict">
+          <span class="op-tag">冲突审计</span>
+          <span>{{ operatorConflictItems[0].description || '存在冲突' }}</span>
+        </div>
+      </div>
+
       <div class="table-wrapper">
         <table class="data-table">
           <thead>
@@ -232,6 +279,47 @@ function getCellValue(sub: SubIndicator, col: string): string {
 .sub-evidence summary {
   cursor: pointer;
   color: var(--color-text-muted);
+}
+
+.operator-box {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 0.4rem 0.5rem;
+}
+
+.operator-title {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.operator-row {
+  display: flex;
+  gap: 0.35rem;
+  align-items: flex-start;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.operator-row:last-child {
+  margin-bottom: 0;
+}
+
+.operator-row.conflict {
+  color: #b45309;
+}
+
+.op-tag {
+  font-size: 0.68rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.02rem 0.35rem;
+  white-space: nowrap;
+  background: #fff;
 }
 
 .collapsed-thumb {

@@ -1,0 +1,573 @@
+{
+  "original_question": "How does Apple’s hardware-focused model compare to Microsoft’s software-focused model?",
+  "operator_results": [
+    {
+      "pillar": "Strategic Business Operations and Product Ecosystem",
+      "operators": {
+        "causal_anchoring": [],
+        "entity_alignment": [],
+        "conflict_audit": {
+          "has_conflict": false,
+          "conflicts": [],
+          "overall_resolution": "Fallback due to model call failure."
+        },
+        "narrative_relations": []
+      },
+      "error": "LLM call failed: TypeError",
+      "source_stats": {
+        "narrative_count": 10,
+        "table_count": 5,
+        "table_row_count": 14
+      },
+      "indicator_id_map": {
+        "ref_to_id": {
+          "narrative:Core Product Portfolio Scope": "IND_1",
+          "narrative:iPhone Product Lineup": "IND_2",
+          "narrative:Integrated Product Ecosystem Development": "IND_3",
+          "narrative:Market Share Positioning in Hardware": "IND_4",
+          "narrative:Distribution Channel Strategy": "IND_5",
+          "narrative:EU Regulatory Compliance Actions (DMA)": "IND_6",
+          "narrative:iPhone Revenue Growth Strategy": "IND_7",
+          "narrative:Services Revenue Drivers": "IND_8",
+          "narrative:Product Gross Margin Influences": "IND_9",
+          "narrative:Supply Chain Single-Sourcing Vulnerability": "IND_10",
+          "table:net_sales_table": "IND_11",
+          "table:net_sales_table|sub:Products": "IND_11",
+          "table:net_sales_table|sub:Services": "IND_11",
+          "table:net_sales_table|sub:Total net sales": "IND_11",
+          "table:cost_of_sales_table": "IND_12",
+          "table:cost_of_sales_table|sub:Products": "IND_12",
+          "table:cost_of_sales_table|sub:Services": "IND_12",
+          "table:cost_of_sales_table|sub:Total cost of sales": "IND_12",
+          "table:gross_margin_table": "IND_13",
+          "table:gross_margin_table|sub:Gross margin": "IND_13",
+          "table:operating_results_table": "IND_14",
+          "table:operating_results_table|sub:Operating income": "IND_14",
+          "table:operating_results_table|sub:Other income/(expense), net": "IND_14",
+          "table:operating_results_table|sub:Income before provision for income taxes": "IND_14",
+          "table:operating_results_table|sub:Provision for income taxes": "IND_14",
+          "table:operating_results_table|sub:Net income": "IND_14",
+          "table:segment_information_2025": "IND_15",
+          "table:segment_information_2025|sub:Net sales": "IND_15",
+          "table:segment_information_2025|sub:Operating income/(loss)": "IND_15"
+        },
+        "id_to_name": {
+          "IND_1": "Core Product Portfolio Scope",
+          "IND_2": "iPhone Product Lineup",
+          "IND_3": "Integrated Product Ecosystem Development",
+          "IND_4": "Market Share Positioning in Hardware",
+          "IND_5": "Distribution Channel Strategy",
+          "IND_6": "EU Regulatory Compliance Actions (DMA)",
+          "IND_7": "iPhone Revenue Growth Strategy",
+          "IND_8": "Services Revenue Drivers",
+          "IND_9": "Product Gross Margin Influences",
+          "IND_10": "Supply Chain Single-Sourcing Vulnerability",
+          "IND_11": "net_sales_table",
+          "IND_12": "cost_of_sales_table",
+          "IND_13": "gross_margin_table",
+          "IND_14": "operating_results_table",
+          "IND_15": "segment_information_2025"
+        }
+      },
+      "paragraph_plan": {
+        "opening_claim": "In terms of Strategic Business Operations and Product Ecosystem, the available indicators provide contextual support but limited high-confidence trend evidence.",
+        "evidence_chain": [],
+        "tension_and_resolution": "",
+        "closing_insight": "Overall, these aligned indicators support a coherent answer to: How does Apple’s hardware-focused model compare to Microsoft’s software-focused model?",
+        "writing_constraints": {
+          "evidence_budget": 6,
+          "require_causal_connective": true,
+          "prefer_one_contrastive_sentence": true,
+          "avoid_list_style": true
+        },
+        "draft_paragraph": "In terms of Strategic Business Operations and Product Ecosystem, the available indicators provide contextual support but limited high-confidence trend evidence. Therefore, Overall, these aligned indicators support a coherent answer to: How does Apple’s hardware-focused model compare to Microsoft’s software-focused model?"
+      }
+    },
+    {
+      "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+      "operators": {
+        "causal_anchoring": [
+          {
+            "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Net Sales",
+              "comparison": "2025 vs 2024"
+            },
+            "trend_or_claim_sentence": "iPhone net sales increased to $209,586 million in 2025, representing a 4% growth over the previous year.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Higher unit sales and product mix improvements in the iPhone category",
+                "source_hint": "text_b12"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "down",
+              "focus_metric": "Gross Margin %",
+              "comparison": "2025 vs 2024"
+            },
+            "trend_or_claim_sentence": "The gross margin percentage for Products declined slightly from 37.2% in 2024 to 36.8% in 2025.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Industry-wide global product pricing pressures and shifts in product mix",
+                "source_hint": "text_b8"
+              },
+              {
+                "cause_clause": "Potential increases in component costs and outside manufacturing services",
+                "source_hint": "text_b8"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Services Revenue Drivers",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Services Net Sales",
+              "comparison": "2025 vs 2024"
+            },
+            "trend_or_claim_sentence": "Services net sales grew by 14% in 2025, reaching $109,158 million, driven by diverse service offerings.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Higher volume of transactions and a different mix of services offered",
+                "source_hint": "text_b8"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "table:operating_expenses_table|sub:Research and development",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "R&D Spend",
+              "comparison": "2025 vs 2024"
+            },
+            "trend_or_claim_sentence": "Research and development spending increased by 10% to $34,550 million in 2025.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Increased headcount and related expenses to support technical innovation",
+                "source_hint": "text_b8"
+              }
+            ]
+          }
+        ],
+        "entity_alignment": [
+          {
+            "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+            "query_domain": "Apple’s hardware-focused model",
+            "document_entities": [
+              "iPhone",
+              "Americas",
+              "Greater China"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 1.0,
+            "rationale": "iPhone represents the core component of Apple's hardware-focused revenue model."
+          },
+          {
+            "indicator_ref": "table:products_and_services_performance_table|sub:Services (1)",
+            "query_domain": "software-focused model",
+            "document_entities": [
+              "Services",
+              "App Store"
+            ],
+            "alignment_relation": "indirect",
+            "confidence": 0.9,
+            "rationale": "Services net sales are the primary comparable to a software-focused model within Apple's ecosystem."
+          },
+          {
+            "indicator_ref": "narrative:May 2025 Share Repurchase Program Authorization",
+            "query_domain": "other",
+            "document_entities": [
+              "Share Repurchase Program",
+              "Dividends"
+            ],
+            "alignment_relation": "contextual",
+            "confidence": 0.85,
+            "rationale": "Capital allocation strategies like share repurchases reflect the overall financial health but are not unique to hardware or software models."
+          }
+        ],
+        "conflict_audit": {
+          "has_conflict": true,
+          "conflicts": [
+            {
+              "conflict_type": "numerical",
+              "involved_indicator_refs": [
+                "narrative:Share Repurchase Program Execution",
+                "table:share_repurchase_activity_table|sub:Total"
+              ],
+              "description": "Narrative text text_b11 states the company repurchased 402 million shares, while the Consolidated Statements of Shareholders' Equity (text_b3) reports 401,672 thousand shares.",
+              "resolution": "The 402 million figure is a rounded approximation used in narrative disclosures, whereas 401,672,000 is the precise figure from the financial statements."
+            }
+          ],
+          "overall_resolution": "Accounting-grade figures from consolidated statements take precedence over rounded narrative summaries."
+        },
+        "narrative_relations": [
+          {
+            "indicator_ref": "narrative:Gross Margin Volatility Drivers",
+            "proposition": "Gross margins are subject to downward pressure due to pricing actions and component costs.",
+            "relation_type": "condition",
+            "connective": "consequently",
+            "composed_sentence": "The company’s gross margins are subject to downward pressure due to pricing actions and component costs; consequently, product gross margin percentages declined in 2025."
+          },
+          {
+            "indicator_ref": "narrative:May 2025 Share Repurchase Program Authorization",
+            "proposition": "The Company announced a new $100 billion share repurchase program in May 2025.",
+            "relation_type": "background",
+            "connective": "furthermore",
+            "composed_sentence": "The Company announced a new $100 billion share repurchase program in May 2025; furthermore, it successfully repurchased $89.3 billion of common stock throughout the year."
+          },
+          {
+            "indicator_ref": "narrative:Revenue Recognition Timing by Category",
+            "proposition": "Control of products transfers to customers before revenue is recognized, while App Store sales are recognized on a net basis.",
+            "relation_type": "contrast",
+            "connective": "whereas",
+            "composed_sentence": "Control of products transfers to customers before revenue is recognized, whereas App Store sales are recognized on a net basis within Services net sales."
+          }
+        ]
+      },
+      "source_stats": {
+        "narrative_count": 10,
+        "table_count": 5,
+        "table_row_count": 28
+      },
+      "indicator_id_map": {
+        "ref_to_id": {
+          "narrative:Aggregate Market Value of Common Stock": "IND_1",
+          "narrative:Gross Margin Volatility Drivers": "IND_2",
+          "narrative:May 2025 Share Repurchase Program Authorization": "IND_3",
+          "narrative:Services Revenue Drivers": "IND_4",
+          "narrative:Product Gross Margin Influences": "IND_5",
+          "narrative:Liquidity and Cash Holdings": "IND_6",
+          "narrative:Capital Return Program Execution": "IND_7",
+          "narrative:Revenue Recognition Timing by Category": "IND_8",
+          "narrative:Effective Tax Rate": "IND_9",
+          "narrative:Share Repurchase Program Execution": "IND_10",
+          "table:share_repurchase_activity_table": "IND_11",
+          "table:share_repurchase_activity_table|sub:June 29, 2025 to August 2, 2025: Open market and privately negotiated purchases": "IND_11",
+          "table:share_repurchase_activity_table|sub:August 3, 2025 to August 30, 2025: Open market and privately negotiated purchases": "IND_11",
+          "table:share_repurchase_activity_table|sub:August 31, 2025 to September 27, 2025: Open market and privately negotiated purchases": "IND_11",
+          "table:share_repurchase_activity_table|sub:Total": "IND_11",
+          "table:segment_operating_performance_table": "IND_12",
+          "table:segment_operating_performance_table|sub:Americas": "IND_12",
+          "table:segment_operating_performance_table|sub:Europe": "IND_12",
+          "table:segment_operating_performance_table|sub:Greater China": "IND_12",
+          "table:segment_operating_performance_table|sub:Japan": "IND_12",
+          "table:segment_operating_performance_table|sub:Rest of Asia Pacific": "IND_12",
+          "table:segment_operating_performance_table|sub:Total net sales": "IND_12",
+          "table:products_and_services_performance_table": "IND_13",
+          "table:products_and_services_performance_table|sub:iPhone": "IND_13",
+          "table:products_and_services_performance_table|sub:Mac": "IND_13",
+          "table:products_and_services_performance_table|sub:iPad": "IND_13",
+          "table:products_and_services_performance_table|sub:Wearables, Home and Accessories": "IND_13",
+          "table:products_and_services_performance_table|sub:Services (1)": "IND_13",
+          "table:products_and_services_performance_table|sub:Total net sales": "IND_13",
+          "table:gross_margin_table": "IND_14",
+          "table:gross_margin_table|sub:Products": "IND_14",
+          "table:gross_margin_table|sub:Services": "IND_14",
+          "table:gross_margin_table|sub:Total gross margin": "IND_14",
+          "table:gross_margin_table|sub:Gross margin percentage: Products": "IND_14",
+          "table:gross_margin_table|sub:Gross margin percentage: Services": "IND_14",
+          "table:gross_margin_table|sub:Total gross margin percentage": "IND_14",
+          "table:operating_expenses_table": "IND_15",
+          "table:operating_expenses_table|sub:Research and development": "IND_15",
+          "table:operating_expenses_table|sub:Percentage of total net sales": "IND_15",
+          "table:operating_expenses_table|sub:Selling, general and administrative": "IND_15",
+          "table:operating_expenses_table|sub:Total operating expenses": "IND_15"
+        },
+        "id_to_name": {
+          "IND_1": "Aggregate Market Value of Common Stock",
+          "IND_2": "Gross Margin Volatility Drivers",
+          "IND_3": "May 2025 Share Repurchase Program Authorization",
+          "IND_4": "Services Revenue Drivers",
+          "IND_5": "Product Gross Margin Influences",
+          "IND_6": "Liquidity and Cash Holdings",
+          "IND_7": "Capital Return Program Execution",
+          "IND_8": "Revenue Recognition Timing by Category",
+          "IND_9": "Effective Tax Rate",
+          "IND_10": "Share Repurchase Program Execution",
+          "IND_11": "share_repurchase_activity_table",
+          "IND_12": "segment_operating_performance_table",
+          "IND_13": "products_and_services_performance_table",
+          "IND_14": "gross_margin_table",
+          "IND_15": "operating_expenses_table"
+        }
+      },
+      "paragraph_plan": {
+        "opening_claim": "In terms of Financial Performance, Capital Allocation, and Shareholder Value, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar.",
+        "evidence_chain": [
+          {
+            "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+            "indicator_id": "IND_13",
+            "sentence": "iPhone net sales increased to $209,586 million in 2025, representing a 4% growth over the previous year. Because Higher unit sales and product mix improvements in the iPhone category.",
+            "score": 4.2
+          },
+          {
+            "indicator_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+            "indicator_id": "IND_14",
+            "sentence": "The gross margin percentage for Products declined slightly from 37.2% in 2024 to 36.8% in 2025. Because Industry-wide global product pricing pressures and shifts in product mix and Potential increases in component costs and outside manufacturing services.",
+            "score": 3.2
+          },
+          {
+            "indicator_ref": "table:operating_expenses_table|sub:Research and development",
+            "indicator_id": "IND_15",
+            "sentence": "Research and development spending increased by 10% to $34,550 million in 2025. Because Increased headcount and related expenses to support technical innovation.",
+            "score": 2.4
+          },
+          {
+            "indicator_ref": "narrative:Services Revenue Drivers",
+            "indicator_id": "IND_4",
+            "sentence": "Services net sales grew by 14% in 2025, reaching $109,158 million, driven by diverse service offerings. Because Higher volume of transactions and a different mix of services offered.",
+            "score": 2.2
+          }
+        ],
+        "tension_and_resolution": "Accounting-grade figures from consolidated statements take precedence over rounded narrative summaries.",
+        "closing_insight": "The company’s gross margins are subject to downward pressure due to pricing actions and component costs; consequently, product gross margin percentages declined in 2025.",
+        "writing_constraints": {
+          "evidence_budget": 6,
+          "require_causal_connective": true,
+          "prefer_one_contrastive_sentence": true,
+          "avoid_list_style": true
+        },
+        "draft_paragraph": "In terms of Financial Performance, Capital Allocation, and Shareholder Value, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar. iPhone net sales increased to $209,586 million in 2025, representing a 4% growth over the previous year. Because Higher unit sales and product mix improvements in the iPhone category. The gross margin percentage for Products declined slightly from 37.2% in 2024 to 36.8% in 2025. Because Industry-wide global product pricing pressures and shifts in product mix and Potential increases in component costs and outside manufacturing services. Research and development spending increased by 10% to $34,550 million in 2025. Because Increased headcount and related expenses to support technical innovation. Services net sales grew by 14% in 2025, reaching $109,158 million, driven by diverse service offerings. Because Higher volume of transactions and a different mix of services offered. However, Accounting-grade figures from consolidated statements take precedence over rounded narrative summaries. Therefore, The company’s gross margins are subject to downward pressure due to pricing actions and component costs; consequently, product gross margin percentages declined in 2025."
+      }
+    },
+    {
+      "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+      "operators": {
+        "causal_anchoring": [
+          {
+            "indicator_ref": "table:net_sales_table|sub:Products",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Net Sales",
+              "comparison": "fiscal 2025 vs 2024"
+            },
+            "trend_or_claim_sentence": "Hardware-driven product sales increased from $294.9 billion to $307.0 billion year-over-year.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Strong consumer demand for new product technologies and hardware iterations",
+                "source_hint": "text_b11"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "table:net_sales_table|sub:Services",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Net Sales",
+              "comparison": "fiscal 2025 vs 2024"
+            },
+            "trend_or_claim_sentence": "Services revenue grew significantly to $109.2 billion, representing an expansion of the software-adjacent model.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Growth in digital content, cloud services, and advertising offerings",
+                "source_hint": "table_indicators"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Single-Source Component Vulnerability",
+            "indicator_type": "narrative",
+            "trend": null,
+            "trend_or_claim_sentence": "The hardware model is exposed to supply disruptions because many new products utilize custom components available from only one source.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Initial capacity constraints and maturing supplier yields for new technologies",
+                "source_hint": "text_b5"
+              },
+              {
+                "cause_clause": "Supplier consolidation and shifts toward common instead of custom components",
+                "source_hint": "text_b9"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:U.S. Tariff Impacts (2025)",
+            "indicator_type": "narrative",
+            "trend": null,
+            "trend_or_claim_sentence": "New U.S. tariffs announced in 2025 threaten to increase the cost of goods sold for hardware imported from China and other regions.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Geopolitical trade disputes leading to reciprocal retaliatory measures by foreign governments",
+                "source_hint": "text_b2"
+              }
+            ]
+          }
+        ],
+        "entity_alignment": [
+          {
+            "indicator_ref": "table:net_sales_table|sub:Products",
+            "query_domain": "Apple’s hardware-focused model",
+            "document_entities": [
+              "Apple Inc.",
+              "Products"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 1.0,
+            "rationale": "Directly quantifies the primary output of the hardware-focused business model mentioned in the query."
+          },
+          {
+            "indicator_ref": "table:net_sales_table|sub:Services",
+            "query_domain": "Microsoft’s software-focused model",
+            "document_entities": [
+              "Apple Inc.",
+              "Services"
+            ],
+            "alignment_relation": "contextual",
+            "confidence": 0.85,
+            "rationale": "Services represent the software/recurring revenue component of Apple that is most comparable to Microsoft's software-centric model."
+          },
+          {
+            "indicator_ref": "narrative:Global Manufacturing Footprint",
+            "query_domain": "Apple’s hardware-focused model",
+            "document_entities": [
+              "China mainland",
+              "India",
+              "Vietnam"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 0.95,
+            "rationale": "Hardware production is the cornerstone of the model, and the manufacturing footprint describes its operational reality."
+          }
+        ],
+        "conflict_audit": {
+          "has_conflict": true,
+          "conflicts": [
+            {
+              "conflict_type": "causal",
+              "involved_indicator_refs": [
+                "table:net_sales_table|sub:Products",
+                "narrative:Macroeconomic Impact of Trade Disputes"
+              ],
+              "description": "Historical sales for hardware products show steady growth, whereas narrative indicators warn of shifts and reductions in consumer spending due to trade disputes.",
+              "resolution": "The historical financials reflect past demand, while the narrative indicators highlight emerging forward-looking risks from 2025 tariff announcements that have not yet fully impacted fiscal 2025 results."
+            }
+          ],
+          "overall_resolution": "Distinguish between realized financial performance and the escalation of exogenous geopolitical risks that threaten future hardware margins."
+        },
+        "narrative_relations": [
+          {
+            "indicator_ref": "narrative:Single-Source Component Vulnerability",
+            "proposition": "Apple relies on single-source suppliers for custom components in new products",
+            "relation_type": "cause",
+            "connective": "consequently",
+            "composed_sentence": "Apple relies on single-source suppliers for custom components in new products; consequently, it faces significant risks of supply shortages and price increases."
+          },
+          {
+            "indicator_ref": "narrative:Global Manufacturing Footprint",
+            "proposition": "Hardware manufacturing is primarily outsourced to partners in China and Southeast Asia",
+            "relation_type": "background",
+            "connective": "while",
+            "composed_sentence": "While hardware manufacturing is primarily outsourced to partners in China and Southeast Asia, the company must manage complex cross-border logistical and regulatory risks."
+          }
+        ]
+      },
+      "source_stats": {
+        "narrative_count": 10,
+        "table_count": 5,
+        "table_row_count": 19
+      },
+      "indicator_id_map": {
+        "ref_to_id": {
+          "narrative:Single-Source Component Vulnerability": "IND_1",
+          "narrative:Global Manufacturing Footprint": "IND_2",
+          "narrative:U.S. Tariff Impacts (2025)": "IND_3",
+          "narrative:Semiconductor Trade Investigation": "IND_4",
+          "narrative:Climate Change and Natural Disaster Risk": "IND_5",
+          "narrative:Critical Component Supply Chain Concentration": "IND_6",
+          "narrative:EU Regulatory Compliance Actions (DMA)": "IND_7",
+          "narrative:DOJ Antitrust Lawsuit for Monopolization": "IND_8",
+          "narrative:Macroeconomic Impact of Trade Disputes": "IND_9",
+          "narrative:Impact of International Trade Restrictions": "IND_10",
+          "table:net_sales_table": "IND_11",
+          "table:net_sales_table|sub:Products": "IND_11",
+          "table:net_sales_table|sub:Services": "IND_11",
+          "table:net_sales_table|sub:Total net sales": "IND_11",
+          "table:cost_of_sales_table": "IND_12",
+          "table:cost_of_sales_table|sub:Products": "IND_12",
+          "table:cost_of_sales_table|sub:Services": "IND_12",
+          "table:cost_of_sales_table|sub:Total cost of sales": "IND_12",
+          "table:gross_margin_table": "IND_13",
+          "table:gross_margin_table|sub:Gross margin": "IND_13",
+          "table:operating_results_table": "IND_14",
+          "table:operating_results_table|sub:Operating income": "IND_14",
+          "table:operating_results_table|sub:Other income/(expense), net": "IND_14",
+          "table:operating_results_table|sub:Income before provision for income taxes": "IND_14",
+          "table:operating_results_table|sub:Provision for income taxes": "IND_14",
+          "table:operating_results_table|sub:Net income": "IND_14",
+          "table:unconditional_purchase_obligations_table": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:2026": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:2027": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:2028": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:2029": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:2030": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:Thereafter": "IND_15",
+          "table:unconditional_purchase_obligations_table|sub:Total": "IND_15"
+        },
+        "id_to_name": {
+          "IND_1": "Single-Source Component Vulnerability",
+          "IND_2": "Global Manufacturing Footprint",
+          "IND_3": "U.S. Tariff Impacts (2025)",
+          "IND_4": "Semiconductor Trade Investigation",
+          "IND_5": "Climate Change and Natural Disaster Risk",
+          "IND_6": "Critical Component Supply Chain Concentration",
+          "IND_7": "EU Regulatory Compliance Actions (DMA)",
+          "IND_8": "DOJ Antitrust Lawsuit for Monopolization",
+          "IND_9": "Macroeconomic Impact of Trade Disputes",
+          "IND_10": "Impact of International Trade Restrictions",
+          "IND_11": "net_sales_table",
+          "IND_12": "cost_of_sales_table",
+          "IND_13": "gross_margin_table",
+          "IND_14": "operating_results_table",
+          "IND_15": "unconditional_purchase_obligations_table"
+        }
+      },
+      "paragraph_plan": {
+        "opening_claim": "In terms of Global Risk Profile and External Environmental Vulnerabilities, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar.",
+        "evidence_chain": [
+          {
+            "indicator_ref": "table:net_sales_table|sub:Products",
+            "indicator_id": "IND_11",
+            "sentence": "Hardware-driven product sales increased from $294.9 billion to $307.0 billion year-over-year. Because Strong consumer demand for new product technologies and hardware iterations.",
+            "score": 4.2
+          },
+          {
+            "indicator_ref": "table:net_sales_table|sub:Services",
+            "indicator_id": "IND_11",
+            "sentence": "Services revenue grew significantly to $109.2 billion, representing an expansion of the software-adjacent model. Because Growth in digital content, cloud services, and advertising offerings.",
+            "score": 3.28
+          },
+          {
+            "indicator_ref": "narrative:Single-Source Component Vulnerability",
+            "indicator_id": "IND_1",
+            "sentence": "The hardware model is exposed to supply disruptions because many new products utilize custom components available from only one source. Because Initial capacity constraints and maturing supplier yields for new technologies and Supplier consolidation and shifts toward common instead of custom components.",
+            "score": 3.0
+          },
+          {
+            "indicator_ref": "narrative:U.S. Tariff Impacts (2025)",
+            "indicator_id": "IND_3",
+            "sentence": "New U.S. tariffs announced in 2025 threaten to increase the cost of goods sold for hardware imported from China and other regions. Because Geopolitical trade disputes leading to reciprocal retaliatory measures by foreign governments.",
+            "score": 2.2
+          }
+        ],
+        "tension_and_resolution": "Distinguish between realized financial performance and the escalation of exogenous geopolitical risks that threaten future hardware margins.",
+        "closing_insight": "Apple relies on single-source suppliers for custom components in new products; consequently, it faces significant risks of supply shortages and price increases.",
+        "writing_constraints": {
+          "evidence_budget": 6,
+          "require_causal_connective": true,
+          "prefer_one_contrastive_sentence": true,
+          "avoid_list_style": true
+        },
+        "draft_paragraph": "In terms of Global Risk Profile and External Environmental Vulnerabilities, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar. Hardware-driven product sales increased from $294.9 billion to $307.0 billion year-over-year. Because Strong consumer demand for new product technologies and hardware iterations. Services revenue grew significantly to $109.2 billion, representing an expansion of the software-adjacent model. Because Growth in digital content, cloud services, and advertising offerings. The hardware model is exposed to supply disruptions because many new products utilize custom components available from only one source. Because Initial capacity constraints and maturing supplier yields for new technologies and Supplier consolidation and shifts toward common instead of custom components. New U.S. tariffs announced in 2025 threaten to increase the cost of goods sold for hardware imported from China and other regions. Because Geopolitical trade disputes leading to reciprocal retaliatory measures by foreign governments. However, Distinguish between realized financial performance and the escalation of exogenous geopolitical risks that threaten future hardware margins. Therefore, Apple relies on single-source suppliers for custom components in new products; consequently, it faces significant risks of supply shortages and price increases."
+      }
+    }
+  ]
+}

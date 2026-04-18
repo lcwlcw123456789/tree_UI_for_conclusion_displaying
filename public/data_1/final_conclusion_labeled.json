@@ -1,0 +1,3133 @@
+{
+  "original_question": "Should Alphabet reduce its dependence on search advertising?",
+  "final_answer": "Yes, Alphabet must reduce its dependence on search advertising, not out of strategic choice, but due to overwhelming regulatory force. This imperative emerges from a core strategic conflict: an existential legal threat to the search business model, following an adverse U.S. antitrust ruling, directly opposes the division's accelerating financial performance. While search revenues grew to $198.1 billion, Alphabet's own AI investments have paradoxically deepened this dependence by increasing search query volume. This creates a strategic bind where the company's most successful internal initiatives contradict its externally-forced pivot. Although diversification is progressing, with Google Cloud's operating income rising to $6.1 billion, this path presents its own challenges, including pressure on corporate margins. Therefore, reducing dependence on search is a necessary but deeply conflicted mandate, forcing Alphabet to pursue a strategy that runs counter to its primary financial engine and the current effects of its AI transformation.",
+  "pillar_analysis": [
+    {
+      "pillar": "Segment Operations and Revenue Diversification",
+      "paragraph": "In terms of Segment Operations and Revenue Diversification, Alphabet's trajectory demonstrates a strategic pivot toward non-advertising businesses, creating a tension between significant growth in new segments and pressure on overall corporate margins. While the core Google Search business remains robust, with revenues growing to $198.1 billion in 2024 (IND_11), the most significant diversification success is Google Cloud, which transitioned into a substantial profit center by increasing its operating income from $1.7 billion in 2023 to $6.1 billion in 2024 (IND_9, IND_14). This growth, however, underscores a fundamental challenge, as the increasing share of non-advertising revenues may adversely affect consolidated margins due to inherently different cost structures (IND_6). This trade-off is further exemplified by the continued, heavy investment in long-term projects like Waymo, which received $5.6 billion in funding in 2024 (IND_1), while the Other Bets segment as a whole deepened its operating loss to $4.4 billion (IND_10, IND_14). Consequently, while Alphabet is successfully cultivating Google Cloud into a viable second engine of profitability, its diversification strategy necessitates navigating the financial friction between lower-margin growth segments and the high-margin legacy advertising business.",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_1",
+          "indicator_name": "Waymo Operational Growth"
+        },
+        {
+          "indicator_id": "IND_6",
+          "indicator_name": "Non-Advertising Revenue Margin Pressure"
+        },
+        {
+          "indicator_id": "IND_9",
+          "indicator_name": "Google Cloud Profitability Drivers"
+        },
+        {
+          "indicator_id": "IND_10",
+          "indicator_name": "Other Bets Operating Loss Performance"
+        },
+        {
+          "indicator_id": "IND_11",
+          "indicator_name": "revenues_by_type_table"
+        },
+        {
+          "indicator_id": "IND_14",
+          "indicator_name": "segment_operating_income_loss_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Waymo Operational Growth",
+        "IND_2": "Google Services Revenue Drivers",
+        "IND_3": "Revenue Diversification via Subscriptions",
+        "IND_4": "Cloud Revenue Model",
+        "IND_5": "AI Integration and Monetization Trends",
+        "IND_6": "Non-Advertising Revenue Margin Pressure",
+        "IND_7": "TAC Rate and Revenue Mix Shift",
+        "IND_8": "Mobile Search TAC Pressure",
+        "IND_9": "Google Cloud Profitability Drivers",
+        "IND_10": "Other Bets Operating Loss Performance",
+        "IND_11": "revenues_by_type_table",
+        "IND_12": "cost_of_revenues_table",
+        "IND_13": "research_and_development_table",
+        "IND_14": "segment_operating_income_loss_table",
+        "IND_15": "investing_activities"
+      }
+    },
+    {
+      "pillar": "AI Transformation and Technical Infrastructure",
+      "paragraph": "In terms of AI Transformation and Technical Infrastructure, Alphabet is pursuing a dual strategy that reinforces its core search business while simultaneously building capacity for diversification, a trajectory underpinned by massive capital investment. The plan to invest approximately $75 billion in capital expenditures in 2025 is driven by the need for deeper investments in technical infrastructure to power AI and data centers (IND_11). Paradoxically, this AI transformation is currently strengthening the company's search dominance rather than reducing dependence on it; AI Overviews have reached over one billion users and increased the volume of commercial queries, with users returning to Search more frequently for their needs (IND_2). This foundational investment in proprietary hardware, such as the development of its 7th generation custom TPU, is critical for training the next frontier of AI models that power these services (IND_6). While fortifying search, this scaled infrastructure also fuels strong momentum in non-advertising segments, evidenced by YouTube Music and Premium subscriptions exceeding 125 million (IND_12), demonstrating that the current strategy is to maximize the utility of its AI infrastructure across all business lines, not to pivot away from its most profitable one.",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_2",
+          "indicator_name": "AI Overviews Adoption"
+        },
+        {
+          "indicator_id": "IND_6",
+          "indicator_name": "Custom TPU Development"
+        },
+        {
+          "indicator_id": "IND_11",
+          "indicator_name": "investment_and_search_metrics"
+        },
+        {
+          "indicator_id": "IND_12",
+          "indicator_name": "product_usage_and_subscriber_metrics"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Gemini Ecosystem Integration",
+        "IND_2": "AI Overviews Adoption",
+        "IND_3": "Global Infrastructure Backbone Scale",
+        "IND_4": "Gemini Developer and API Demand",
+        "IND_5": "AI Model Evolution and Gemini 2.0 Launch",
+        "IND_6": "Custom TPU Development",
+        "IND_7": "AI Output Latency and Cost Efficiency",
+        "IND_8": "Enterprise-Wide AI Integration Strategy",
+        "IND_9": "AI Hardware and Energy Dependency",
+        "IND_10": "Infrastructure Supply Capacity Scarcity (GPUs/TPUs)",
+        "IND_11": "investment_and_search_metrics",
+        "IND_12": "product_usage_and_subscriber_metrics",
+        "IND_13": "other_income_expense_net_table",
+        "IND_14": "cash_flows_table",
+        "IND_15": "share_repurchase_program_table"
+      }
+    },
+    {
+      "pillar": "Regulatory Compliance and Risk Mitigation",
+      "paragraph": "In terms of Regulatory Compliance and Risk Mitigation, Alphabet faces a fundamental conflict between the current financial performance of its search advertising business and its long-term legal viability. The core of this risk is the August 2024 U.S. District Court ruling that found Google in violation of U.S. antitrust laws related to its search and search advertising business, leading the Department of Justice to propose remedies that could include structural changes to the business model (IND_7). This legal threat stands in stark contrast to the segment's ongoing financial dominance, as \"Google Search & other\" revenues grew to $198.1 billion in 2024, demonstrating a deep and increasing reliance on the very operations under judicial fire (IND_12). While the company is cultivating alternative revenue streams, evidenced by Google Cloud's significant revenue growth to $43.2 billion in 2024 (IND_12), the pressure to diversify is compounded by a broad front of legal challenges, including a separate advertising technology trial scheduled for March 2025 (IND_8). The trajectory, therefore, shows a business whose primary engine is accelerating financially while its legal license to operate under current terms is being systematically dismantled, making the strategic imperative to reduce dependence a critical risk mitigation effort.",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_7",
+          "indicator_name": "Search Antitrust Liability"
+        },
+        {
+          "indicator_id": "IND_8",
+          "indicator_name": "Advertising Technology Trial Schedule"
+        },
+        {
+          "indicator_id": "IND_12",
+          "indicator_name": "revenues_by_type_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Regulatory Scrutiny and Compliance Risk",
+        "IND_2": "Regulatory Compliance Burden and Cost",
+        "IND_3": "Third-Party Cookie Regulatory Shift",
+        "IND_4": "EU AI Act Enforcement",
+        "IND_5": "Antitrust Regulation (Digital Markets Act)",
+        "IND_6": "Safe Harbor Protection Vulnerability",
+        "IND_7": "Search Antitrust Liability",
+        "IND_8": "Advertising Technology Trial Schedule",
+        "IND_9": "Legal Liability Risks for AI Training and Development",
+        "IND_10": "Regulatory and Legal Compliance Impact",
+        "IND_11": "consolidated_financial_results_table",
+        "IND_12": "revenues_by_type_table",
+        "IND_13": "revenues_by_geography_table",
+        "IND_14": "other_income_expense_net_table",
+        "IND_15": "provision_for_income_taxes_table"
+      }
+    }
+  ],
+  "stage3_global_synthesis": {
+    "synthesis_brief": [
+      {
+        "pillar_index": 0,
+        "pillar": "Segment Operations and Revenue Diversification",
+        "paragraph": "In terms of Segment Operations and Revenue Diversification, Alphabet's trajectory demonstrates a strategic pivot toward non-advertising businesses, creating a tension between significant growth in new segments and pressure on overall corporate margins. While the core Google Search business remains robust, with revenues growing to $198.1 billion in 2024 (IND_11), the most significant diversification success is Google Cloud, which transitioned into a substantial profit center by increasing its operating income from $1.7 billion in 2023 to $6.1 billion in 2024 (IND_9, IND_14). This growth, however, underscores a fundamental challenge, as the increasing share of non-advertising revenues may adversely affect consolidated margins due to inherently different cost structures (IND_6). This trade-off is further exemplified by the continued, heavy investment in long-term projects like Waymo, which received $5.6 billion in funding in 2024 (IND_1), while the Other Bets segment as a whole deepened its operating loss to $4.4 billion (IND_10, IND_14). Consequently, while Alphabet is successfully cultivating Google Cloud into a viable second engine of profitability, its diversification strategy necessitates navigating the financial friction between lower-margin growth segments and the high-margin legacy advertising business.",
+        "referenced_indicator_names": [
+          "Waymo Operational Growth",
+          "Non-Advertising Revenue Margin Pressure",
+          "Google Cloud Profitability Drivers",
+          "Other Bets Operating Loss Performance",
+          "revenues_by_type_table",
+          "segment_operating_income_loss_table"
+        ],
+        "referenced_indicator_ids": [
+          "IND_1",
+          "IND_6",
+          "IND_9",
+          "IND_10",
+          "IND_11",
+          "IND_14"
+        ]
+      },
+      {
+        "pillar_index": 1,
+        "pillar": "AI Transformation and Technical Infrastructure",
+        "paragraph": "In terms of AI Transformation and Technical Infrastructure, Alphabet is pursuing a dual strategy that reinforces its core search business while simultaneously building capacity for diversification, a trajectory underpinned by massive capital investment. The plan to invest approximately $75 billion in capital expenditures in 2025 is driven by the need for deeper investments in technical infrastructure to power AI and data centers (IND_11). Paradoxically, this AI transformation is currently strengthening the company's search dominance rather than reducing dependence on it; AI Overviews have reached over one billion users and increased the volume of commercial queries, with users returning to Search more frequently for their needs (IND_2). This foundational investment in proprietary hardware, such as the development of its 7th generation custom TPU, is critical for training the next frontier of AI models that power these services (IND_6). While fortifying search, this scaled infrastructure also fuels strong momentum in non-advertising segments, evidenced by YouTube Music and Premium subscriptions exceeding 125 million (IND_12), demonstrating that the current strategy is to maximize the utility of its AI infrastructure across all business lines, not to pivot away from its most profitable one.",
+        "referenced_indicator_names": [
+          "AI Overviews Adoption",
+          "Custom TPU Development",
+          "investment_and_search_metrics",
+          "product_usage_and_subscriber_metrics"
+        ],
+        "referenced_indicator_ids": [
+          "IND_2",
+          "IND_6",
+          "IND_11",
+          "IND_12"
+        ]
+      },
+      {
+        "pillar_index": 2,
+        "pillar": "Regulatory Compliance and Risk Mitigation",
+        "paragraph": "In terms of Regulatory Compliance and Risk Mitigation, Alphabet faces a fundamental conflict between the current financial performance of its search advertising business and its long-term legal viability. The core of this risk is the August 2024 U.S. District Court ruling that found Google in violation of U.S. antitrust laws related to its search and search advertising business, leading the Department of Justice to propose remedies that could include structural changes to the business model (IND_7). This legal threat stands in stark contrast to the segment's ongoing financial dominance, as \"Google Search & other\" revenues grew to $198.1 billion in 2024, demonstrating a deep and increasing reliance on the very operations under judicial fire (IND_12). While the company is cultivating alternative revenue streams, evidenced by Google Cloud's significant revenue growth to $43.2 billion in 2024 (IND_12), the pressure to diversify is compounded by a broad front of legal challenges, including a separate advertising technology trial scheduled for March 2025 (IND_8). The trajectory, therefore, shows a business whose primary engine is accelerating financially while its legal license to operate under current terms is being systematically dismantled, making the strategic imperative to reduce dependence a critical risk mitigation effort.",
+        "referenced_indicator_names": [
+          "Search Antitrust Liability",
+          "Advertising Technology Trial Schedule",
+          "revenues_by_type_table"
+        ],
+        "referenced_indicator_ids": [
+          "IND_7",
+          "IND_8",
+          "IND_12"
+        ]
+      }
+    ],
+    "tree_graph": {
+      "root_id": "ROOT",
+      "nodes": [
+        {
+          "node_id": "ROOT",
+          "node_type": "root",
+          "label": "Global Conclusion Root",
+          "selected": true
+        },
+        {
+          "node_id": "PILLAR_1",
+          "node_type": "pillar",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "label": "Segment Operations and Revenue Diversification",
+          "selected": true
+        },
+        {
+          "node_id": "N_1_1",
+          "node_type": "indicator_candidate",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "pillar_index": 0,
+          "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+          "indicator_id": "IND_11",
+          "indicator_name": "revenues_by_type_table",
+          "selection_score": 5.9,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "revenues_by_type_table",
+            "raw_indicator": {
+              "indicator_name": "revenues_by_type_table",
+              "source_page": 40,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Google Search & other",
+                  "factoid_question": "What was the revenue for Google Search & other in 2024?",
+                  "relevance_rationale": "Directly quantifies the level of dependence on the primary search product, serving as the key metric to be reduced.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Item": "Google Search & other",
+                    "2023": "$ 175,033",
+                    "2024": "$ 198,084"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 105,
+                      "text": "Pursuant to the requirements of the Securities Exchange Act of 1934, this Annual Report on Form 10-K has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b25",
+                      "page": 40,
+                      "text": "Google Search & other revenues increased $23.1 billion from 2023 to 2024. The overall growth was driven by interrelated factors including increases in search queries resulting from growth in user adoption and usage on mobile devices; growth in",
+                      "score": 0.817244291305542,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7965004444122314,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Cloud",
+                  "factoid_question": "How much revenue did Google Cloud generate in 2024?",
+                  "relevance_rationale": "Google Cloud is the primary growth engine for revenue diversification away from advertising.",
+                  "source_text_id": "table_0.row_6",
+                  "values": {
+                    "Item": "Google Cloud",
+                    "2023": "33,088",
+                    "2024": "43,229"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b18]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b18",
+                      "page": 101,
+                      "text": "otherwise included.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b8",
+                      "page": 63,
+                      "text": "Google Cloud Revenues",
+                      "score": 0.800657331943512,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b25",
+                      "page": 44,
+                      "text": "Google Cloud operating income increased $4.4 billion from 2023 to 2024. The increase in operating income was primarily driven by an increase in revenues, partially offset by increases in usage costs for technical infrastructure as well as employee compensation expenses, largely driven by headcount growth.",
+                      "score": 0.780689537525177,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google subscriptions, platforms, and devices",
+                  "factoid_question": "What was the revenue for Google subscriptions, platforms, and devices in 2024?",
+                  "relevance_rationale": "Reflects the success of hardware and non-ad services in creating a broader revenue base.",
+                  "source_text_id": "table_0.row_4",
+                  "values": {
+                    "Item": "Google subscriptions, platforms, and devices",
+                    "2023": "34,688",
+                    "2024": "40,340"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7830204963684082,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7824092507362366,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ],
+              "audit_thought": "This is the most critical table. It directly breaks down revenues by source: Search, YouTube Ads, Google Other (subscriptions, hardware), and Google Cloud. It quantifies the exact dependence on search and the scale of diversification efforts. This is non-negotiable 'Hard Evidence'. KEEP.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "revenue",
+                "comparison": "2023 to 2024"
+              },
+              "trend_or_claim_sentence": "Google Search and other revenues grew by approximately 13% year-over-year, reaching $198.1 billion in 2024.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "increase in advertiser demand and search queries",
+                  "source_hint": "general search industry trends"
+                },
+                {
+                  "cause_clause": "improved monetization of existing traffic",
+                  "source_hint": "implied by core service revenue growth"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+              "query_domain": "search advertising",
+              "document_entities": [
+                "Google Search",
+                "Google Services"
+              ],
+              "alignment_relation": "direct",
+              "confidence": 1.0,
+              "rationale": "Directly measures the primary component of search advertising dependence."
+            },
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+              "indicator_id": "IND_11",
+              "sentence": "Google Search and other revenues grew by approximately 13% year-over-year, reaching $198.1 billion in 2024. Because increase in advertiser demand and search queries and improved monetization of existing traffic.",
+              "score": 5.0
+            }
+          }
+        },
+        {
+          "node_id": "N_1_2",
+          "node_type": "indicator_candidate",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "pillar_index": 0,
+          "indicator_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+          "indicator_id": "IND_14",
+          "indicator_name": "segment_operating_income_loss_table",
+          "selection_score": 3.5,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "segment_operating_income_loss_table",
+            "raw_indicator": {
+              "indicator_name": "segment_operating_income_loss_table",
+              "source_page": 44,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Google Services",
+                  "factoid_question": "What was the operating income for Google Services in 2024?",
+                  "relevance_rationale": "Compares the high profitability of the core (mostly ad-driven) services against the nascent profitability of other segments.",
+                  "source_text_id": "table_1.row_0",
+                  "values": {
+                    "Operating income (loss)": "Google Services",
+                    "2023": "95,858",
+                    "2024": "121,263"
+                  },
+                  "linked_text_evidence_id": "[P:45|ID:text_b26]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b26",
+                      "page": 94,
+                      "text": "As of December 31, 2024, our Federal and California research and development credit carryforwards for income tax purposes were approximately $700 million and $6.4 billion, respectively. If not utilized, the Federal R&D credit will begin to expire in 2037 and the California R&D credit can be carried over indefinitely. We believe the majority of the federal tax credit and state tax credit is not likely to be realized.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b18",
+                      "page": 44,
+                      "text": "2023 2024 Operating income (loss): Google Services $ 95,858 $ 121,263 Google Cloud 1,716 6,112 Other Bets (4,095) (4,444) Alphabet-level activities” (9,186) (10,541) Total income from operations $ 84,293 $ 112,390",
+                      "score": 0.8507393598556519,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.8349688053131104,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Cloud",
+                  "factoid_question": "What was the operating income for Google Cloud in 2024?",
+                  "relevance_rationale": "The positive operating income in Cloud indicates that Alphabet's diversification strategy is becoming financially viable and sustainable.",
+                  "source_text_id": "table_1.row_1",
+                  "values": {
+                    "Operating income (loss)": "Google Cloud",
+                    "2023": "1,716",
+                    "2024": "6,112"
+                  },
+                  "linked_text_evidence_id": "[P:44|ID:text_b25]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b25",
+                      "page": 94,
+                      "text": "As of December 31, 2024, our federal, state, and foreign net operating loss carryforwards for income tax purposes were approximately $8.4 billion, $19.4 billion, and $2.5 billion respectively. If not utilized, the federal net operating loss carryforwards will begin to expire in 2025, foreign net operating loss carryforwards will begin to expire in 2025 and the state net operating loss carryforwards will begin to expire in 2033. It is more likely than not that the majority of the net operating loss carryforwards will not be realized. The net operating loss carryforwards are subject to various annual limitations under the tax laws of the different jurisdictions.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b18",
+                      "page": 44,
+                      "text": "2023 2024 Operating income (loss): Google Services $ 95,858 $ 121,263 Google Cloud 1,716 6,112 Other Bets (4,095) (4,444) Alphabet-level activities” (9,186) (10,541) Total income from operations $ 84,293 $ 112,390",
+                      "score": 0.8215808868408203,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.8081554770469666,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ],
+              "audit_thought": "This is the perfect companion to table_8. It shows operating income (or loss) by segment. It answers the crucial question: are the diversification efforts (Cloud, Other Bets) profitable? This table is essential for evaluating the viability and success of the diversification strategy. 'Hard Evidence'. KEEP.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "operating income",
+                "comparison": "2023 to 2024"
+              },
+              "trend_or_claim_sentence": "Google Cloud's operating income experienced a substantial increase from $1.7 billion in 2023 to $6.1 billion in 2024.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "growth in Google Cloud Platform infrastructure services",
+                  "source_hint": "text_b18"
+                },
+                {
+                  "cause_clause": "scaling of cloud operations and cost efficiencies",
+                  "source_hint": "segment expenses analysis in text_b27"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+              "indicator_id": "IND_14",
+              "sentence": "Google Cloud's operating income experienced a substantial increase from $1.7 billion in 2023 to $6.1 billion in 2024. Because growth in Google Cloud Platform infrastructure services and scaling of cloud operations and cost efficiencies.",
+              "score": 3.2
+            }
+          }
+        },
+        {
+          "node_id": "N_1_3",
+          "node_type": "indicator_candidate",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "pillar_index": 0,
+          "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+          "indicator_id": "IND_6",
+          "indicator_name": "Non-Advertising Revenue Margin Pressure",
+          "selection_score": 3.3,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Non-Advertising Revenue Margin Pressure",
+            "raw_indicator": {
+              "indicator_name": "Non-Advertising Revenue Margin Pressure",
+              "factoid_question": "How do the margins on non-advertising revenues compare to advertising revenue margins?",
+              "source_text_id": "text_b6",
+              "source_page": 35,
+              "is_quantitative": false,
+              "rationale_from_extraction": "Notes that the growth of Cloud, subscriptions, and hardware (devices) puts downward pressure on consolidated margins.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b5",
+                  "page": 35,
+                  "text": "+ The revenues that we derive beyond advertising are increasing and may adversely affect our margins.",
+                  "score": 0.6115325689315796,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b12",
+                  "page": 62,
+                  "text": "Advertising Revenues",
+                  "score": 0.6097477674484253,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b18",
+                  "page": 64,
+                  "text": "Advertising and Promotional Expenses",
+                  "score": 0.5357260704040527,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ],
+              "audit_thought": "This is a critical piece of 'Hard Evidence'. It provides the crucial counter-argument or challenge to diversification: that new revenue streams (Cloud, hardware) have lower margins. This is essential for a balanced audit of the query. KEEP.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "unknown",
+                "focus_metric": "operating margin",
+                "comparison": "forward-looking"
+              },
+              "trend_or_claim_sentence": "Increasing non-advertising revenues may negatively impact overall corporate margins due to different cost structures.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "higher inventory and technical infrastructure costs for hardware and cloud services",
+                  "source_hint": "text_b11"
+                },
+                {
+                  "cause_clause": "mix shift toward lower-margin consumer subscription and device products",
+                  "source_hint": "text_b5"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [
+              {
+                "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+                "proposition": "Non-advertising revenues carry different cost structures.",
+                "relation_type": "contrast",
+                "connective": "nonetheless",
+                "composed_sentence": "Diversification efforts are growing; nonetheless, non-advertising revenues may adversely affect corporate margins due to higher underlying costs."
+              }
+            ],
+            "conflict_hits": [
+              {
+                "conflict_type": "causal",
+                "involved_indicator_refs": [
+                  "table:revenues_by_type_table|sub:Google Cloud",
+                  "narrative:Non-Advertising Revenue Margin Pressure"
+                ],
+                "description": "Google Cloud is scaling rapidly and achieving profitability ($6.1B operating income), but the narrative warns that non-advertising revenues 'may adversely affect margins'.",
+                "resolution": "The cloud segment is currently improving consolidated profits, but its operating margin (approx. 14%) remains significantly lower than Google Services (approx. 40%), meaning relative growth in Cloud mathematically dilutes total corporate margin percentage."
+              }
+            ],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+              "indicator_id": "IND_6",
+              "sentence": "Increasing non-advertising revenues may negatively impact overall corporate margins due to different cost structures. Because higher inventory and technical infrastructure costs for hardware and cloud services and mix shift toward lower-margin consumer subscription and device products.",
+              "score": 3.0
+            }
+          }
+        },
+        {
+          "node_id": "N_1_4",
+          "node_type": "indicator_candidate",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "pillar_index": 0,
+          "indicator_ref": "narrative:Waymo Operational Growth",
+          "indicator_id": "IND_1",
+          "indicator_name": "Waymo Operational Growth",
+          "selection_score": 3.3,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Waymo Operational Growth",
+            "raw_indicator": {
+              "indicator_name": "Waymo Operational Growth",
+              "factoid_question": "How many paid rides is Waymo serving on a weekly basis?",
+              "source_text_id": "text_b5",
+              "source_page": 4,
+              "is_quantitative": true,
+              "rationale_from_extraction": "Tracks the commercialization progress of 'Other Bets' through autonomous vehicle deployment.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b6",
+                  "page": 80,
+                  "text": "Waymo, a fully autonomous driving technology company and a consolidated VIE, received $5.6 billion in funding during the year ended December 31, 2024, the majority of which was funded by Alphabet. Investments from external parties were accounted for as equity transactions and resulted in recognition of noncontrolling interests.",
+                  "score": 0.43278831243515015,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b7",
+                  "page": 93,
+                  "text": "2022 2023 2024 Domestic operations $ 61,307 $ 73,600 $ 108,076 Foreign operations 10,021 12,117 11,739 Total $ 71,328 $ 85.717 $ 119,815",
+                  "score": 0.36219415068626404,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b27",
+                  "page": 84,
+                  "text": "Google Services Google Cloud Other Bets Total Balance as of December 31, 2022 $ 20,847 $ 7,205 $ 908 §$ 28,960 Additions 240 3 0 243 Foreign currency translation and other adjustments 31 (9) (27) (5) Balance as of December 31, 2023 21,118 7,199 881 29,198 Additions 2,441 295 0 2,736 Foreign currency translation and other adjustments (38) (4) (7) (49) Balance as of December 31, 2024 $ 23,521 $ 7,490 $ 874 $ 31,885",
+                  "score": 0.3261304497718811,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ],
+              "audit_thought": "The question about the number of paid rides for Waymo is a direct measure of the commercialization progress of an 'Other Bet'. It provides 'Hard Evidence' of a nascent, non-advertising revenue stream and is central to the diversification pillar. KEEP.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Waymo Operational Growth",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "funding and commercialization stage",
+                "comparison": "2024 status"
+              },
+              "trend_or_claim_sentence": "Waymo represents a significant non-search bet that received $5.6 billion in funding to reach commercialization stages.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "continued capital injection primarily from Alphabet",
+                  "source_hint": "text_b6"
+                },
+                {
+                  "cause_clause": "advancements in fully autonomous driving technology",
+                  "source_hint": "text_b6"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Waymo Operational Growth",
+              "indicator_id": "IND_1",
+              "sentence": "Waymo represents a significant non-search bet that received $5.6 billion in funding to reach commercialization stages. Because continued capital injection primarily from Alphabet and advancements in fully autonomous driving technology.",
+              "score": 3.0
+            }
+          }
+        },
+        {
+          "node_id": "PILLAR_2",
+          "node_type": "pillar",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "label": "AI Transformation and Technical Infrastructure",
+          "selected": true
+        },
+        {
+          "node_id": "N_2_1",
+          "node_type": "indicator_candidate",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "pillar_index": 1,
+          "indicator_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+          "indicator_id": "IND_11",
+          "indicator_name": "investment_and_search_metrics",
+          "selection_score": 3.5,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "investment_and_search_metrics",
+            "raw_indicator": {
+              "indicator_name": "investment_and_search_metrics",
+              "source_page": 4,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Planned Capital Expenditures 2025",
+                  "factoid_question": "What is the planned capital expenditure for Alphabet in 2025?",
+                  "relevance_rationale": "High capital expenditure indicates the scale of investment in infrastructure, such as AI data centers, which are essential for diversifying revenue away from traditional search advertising.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Metric": "Planned Capital Expenditures 2025",
+                    "Value": "$75 billion"
+                  },
+                  "linked_text_evidence_id": "[P:4|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 105,
+                      "text": "ALPHABET INC. By: /S/ SUNDAR PICHAI",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b15",
+                      "page": 58,
+                      "text": "Part | Part Ill Part IV Alphabet Inc. Consolidated Statements of Income Year Ended December 31, (in millions, except per share amounts) 2022 2023 2024 Revenues $ 282,836 307,394 $ 350,018 Costs and expenses: Cost of revenues 126,203 133,332 146,306 Research and development 39,500 45,427 49,326 Sales and marketing 26,567 27,917 27,808 General and administrative 15,724 16,425 14,188 Total costs and expenses 207,994 223,101 237,628 Income from operations 74,842 84,293 112,390 Other income (expense), net (3,514) 1,424 7,425 Income before income taxes 71,328 85,717 119,815 Provision for income taxes 11,356 11,922 19,697 Net income $ 59,972 73,795 $ 100,118 Basic net income per share (Note 12) 4.59 5.84 $ 8.13 Diluted net income per share (Note 12) 4.56 5.80 $ 8.04",
+                      "score": 0.7524377107620239,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.6751379370689392,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "AI Opportunity Fund",
+                  "factoid_question": "What is the total value of the AI Opportunity Fund?",
+                  "relevance_rationale": "Direct investment in AI development underscores Alphabet's commitment to new technology frontiers that could eventually provide alternative revenue streams.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Metric": "AI Opportunity Fund",
+                    "Value": "$120 million"
+                  },
+                  "linked_text_evidence_id": "[P:4|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 105,
+                      "text": "ALPHABET INC. By: /S/ SUNDAR PICHAI",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 92,
+                      "text": "Unvested as of December 31, 2024 299",
+                      "score": 0.5812699794769287,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b7",
+                      "page": 74,
+                      "text": "As of December 31, 2023 As of December 31, 2024 Marketable Non-Marketable Marketable Non-Marketable Equity Securities Equity Securities Total EquitySecurities Equity Securities Total Total initial cost $ 5.418 $ 17,616 $ 23,034 $ 4,767 $ 21,240 $ 26,007 Cumulative net gain (loss) 555 11,150 11,705 312 14,291 14,603 Carrying value $ 5,973 $ 28,766 $ 34,739 $ 5,079 $ 35,531 $ 40,610",
+                      "score": 0.5796330571174622,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Annual Google Searches",
+                  "factoid_question": "How many Google searches are conducted on an annual basis?",
+                  "relevance_rationale": "Establishing the current volume of searches provides a baseline for understanding the company's existing dependence on the search ecosystem.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Metric": "Annual Google Searches",
+                    "Value": "5 trillion"
+                  },
+                  "linked_text_evidence_id": "",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b25",
+                      "page": 40,
+                      "text": "Google Search & other revenues increased $23.1 billion from 2023 to 2024. The overall growth was driven by interrelated factors including increases in search queries resulting from growth in user adoption and usage on mobile devices; growth in",
+                      "score": 0.5828927755355835,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.5714612007141113,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b14",
+                      "page": 70,
+                      "text": "2022 2023 2024 Google Search & other $ 162,450 $ 175,033 $ 198,084 YouTube ads 29,243 31,510 36,147 Google Network 32,780 31,312 30,359 Google advertising 224,473 237,855 264,590 Google subscriptions, platforms, and devices 29,055 34,688 40,340 Google Services total 253,528 272,543 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018",
+                      "score": 0.5535423159599304,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ],
+              "audit_thought": "The question is about planned capital expenditure, and the rationale correctly links it to AI data centers. This is a direct, forward-looking, quantitative measure of investment in the 'Technical Infrastructure' required to diversify revenue. It's highly relevant Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Capital Expenditures",
+                "comparison": "2024 to 2025 plan"
+              },
+              "trend_or_claim_sentence": "Alphabet plans to significantly increase capital expenditures to approximately $75 billion in 2025.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "deeper investments in technical infrastructure for AI",
+                  "source_hint": "text_b5"
+                },
+                {
+                  "cause_clause": "powering data centers using small modular nuclear reactors",
+                  "source_hint": "text_b5"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+              "indicator_id": "IND_11",
+              "sentence": "Alphabet plans to significantly increase capital expenditures to approximately $75 billion in 2025. Because deeper investments in technical infrastructure for AI and powering data centers using small modular nuclear reactors.",
+              "score": 3.2
+            }
+          }
+        },
+        {
+          "node_id": "N_2_2",
+          "node_type": "indicator_candidate",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "pillar_index": 1,
+          "indicator_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+          "indicator_id": "IND_12",
+          "indicator_name": "product_usage_and_subscriber_metrics",
+          "selection_score": 2.55,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "product_usage_and_subscriber_metrics",
+            "raw_indicator": {
+              "indicator_name": "product_usage_and_subscriber_metrics",
+              "source_page": 4,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "YouTube Music and Premium Subscriptions",
+                  "factoid_question": "How many YouTube Music and Premium subscriptions does Alphabet have?",
+                  "relevance_rationale": "Subscription-based models represent a significant shift from ad-supported search revenue, indicating progress in diversification.",
+                  "source_text_id": "table_1.row_0",
+                  "values": {
+                    "Metric": "YouTube Music and Premium Subscriptions",
+                    "Value": "125 million"
+                  },
+                  "linked_text_evidence_id": "[P:4|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 105,
+                      "text": "ALPHABET INC. By: /S/ SUNDAR PICHAI",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 6,
+                      "text": "As of January 28, 2025, there were 5,833 million shares of Alphabet’s Class A stock outstanding, 860 million shares of Alphabet’s Class B stock outstanding, and 5,497 million shares of the Alphabet’s Class C stock outstanding.",
+                      "score": 0.5240319967269897,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b6",
+                      "page": 34,
+                      "text": "Alphabet is a collection of businesses — the largest of which is Google. We report Google in two segments, Google Services and Google Cloud; we also report all non-Google businesses collectively as Other Bets. For further details on our segments, see Part |, |tem 1 Business and Note 15 of the Notes to Consolidated Financial Statements included in Item 8 of this Annual Report on Form 10-K.",
+                      "score": 0.5224987268447876,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "YouTube Monthly Podcast Users",
+                  "factoid_question": "What is the number of monthly podcast users on YouTube?",
+                  "relevance_rationale": "The growth of podcasting on YouTube shows the expansion of the platform into diverse media formats beyond standard search results.",
+                  "source_text_id": "table_1.row_1",
+                  "values": {
+                    "Metric": "YouTube Monthly Podcast Users",
+                    "Value": "1 billion"
+                  },
+                  "linked_text_evidence_id": "[P:4|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 105,
+                      "text": "ALPHABET INC. By: /S/ SUNDAR PICHAI",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b28",
+                      "page": 40,
+                      "text": "YouTube ads revenues increased $4.6 billion from 2023 to 2024. The growth was driven by our brand advertising products followed by our direct response advertising products, both of which benefited from increased spending by our advertisers.",
+                      "score": 0.4447735548019409,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b8",
+                      "page": 37,
+                      "text": "* consumer subscriptions, which primarily include revenues from YouTube services, such as YouTube TV, YouTube Music and Premium, and NFL Sunday Ticket, as well as Google One;",
+                      "score": 0.42684227228164673,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Android Active Devices Worldwide",
+                  "factoid_question": "How many active Android devices are currently in use worldwide?",
+                  "relevance_rationale": "The scale of the Android ecosystem provides a massive distribution network for non-search services and hardware sales.",
+                  "source_text_id": "table_1.row_2",
+                  "values": {
+                    "Metric": "Android Active Devices Worldwide",
+                    "Value": "3 billion"
+                  },
+                  "linked_text_evidence_id": "[P:4|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 105,
+                      "text": "ALPHABET INC. By: /S/ SUNDAR PICHAI",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 6,
+                      "text": "As of January 28, 2025, there were 5,833 million shares of Alphabet’s Class A stock outstanding, 860 million shares of Alphabet’s Class B stock outstanding, and 5,497 million shares of the Alphabet’s Class C stock outstanding.",
+                      "score": 0.4062572717666626,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b6",
+                      "page": 63,
+                      "text": "- platforms, which primarily include revenues from Google Play sales of apps and in-app purchases; « devices, which primarily include sales of the Pixel family of devices; and + other products and services.",
+                      "score": 0.40295058488845825,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google One and YouTube Subscribers (collective)",
+                  "factoid_question": "What is the collective number of Google One and YouTube subscribers?",
+                  "relevance_rationale": "Tracking collective subscribers shows the total reach of Alphabet's paid consumer services outside of free, ad-supported search.",
+                  "source_text_id": "table_1.row_3",
+                  "values": {
+                    "Metric": "Google One and YouTube Subscribers (collective)",
+                    "Value": "over 200 million"
+                  },
+                  "linked_text_evidence_id": "",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b14",
+                      "page": 70,
+                      "text": "2022 2023 2024 Google Search & other $ 162,450 $ 175,033 $ 198,084 YouTube ads 29,243 31,510 36,147 Google Network 32,780 31,312 30,359 Google advertising 224,473 237,855 264,590 Google subscriptions, platforms, and devices 29,055 34,688 40,340 Google Services total 253,528 272,543 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018",
+                      "score": 0.5523092150688171,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.5331922769546509,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b8",
+                      "page": 37,
+                      "text": "* consumer subscriptions, which primarily include revenues from YouTube services, such as YouTube TV, YouTube Music and Premium, and NFL Sunday Ticket, as well as Google One;",
+                      "score": 0.5031795501708984,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Waymo Paid Rides per Week",
+                  "factoid_question": "How many paid rides does Waymo provide per week?",
+                  "relevance_rationale": "Waymo represents the 'Other Bets' segment, which is crucial for long-term strategic diversification into autonomous transport.",
+                  "source_text_id": "table_1.row_4",
+                  "values": {
+                    "Metric": "Waymo Paid Rides per Week",
+                    "Value": "200K"
+                  },
+                  "linked_text_evidence_id": "[P:4|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 105,
+                      "text": "ALPHABET INC. By: /S/ SUNDAR PICHAI",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b6",
+                      "page": 80,
+                      "text": "Waymo, a fully autonomous driving technology company and a consolidated VIE, received $5.6 billion in funding during the year ended December 31, 2024, the majority of which was funded by Alphabet. Investments from external parties were accounted for as equity transactions and resulted in recognition of noncontrolling interests.",
+                      "score": 0.41577303409576416,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b28",
+                      "page": 81,
+                      "text": "2025 $ 1,000 2026 2,000 2027 1,000 2028 0 2029 0 Thereafter 8,000 Total $ 12,000",
+                      "score": 0.31037548184394836,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ],
+              "audit_thought": "This table on subscriber metrics (like YouTube) serves as a proxy for the company's ability to execute on non-advertising business models. While not exclusively about AI, new AI features (e.g., Duet AI) will be monetized via subscriptions, making this a relevant, albeit indirect, indicator. Better than the boilerplate options.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "YouTube Subscriptions",
+                "comparison": "current total"
+              },
+              "trend_or_claim_sentence": "YouTube Music and Premium have exceeded 125 million subscriptions, showing strong non-advertising momentum.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "strong momentum across the breadth of the business",
+                  "source_hint": "text_b5"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+              "indicator_id": "IND_12",
+              "sentence": "YouTube Music and Premium have exceeded 125 million subscriptions, showing strong non-advertising momentum. Because strong momentum across the breadth of the business.",
+              "score": 2.4
+            }
+          }
+        },
+        {
+          "node_id": "N_2_3",
+          "node_type": "indicator_candidate",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "pillar_index": 1,
+          "indicator_ref": "narrative:AI Overviews Adoption",
+          "indicator_id": "IND_2",
+          "indicator_name": "AI Overviews Adoption",
+          "selection_score": 3.3,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "AI Overviews Adoption",
+            "raw_indicator": {
+              "indicator_name": "AI Overviews Adoption",
+              "factoid_question": "How many people do AI Overviews currently reach in Search?",
+              "source_text_id": "text_b2",
+              "source_page": 3,
+              "is_quantitative": true,
+              "rationale_from_extraction": "Evidence of AI transformation within the core Search product and its positive impact on user retention/engagement.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b5",
+                  "page": 4,
+                  "text": "Investing in the future Making Al helpful for everyone requires deeper investments in infrastructure, job training, and clean energy which can create jobs and opportunities for people. That’s why we plan to invest approximately $75 billion in 2025 in capital expenditures, launch a first-ever project to power data centers using small modular nuclear reactors, and expand training through our $120 million Al Opportunity Fund. Advancing science & society 2024 also saw important progress that is advancing science and discovery. Demis Hassabis and John Jumper from Google DeepMind received the Nobel Prize for Chemistry for their work on AlphaFold, a protein-folding breakthrough now being used by 2 million researchers around the world. We’ve made new state-of-the-art weather forecasting models available to researchers and businesses. And our new FireSat initiative will use high-resolution satellite imagery and Al to detect fires as small as 5x5 meters, which will be a game changer for fighting wildfires globally. Strong business momentum We've seen strong momentum across the breadth of our business over the past year. Take a look at Search and our ads business: We already see more than 5 trillion searches on Google annually, and with Al, we’re continuing to expand the types of questions that people can ask. Al Overviews have increased the volume of commercial queries. And today people shop more than a billion times a day across Google. But the momentum goes well beyond Search: YouTube Music and Premium have exceeded 125 million subscriptions, and YouTube hit 1 billion monthly podcast users and is now the most-watched streaming service in the U.S. Android remains the world’s most popular operating system, with more than 3 billion active devices worldwide. Collectively Google One and YouTube have amassed over 200 million subscribers. Our new Pixel phones have super advanced cameras, improved performance, and are built with our Al tools deeply integrated. And Google Cloud had one of the highest growth rates among leading cloud providers last year. Meanwhile, Waymo is now serving more than 200K paid rides a week while expanding into new cities, and Calico, Wing, and Isomorphic Labs continue to create new opportunities in biotech, logistics, and more. Demis Hassabis and John Jumper from Google DeepMind received the Nobel Prize for Chemistry for their work on AlphaFold, a protein- folding breakthrough now being used by 2 million researchers around the world.",
+                  "score": 0.45956718921661377,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b10",
+                  "page": 11,
+                  "text": "Our products and services have come a long way since the company was founded more than 25 years ago. While Google Search started as a way to find web pages, organized into ten blue links, we have driven technical advancements and product innovations that have transformed Google Search into a dynamic, multimodal experience. We first expanded from traditional desktop browsers into mobile web search, making it easier to navigate on smaller screens. As new types of content surfaced on the internet, Universal Search made it possible to search multiple content types, like news, images, videos, and more, to deliver rich, relevant results. The introduction of new search modalities, like voice and visual search, made it easier for people to express their curiosity in natural and intuitive ways. We took that a step further with multisearch, which lets people search with text and images at the same time. Large language models have made it possible to express more natural language queries, vastly improving the types of questions users can ask, and the quality of results. Each advancement has made it easier and more natural for people to find what they are looking for. We are now using Gemini customized for Google Search to provide our users an improved Search experience, and Al Overviews has been released in more than one hundred countries, reaching more than one billion users.",
+                  "score": 0.4324232339859009,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b25",
+                  "page": 40,
+                  "text": "Google Search & other revenues increased $23.1 billion from 2023 to 2024. The overall growth was driven by interrelated factors including increases in search queries resulting from growth in user adoption and usage on mobile devices; growth in",
+                  "score": 0.432381272315979,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ],
+              "audit_thought": "This indicator on 'AI Overviews' adoption is critical. It shows the AI transformation happening within the core Search product. This is a double-edged sword: it represents a potential evolution of Search but also incurs significant computational costs, which is a key aspect of the AI infrastructure challenge. This is Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:AI Overviews Adoption",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Search Query Volume",
+                "comparison": "pre vs post AI Overviews"
+              },
+              "trend_or_claim_sentence": "AI Overviews have reached more than one billion users and increased commercial query volume.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "multimodal and natural language query improvements using Gemini",
+                  "source_hint": "text_b10"
+                },
+                {
+                  "cause_clause": "user adoption and usage growth on mobile devices",
+                  "source_hint": "text_b25"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [
+              {
+                "indicator_ref": "narrative:AI Overviews Adoption",
+                "proposition": "AI-powered search features reach over one billion people.",
+                "relation_type": "support",
+                "connective": "furthermore",
+                "composed_sentence": "AI-powered search features reach over one billion people; furthermore, users engaging with these features return to Search more frequently for their needs."
+              }
+            ],
+            "conflict_hits": [
+              {
+                "conflict_type": "causal",
+                "involved_indicator_refs": [
+                  "narrative:AI Overviews Adoption",
+                  "table:investment_and_search_metrics|sub:Annual Google Searches"
+                ],
+                "description": "While the query suggests reducing dependence on search ads, AI Overviews are explicitly noted to increase the volume of commercial searches, reinforcing the search ad model.",
+                "resolution": "The technology increases search utility and volume (reinforcing dependence), while concurrently building infrastructure to power non-ad products like Cloud and Subscriptions."
+              }
+            ],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:AI Overviews Adoption",
+              "indicator_id": "IND_2",
+              "sentence": "AI Overviews have reached more than one billion users and increased commercial query volume. Because multimodal and natural language query improvements using Gemini and user adoption and usage growth on mobile devices.",
+              "score": 3.0
+            }
+          }
+        },
+        {
+          "node_id": "N_2_4",
+          "node_type": "indicator_candidate",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "pillar_index": 1,
+          "indicator_ref": "narrative:Custom TPU Development",
+          "indicator_id": "IND_6",
+          "indicator_name": "Custom TPU Development",
+          "selection_score": 2.35,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Custom TPU Development",
+            "raw_indicator": {
+              "indicator_name": "Custom TPU Development",
+              "factoid_question": "What is the name of Alphabet's custom-built AI accelerators?",
+              "source_text_id": "text_b4",
+              "source_page": 10,
+              "is_quantitative": false,
+              "rationale_from_extraction": "Highlights specific technical infrastructure advantages (custom silicon) that support AI model deployment and Google Cloud's competitive edge.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b28",
+                  "page": 39,
+                  "text": "Alphabet 2024 Annual Report 31",
+                  "score": 0.5337117314338684,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b16",
+                  "page": 67,
+                  "text": "Alphabet 2024 Annual Report 59",
+                  "score": 0.5314023494720459,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b10",
+                  "page": 21,
+                  "text": "Alphabet 2024 Annual Report 13",
+                  "score": 0.5290611982345581,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ],
+              "audit_thought": "This indicator focuses on custom-built AI accelerators (TPUs). This is a cornerstone of the 'Technical Infrastructure' pillar and a key competitive moat. It directly enables the AI transformation and supports non-search revenue via Google Cloud. This is Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Custom TPU Development",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Hardware Efficiency",
+                "comparison": "generation over generation"
+              },
+              "trend_or_claim_sentence": "Alphabet is accelerating custom chip development with the announcement of the 7th generation TPU, Ironwood.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "need for high-performance training for the next frontier of AI models",
+                  "source_hint": "text_b2"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Custom TPU Development",
+              "indicator_id": "IND_6",
+              "sentence": "Alphabet is accelerating custom chip development with the announcement of the 7th generation TPU, Ironwood. Because need for high-performance training for the next frontier of AI models.",
+              "score": 2.2
+            }
+          }
+        },
+        {
+          "node_id": "PILLAR_3",
+          "node_type": "pillar",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "label": "Regulatory Compliance and Risk Mitigation",
+          "selected": true
+        },
+        {
+          "node_id": "N_3_1",
+          "node_type": "indicator_candidate",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "pillar_index": 2,
+          "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+          "indicator_id": "IND_12",
+          "indicator_name": "revenues_by_type_table",
+          "selection_score": 4.95,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "revenues_by_type_table",
+            "raw_indicator": {
+              "indicator_name": "revenues_by_type_table",
+              "source_page": 40,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Google Search & other",
+                  "factoid_question": "How much revenue was generated by Google Search & other in 2024?",
+                  "relevance_rationale": "Directly measures the core dependency; comparing this to total revenue reveals the exact 'search advertising dependence' percentage.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Item": "Google Search & other",
+                    "2023": "$ 175,033",
+                    "2024": "$ 198,084"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 105,
+                      "text": "Pursuant to the requirements of the Securities Exchange Act of 1934, this Annual Report on Form 10-K has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b25",
+                      "page": 40,
+                      "text": "Google Search & other revenues increased $23.1 billion from 2023 to 2024. The overall growth was driven by interrelated factors including increases in search queries resulting from growth in user adoption and usage on mobile devices; growth in",
+                      "score": 0.8133228421211243,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7855576276779175,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "YouTube ads",
+                  "factoid_question": "What was the revenue from YouTube ads in 2024?",
+                  "relevance_rationale": "While still advertising, YouTube represents a different format (video) that diversifies Alphabet's ad products beyond search queries.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Item": "YouTube ads",
+                    "2023": "31,510",
+                    "2024": "36,147"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b28",
+                      "page": 40,
+                      "text": "YouTube ads revenues increased $4.6 billion from 2023 to 2024. The growth was driven by our brand advertising products followed by our direct response advertising products, both of which benefited from increased spending by our advertisers.",
+                      "score": 0.7551524639129639,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.6586615443229675,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Network",
+                  "factoid_question": "What was the revenue for Google Network in 2024?",
+                  "relevance_rationale": "Revenue from third-party sites using Google ad tech; seeing this decline suggests a shift in the digital ad landscape.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Item": "Google Network",
+                    "2023": "31,312",
+                    "2024": "30,359"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b18]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b18",
+                      "page": 101,
+                      "text": "otherwise included.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7899105548858643,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7827839851379395,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google advertising",
+                  "factoid_question": "What was the total Google advertising revenue in 2024?",
+                  "relevance_rationale": "Combines Search, YouTube, and Network to show total ad dependence, currently representing the vast majority of income.",
+                  "source_text_id": "table_0.row_3",
+                  "values": {
+                    "Item": "Google advertising",
+                    "2023": "237,855",
+                    "2024": "264,590"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 105,
+                      "text": "Pursuant to the requirements of the Securities Exchange Act of 1934, this Annual Report on Form 10-K has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7805578112602234,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b14",
+                      "page": 70,
+                      "text": "2022 2023 2024 Google Search & other $ 162,450 $ 175,033 $ 198,084 YouTube ads 29,243 31,510 36,147 Google Network 32,780 31,312 30,359 Google advertising 224,473 237,855 264,590 Google subscriptions, platforms, and devices 29,055 34,688 40,340 Google Services total 253,528 272,543 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018",
+                      "score": 0.7694567441940308,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google subscriptions, platforms, and devices",
+                  "factoid_question": "What was the revenue for 'Google subscriptions, platforms, and devices' in 2024?",
+                  "relevance_rationale": "A critical 'non-ad' category; growth here directly reduces the company's dependence on search advertising.",
+                  "source_text_id": "table_0.row_4",
+                  "values": {
+                    "Item": "Google subscriptions, platforms, and devices",
+                    "2023": "34,688",
+                    "2024": "40,340"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7966151833534241,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7843762636184692,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Services total",
+                  "factoid_question": "What was the total revenue for Google Services in 2024?",
+                  "relevance_rationale": "The aggregate of Google's consumer-facing products, showing the scale of the ecosystem supported by search.",
+                  "source_text_id": "table_0.row_5",
+                  "values": {
+                    "Item": "Google Services total",
+                    "2023": "272,543",
+                    "2024": "304,930"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.8147503733634949,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b18",
+                      "page": 44,
+                      "text": "2023 2024 Operating income (loss): Google Services $ 95,858 $ 121,263 Google Cloud 1,716 6,112 Other Bets (4,095) (4,444) Alphabet-level activities” (9,186) (10,541) Total income from operations $ 84,293 $ 112,390",
+                      "score": 0.7950471639633179,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Cloud",
+                  "factoid_question": "What was the revenue for Google Cloud in 2024?",
+                  "relevance_rationale": "The most successful diversification effort; Cloud represents a massive, non-ad business model that is growing faster than Search.",
+                  "source_text_id": "table_0.row_6",
+                  "values": {
+                    "Item": "Google Cloud",
+                    "2023": "33,088",
+                    "2024": "43,229"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b18]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b18",
+                      "page": 101,
+                      "text": "otherwise included.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b8",
+                      "page": 63,
+                      "text": "Google Cloud Revenues",
+                      "score": 0.7992013692855835,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7922219634056091,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Other Bets",
+                  "factoid_question": "How much revenue did 'Other Bets' generate in 2024?",
+                  "relevance_rationale": "Includes high-potential startups like Waymo; though currently small, these are the long-term hedges against ad-dependency.",
+                  "source_text_id": "table_0.row_7",
+                  "values": {
+                    "Item": "Other Bets",
+                    "2023": "1,527",
+                    "2024": "1,648"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b26]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b26",
+                      "page": 94,
+                      "text": "As of December 31, 2024, our Federal and California research and development credit carryforwards for income tax purposes were approximately $700 million and $6.4 billion, respectively. If not utilized, the Federal R&D credit will begin to expire in 2037 and the California R&D credit can be carried over indefinitely. We believe the majority of the federal tax credit and state tax credit is not likely to be realized.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b6",
+                      "page": 96,
+                      "text": "+ Other Bets is a combination of multiple operating segments that are not individually material. Revenues from Other Bets are generated primarily from the sale of healthcare-related services and internet services.",
+                      "score": 0.6461995244026184,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 44,
+                      "text": "Other Bets operating loss increased $349 million from 2023 to 2024. The increase in operating loss was primarily due to an increase in expenses, largely driven by employee compensation expenses in addition to a combination of factors, none of which were individually significant. The increase in employee compensation expenses was primarily as a result of the reduction in valuation-based compensation liabilities related to certain Other Bets recognized in the prior year comparable period.",
+                      "score": 0.6196811199188232,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Hedging gains (losses)",
+                  "factoid_question": "What were the hedging gains/losses in 2024?",
+                  "relevance_rationale": "Alphabet's strategy to mitigate currency risks related to its global revenue streams.",
+                  "source_text_id": "table_0.row_8",
+                  "values": {
+                    "Item": "Hedging gains (losses)",
+                    "2023": "236",
+                    "2024": "211"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b26]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b26",
+                      "page": 94,
+                      "text": "As of December 31, 2024, our Federal and California research and development credit carryforwards for income tax purposes were approximately $700 million and $6.4 billion, respectively. If not utilized, the Federal R&D credit will begin to expire in 2037 and the California R&D credit can be carried over indefinitely. We believe the majority of the federal tax credit and state tax credit is not likely to be realized.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 76,
+                      "text": "2023 2024 Derivatives designated as hedging instruments: Foreign exchange contracts Cash flow hedges $ 18,039 $ 20,315 Fair value hedges $ 2,065 $ 1,562 Net investment hedges $ 9,472 $ 6,986 Derivatives not designated as hedging instruments: Foreign exchange contracts $ 39,722 $ 44,227 Other contracts $ 10,818 $ 15,082 The fair values of outstanding derivative instruments were as follows (in millions): As of December 31, 2023 As of December 31, 2024 Assets” Liabilities Assets\" Liabilities Derivatives designated as hedging instruments: Foreign exchange contracts $ 205 $ 242 $ 1,054 $ 0 Derivatives not designated as hedging instruments: Foreign exchange contracts 134 156 200 593 Other contracts 114 47 A474 19 Total derivatives not designated as hedging instruments 248 203 674 612 Total $ 453 $ 445 $ 1,728 $ 612",
+                      "score": 0.6670758724212646,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b4",
+                      "page": 59,
+                      "text": "(in millions) 2022 2023 2024 Net income $ 59,972 $ 73,795 $ 100,118 Other comprehensive income (loss): Change in foreign currency translation adjustment, net of income tax benefit (expense) of $(134), $63 and $(49) (1,836) 735 (1,673) Available-for-sale investments: Change in net unrealized gains (losses) (4,720) 1,344 (116) Less: reclassification adjustment for net (gains) losses included in net income 1,007 1,168 782 Net change, net of income tax benefit (expense) of $1,056, $(698), and $(190) (3,713) 2,512 666 Cash flow hedges: Change in net unrealized gains (losses) 1,275 168 775 Less: reclassification adjustment for net (gains) losses included in net income (1,706) (214) (166) Net change, net of income tax benefit (expense) of $110, $2, and $(151) (431) (46) 609 Other comprehensive income (loss) (5,980) 3,201 (398) Comprehensive income $ 53,992 $ 76,996 $ 99,720",
+                      "score": 0.653905987739563,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total revenues",
+                  "factoid_question": "What was Alphabet's total revenue in 2024?",
+                  "relevance_rationale": "The denominator for all segment-specific analysis; essential for measuring business mix.",
+                  "source_text_id": "table_0.row_9",
+                  "values": {
+                    "Item": "Total revenues",
+                    "2023": "$ 307,394",
+                    "2024": "$ 350,018"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b20]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b20",
+                      "page": 104,
+                      "text": "* Filed herewith.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b15",
+                      "page": 58,
+                      "text": "Part | Part Ill Part IV Alphabet Inc. Consolidated Statements of Income Year Ended December 31, (in millions, except per share amounts) 2022 2023 2024 Revenues $ 282,836 307,394 $ 350,018 Costs and expenses: Cost of revenues 126,203 133,332 146,306 Research and development 39,500 45,427 49,326 Sales and marketing 26,567 27,917 27,808 General and administrative 15,724 16,425 14,188 Total costs and expenses 207,994 223,101 237,628 Income from operations 74,842 84,293 112,390 Other income (expense), net (3,514) 1,424 7,425 Income before income taxes 71,328 85,717 119,815 Provision for income taxes 11,356 11,922 19,697 Net income $ 59,972 73,795 $ 100,118 Basic net income per share (Note 12) 4.59 5.84 $ 8.13 Diluted net income per share (Note 12) 4.56 5.80 $ 8.04",
+                      "score": 0.7878094911575317,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7214237451553345,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ],
+              "audit_thought": "This table breaks down revenues by type, specifically isolating 'Google Search & other'. This is the single most important table to quantify the 'dependence on search advertising'. By comparing this number to the total revenue from table_10, an auditor can calculate the exact concentration of risk. High numeric ratio. Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Revenue",
+                "comparison": "2024 vs 2023"
+              },
+              "trend_or_claim_sentence": "Google Search and other revenues increased by approximately 13% to $198.1 billion in 2024.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Growth in search queries and advertising demand",
+                  "source_hint": "revenues_by_type_table"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+              "query_domain": "search advertising dependence",
+              "document_entities": [
+                "Google Search"
+              ],
+              "alignment_relation": "direct",
+              "confidence": 1.0,
+              "rationale": "Directly measures the financial scale of the specific business segment mentioned in the query."
+            },
+            "narrative_relations": [],
+            "conflict_hits": [
+              {
+                "conflict_type": "causal",
+                "involved_indicator_refs": [
+                  "table:revenues_by_type_table|sub:Google Search & other",
+                  "narrative:Search Antitrust Liability"
+                ],
+                "description": "Financial results show accelerating search revenue growth ($198B) while the legal narrative indicates the business model is legally untenable according to the U.S. District Court.",
+                "resolution": "The financial trend reflects current market power, whereas the narrative indicates forward-looking regulatory risk that may force a decoupling of revenue from current practices regardless of performance."
+              }
+            ],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+              "indicator_id": "IND_12",
+              "sentence": "Google Search and other revenues increased by approximately 13% to $198.1 billion in 2024. Because Growth in search queries and advertising demand.",
+              "score": 4.2
+            }
+          }
+        },
+        {
+          "node_id": "N_3_2",
+          "node_type": "indicator_candidate",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "pillar_index": 2,
+          "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+          "indicator_id": "IND_12",
+          "indicator_name": "revenues_by_type_table",
+          "selection_score": 4.24,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "revenues_by_type_table",
+            "raw_indicator": {
+              "indicator_name": "revenues_by_type_table",
+              "source_page": 40,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Google Search & other",
+                  "factoid_question": "How much revenue was generated by Google Search & other in 2024?",
+                  "relevance_rationale": "Directly measures the core dependency; comparing this to total revenue reveals the exact 'search advertising dependence' percentage.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Item": "Google Search & other",
+                    "2023": "$ 175,033",
+                    "2024": "$ 198,084"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 105,
+                      "text": "Pursuant to the requirements of the Securities Exchange Act of 1934, this Annual Report on Form 10-K has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b25",
+                      "page": 40,
+                      "text": "Google Search & other revenues increased $23.1 billion from 2023 to 2024. The overall growth was driven by interrelated factors including increases in search queries resulting from growth in user adoption and usage on mobile devices; growth in",
+                      "score": 0.8133228421211243,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7855576276779175,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "YouTube ads",
+                  "factoid_question": "What was the revenue from YouTube ads in 2024?",
+                  "relevance_rationale": "While still advertising, YouTube represents a different format (video) that diversifies Alphabet's ad products beyond search queries.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Item": "YouTube ads",
+                    "2023": "31,510",
+                    "2024": "36,147"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b28",
+                      "page": 40,
+                      "text": "YouTube ads revenues increased $4.6 billion from 2023 to 2024. The growth was driven by our brand advertising products followed by our direct response advertising products, both of which benefited from increased spending by our advertisers.",
+                      "score": 0.7551524639129639,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.6586615443229675,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Network",
+                  "factoid_question": "What was the revenue for Google Network in 2024?",
+                  "relevance_rationale": "Revenue from third-party sites using Google ad tech; seeing this decline suggests a shift in the digital ad landscape.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Item": "Google Network",
+                    "2023": "31,312",
+                    "2024": "30,359"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b18]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b18",
+                      "page": 101,
+                      "text": "otherwise included.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7899105548858643,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7827839851379395,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google advertising",
+                  "factoid_question": "What was the total Google advertising revenue in 2024?",
+                  "relevance_rationale": "Combines Search, YouTube, and Network to show total ad dependence, currently representing the vast majority of income.",
+                  "source_text_id": "table_0.row_3",
+                  "values": {
+                    "Item": "Google advertising",
+                    "2023": "237,855",
+                    "2024": "264,590"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 105,
+                      "text": "Pursuant to the requirements of the Securities Exchange Act of 1934, this Annual Report on Form 10-K has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7805578112602234,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b14",
+                      "page": 70,
+                      "text": "2022 2023 2024 Google Search & other $ 162,450 $ 175,033 $ 198,084 YouTube ads 29,243 31,510 36,147 Google Network 32,780 31,312 30,359 Google advertising 224,473 237,855 264,590 Google subscriptions, platforms, and devices 29,055 34,688 40,340 Google Services total 253,528 272,543 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018",
+                      "score": 0.7694567441940308,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google subscriptions, platforms, and devices",
+                  "factoid_question": "What was the revenue for 'Google subscriptions, platforms, and devices' in 2024?",
+                  "relevance_rationale": "A critical 'non-ad' category; growth here directly reduces the company's dependence on search advertising.",
+                  "source_text_id": "table_0.row_4",
+                  "values": {
+                    "Item": "Google subscriptions, platforms, and devices",
+                    "2023": "34,688",
+                    "2024": "40,340"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7966151833534241,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 40,
+                      "text": "2023 2024 Google Search & other $ 175,033 198,084 YouTube ads 31,510 36,147 Google Network 31,312 30,359 Google advertising 237,855 264,590 Google subscriptions, platforms, and devices 34,688 40,340 Google Services total 272,543 304,930 Google Cloud 33,088 43,229 Other Bets 1,527 1,648 Hedging gains (losses) 236 211 Total revenues $ 307,394 350,018",
+                      "score": 0.7843762636184692,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Services total",
+                  "factoid_question": "What was the total revenue for Google Services in 2024?",
+                  "relevance_rationale": "The aggregate of Google's consumer-facing products, showing the scale of the ecosystem supported by search.",
+                  "source_text_id": "table_0.row_5",
+                  "values": {
+                    "Item": "Google Services total",
+                    "2023": "272,543",
+                    "2024": "304,930"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 104,
+                      "text": "Inline XBRL document and contained in Exhibit 101)",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.8147503733634949,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b18",
+                      "page": 44,
+                      "text": "2023 2024 Operating income (loss): Google Services $ 95,858 $ 121,263 Google Cloud 1,716 6,112 Other Bets (4,095) (4,444) Alphabet-level activities” (9,186) (10,541) Total income from operations $ 84,293 $ 112,390",
+                      "score": 0.7950471639633179,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Google Cloud",
+                  "factoid_question": "What was the revenue for Google Cloud in 2024?",
+                  "relevance_rationale": "The most successful diversification effort; Cloud represents a massive, non-ad business model that is growing faster than Search.",
+                  "source_text_id": "table_0.row_6",
+                  "values": {
+                    "Item": "Google Cloud",
+                    "2023": "33,088",
+                    "2024": "43,229"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b18]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b18",
+                      "page": 101,
+                      "text": "otherwise included.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b8",
+                      "page": 63,
+                      "text": "Google Cloud Revenues",
+                      "score": 0.7992013692855835,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7922219634056091,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Other Bets",
+                  "factoid_question": "How much revenue did 'Other Bets' generate in 2024?",
+                  "relevance_rationale": "Includes high-potential startups like Waymo; though currently small, these are the long-term hedges against ad-dependency.",
+                  "source_text_id": "table_0.row_7",
+                  "values": {
+                    "Item": "Other Bets",
+                    "2023": "1,527",
+                    "2024": "1,648"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b26]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b26",
+                      "page": 94,
+                      "text": "As of December 31, 2024, our Federal and California research and development credit carryforwards for income tax purposes were approximately $700 million and $6.4 billion, respectively. If not utilized, the Federal R&D credit will begin to expire in 2037 and the California R&D credit can be carried over indefinitely. We believe the majority of the federal tax credit and state tax credit is not likely to be realized.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b6",
+                      "page": 96,
+                      "text": "+ Other Bets is a combination of multiple operating segments that are not individually material. Revenues from Other Bets are generated primarily from the sale of healthcare-related services and internet services.",
+                      "score": 0.6461995244026184,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 44,
+                      "text": "Other Bets operating loss increased $349 million from 2023 to 2024. The increase in operating loss was primarily due to an increase in expenses, largely driven by employee compensation expenses in addition to a combination of factors, none of which were individually significant. The increase in employee compensation expenses was primarily as a result of the reduction in valuation-based compensation liabilities related to certain Other Bets recognized in the prior year comparable period.",
+                      "score": 0.6196811199188232,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Hedging gains (losses)",
+                  "factoid_question": "What were the hedging gains/losses in 2024?",
+                  "relevance_rationale": "Alphabet's strategy to mitigate currency risks related to its global revenue streams.",
+                  "source_text_id": "table_0.row_8",
+                  "values": {
+                    "Item": "Hedging gains (losses)",
+                    "2023": "236",
+                    "2024": "211"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b26]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b26",
+                      "page": 94,
+                      "text": "As of December 31, 2024, our Federal and California research and development credit carryforwards for income tax purposes were approximately $700 million and $6.4 billion, respectively. If not utilized, the Federal R&D credit will begin to expire in 2037 and the California R&D credit can be carried over indefinitely. We believe the majority of the federal tax credit and state tax credit is not likely to be realized.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b20",
+                      "page": 76,
+                      "text": "2023 2024 Derivatives designated as hedging instruments: Foreign exchange contracts Cash flow hedges $ 18,039 $ 20,315 Fair value hedges $ 2,065 $ 1,562 Net investment hedges $ 9,472 $ 6,986 Derivatives not designated as hedging instruments: Foreign exchange contracts $ 39,722 $ 44,227 Other contracts $ 10,818 $ 15,082 The fair values of outstanding derivative instruments were as follows (in millions): As of December 31, 2023 As of December 31, 2024 Assets” Liabilities Assets\" Liabilities Derivatives designated as hedging instruments: Foreign exchange contracts $ 205 $ 242 $ 1,054 $ 0 Derivatives not designated as hedging instruments: Foreign exchange contracts 134 156 200 593 Other contracts 114 47 A474 19 Total derivatives not designated as hedging instruments 248 203 674 612 Total $ 453 $ 445 $ 1,728 $ 612",
+                      "score": 0.6670758724212646,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b4",
+                      "page": 59,
+                      "text": "(in millions) 2022 2023 2024 Net income $ 59,972 $ 73,795 $ 100,118 Other comprehensive income (loss): Change in foreign currency translation adjustment, net of income tax benefit (expense) of $(134), $63 and $(49) (1,836) 735 (1,673) Available-for-sale investments: Change in net unrealized gains (losses) (4,720) 1,344 (116) Less: reclassification adjustment for net (gains) losses included in net income 1,007 1,168 782 Net change, net of income tax benefit (expense) of $1,056, $(698), and $(190) (3,713) 2,512 666 Cash flow hedges: Change in net unrealized gains (losses) 1,275 168 775 Less: reclassification adjustment for net (gains) losses included in net income (1,706) (214) (166) Net change, net of income tax benefit (expense) of $110, $2, and $(151) (431) (46) 609 Other comprehensive income (loss) (5,980) 3,201 (398) Comprehensive income $ 53,992 $ 76,996 $ 99,720",
+                      "score": 0.653905987739563,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total revenues",
+                  "factoid_question": "What was Alphabet's total revenue in 2024?",
+                  "relevance_rationale": "The denominator for all segment-specific analysis; essential for measuring business mix.",
+                  "source_text_id": "table_0.row_9",
+                  "values": {
+                    "Item": "Total revenues",
+                    "2023": "$ 307,394",
+                    "2024": "$ 350,018"
+                  },
+                  "linked_text_evidence_id": "[P:41|ID:text_b20]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b20",
+                      "page": 104,
+                      "text": "* Filed herewith.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b15",
+                      "page": 58,
+                      "text": "Part | Part Ill Part IV Alphabet Inc. Consolidated Statements of Income Year Ended December 31, (in millions, except per share amounts) 2022 2023 2024 Revenues $ 282,836 307,394 $ 350,018 Costs and expenses: Cost of revenues 126,203 133,332 146,306 Research and development 39,500 45,427 49,326 Sales and marketing 26,567 27,917 27,808 General and administrative 15,724 16,425 14,188 Total costs and expenses 207,994 223,101 237,628 Income from operations 74,842 84,293 112,390 Other income (expense), net (3,514) 1,424 7,425 Income before income taxes 71,328 85,717 119,815 Provision for income taxes 11,356 11,922 19,697 Net income $ 59,972 73,795 $ 100,118 Basic net income per share (Note 12) 4.59 5.84 $ 8.13 Diluted net income per share (Note 12) 4.56 5.80 $ 8.04",
+                      "score": 0.7878094911575317,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b27",
+                      "page": 97,
+                      "text": "2022 2023 2024 Revenues: Google Services $ 253,528 $ 272,543 $ 304,930 Google Cloud 26,280 33,088 43,229 Other Bets 1,068 1,527 1,648 Hedging gains (losses) 1,960 236 211 Total revenues $ 282,836 $ 307,394 $ 350,018 Operating income (loss): Google Services $ 82,699 $ 95,858 $ 121,263 Google Cloud (1,922) 1,716 6,112 Other Bets (4,636) (4,095) (4,444) Alphabet-level activities (1,299) (9,186) (10,541) Total income from operations $ 74,842 $ 84,293 $ 112,390 Supplemental information about our segment expenses: Google Services: Employee compensation expenses $ 43,529 $ 46,224 $ 44,560 Other costs and expenses 127,300 130,461 139,107 Total Google Services costs and expenses $ 170,829 $ 176,685 $ 183,667 Google Cloud: Employee compensation expenses $ 16,132 $ 19,054 $ 20,519 Other costs and expenses 12,070 12,318 16,598 Total Google Cloud costs and expenses $ 28,202 $ 31,372 $ 37,117",
+                      "score": 0.7214237451553345,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ],
+              "audit_thought": "This table breaks down revenues by type, specifically isolating 'Google Search & other'. This is the single most important table to quantify the 'dependence on search advertising'. By comparing this number to the total revenue from table_10, an auditor can calculate the exact concentration of risk. High numeric ratio. Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Revenue",
+                "comparison": "2024 vs 2023"
+              },
+              "trend_or_claim_sentence": "Google Cloud revenue grew significantly from $33.1 billion in 2023 to $43.2 billion in 2024.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Stronger enterprise adoption of cloud and AI-driven infrastructure",
+                  "source_hint": "revenues_by_type_table"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+              "query_domain": "reduce dependence",
+              "document_entities": [
+                "Google Cloud"
+              ],
+              "alignment_relation": "indirect",
+              "confidence": 0.85,
+              "rationale": "Represents the primary alternative revenue stream that would allow Alphabet to reduce dependence on advertising."
+            },
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+              "indicator_id": "IND_12",
+              "sentence": "Google Cloud revenue grew significantly from $33.1 billion in 2023 to $43.2 billion in 2024. Because Stronger enterprise adoption of cloud and AI-driven infrastructure.",
+              "score": 3.58
+            }
+          }
+        },
+        {
+          "node_id": "N_3_3",
+          "node_type": "indicator_candidate",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "pillar_index": 2,
+          "indicator_ref": "narrative:Search Antitrust Liability",
+          "indicator_id": "IND_7",
+          "indicator_name": "Search Antitrust Liability",
+          "selection_score": 5.63,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Search Antitrust Liability",
+            "raw_indicator": {
+              "indicator_name": "Search Antitrust Liability",
+              "factoid_question": "When did the U.S. District Court rule that Google violated antitrust laws regarding Search?",
+              "source_text_id": "text_b7",
+              "source_page": 25,
+              "is_quantitative": true,
+              "rationale_from_extraction": "Provides factual evidence of a major legal defeat in antitrust litigation, impacting Alphabet's core business and potential for structural remedies.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b2",
+                  "page": 86,
+                  "text": "- Search: In October 2020, the DOJ and a number of state Attorneys General filed a lawsuit in the U.S. District Court for the District of Columbia alleging that Google violated U.S. antitrust laws relating to Search and Search advertising. In August 2024, the U.S. District Court for the District of Columbia ruled that Google violated such U.S. antitrust laws. A separate proceeding is being held to determine remedies, the range of which vary widely. The DOJ has proposed a high level remedy framework, which includes alterations to our products and services and our business models and operations, including structural remedies, and/or our distribution arrangements, among other changes, some of which could have a material adverse effect on our business. We have filed our own remedies proposal ahead of a hearing on remedies in April 2025. We expect a decision likely in the second half of 2025, after which we intend to appeal.",
+                  "score": 0.7458857297897339,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b5",
+                  "page": 86,
+                  "text": "+ Advertising Technology. In December 2020, a number of state Attorneys General filed a lawsuit in the U.S. District Court for the Eastern District of Texas alleging that Google violated U.S. antitrust laws as well as state deceptive trade laws relating to its advertising technology, and a trial is scheduled for March 2025. Additionally, in January 2023, the DOJ, along with a number of state Attorneys General, filed a lawsuit in the U.S. District Court for the Eastern District of Virginia alleging that Google violated U.S. antitrust laws relating to its advertising technology, and a number of additional state Attorneys General subsequently joined the lawsuit. The trial ended in September 2024, and we expect a decision in early 2025.",
+                  "score": 0.7228544354438782,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b6",
+                  "page": 25,
+                  "text": "The U.S. Department of Justice (DOJ), various U.S. states, and other plaintiffs have filed, and may continue to file in the future, several antitrust lawsuits about various aspects of our business, including our advertising technologies and practices, the operation and distribution of Google Search, and the operation and distribution of the Android operating system and Play Store.",
+                  "score": 0.6603847742080688,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ],
+              "audit_thought": "This indicator cites a specific US court ruling that Google violated antitrust laws in Search. This is not a theoretical risk; it's a realized legal defeat concerning the core advertising business. This is the strongest form of Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Search Antitrust Liability",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Regulatory Liability",
+                "comparison": "Post-August 2024"
+              },
+              "trend_or_claim_sentence": "Alphabet faces increased existential risk to its search model following an adverse antitrust ruling.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "August 2024 U.S. District Court ruling that Google violated antitrust laws",
+                  "source_hint": "text_b2"
+                },
+                {
+                  "cause_clause": "DOJ proposed remedies including structural changes and business model alterations",
+                  "source_hint": "text_b2"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "narrative:Search Antitrust Liability",
+              "query_domain": "search advertising dependence",
+              "document_entities": [
+                "DOJ",
+                "U.S. District Court"
+              ],
+              "alignment_relation": "direct",
+              "confidence": 0.95,
+              "rationale": "The antitrust ruling specifically targets the dominance of search advertising, which is the core of the dependence question."
+            },
+            "narrative_relations": [
+              {
+                "indicator_ref": "narrative:Search Antitrust Liability",
+                "proposition": "The U.S. District Court ruled Google violated antitrust laws regarding Search advertising.",
+                "relation_type": "cause",
+                "connective": "accordingly",
+                "composed_sentence": "The U.S. District Court ruled Google violated antitrust laws regarding Search advertising; accordingly, the DOJ has proposed structural remedies that could alter the business model."
+              }
+            ],
+            "conflict_hits": [
+              {
+                "conflict_type": "causal",
+                "involved_indicator_refs": [
+                  "table:revenues_by_type_table|sub:Google Search & other",
+                  "narrative:Search Antitrust Liability"
+                ],
+                "description": "Financial results show accelerating search revenue growth ($198B) while the legal narrative indicates the business model is legally untenable according to the U.S. District Court.",
+                "resolution": "The financial trend reflects current market power, whereas the narrative indicates forward-looking regulatory risk that may force a decoupling of revenue from current practices regardless of performance."
+              }
+            ],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Search Antitrust Liability",
+              "indicator_id": "IND_7",
+              "sentence": "Alphabet faces increased existential risk to its search model following an adverse antitrust ruling. Because August 2024 U.S. District Court ruling that Google violated antitrust laws and DOJ proposed remedies including structural changes and business model alterations.",
+              "score": 4.76
+            }
+          }
+        },
+        {
+          "node_id": "N_3_4",
+          "node_type": "indicator_candidate",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "pillar_index": 2,
+          "indicator_ref": "narrative:Advertising Technology Trial Schedule",
+          "indicator_id": "IND_8",
+          "indicator_name": "Advertising Technology Trial Schedule",
+          "selection_score": 3.3,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Advertising Technology Trial Schedule",
+            "raw_indicator": {
+              "indicator_name": "Advertising Technology Trial Schedule",
+              "factoid_question": "When is the advertising technology case against Alphabet set for trial?",
+              "source_text_id": "text_b9",
+              "source_page": 25,
+              "is_quantitative": true,
+              "rationale_from_extraction": "Outlines the timeline for upcoming legal risks in the ad-tech space, which is critical for assessing future financial and regulatory exposure.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b5",
+                  "page": 86,
+                  "text": "+ Advertising Technology. In December 2020, a number of state Attorneys General filed a lawsuit in the U.S. District Court for the Eastern District of Texas alleging that Google violated U.S. antitrust laws as well as state deceptive trade laws relating to its advertising technology, and a trial is scheduled for March 2025. Additionally, in January 2023, the DOJ, along with a number of state Attorneys General, filed a lawsuit in the U.S. District Court for the Eastern District of Virginia alleging that Google violated U.S. antitrust laws relating to its advertising technology, and a number of additional state Attorneys General subsequently joined the lawsuit. The trial ended in September 2024, and we expect a decision in early 2025.",
+                  "score": 0.6676080226898193,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b10",
+                  "page": 25,
+                  "text": "In addition to these regulatory proceedings, private individual and collective actions that overlap with claims pursued by regulators are pending in the U.S. and in several other jurisdictions. Adverse results in these or similar future lawsuits may include awards of monetary damages and remedies that could harm our business, reputation, financial condition, and operating results. Alphabet 2024 Annual Report vd",
+                  "score": 0.6476932764053345,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b7",
+                  "page": 25,
+                  "text": "For example, the DOJ and a number of state Attorneys General filed a lawsuit alleging that Google violated antitrust laws relating to Search and Search advertising, and in August 2024, the U.S. District Court for the District of Columbia ruled that Google violated such antitrust laws. The Court is holding a separate proceeding to determine remedies, which could include alterations to our products and services and our business models and operations, including structural remedies, and/or our distribution arrangements, among other changes. While we plan to appeal, there can be no assurance that our appeal will succeed, or that we will be able to change or decrease the severity of any remedies that may be ordered, and any or all of these potential remedies could harm our business, reputation, financial condition, and operating results.",
+                  "score": 0.5712867379188538,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ],
+              "audit_thought": "This points to a scheduled trial for the advertising technology business. It represents a specific, impending, and material legal risk to the core revenue engine. This is forward-looking Hard Evidence.",
+              "logic_status": "KEEP"
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Advertising Technology Trial Schedule",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "unknown",
+                "focus_metric": "Legal Resolution",
+                "comparison": "2025 Outlook"
+              },
+              "trend_or_claim_sentence": "The legal uncertainty regarding Alphabet's ad tech stack will persist through mid-2025 due to scheduled trials.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Trial scheduled for March 2025 in Texas regarding state deceptive trade laws",
+                  "source_hint": "text_b5"
+                },
+                {
+                  "cause_clause": "Expected decision in early 2025 for the Virginia DOJ ad tech trial",
+                  "source_hint": "text_b5"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Advertising Technology Trial Schedule",
+              "indicator_id": "IND_8",
+              "sentence": "The legal uncertainty regarding Alphabet's ad tech stack will persist through mid-2025 due to scheduled trials. Because Trial scheduled for March 2025 in Texas regarding state deceptive trade laws and Expected decision in early 2025 for the Virginia DOJ ad tech trial.",
+              "score": 3.0
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "edge_id": "E_ROOT_1",
+          "from": "ROOT",
+          "to": "PILLAR_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "root_to_pillar"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_1_N_1_1",
+          "from": "PILLAR_1",
+          "to": "N_1_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_1_N_1_2",
+          "from": "PILLAR_1",
+          "to": "N_1_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_1_N_1_3",
+          "from": "PILLAR_1",
+          "to": "N_1_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_1_N_1_4",
+          "from": "PILLAR_1",
+          "to": "N_1_4",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_1_1_N_1_2",
+          "from": "N_1_1",
+          "to": "N_1_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "to_ref": "table:segment_operating_income_loss_table|sub:Google Cloud"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_1_2_N_1_3",
+          "from": "N_1_2",
+          "to": "N_1_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+            "to_ref": "narrative:Non-Advertising Revenue Margin Pressure"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_1_3_N_1_4",
+          "from": "N_1_3",
+          "to": "N_1_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+            "to_ref": "narrative:Waymo Operational Growth"
+          }
+        },
+        {
+          "edge_id": "E_ROOT_2",
+          "from": "ROOT",
+          "to": "PILLAR_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "root_to_pillar"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_1",
+          "from": "PILLAR_2",
+          "to": "N_2_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_2",
+          "from": "PILLAR_2",
+          "to": "N_2_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_3",
+          "from": "PILLAR_2",
+          "to": "N_2_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_4",
+          "from": "PILLAR_2",
+          "to": "N_2_4",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_1_N_2_3",
+          "from": "N_2_1",
+          "to": "N_2_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+            "to_ref": "narrative:AI Overviews Adoption"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_3_N_2_2",
+          "from": "N_2_3",
+          "to": "N_2_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:AI Overviews Adoption",
+            "to_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_2_N_2_4",
+          "from": "N_2_2",
+          "to": "N_2_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+            "to_ref": "narrative:Custom TPU Development"
+          }
+        },
+        {
+          "edge_id": "E_ROOT_3",
+          "from": "ROOT",
+          "to": "PILLAR_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "root_to_pillar"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_1",
+          "from": "PILLAR_3",
+          "to": "N_3_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_2",
+          "from": "PILLAR_3",
+          "to": "N_3_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_3",
+          "from": "PILLAR_3",
+          "to": "N_3_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_4",
+          "from": "PILLAR_3",
+          "to": "N_3_4",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_3_N_3_1",
+          "from": "N_3_3",
+          "to": "N_3_1",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:Search Antitrust Liability",
+            "to_ref": "table:revenues_by_type_table|sub:Google Search & other"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_1_N_3_2",
+          "from": "N_3_1",
+          "to": "N_3_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "to_ref": "table:revenues_by_type_table|sub:Google Cloud"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_2_N_3_4",
+          "from": "N_3_2",
+          "to": "N_3_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:revenues_by_type_table|sub:Google Cloud",
+            "to_ref": "narrative:Advertising Technology Trial Schedule"
+          }
+        },
+        {
+          "edge_id": "E_CONFLICT_3_1_N_3_1_N_3_3",
+          "from": "N_3_1",
+          "to": "N_3_3",
+          "relation_type": "conflict",
+          "weight": 1.0,
+          "evidence": {
+            "conflict_type": "causal",
+            "description": "Financial results show accelerating search revenue growth ($198B) while the legal narrative indicates the business model is legally untenable according to the U.S. District Court.",
+            "resolution": "The financial trend reflects current market power, whereas the narrative indicates forward-looking regulatory risk that may force a decoupling of revenue from current practices regardless of performance."
+          }
+        }
+      ],
+      "selection": {
+        "top_k_per_pillar": 5,
+        "candidate_node_ids": [
+          "N_1_1",
+          "N_1_2",
+          "N_1_3",
+          "N_1_4",
+          "N_2_1",
+          "N_2_2",
+          "N_2_3",
+          "N_2_4",
+          "N_3_1",
+          "N_3_2",
+          "N_3_3",
+          "N_3_4"
+        ],
+        "selected_node_ids": [
+          "N_1_1",
+          "N_1_2",
+          "N_1_3",
+          "N_1_4",
+          "N_2_1",
+          "N_2_3",
+          "N_2_2",
+          "N_2_4",
+          "N_3_3",
+          "N_3_1",
+          "N_3_2",
+          "N_3_4"
+        ],
+        "excluded_node_ids": [],
+        "candidate_count": 12,
+        "selected_count": 12
+      }
+    },
+    "planner_graph_payload": {
+      "nodes": [
+        {
+          "node_id": "N_1_1",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "indicator_id": "IND_11",
+          "indicator_name": "revenues_by_type_table",
+          "selection_score": 5.9,
+          "trend_or_claim_sentence": "Google Search and other revenues grew by approximately 13% year-over-year, reaching $198.1 billion in 2024.",
+          "candidate_causes": [
+            {
+              "cause_clause": "increase in advertiser demand and search queries",
+              "source_hint": "general search industry trends"
+            },
+            {
+              "cause_clause": "improved monetization of existing traffic",
+              "source_hint": "implied by core service revenue growth"
+            }
+          ],
+          "query_domain": "search advertising",
+          "alignment_relation": "direct",
+          "alignment_confidence": 1.0
+        },
+        {
+          "node_id": "N_1_2",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "indicator_id": "IND_14",
+          "indicator_name": "segment_operating_income_loss_table",
+          "selection_score": 3.5,
+          "trend_or_claim_sentence": "Google Cloud's operating income experienced a substantial increase from $1.7 billion in 2023 to $6.1 billion in 2024.",
+          "candidate_causes": [
+            {
+              "cause_clause": "growth in Google Cloud Platform infrastructure services",
+              "source_hint": "text_b18"
+            },
+            {
+              "cause_clause": "scaling of cloud operations and cost efficiencies",
+              "source_hint": "segment expenses analysis in text_b27"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_1_3",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "indicator_id": "IND_6",
+          "indicator_name": "Non-Advertising Revenue Margin Pressure",
+          "selection_score": 3.3,
+          "trend_or_claim_sentence": "Increasing non-advertising revenues may negatively impact overall corporate margins due to different cost structures.",
+          "candidate_causes": [
+            {
+              "cause_clause": "higher inventory and technical infrastructure costs for hardware and cloud services",
+              "source_hint": "text_b11"
+            },
+            {
+              "cause_clause": "mix shift toward lower-margin consumer subscription and device products",
+              "source_hint": "text_b5"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_1_4",
+          "pillar": "Segment Operations and Revenue Diversification",
+          "indicator_id": "IND_1",
+          "indicator_name": "Waymo Operational Growth",
+          "selection_score": 3.3,
+          "trend_or_claim_sentence": "Waymo represents a significant non-search bet that received $5.6 billion in funding to reach commercialization stages.",
+          "candidate_causes": [
+            {
+              "cause_clause": "continued capital injection primarily from Alphabet",
+              "source_hint": "text_b6"
+            },
+            {
+              "cause_clause": "advancements in fully autonomous driving technology",
+              "source_hint": "text_b6"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_2_1",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "indicator_id": "IND_11",
+          "indicator_name": "investment_and_search_metrics",
+          "selection_score": 3.5,
+          "trend_or_claim_sentence": "Alphabet plans to significantly increase capital expenditures to approximately $75 billion in 2025.",
+          "candidate_causes": [
+            {
+              "cause_clause": "deeper investments in technical infrastructure for AI",
+              "source_hint": "text_b5"
+            },
+            {
+              "cause_clause": "powering data centers using small modular nuclear reactors",
+              "source_hint": "text_b5"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_2_3",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "indicator_id": "IND_2",
+          "indicator_name": "AI Overviews Adoption",
+          "selection_score": 3.3,
+          "trend_or_claim_sentence": "AI Overviews have reached more than one billion users and increased commercial query volume.",
+          "candidate_causes": [
+            {
+              "cause_clause": "multimodal and natural language query improvements using Gemini",
+              "source_hint": "text_b10"
+            },
+            {
+              "cause_clause": "user adoption and usage growth on mobile devices",
+              "source_hint": "text_b25"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_2_2",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "indicator_id": "IND_12",
+          "indicator_name": "product_usage_and_subscriber_metrics",
+          "selection_score": 2.55,
+          "trend_or_claim_sentence": "YouTube Music and Premium have exceeded 125 million subscriptions, showing strong non-advertising momentum.",
+          "candidate_causes": [
+            {
+              "cause_clause": "strong momentum across the breadth of the business",
+              "source_hint": "text_b5"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_2_4",
+          "pillar": "AI Transformation and Technical Infrastructure",
+          "indicator_id": "IND_6",
+          "indicator_name": "Custom TPU Development",
+          "selection_score": 2.35,
+          "trend_or_claim_sentence": "Alphabet is accelerating custom chip development with the announcement of the 7th generation TPU, Ironwood.",
+          "candidate_causes": [
+            {
+              "cause_clause": "need for high-performance training for the next frontier of AI models",
+              "source_hint": "text_b2"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_3_3",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "indicator_id": "IND_7",
+          "indicator_name": "Search Antitrust Liability",
+          "selection_score": 5.63,
+          "trend_or_claim_sentence": "Alphabet faces increased existential risk to its search model following an adverse antitrust ruling.",
+          "candidate_causes": [
+            {
+              "cause_clause": "August 2024 U.S. District Court ruling that Google violated antitrust laws",
+              "source_hint": "text_b2"
+            },
+            {
+              "cause_clause": "DOJ proposed remedies including structural changes and business model alterations",
+              "source_hint": "text_b2"
+            }
+          ],
+          "query_domain": "search advertising dependence",
+          "alignment_relation": "direct",
+          "alignment_confidence": 0.95
+        },
+        {
+          "node_id": "N_3_1",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "indicator_id": "IND_12",
+          "indicator_name": "revenues_by_type_table",
+          "selection_score": 4.95,
+          "trend_or_claim_sentence": "Google Search and other revenues increased by approximately 13% to $198.1 billion in 2024.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Growth in search queries and advertising demand",
+              "source_hint": "revenues_by_type_table"
+            }
+          ],
+          "query_domain": "search advertising dependence",
+          "alignment_relation": "direct",
+          "alignment_confidence": 1.0
+        },
+        {
+          "node_id": "N_3_2",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "indicator_id": "IND_12",
+          "indicator_name": "revenues_by_type_table",
+          "selection_score": 4.24,
+          "trend_or_claim_sentence": "Google Cloud revenue grew significantly from $33.1 billion in 2023 to $43.2 billion in 2024.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Stronger enterprise adoption of cloud and AI-driven infrastructure",
+              "source_hint": "revenues_by_type_table"
+            }
+          ],
+          "query_domain": "reduce dependence",
+          "alignment_relation": "indirect",
+          "alignment_confidence": 0.85
+        },
+        {
+          "node_id": "N_3_4",
+          "pillar": "Regulatory Compliance and Risk Mitigation",
+          "indicator_id": "IND_8",
+          "indicator_name": "Advertising Technology Trial Schedule",
+          "selection_score": 3.3,
+          "trend_or_claim_sentence": "The legal uncertainty regarding Alphabet's ad tech stack will persist through mid-2025 due to scheduled trials.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Trial scheduled for March 2025 in Texas regarding state deceptive trade laws",
+              "source_hint": "text_b5"
+            },
+            {
+              "cause_clause": "Expected decision in early 2025 for the Virginia DOJ ad tech trial",
+              "source_hint": "text_b5"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        }
+      ],
+      "edges": [
+        {
+          "edge_id": "E_SEQ_N_1_1_N_1_2",
+          "from": "N_1_1",
+          "to": "N_1_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "to_ref": "table:segment_operating_income_loss_table|sub:Google Cloud"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_1_2_N_1_3",
+          "from": "N_1_2",
+          "to": "N_1_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+            "to_ref": "narrative:Non-Advertising Revenue Margin Pressure"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_1_3_N_1_4",
+          "from": "N_1_3",
+          "to": "N_1_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+            "to_ref": "narrative:Waymo Operational Growth"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_1_N_2_3",
+          "from": "N_2_1",
+          "to": "N_2_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+            "to_ref": "narrative:AI Overviews Adoption"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_3_N_2_2",
+          "from": "N_2_3",
+          "to": "N_2_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:AI Overviews Adoption",
+            "to_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_2_N_2_4",
+          "from": "N_2_2",
+          "to": "N_2_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+            "to_ref": "narrative:Custom TPU Development"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_3_N_3_1",
+          "from": "N_3_3",
+          "to": "N_3_1",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:Search Antitrust Liability",
+            "to_ref": "table:revenues_by_type_table|sub:Google Search & other"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_1_N_3_2",
+          "from": "N_3_1",
+          "to": "N_3_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "to_ref": "table:revenues_by_type_table|sub:Google Cloud"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_2_N_3_4",
+          "from": "N_3_2",
+          "to": "N_3_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:revenues_by_type_table|sub:Google Cloud",
+            "to_ref": "narrative:Advertising Technology Trial Schedule"
+          }
+        },
+        {
+          "edge_id": "E_CONFLICT_3_1_N_3_1_N_3_3",
+          "from": "N_3_1",
+          "to": "N_3_3",
+          "relation_type": "conflict",
+          "weight": 1.0,
+          "evidence": {
+            "conflict_type": "causal",
+            "description": "Financial results show accelerating search revenue growth ($198B) while the legal narrative indicates the business model is legally untenable according to the U.S. District Court.",
+            "resolution": "The financial trend reflects current market power, whereas the narrative indicates forward-looking regulatory risk that may force a decoupling of revenue from current practices regardless of performance."
+          }
+        }
+      ]
+    },
+    "candidate_paths": [
+      {
+        "path_id": "path_1",
+        "title": "The Regulatory Imperative: Diversification as a Necessity",
+        "core_thesis": "Alphabet must accelerate its reduction of dependence on search advertising because the existential regulatory risk now outweighs the financial benefits and margin pressures associated with diversification.",
+        "node_path": [
+          "N_3_3",
+          "N_3_1",
+          "N_1_2",
+          "N_1_3"
+        ],
+        "cross_pillar_links": [
+          "Connects the 'Search Antitrust Liability' (N_3_3) from the Regulatory pillar with the 'Search Revenue' growth (N_3_1) and 'Cloud Profitability' (N_1_2) from the Segments pillar, framing the latter as a necessary response to the former."
+        ],
+        "tensions_or_gaps": [
+          "The primary tension is the conflict between the accelerating financial performance of search ($198.1B revenue in N_3_1) and the adverse U.S. District Court ruling that threatens its very structure (N_3_3), as highlighted by edge E_CONFLICT_3_1_N_3_1_N_3_3."
+        ],
+        "resolution_logic": [
+          "This path resolves the tension by positing that the regulatory threat is an overriding, existential factor. The financial strength of search is re-framed not as a reason to maintain dependence, but as a measure of the immense risk exposure, making the lower-margin diversification into areas like Cloud (N_1_2, N_1_3) a critical, non-negotiable risk mitigation strategy."
+        ],
+        "coverage_score": 0.8,
+        "coherence_score": 0.9,
+        "faithfulness_score": 1,
+        "why_it_wins": null
+      },
+      {
+        "path_id": "path_2",
+        "title": "The AI Synergy Engine: Doubling Down on Search",
+        "core_thesis": "Alphabet should not actively reduce its dependence on search advertising because its massive AI and infrastructure investments are creating powerful synergies that reinforce search's dominance and profitability, making it strategically incoherent to pivot away from its strongest asset despite regulatory headwinds.",
+        "node_path": [
+          "N_2_1",
+          "N_2_3",
+          "N_1_1",
+          "N_3_3"
+        ],
+        "cross_pillar_links": [
+          "Links the planned '$75B capex' for AI infrastructure (N_2_1) to the direct strengthening of the core business via 'AI Overviews' (N_2_3), which in turn drives the financial dependence noted in 'Search Revenue' (N_1_1)."
+        ],
+        "tensions_or_gaps": [
+          "Acknowledges the tension between the successful, search-centric AI strategy (N_2_3) and the significant 'Antitrust Liability' (N_3_3). This path's main gap is potentially understating the severity of the court ruling, which the evidence describes as an 'existential risk' requiring 'structural changes'."
+        ],
+        "resolution_logic": [
+          "Resolves the tension by arguing that the strategic and financial logic of the AI-Search synergy is too powerful to abandon. It frames the regulatory risk (N_3_3) as a severe operational constraint to be managed and legally contested, rather than a trigger for dismantling a highly successful and synergistic core strategy."
+        ],
+        "coverage_score": 0.75,
+        "coherence_score": 0.9,
+        "faithfulness_score": 0.9,
+        "why_it_wins": null
+      },
+      {
+        "path_id": "path_3",
+        "title": "The Strategic Bind: A Forced and Contradictory Pivot",
+        "core_thesis": "Alphabet must reduce its dependence on search advertising, not out of strategic choice, but due to overwhelming regulatory force, placing it in a strategic bind where its core financial incentives and AI strategy actively contradict this externally-imposed necessity.",
+        "node_path": [
+          "N_3_3",
+          "N_1_1",
+          "N_2_3",
+          "N_1_3",
+          "N_1_2"
+        ],
+        "cross_pillar_links": [
+          "Integrates all three pillars by highlighting the conflict between the regulatory imperative to diversify (N_3_3) and the internal forces deepening the dependence: the financial strength of search (N_1_1) and the fact that AI investments are reinforcing search's dominance (N_2_3)."
+        ],
+        "tensions_or_gaps": [
+          "This path's central argument is the tension itself. The company is caught between the existential legal threat to search (N_3_3) and the dual reality that a) its own AI strategy is making search stronger (N_2_3) and b) diversification into areas like Cloud, while successful (N_1_2), comes with margin pressure (N_1_3)."
+        ],
+        "resolution_logic": [
+          "This path doesn't resolve the tension with a simple answer, but synthesizes the evidence to explain the complexity of the situation. The conclusion is that the answer to 'should they' is 'yes, they must,' but the synthesis explains that this path is fraught with internal strategic and financial contradictions. The reduction of dependence is thus framed as a necessary, but painful and deeply conflicted, pivot."
+        ],
+        "coverage_score": 1,
+        "coherence_score": 1,
+        "faithfulness_score": 1,
+        "why_it_wins": "This path is superior because it provides the most comprehensive synthesis, fully integrating the core evidence and tensions from all three pillars without downplaying any of them. It uniquely identifies and articulates the conflict between Alphabet's regulatory reality (Pillar 3) and its internal AI strategy (Pillar 2), a nuance the other paths miss. Instead of simplifying the problem, it uses the conflicting evidence to construct a more sophisticated and accurate picture of Alphabet's strategic dilemma, making it the most faithful and complete explanation."
+      }
+    ],
+    "selected_path_id": "path_3",
+    "selected_path": {
+      "path_id": "path_3",
+      "title": "The Strategic Bind: A Forced and Contradictory Pivot",
+      "core_thesis": "Alphabet must reduce its dependence on search advertising, not out of strategic choice, but due to overwhelming regulatory force, placing it in a strategic bind where its core financial incentives and AI strategy actively contradict this externally-imposed necessity.",
+      "node_path": [
+        "N_3_3",
+        "N_1_1",
+        "N_2_3",
+        "N_1_3",
+        "N_1_2"
+      ],
+      "cross_pillar_links": [
+        "Integrates all three pillars by highlighting the conflict between the regulatory imperative to diversify (N_3_3) and the internal forces deepening the dependence: the financial strength of search (N_1_1) and the fact that AI investments are reinforcing search's dominance (N_2_3)."
+      ],
+      "tensions_or_gaps": [
+        "This path's central argument is the tension itself. The company is caught between the existential legal threat to search (N_3_3) and the dual reality that a) its own AI strategy is making search stronger (N_2_3) and b) diversification into areas like Cloud, while successful (N_1_2), comes with margin pressure (N_1_3)."
+      ],
+      "resolution_logic": [
+        "This path doesn't resolve the tension with a simple answer, but synthesizes the evidence to explain the complexity of the situation. The conclusion is that the answer to 'should they' is 'yes, they must,' but the synthesis explains that this path is fraught with internal strategic and financial contradictions. The reduction of dependence is thus framed as a necessary, but painful and deeply conflicted, pivot."
+      ],
+      "coverage_score": 1,
+      "coherence_score": 1,
+      "faithfulness_score": 1,
+      "why_it_wins": "This path is superior because it provides the most comprehensive synthesis, fully integrating the core evidence and tensions from all three pillars without downplaying any of them. It uniquely identifies and articulates the conflict between Alphabet's regulatory reality (Pillar 3) and its internal AI strategy (Pillar 2), a nuance the other paths miss. Instead of simplifying the problem, it uses the conflicting evidence to construct a more sophisticated and accurate picture of Alphabet's strategic dilemma, making it the most faithful and complete explanation."
+    }
+  }
+}

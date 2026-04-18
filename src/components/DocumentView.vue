@@ -12,7 +12,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   back: []
   openLastResult: []
-  questionComplete: [payload: { intermediate: any; conclusion: any; logs?: string[] }]
+  questionComplete: [payload: { intermediate: any; conclusion: any; operatorView?: any; logs?: string[] }]
 }>()
 
 const { get, postJsonWithSignal, buildUrl } = useBackend()
@@ -62,36 +62,90 @@ const hasQuestionResult = ref(false)
 const DEMO_FILES: Record<
   number,
   {
-    intermediate: string
-    conclusion: string
+    intermediateCandidates: string[]
+    conclusionCandidates: string[]
+    operatorCandidates?: string[]
     label: string
   }
 > = {
   0: {
-    intermediate: '/data/final_qed_with_retrieval_meta.json',
-    conclusion: '/data/final_conclusion_meta_labeled.json',
+    intermediateCandidates: [
+      '/data/denoised_traceable_report.json',
+      '/data/final_qed_with_retrieval_meta.json',
+    ],
+    conclusionCandidates: [
+      '/data/final_conclusion_labeled.json',
+      '/data/final_conclusion_meta_labeled.json',
+    ],
+    operatorCandidates: ['/data/pillar_operator_view.json'],
     label: 'Meta 示例',
   },
   1: {
-    intermediate: '/data_1/final_qed_with_retrieval_apple.json',
-    conclusion: '/data_1/final_conclusion_apple_labeled.json',
+    // data_1 已切换为后端新格式样例
+    intermediateCandidates: [
+      '/data_1/denoised_traceable_report.json',
+      '/data_1/final_qed_with_retrieval_apple.json',
+    ],
+    conclusionCandidates: [
+      '/data_1/final_conclusion_labeled.json',
+      '/data_1/final_conclusion_apple_labeled.json',
+    ],
+    operatorCandidates: ['/data_1/pillar_operator_view.json'],
     label: 'Apple 示例',
   },
   2: {
-    intermediate: '/data_2/final_qed_with_retrieval_microsoft.json',
-    conclusion: '/data_2/final_conclusion_microsoft_labeled.json',
+    intermediateCandidates: [
+      '/data_2/denoised_traceable_report.json',
+      '/data_2/final_qed_with_retrieval_microsoft.json',
+    ],
+    conclusionCandidates: [
+      '/data_2/final_conclusion_labeled.json',
+      '/data_2/final_conclusion_microsoft_labeled.json',
+    ],
+    operatorCandidates: ['/data_2/pillar_operator_view.json'],
     label: 'Microsoft 示例 A',
   },
   3: {
-    intermediate: '/data_3/final_qed_with_retrieval_microsoft.json',
-    conclusion: '/data_3/final_conclusion_microsoft_labeled.json',
+    intermediateCandidates: [
+      '/data_3/denoised_traceable_report.json',
+      '/data_3/final_qed_with_retrieval_microsoft.json',
+    ],
+    conclusionCandidates: [
+      '/data_3/final_conclusion_labeled.json',
+      '/data_3/final_conclusion_microsoft_labeled.json',
+    ],
+    operatorCandidates: ['/data_3/pillar_operator_view.json'],
     label: 'Microsoft 示例 B',
   },
   4: {
-    intermediate: '/data_4/final_qed_with_retrieval.json',
-    conclusion: '/data_4/final_conclusion_labeled.json',
+    intermediateCandidates: [
+      '/data_4/denoised_traceable_report.json',
+      '/data_4/final_qed_with_retrieval.json',
+    ],
+    conclusionCandidates: ['/data_4/final_conclusion_labeled.json'],
+    operatorCandidates: ['/data_4/pillar_operator_view.json'],
     label: '通用示例',
   },
+}
+
+async function fetchFirstAvailableJson(candidates: string[]) {
+  let lastErr = ''
+  for (const p of candidates) {
+    try {
+      const r = await fetch(p)
+      if (!r.ok) {
+        lastErr = `${p}: ${r.status}`
+        continue
+      }
+      return {
+        path: p,
+        data: await r.json(),
+      }
+    } catch (e: any) {
+      lastErr = `${p}: ${e?.message || 'unknown error'}`
+    }
+  }
+  throw new Error(`候选文件均加载失败：${lastErr}`)
 }
 
 const uploadLogsComputed = computed(() => props.uploadLogs ?? [])
@@ -197,27 +251,35 @@ async function sendQuestion() {
 
     asking.value = true
     error.value = null
-    askLogs.value = [
-      `前端静态示例：捕获到快捷键 ${idx}（${files.label}），从 ${files.intermediate} 与 ${files.conclusion} 读取结果。`,
-    ]
+    askLogs.value = [`前端静态示例：捕获到快捷键 ${idx}（${files.label}），开始按候选路径加载结果。`]
     hasQuestionResult.value = false
 
     try {
-      const [intermediate, conclusion] = await Promise.all([
-        fetch(files.intermediate).then((r) => {
-          if (!r.ok) throw new Error(`加载 ${files.intermediate} 失败`)
-          return r.json()
-        }),
-        fetch(files.conclusion).then((r) => {
-          if (!r.ok) throw new Error(`加载 ${files.conclusion} 失败`)
-          return r.json()
-        }),
+      const [intermediateResult, conclusionResult] = await Promise.all([
+        fetchFirstAvailableJson(files.intermediateCandidates),
+        fetchFirstAvailableJson(files.conclusionCandidates),
       ])
+
+      askLogs.value.push(`静态 intermediate: ${intermediateResult.path}`)
+      askLogs.value.push(`静态 conclusion: ${conclusionResult.path}`)
+
+      let operatorView: any = null
+      if (files.operatorCandidates && files.operatorCandidates.length) {
+        try {
+          const operatorResult = await fetchFirstAvailableJson(files.operatorCandidates)
+          operatorView = operatorResult.data
+          askLogs.value.push(`静态 operator_view: ${operatorResult.path}`)
+        } catch {
+          // 算子文件可选，不阻断主流程
+          askLogs.value.push('静态 operator_view: 未找到，继续使用结论与中间结果。')
+        }
+      }
 
       hasQuestionResult.value = true
       emit('questionComplete', {
-        intermediate,
-        conclusion,
+        intermediate: intermediateResult.data,
+        conclusion: conclusionResult.data,
+        operatorView,
         logs: askLogs.value,
       })
     } catch (e: any) {
@@ -255,6 +317,7 @@ async function sendQuestion() {
     emit('questionComplete', {
       intermediate: res.intermediate,
       conclusion: res.conclusion,
+      operatorView: res.pillar_operator_view ?? null,
       logs: res.logs,
     })
   } catch (e: any) {

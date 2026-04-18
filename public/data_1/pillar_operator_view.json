@@ -1,0 +1,766 @@
+{
+  "original_question": "Should Alphabet reduce its dependence on search advertising?",
+  "operator_results": [
+    {
+      "pillar": "Segment Operations and Revenue Diversification",
+      "operators": {
+        "causal_anchoring": [
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "revenue",
+              "comparison": "2023 to 2024"
+            },
+            "trend_or_claim_sentence": "Google Search and other revenues grew by approximately 13% year-over-year, reaching $198.1 billion in 2024.",
+            "candidate_causes": [
+              {
+                "cause_clause": "increase in advertiser demand and search queries",
+                "source_hint": "general search industry trends"
+              },
+              {
+                "cause_clause": "improved monetization of existing traffic",
+                "source_hint": "implied by core service revenue growth"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "operating income",
+              "comparison": "2023 to 2024"
+            },
+            "trend_or_claim_sentence": "Google Cloud's operating income experienced a substantial increase from $1.7 billion in 2023 to $6.1 billion in 2024.",
+            "candidate_causes": [
+              {
+                "cause_clause": "growth in Google Cloud Platform infrastructure services",
+                "source_hint": "text_b18"
+              },
+              {
+                "cause_clause": "scaling of cloud operations and cost efficiencies",
+                "source_hint": "segment expenses analysis in text_b27"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "unknown",
+              "focus_metric": "operating margin",
+              "comparison": "forward-looking"
+            },
+            "trend_or_claim_sentence": "Increasing non-advertising revenues may negatively impact overall corporate margins due to different cost structures.",
+            "candidate_causes": [
+              {
+                "cause_clause": "higher inventory and technical infrastructure costs for hardware and cloud services",
+                "source_hint": "text_b11"
+              },
+              {
+                "cause_clause": "mix shift toward lower-margin consumer subscription and device products",
+                "source_hint": "text_b5"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Waymo Operational Growth",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "funding and commercialization stage",
+              "comparison": "2024 status"
+            },
+            "trend_or_claim_sentence": "Waymo represents a significant non-search bet that received $5.6 billion in funding to reach commercialization stages.",
+            "candidate_causes": [
+              {
+                "cause_clause": "continued capital injection primarily from Alphabet",
+                "source_hint": "text_b6"
+              },
+              {
+                "cause_clause": "advancements in fully autonomous driving technology",
+                "source_hint": "text_b6"
+              }
+            ]
+          }
+        ],
+        "entity_alignment": [
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "query_domain": "search advertising",
+            "document_entities": [
+              "Google Search",
+              "Google Services"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 1.0,
+            "rationale": "Directly measures the primary component of search advertising dependence."
+          },
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+            "query_domain": "reduce dependence",
+            "document_entities": [
+              "Google Cloud"
+            ],
+            "alignment_relation": "indirect",
+            "confidence": 0.9,
+            "rationale": "Google Cloud is the primary alternative revenue stream for diversification away from search."
+          },
+          {
+            "indicator_ref": "narrative:Mobile Search TAC Pressure",
+            "query_domain": "search advertising",
+            "document_entities": [
+              "Traffic Acquisition Cost",
+              "distribution partners"
+            ],
+            "alignment_relation": "contextual",
+            "confidence": 0.85,
+            "rationale": "Analyzes the cost efficiency of the search advertising model."
+          },
+          {
+            "indicator_ref": "table:investing_activities|sub:Purchases of property and equipment",
+            "query_domain": "reduce dependence",
+            "document_entities": [
+              "property and equipment",
+              "AI infrastructure"
+            ],
+            "alignment_relation": "indirect",
+            "confidence": 0.75,
+            "rationale": "Massive CapEx increases are often linked to AI and Cloud infrastructure needed to diversify beyond search."
+          }
+        ],
+        "conflict_audit": {
+          "has_conflict": true,
+          "conflicts": [
+            {
+              "conflict_type": "causal",
+              "involved_indicator_refs": [
+                "table:revenues_by_type_table|sub:Google Cloud",
+                "narrative:Non-Advertising Revenue Margin Pressure"
+              ],
+              "description": "Google Cloud is scaling rapidly and achieving profitability ($6.1B operating income), but the narrative warns that non-advertising revenues 'may adversely affect margins'.",
+              "resolution": "The cloud segment is currently improving consolidated profits, but its operating margin (approx. 14%) remains significantly lower than Google Services (approx. 40%), meaning relative growth in Cloud mathematically dilutes total corporate margin percentage."
+            }
+          ],
+          "overall_resolution": "While Alphabet is successfully diversifying revenue via Cloud and Subscriptions, the structural cost of these new units is higher than search advertising, creating a tension between absolute profit growth and margin optimization."
+        },
+        "narrative_relations": [
+          {
+            "indicator_ref": "narrative:Google Cloud Profitability Drivers",
+            "proposition": "Google Cloud operating income increased to over $6 billion in 2024.",
+            "relation_type": "support",
+            "connective": "consequently",
+            "composed_sentence": "Google Cloud operating income increased to over $6 billion in 2024; consequently, the segment is becoming a viable profit-generating alternative to advertising."
+          },
+          {
+            "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+            "proposition": "Non-advertising revenues carry different cost structures.",
+            "relation_type": "contrast",
+            "connective": "nonetheless",
+            "composed_sentence": "Diversification efforts are growing; nonetheless, non-advertising revenues may adversely affect corporate margins due to higher underlying costs."
+          },
+          {
+            "indicator_ref": "narrative:Revenue Diversification via Subscriptions",
+            "proposition": "Alphabet generates revenue through YouTube Premium and NFL Sunday Ticket.",
+            "relation_type": "background",
+            "connective": "specifically",
+            "composed_sentence": "Alphabet is pursuing consumer-facing revenue models; specifically, it generates significant fees from YouTube subscriptions and NFL Sunday Ticket."
+          }
+        ]
+      },
+      "source_stats": {
+        "narrative_count": 10,
+        "table_count": 5,
+        "table_row_count": 8
+      },
+      "indicator_id_map": {
+        "ref_to_id": {
+          "narrative:Waymo Operational Growth": "IND_1",
+          "narrative:Google Services Revenue Drivers": "IND_2",
+          "narrative:Revenue Diversification via Subscriptions": "IND_3",
+          "narrative:Cloud Revenue Model": "IND_4",
+          "narrative:AI Integration and Monetization Trends": "IND_5",
+          "narrative:Non-Advertising Revenue Margin Pressure": "IND_6",
+          "narrative:TAC Rate and Revenue Mix Shift": "IND_7",
+          "narrative:Mobile Search TAC Pressure": "IND_8",
+          "narrative:Google Cloud Profitability Drivers": "IND_9",
+          "narrative:Other Bets Operating Loss Performance": "IND_10",
+          "table:revenues_by_type_table": "IND_11",
+          "table:revenues_by_type_table|sub:Google Search & other": "IND_11",
+          "table:revenues_by_type_table|sub:Google Cloud": "IND_11",
+          "table:revenues_by_type_table|sub:Google subscriptions, platforms, and devices": "IND_11",
+          "table:cost_of_revenues_table": "IND_12",
+          "table:cost_of_revenues_table|sub:TAC": "IND_12",
+          "table:research_and_development_table": "IND_13",
+          "table:research_and_development_table|sub:Research and development expenses": "IND_13",
+          "table:segment_operating_income_loss_table": "IND_14",
+          "table:segment_operating_income_loss_table|sub:Google Services": "IND_14",
+          "table:segment_operating_income_loss_table|sub:Google Cloud": "IND_14",
+          "table:investing_activities": "IND_15",
+          "table:investing_activities|sub:Purchases of property and equipment": "IND_15"
+        },
+        "id_to_name": {
+          "IND_1": "Waymo Operational Growth",
+          "IND_2": "Google Services Revenue Drivers",
+          "IND_3": "Revenue Diversification via Subscriptions",
+          "IND_4": "Cloud Revenue Model",
+          "IND_5": "AI Integration and Monetization Trends",
+          "IND_6": "Non-Advertising Revenue Margin Pressure",
+          "IND_7": "TAC Rate and Revenue Mix Shift",
+          "IND_8": "Mobile Search TAC Pressure",
+          "IND_9": "Google Cloud Profitability Drivers",
+          "IND_10": "Other Bets Operating Loss Performance",
+          "IND_11": "revenues_by_type_table",
+          "IND_12": "cost_of_revenues_table",
+          "IND_13": "research_and_development_table",
+          "IND_14": "segment_operating_income_loss_table",
+          "IND_15": "investing_activities"
+        }
+      },
+      "paragraph_plan": {
+        "opening_claim": "In terms of Segment Operations and Revenue Diversification, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar.",
+        "evidence_chain": [
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "indicator_id": "IND_11",
+            "sentence": "Google Search and other revenues grew by approximately 13% year-over-year, reaching $198.1 billion in 2024. Because increase in advertiser demand and search queries and improved monetization of existing traffic.",
+            "score": 5.0
+          },
+          {
+            "indicator_ref": "table:segment_operating_income_loss_table|sub:Google Cloud",
+            "indicator_id": "IND_14",
+            "sentence": "Google Cloud's operating income experienced a substantial increase from $1.7 billion in 2023 to $6.1 billion in 2024. Because growth in Google Cloud Platform infrastructure services and scaling of cloud operations and cost efficiencies.",
+            "score": 3.2
+          },
+          {
+            "indicator_ref": "narrative:Non-Advertising Revenue Margin Pressure",
+            "indicator_id": "IND_6",
+            "sentence": "Increasing non-advertising revenues may negatively impact overall corporate margins due to different cost structures. Because higher inventory and technical infrastructure costs for hardware and cloud services and mix shift toward lower-margin consumer subscription and device products.",
+            "score": 3.0
+          },
+          {
+            "indicator_ref": "narrative:Waymo Operational Growth",
+            "indicator_id": "IND_1",
+            "sentence": "Waymo represents a significant non-search bet that received $5.6 billion in funding to reach commercialization stages. Because continued capital injection primarily from Alphabet and advancements in fully autonomous driving technology.",
+            "score": 3.0
+          }
+        ],
+        "tension_and_resolution": "While Alphabet is successfully diversifying revenue via Cloud and Subscriptions, the structural cost of these new units is higher than search advertising, creating a tension between absolute profit growth and margin optimization.",
+        "closing_insight": "Google Cloud operating income increased to over $6 billion in 2024; consequently, the segment is becoming a viable profit-generating alternative to advertising.",
+        "writing_constraints": {
+          "evidence_budget": 6,
+          "require_causal_connective": true,
+          "prefer_one_contrastive_sentence": true,
+          "avoid_list_style": true
+        },
+        "draft_paragraph": "In terms of Segment Operations and Revenue Diversification, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar. Google Search and other revenues grew by approximately 13% year-over-year, reaching $198.1 billion in 2024. Because increase in advertiser demand and search queries and improved monetization of existing traffic. Google Cloud's operating income experienced a substantial increase from $1.7 billion in 2023 to $6.1 billion in 2024. Because growth in Google Cloud Platform infrastructure services and scaling of cloud operations and cost efficiencies. Increasing non-advertising revenues may negatively impact overall corporate margins due to different cost structures. Because higher inventory and technical infrastructure costs for hardware and cloud services and mix shift toward lower-margin consumer subscription and device products. Waymo represents a significant non-search bet that received $5.6 billion in funding to reach commercialization stages. Because continued capital injection primarily from Alphabet and advancements in fully autonomous driving technology. However, While Alphabet is successfully diversifying revenue via Cloud and Subscriptions, the structural cost of these new units is higher than search advertising, creating a tension between absolute profit growth and margin optimization. Therefore, Google Cloud operating income increased to over $6 billion in 2024; consequently, the segment is becoming a viable profit-generating alternative to advertising."
+      }
+    },
+    {
+      "pillar": "AI Transformation and Technical Infrastructure",
+      "operators": {
+        "causal_anchoring": [
+          {
+            "indicator_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Capital Expenditures",
+              "comparison": "2024 to 2025 plan"
+            },
+            "trend_or_claim_sentence": "Alphabet plans to significantly increase capital expenditures to approximately $75 billion in 2025.",
+            "candidate_causes": [
+              {
+                "cause_clause": "deeper investments in technical infrastructure for AI",
+                "source_hint": "text_b5"
+              },
+              {
+                "cause_clause": "powering data centers using small modular nuclear reactors",
+                "source_hint": "text_b5"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "YouTube Subscriptions",
+              "comparison": "current total"
+            },
+            "trend_or_claim_sentence": "YouTube Music and Premium have exceeded 125 million subscriptions, showing strong non-advertising momentum.",
+            "candidate_causes": [
+              {
+                "cause_clause": "strong momentum across the breadth of the business",
+                "source_hint": "text_b5"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:AI Overviews Adoption",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Search Query Volume",
+              "comparison": "pre vs post AI Overviews"
+            },
+            "trend_or_claim_sentence": "AI Overviews have reached more than one billion users and increased commercial query volume.",
+            "candidate_causes": [
+              {
+                "cause_clause": "multimodal and natural language query improvements using Gemini",
+                "source_hint": "text_b10"
+              },
+              {
+                "cause_clause": "user adoption and usage growth on mobile devices",
+                "source_hint": "text_b25"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Custom TPU Development",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Hardware Efficiency",
+              "comparison": "generation over generation"
+            },
+            "trend_or_claim_sentence": "Alphabet is accelerating custom chip development with the announcement of the 7th generation TPU, Ironwood.",
+            "candidate_causes": [
+              {
+                "cause_clause": "need for high-performance training for the next frontier of AI models",
+                "source_hint": "text_b2"
+              }
+            ]
+          }
+        ],
+        "entity_alignment": [
+          {
+            "indicator_ref": "table:investment_and_search_metrics|sub:Annual Google Searches",
+            "query_domain": "search advertising dependence",
+            "document_entities": [
+              "Google Search"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 1.0,
+            "rationale": "Directly measures the core search activity that drives the advertising revenue mentioned in the question."
+          },
+          {
+            "indicator_ref": "table:product_usage_and_subscriber_metrics|sub:Waymo Paid Rides per Week",
+            "query_domain": "reduce dependence",
+            "document_entities": [
+              "Waymo",
+              "Other Bets"
+            ],
+            "alignment_relation": "indirect",
+            "confidence": 0.9,
+            "rationale": "Represents a non-advertising revenue stream that could potentially reduce reliance on search ads."
+          },
+          {
+            "indicator_ref": "narrative:Gemini Ecosystem Integration",
+            "query_domain": "AI infrastructure",
+            "document_entities": [
+              "Gemini",
+              "Alphabet"
+            ],
+            "alignment_relation": "contextual",
+            "confidence": 0.85,
+            "rationale": "Describes the technical transition that impacts both search ads and new revenue models."
+          }
+        ],
+        "conflict_audit": {
+          "has_conflict": true,
+          "conflicts": [
+            {
+              "conflict_type": "causal",
+              "involved_indicator_refs": [
+                "narrative:AI Overviews Adoption",
+                "table:investment_and_search_metrics|sub:Annual Google Searches"
+              ],
+              "description": "While the query suggests reducing dependence on search ads, AI Overviews are explicitly noted to increase the volume of commercial searches, reinforcing the search ad model.",
+              "resolution": "The technology increases search utility and volume (reinforcing dependence), while concurrently building infrastructure to power non-ad products like Cloud and Subscriptions."
+            }
+          ],
+          "overall_resolution": "Alphabet is pursuing a dual strategy: maximizing search advertising efficiency via AI while scaling infrastructure to support non-advertising segments."
+        },
+        "narrative_relations": [
+          {
+            "indicator_ref": "narrative:AI Overviews Adoption",
+            "proposition": "AI-powered search features reach over one billion people.",
+            "relation_type": "support",
+            "connective": "furthermore",
+            "composed_sentence": "AI-powered search features reach over one billion people; furthermore, users engaging with these features return to Search more frequently for their needs."
+          },
+          {
+            "indicator_ref": "narrative:Global Infrastructure Backbone Scale",
+            "proposition": "Alphabet maintains a 2-million-mile subsea and terrestrial cable network.",
+            "relation_type": "background",
+            "connective": "which serves as",
+            "composed_sentence": "Alphabet maintains a 2-million-mile subsea and terrestrial cable network, which serves as a super resilient foundation for its AI-powered future across all segments."
+          }
+        ]
+      },
+      "source_stats": {
+        "narrative_count": 10,
+        "table_count": 5,
+        "table_row_count": 23
+      },
+      "indicator_id_map": {
+        "ref_to_id": {
+          "narrative:Gemini Ecosystem Integration": "IND_1",
+          "narrative:AI Overviews Adoption": "IND_2",
+          "narrative:Global Infrastructure Backbone Scale": "IND_3",
+          "narrative:Gemini Developer and API Demand": "IND_4",
+          "narrative:AI Model Evolution and Gemini 2.0 Launch": "IND_5",
+          "narrative:Custom TPU Development": "IND_6",
+          "narrative:AI Output Latency and Cost Efficiency": "IND_7",
+          "narrative:Enterprise-Wide AI Integration Strategy": "IND_8",
+          "narrative:AI Hardware and Energy Dependency": "IND_9",
+          "narrative:Infrastructure Supply Capacity Scarcity (GPUs/TPUs)": "IND_10",
+          "table:investment_and_search_metrics": "IND_11",
+          "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025": "IND_11",
+          "table:investment_and_search_metrics|sub:AI Opportunity Fund": "IND_11",
+          "table:investment_and_search_metrics|sub:Annual Google Searches": "IND_11",
+          "table:product_usage_and_subscriber_metrics": "IND_12",
+          "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions": "IND_12",
+          "table:product_usage_and_subscriber_metrics|sub:YouTube Monthly Podcast Users": "IND_12",
+          "table:product_usage_and_subscriber_metrics|sub:Android Active Devices Worldwide": "IND_12",
+          "table:product_usage_and_subscriber_metrics|sub:Google One and YouTube Subscribers (collective)": "IND_12",
+          "table:product_usage_and_subscriber_metrics|sub:Waymo Paid Rides per Week": "IND_12",
+          "table:other_income_expense_net_table": "IND_13",
+          "table:other_income_expense_net_table|sub:Interest income": "IND_13",
+          "table:other_income_expense_net_table|sub:Interest expense": "IND_13",
+          "table:other_income_expense_net_table|sub:Foreign currency exchange gain (loss), net": "IND_13",
+          "table:other_income_expense_net_table|sub:Gain (loss) on debt securities, net": "IND_13",
+          "table:other_income_expense_net_table|sub:Gain (loss) on equity securities, net": "IND_13",
+          "table:other_income_expense_net_table|sub:Performance fees": "IND_13",
+          "table:other_income_expense_net_table|sub:Income (loss) and impairment from equity method investments, net": "IND_13",
+          "table:other_income_expense_net_table|sub:Other": "IND_13",
+          "table:other_income_expense_net_table|sub:Other income (expense), net": "IND_13",
+          "table:cash_flows_table": "IND_14",
+          "table:cash_flows_table|sub:Net cash provided by operating activities": "IND_14",
+          "table:cash_flows_table|sub:Net cash used in investing activities": "IND_14",
+          "table:cash_flows_table|sub:Net cash used in financing activities": "IND_14",
+          "table:share_repurchase_program_table": "IND_15",
+          "table:share_repurchase_program_table|sub:Class A share repurchases": "IND_15",
+          "table:share_repurchase_program_table|sub:Class C share repurchases": "IND_15",
+          "table:share_repurchase_program_table|sub:Total share repurchases (1)": "IND_15"
+        },
+        "id_to_name": {
+          "IND_1": "Gemini Ecosystem Integration",
+          "IND_2": "AI Overviews Adoption",
+          "IND_3": "Global Infrastructure Backbone Scale",
+          "IND_4": "Gemini Developer and API Demand",
+          "IND_5": "AI Model Evolution and Gemini 2.0 Launch",
+          "IND_6": "Custom TPU Development",
+          "IND_7": "AI Output Latency and Cost Efficiency",
+          "IND_8": "Enterprise-Wide AI Integration Strategy",
+          "IND_9": "AI Hardware and Energy Dependency",
+          "IND_10": "Infrastructure Supply Capacity Scarcity (GPUs/TPUs)",
+          "IND_11": "investment_and_search_metrics",
+          "IND_12": "product_usage_and_subscriber_metrics",
+          "IND_13": "other_income_expense_net_table",
+          "IND_14": "cash_flows_table",
+          "IND_15": "share_repurchase_program_table"
+        }
+      },
+      "paragraph_plan": {
+        "opening_claim": "In terms of AI Transformation and Technical Infrastructure, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar.",
+        "evidence_chain": [
+          {
+            "indicator_ref": "table:investment_and_search_metrics|sub:Planned Capital Expenditures 2025",
+            "indicator_id": "IND_11",
+            "sentence": "Alphabet plans to significantly increase capital expenditures to approximately $75 billion in 2025. Because deeper investments in technical infrastructure for AI and powering data centers using small modular nuclear reactors.",
+            "score": 3.2
+          },
+          {
+            "indicator_ref": "narrative:AI Overviews Adoption",
+            "indicator_id": "IND_2",
+            "sentence": "AI Overviews have reached more than one billion users and increased commercial query volume. Because multimodal and natural language query improvements using Gemini and user adoption and usage growth on mobile devices.",
+            "score": 3.0
+          },
+          {
+            "indicator_ref": "table:product_usage_and_subscriber_metrics|sub:YouTube Music and Premium Subscriptions",
+            "indicator_id": "IND_12",
+            "sentence": "YouTube Music and Premium have exceeded 125 million subscriptions, showing strong non-advertising momentum. Because strong momentum across the breadth of the business.",
+            "score": 2.4
+          },
+          {
+            "indicator_ref": "narrative:Custom TPU Development",
+            "indicator_id": "IND_6",
+            "sentence": "Alphabet is accelerating custom chip development with the announcement of the 7th generation TPU, Ironwood. Because need for high-performance training for the next frontier of AI models.",
+            "score": 2.2
+          }
+        ],
+        "tension_and_resolution": "Alphabet is pursuing a dual strategy: maximizing search advertising efficiency via AI while scaling infrastructure to support non-advertising segments.",
+        "closing_insight": "AI-powered search features reach over one billion people; furthermore, users engaging with these features return to Search more frequently for their needs.",
+        "writing_constraints": {
+          "evidence_budget": 6,
+          "require_causal_connective": true,
+          "prefer_one_contrastive_sentence": true,
+          "avoid_list_style": true
+        },
+        "draft_paragraph": "In terms of AI Transformation and Technical Infrastructure, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar. Alphabet plans to significantly increase capital expenditures to approximately $75 billion in 2025. Because deeper investments in technical infrastructure for AI and powering data centers using small modular nuclear reactors. AI Overviews have reached more than one billion users and increased commercial query volume. Because multimodal and natural language query improvements using Gemini and user adoption and usage growth on mobile devices. YouTube Music and Premium have exceeded 125 million subscriptions, showing strong non-advertising momentum. Because strong momentum across the breadth of the business. Alphabet is accelerating custom chip development with the announcement of the 7th generation TPU, Ironwood. Because need for high-performance training for the next frontier of AI models. However, Alphabet is pursuing a dual strategy: maximizing search advertising efficiency via AI while scaling infrastructure to support non-advertising segments. Therefore, AI-powered search features reach over one billion people; furthermore, users engaging with these features return to Search more frequently for their needs."
+      }
+    },
+    {
+      "pillar": "Regulatory Compliance and Risk Mitigation",
+      "operators": {
+        "causal_anchoring": [
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Revenue",
+              "comparison": "2024 vs 2023"
+            },
+            "trend_or_claim_sentence": "Google Search and other revenues increased by approximately 13% to $198.1 billion in 2024.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Growth in search queries and advertising demand",
+                "source_hint": "revenues_by_type_table"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+            "indicator_type": "table",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Revenue",
+              "comparison": "2024 vs 2023"
+            },
+            "trend_or_claim_sentence": "Google Cloud revenue grew significantly from $33.1 billion in 2023 to $43.2 billion in 2024.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Stronger enterprise adoption of cloud and AI-driven infrastructure",
+                "source_hint": "revenues_by_type_table"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Search Antitrust Liability",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "up",
+              "focus_metric": "Regulatory Liability",
+              "comparison": "Post-August 2024"
+            },
+            "trend_or_claim_sentence": "Alphabet faces increased existential risk to its search model following an adverse antitrust ruling.",
+            "candidate_causes": [
+              {
+                "cause_clause": "August 2024 U.S. District Court ruling that Google violated antitrust laws",
+                "source_hint": "text_b2"
+              },
+              {
+                "cause_clause": "DOJ proposed remedies including structural changes and business model alterations",
+                "source_hint": "text_b2"
+              }
+            ]
+          },
+          {
+            "indicator_ref": "narrative:Advertising Technology Trial Schedule",
+            "indicator_type": "narrative",
+            "trend": {
+              "direction": "unknown",
+              "focus_metric": "Legal Resolution",
+              "comparison": "2025 Outlook"
+            },
+            "trend_or_claim_sentence": "The legal uncertainty regarding Alphabet's ad tech stack will persist through mid-2025 due to scheduled trials.",
+            "candidate_causes": [
+              {
+                "cause_clause": "Trial scheduled for March 2025 in Texas regarding state deceptive trade laws",
+                "source_hint": "text_b5"
+              },
+              {
+                "cause_clause": "Expected decision in early 2025 for the Virginia DOJ ad tech trial",
+                "source_hint": "text_b5"
+              }
+            ]
+          }
+        ],
+        "entity_alignment": [
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "query_domain": "search advertising dependence",
+            "document_entities": [
+              "Google Search"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 1.0,
+            "rationale": "Directly measures the financial scale of the specific business segment mentioned in the query."
+          },
+          {
+            "indicator_ref": "narrative:Search Antitrust Liability",
+            "query_domain": "search advertising dependence",
+            "document_entities": [
+              "DOJ",
+              "U.S. District Court"
+            ],
+            "alignment_relation": "direct",
+            "confidence": 0.95,
+            "rationale": "The antitrust ruling specifically targets the dominance of search advertising, which is the core of the dependence question."
+          },
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+            "query_domain": "reduce dependence",
+            "document_entities": [
+              "Google Cloud"
+            ],
+            "alignment_relation": "indirect",
+            "confidence": 0.85,
+            "rationale": "Represents the primary alternative revenue stream that would allow Alphabet to reduce dependence on advertising."
+          }
+        ],
+        "conflict_audit": {
+          "has_conflict": true,
+          "conflicts": [
+            {
+              "conflict_type": "causal",
+              "involved_indicator_refs": [
+                "table:revenues_by_type_table|sub:Google Search & other",
+                "narrative:Search Antitrust Liability"
+              ],
+              "description": "Financial results show accelerating search revenue growth ($198B) while the legal narrative indicates the business model is legally untenable according to the U.S. District Court.",
+              "resolution": "The financial trend reflects current market power, whereas the narrative indicates forward-looking regulatory risk that may force a decoupling of revenue from current practices regardless of performance."
+            }
+          ],
+          "overall_resolution": "Acknowledge that financial dominance is currently increasing while the legal license to operate under existing terms is simultaneously decreasing."
+        },
+        "narrative_relations": [
+          {
+            "indicator_ref": "narrative:Search Antitrust Liability",
+            "proposition": "The U.S. District Court ruled Google violated antitrust laws regarding Search advertising.",
+            "relation_type": "cause",
+            "connective": "accordingly",
+            "composed_sentence": "The U.S. District Court ruled Google violated antitrust laws regarding Search advertising; accordingly, the DOJ has proposed structural remedies that could alter the business model."
+          },
+          {
+            "indicator_ref": "narrative:Legal Liability Risks for AI Training and Development",
+            "proposition": "AI development introduces risks of IP infringement and inaccuracies.",
+            "relation_type": "background",
+            "connective": "simultaneously",
+            "composed_sentence": "Alphabet is navigating complex search antitrust litigation; simultaneously, its evolving AI efforts introduce new liability risks regarding intellectual property and content accuracy."
+          }
+        ]
+      },
+      "source_stats": {
+        "narrative_count": 10,
+        "table_count": 5,
+        "table_row_count": 36
+      },
+      "indicator_id_map": {
+        "ref_to_id": {
+          "narrative:Regulatory Scrutiny and Compliance Risk": "IND_1",
+          "narrative:Regulatory Compliance Burden and Cost": "IND_2",
+          "narrative:Third-Party Cookie Regulatory Shift": "IND_3",
+          "narrative:EU AI Act Enforcement": "IND_4",
+          "narrative:Antitrust Regulation (Digital Markets Act)": "IND_5",
+          "narrative:Safe Harbor Protection Vulnerability": "IND_6",
+          "narrative:Search Antitrust Liability": "IND_7",
+          "narrative:Advertising Technology Trial Schedule": "IND_8",
+          "narrative:Legal Liability Risks for AI Training and Development": "IND_9",
+          "narrative:Regulatory and Legal Compliance Impact": "IND_10",
+          "table:consolidated_financial_results_table": "IND_11",
+          "table:consolidated_financial_results_table|sub:Consolidated revenues": "IND_11",
+          "table:consolidated_financial_results_table|sub:Change in consolidated constant currency revenues (1)": "IND_11",
+          "table:consolidated_financial_results_table|sub:Cost of revenues": "IND_11",
+          "table:consolidated_financial_results_table|sub:Operating expenses": "IND_11",
+          "table:consolidated_financial_results_table|sub:Operating income": "IND_11",
+          "table:consolidated_financial_results_table|sub:Operating margin": "IND_11",
+          "table:consolidated_financial_results_table|sub:Other income (expense), net": "IND_11",
+          "table:consolidated_financial_results_table|sub:Net income": "IND_11",
+          "table:consolidated_financial_results_table|sub:Diluted EPS (2)": "IND_11",
+          "table:revenues_by_type_table": "IND_12",
+          "table:revenues_by_type_table|sub:Google Search & other": "IND_12",
+          "table:revenues_by_type_table|sub:YouTube ads": "IND_12",
+          "table:revenues_by_type_table|sub:Google Network": "IND_12",
+          "table:revenues_by_type_table|sub:Google advertising": "IND_12",
+          "table:revenues_by_type_table|sub:Google subscriptions, platforms, and devices": "IND_12",
+          "table:revenues_by_type_table|sub:Google Services total": "IND_12",
+          "table:revenues_by_type_table|sub:Google Cloud": "IND_12",
+          "table:revenues_by_type_table|sub:Other Bets": "IND_12",
+          "table:revenues_by_type_table|sub:Hedging gains (losses)": "IND_12",
+          "table:revenues_by_type_table|sub:Total revenues": "IND_12",
+          "table:revenues_by_geography_table": "IND_13",
+          "table:revenues_by_geography_table|sub:United States": "IND_13",
+          "table:revenues_by_geography_table|sub:EMEA": "IND_13",
+          "table:revenues_by_geography_table|sub:APAC": "IND_13",
+          "table:revenues_by_geography_table|sub:Other Americas": "IND_13",
+          "table:revenues_by_geography_table|sub:Hedging gains (losses)": "IND_13",
+          "table:other_income_expense_net_table": "IND_14",
+          "table:other_income_expense_net_table|sub:Interest income": "IND_14",
+          "table:other_income_expense_net_table|sub:Interest expense": "IND_14",
+          "table:other_income_expense_net_table|sub:Foreign currency exchange gain (loss), net": "IND_14",
+          "table:other_income_expense_net_table|sub:Gain (loss) on debt securities, net": "IND_14",
+          "table:other_income_expense_net_table|sub:Gain (loss) on equity securities, net": "IND_14",
+          "table:other_income_expense_net_table|sub:Performance fees": "IND_14",
+          "table:other_income_expense_net_table|sub:Income (loss) and impairment from equity method investments, net": "IND_14",
+          "table:other_income_expense_net_table|sub:Other": "IND_14",
+          "table:other_income_expense_net_table|sub:Other income (expense), net": "IND_14",
+          "table:provision_for_income_taxes_table": "IND_15",
+          "table:provision_for_income_taxes_table|sub:Income before provision for income taxes": "IND_15",
+          "table:provision_for_income_taxes_table|sub:Provision for income taxes": "IND_15",
+          "table:provision_for_income_taxes_table|sub:Effective tax rate": "IND_15"
+        },
+        "id_to_name": {
+          "IND_1": "Regulatory Scrutiny and Compliance Risk",
+          "IND_2": "Regulatory Compliance Burden and Cost",
+          "IND_3": "Third-Party Cookie Regulatory Shift",
+          "IND_4": "EU AI Act Enforcement",
+          "IND_5": "Antitrust Regulation (Digital Markets Act)",
+          "IND_6": "Safe Harbor Protection Vulnerability",
+          "IND_7": "Search Antitrust Liability",
+          "IND_8": "Advertising Technology Trial Schedule",
+          "IND_9": "Legal Liability Risks for AI Training and Development",
+          "IND_10": "Regulatory and Legal Compliance Impact",
+          "IND_11": "consolidated_financial_results_table",
+          "IND_12": "revenues_by_type_table",
+          "IND_13": "revenues_by_geography_table",
+          "IND_14": "other_income_expense_net_table",
+          "IND_15": "provision_for_income_taxes_table"
+        }
+      },
+      "paragraph_plan": {
+        "opening_claim": "In terms of Regulatory Compliance and Risk Mitigation, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar.",
+        "evidence_chain": [
+          {
+            "indicator_ref": "narrative:Search Antitrust Liability",
+            "indicator_id": "IND_7",
+            "sentence": "Alphabet faces increased existential risk to its search model following an adverse antitrust ruling. Because August 2024 U.S. District Court ruling that Google violated antitrust laws and DOJ proposed remedies including structural changes and business model alterations.",
+            "score": 4.76
+          },
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Search & other",
+            "indicator_id": "IND_12",
+            "sentence": "Google Search and other revenues increased by approximately 13% to $198.1 billion in 2024. Because Growth in search queries and advertising demand.",
+            "score": 4.2
+          },
+          {
+            "indicator_ref": "table:revenues_by_type_table|sub:Google Cloud",
+            "indicator_id": "IND_12",
+            "sentence": "Google Cloud revenue grew significantly from $33.1 billion in 2023 to $43.2 billion in 2024. Because Stronger enterprise adoption of cloud and AI-driven infrastructure.",
+            "score": 3.58
+          },
+          {
+            "indicator_ref": "narrative:Advertising Technology Trial Schedule",
+            "indicator_id": "IND_8",
+            "sentence": "The legal uncertainty regarding Alphabet's ad tech stack will persist through mid-2025 due to scheduled trials. Because Trial scheduled for March 2025 in Texas regarding state deceptive trade laws and Expected decision in early 2025 for the Virginia DOJ ad tech trial.",
+            "score": 3.0
+          }
+        ],
+        "tension_and_resolution": "Acknowledge that financial dominance is currently increasing while the legal license to operate under existing terms is simultaneously decreasing.",
+        "closing_insight": "The U.S. District Court ruled Google violated antitrust laws regarding Search advertising; accordingly, the DOJ has proposed structural remedies that could alter the business model.",
+        "writing_constraints": {
+          "evidence_budget": 6,
+          "require_causal_connective": true,
+          "prefer_one_contrastive_sentence": true,
+          "avoid_list_style": true
+        },
+        "draft_paragraph": "In terms of Regulatory Compliance and Risk Mitigation, the key business mechanisms are best explained through linked trend-and-driver evidence across the most relevant domains in this pillar. Alphabet faces increased existential risk to its search model following an adverse antitrust ruling. Because August 2024 U.S. District Court ruling that Google violated antitrust laws and DOJ proposed remedies including structural changes and business model alterations. Google Search and other revenues increased by approximately 13% to $198.1 billion in 2024. Because Growth in search queries and advertising demand. Google Cloud revenue grew significantly from $33.1 billion in 2023 to $43.2 billion in 2024. Because Stronger enterprise adoption of cloud and AI-driven infrastructure. The legal uncertainty regarding Alphabet's ad tech stack will persist through mid-2025 due to scheduled trials. Because Trial scheduled for March 2025 in Texas regarding state deceptive trade laws and Expected decision in early 2025 for the Virginia DOJ ad tech trial. However, Acknowledge that financial dominance is currently increasing while the legal license to operate under existing terms is simultaneously decreasing. Therefore, The U.S. District Court ruled Google violated antitrust laws regarding Search advertising; accordingly, the DOJ has proposed structural remedies that could alter the business model."
+      }
+    }
+  ]
+}

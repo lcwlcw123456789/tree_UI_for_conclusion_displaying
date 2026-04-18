@@ -2,12 +2,14 @@
 import { ref, watch } from 'vue'
 import type { PillarResult } from '../../types/intermediate'
 import type { IndicatorKey } from '../../composables/useIndicatorLink'
+import type { OperatorPillarResult } from '../../types/operator'
 import IndicatorNode from './IndicatorNode.vue'
 import TableIndicatorNode from './TableIndicatorNode.vue'
 
 const props = defineProps<{
   pillar: PillarResult
   pillarIndex: number
+  operatorItem?: OperatorPillarResult | null
   indicatorToExpand: IndicatorKey | null
   isIndicatorHovered: (key: IndicatorKey) => boolean
 }>()
@@ -44,6 +46,7 @@ watch(
         :pillar-index="pillarIndex"
         :indicator-index="i"
         :pillar-name="pillar.pillar"
+        :operator-item="operatorItem"
         :indicator-to-expand="indicatorToExpand"
         :is-hovered="isIndicatorHovered({
           pillarIndex,
@@ -62,6 +65,7 @@ watch(
         :pillar-index="pillarIndex"
         :indicator-index="i"
         :pillar-name="pillar.pillar"
+        :operator-item="operatorItem"
         :indicator-to-expand="indicatorToExpand"
         :is-hovered="isIndicatorHovered({
           pillarIndex,

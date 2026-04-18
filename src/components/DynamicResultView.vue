@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import type { IntermediateResult } from '../types/intermediate'
 import type { FinalConclusion } from '../types/conclusion'
+import type { OperatorView } from '../types/operator'
 import { useIndicatorLink } from '../composables/useIndicatorLink'
 import type { IndicatorKey } from '../composables/useIndicatorLink'
 import TreePanel from './TreePanel/TreePanel.vue'
@@ -10,6 +11,7 @@ import ConclusionPanel from './ConclusionPanel/ConclusionPanel.vue'
 const props = defineProps<{
   intermediate: IntermediateResult
   conclusion: FinalConclusion
+  operatorView?: OperatorView | null
 }>()
 
 const intermediateData = ref<IntermediateResult | null>(props.intermediate)
@@ -68,6 +70,7 @@ function handleTreeIndicatorUnhover() {
     <aside class="tree-aside">
       <TreePanel
         :data="intermediateData"
+        :operator-view="props.operatorView || null"
         :indicator-to-expand="indicatorToExpand"
         :is-indicator-hovered="isTreeIndicatorHovered"
         @indicator-hover="handleTreeIndicatorHover"

@@ -5,6 +5,7 @@ import DocumentView from './components/DocumentView.vue'
 import DynamicResultView from './components/DynamicResultView.vue'
 import type { IntermediateResult } from './types/intermediate'
 import type { FinalConclusion } from './types/conclusion'
+import type { OperatorView } from './types/operator'
 
 type Step = 'select' | 'document' | 'result'
 
@@ -15,6 +16,7 @@ const uploadLogs = ref<string[]>([])
 
 const qaIntermediate = ref<IntermediateResult | null>(null)
 const qaConclusion = ref<FinalConclusion | null>(null)
+const qaOperatorView = ref<OperatorView | null>(null)
 const qaLogs = ref<string[]>([])
 
 const stepIndex = computed(() => {
@@ -53,10 +55,12 @@ function handleCompanyReady(payload: { companyId: string; structure: any; upload
 function handleQuestionComplete(payload: {
   intermediate: IntermediateResult
   conclusion: FinalConclusion
+  operatorView?: OperatorView | null
   logs?: string[]
 }) {
   qaIntermediate.value = payload.intermediate
   qaConclusion.value = payload.conclusion
+  qaOperatorView.value = payload.operatorView ?? null
   qaLogs.value = payload.logs ?? []
   currentStep.value = 'result'
 }
@@ -142,6 +146,7 @@ function backToLastResult() {
         <DynamicResultView
           :intermediate="qaIntermediate"
           :conclusion="qaConclusion"
+          :operator-view="qaOperatorView"
         />
       </section>
     </main>

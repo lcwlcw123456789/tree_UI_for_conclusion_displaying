@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import type { FinalConclusion } from '../../types/conclusion'
 import FinalAnswer from './FinalAnswer.vue'
 import PillarSection from './PillarSection.vue'
+import Stage3TreeModal from './Stage3TreeModal.vue'
 
 defineProps<{
   data: FinalConclusion | null
@@ -25,6 +27,16 @@ function onAnnotationUnhover() {
 function onAnnotationClick(pillarIndex: number, indicatorIds: string[]) {
   emit('annotationClick', pillarIndex, indicatorIds)
 }
+
+const stage3ModalVisible = ref(false)
+
+function openStage3Modal() {
+  stage3ModalVisible.value = true
+}
+
+function closeStage3Modal() {
+  stage3ModalVisible.value = false
+}
 </script>
 
 <template>
@@ -33,7 +45,11 @@ function onAnnotationClick(pillarIndex: number, indicatorIds: string[]) {
       <h2 class="conclusion-title">结论展示</h2>
     </div>
     <div v-if="data" class="conclusion-content">
-      <FinalAnswer :text="data.final_answer" />
+      <FinalAnswer
+        :text="data.final_answer"
+        :can-open-tree="!!data.stage3_global_synthesis?.tree_graph"
+        @open-tree="openStage3Modal"
+      />
       <PillarSection
         v-for="(analysis, i) in data.pillar_analysis"
         :key="i"
@@ -45,6 +61,12 @@ function onAnnotationClick(pillarIndex: number, indicatorIds: string[]) {
         @annotation-click="(ids) => onAnnotationClick(i, ids)"
       />
     </div>
+
+    <Stage3TreeModal
+      :visible="stage3ModalVisible"
+      :stage3="data?.stage3_global_synthesis"
+      @close="closeStage3Modal"
+    />
   </div>
 </template>
 

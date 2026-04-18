@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { watch, nextTick } from 'vue'
+import { computed, watch, nextTick } from 'vue'
+import { ref } from 'vue'
 import type { IntermediateResult } from '../../types/intermediate'
 import type { IndicatorKey } from '../../composables/useIndicatorLink'
+import type { OperatorView, OperatorPillarResult } from '../../types/operator'
 import TreeNode from './TreeNode.vue'
+import OperatorGraphModal from './OperatorGraphModal.vue'
 
 const props = defineProps<{
   data: IntermediateResult | null
+  operatorView?: OperatorView | null
   indicatorToExpand: IndicatorKey | null
   isIndicatorHovered: (key: IndicatorKey) => boolean
 }>()
@@ -14,6 +18,18 @@ const emit = defineEmits<{
   indicatorHover: [key: IndicatorKey]
   indicatorUnhover: []
 }>()
+
+const showOperatorGraph = ref(false)
+
+function openOperatorGraph() {
+  if (props.operatorView?.operator_results?.length) {
+    showOperatorGraph.value = true
+  }
+}
+
+function closeOperatorGraph() {
+  showOperatorGraph.value = false
+}
 
 watch(
   () => props.indicatorToExpand,
@@ -28,13 +44,34 @@ watch(
     }
   }
 )
+
+const operatorByPillar = computed(() => {
+  const map = new Map<string, OperatorPillarResult>()
+  for (const item of props.operatorView?.operator_results || []) {
+    if (item?.pillar) {
+      map.set(item.pillar, item)
+    }
+  }
+  return map
+})
 </script>
 
 <template>
   <div class="tree-panel">
     <div class="tree-header">
-      <h2 class="tree-title">推理结构</h2>
+      <button
+        type="button"
+        class="tree-title-btn"
+        :disabled="!operatorView?.operator_results?.length"
+        @click="openOperatorGraph"
+        :title="operatorView?.operator_results?.length ? '点击查看算子关系图' : '暂无算子文件数据'"
+      >
+        推理结构
+      </button>
       <p v-if="data" class="tree-query">{{ data.query }}</p>
+      <p v-if="operatorView?.operator_results?.length" class="operator-hint">
+        已加载算子视图：{{ operatorView.operator_results.length }} 个 pillar
+      </p>
     </div>
     <div v-if="data" class="tree-content">
       <div class="query-root">
@@ -48,6 +85,7 @@ watch(
             :key="i"
             :pillar="pillar"
             :pillar-index="i"
+            :operator-item="operatorByPillar.get(pillar.pillar) || null"
             :indicator-to-expand="indicatorToExpand"
             :is-indicator-hovered="isIndicatorHovered"
             @indicator-hover="(k) => emit('indicatorHover', k)"
@@ -56,6 +94,13 @@ watch(
         </div>
       </div>
     </div>
+
+    <OperatorGraphModal
+      :visible="showOperatorGraph"
+      :intermediate="data"
+      :operator-view="operatorView || null"
+      @close="closeOperatorGraph"
+    />
   </div>
 </template>
 
@@ -79,10 +124,37 @@ watch(
   font-weight: 600;
 }
 
+.tree-title-btn {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.tree-title-btn:hover:not(:disabled) {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.tree-title-btn:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
 .tree-query {
   margin: 0;
   font-size: 0.9rem;
   color: var(--color-text-muted);
+}
+
+.operator-hint {
+  margin: 0.3rem 0 0;
+  font-size: 0.78rem;
+  color: var(--color-primary);
 }
 
 .tree-content {

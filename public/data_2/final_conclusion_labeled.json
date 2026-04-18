@@ -1,0 +1,2272 @@
+{
+  "original_question": "How does Apple’s hardware-focused model compare to Microsoft’s software-focused model?",
+  "final_answer": "Apple’s hardware-focused model fundamentally differs from a software-first approach by operating as a hybrid strategy that uses its integrated hardware as the foundation for a captive, high-margin services business. This insight emerges from a cross-pillar synthesis of the company's performance and risks. While hardware sales grew to $307.0 billion, the model faces declining product gross margins of 36.8% and significant supply chain vulnerabilities, such as reliance on single-source components. This inherent tension is resolved by the strategic pivot towards the software-like Services segment, which grew 14% and operates at a vastly superior 75.4% gross margin. This symbiotic relationship shows that the hardware, despite its lower profitability and higher risk, is the essential platform that enables the far more lucrative and stable services business, effectively funding and de-risking the entire enterprise in a way a pure software model does not.",
+  "pillar_analysis": [
+    {
+      "pillar": "Strategic Business Operations and Product Ecosystem",
+      "paragraph": "In terms of Strategic Business Operations and Product Ecosystem, Apple’s hardware-centric model is primarily driven by its strategy of designing nearly the entire product solution, from hardware to the operating system and related services (IND_3). This vertically integrated approach underpins a business where Product sales, reaching $307 billion in 2025, constitute the vast majority of revenue, though the company acknowledges holding a minority market share across its key hardware segments (IND_4, IND_11). While iPhone sales grew 4% in 2025, demonstrating the continued dependence on this single category, the company's business development trajectory clearly shows a strategic pivot toward its more profitable Services segment (IND_7). This shift is highlighted by the 14% growth in Services net sales, a move likely motivated by its superior 75.4% gross margin compared to the 36.8% margin for Products (IND_8, IND_9). However, the hardware focus brings inherent operational risks, including vulnerability from single-sourcing for certain components and a heavy reliance on indirect distribution channels which account for 60% of net sales (IND_10, IND_5). Therefore, Apple’s model contrasts with a software-first approach by leveraging its premium, integrated hardware as a platform to cultivate a high-margin, growing services business, thereby mitigating the lower margins and supply chain risks of its physical product operations.",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_3",
+          "indicator_name": "Integrated Product Ecosystem Development"
+        },
+        {
+          "indicator_id": "IND_4",
+          "indicator_name": "Market Share Positioning in Hardware"
+        },
+        {
+          "indicator_id": "IND_5",
+          "indicator_name": "Distribution Channel Strategy"
+        },
+        {
+          "indicator_id": "IND_7",
+          "indicator_name": "iPhone Revenue Growth Strategy"
+        },
+        {
+          "indicator_id": "IND_8",
+          "indicator_name": "Services Revenue Drivers"
+        },
+        {
+          "indicator_id": "IND_9",
+          "indicator_name": "Product Gross Margin Influences"
+        },
+        {
+          "indicator_id": "IND_10",
+          "indicator_name": "Supply Chain Single-Sourcing Vulnerability"
+        },
+        {
+          "indicator_id": "IND_11",
+          "indicator_name": "net_sales_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Core Product Portfolio Scope",
+        "IND_2": "iPhone Product Lineup",
+        "IND_3": "Integrated Product Ecosystem Development",
+        "IND_4": "Market Share Positioning in Hardware",
+        "IND_5": "Distribution Channel Strategy",
+        "IND_6": "EU Regulatory Compliance Actions (DMA)",
+        "IND_7": "iPhone Revenue Growth Strategy",
+        "IND_8": "Services Revenue Drivers",
+        "IND_9": "Product Gross Margin Influences",
+        "IND_10": "Supply Chain Single-Sourcing Vulnerability",
+        "IND_11": "net_sales_table",
+        "IND_12": "cost_of_sales_table",
+        "IND_13": "gross_margin_table",
+        "IND_14": "operating_results_table",
+        "IND_15": "segment_information_2025"
+      }
+    },
+    {
+      "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+      "paragraph": "In terms of Financial Performance, Capital Allocation, and Shareholder Value, Apple's hybrid model demonstrates the strength of its hardware foundation being increasingly complemented by a high-growth, high-margin services segment. While the hardware-centric iPhone business remains the primary revenue driver, its net sales grew 4% to $209.6 billion in 2025, and Mac sales grew 12% to $33.7 billion (IND_13). However, this hardware focus faces profitability headwinds, as the overall Products gross margin percentage slightly declined to 36.8% (IND_14), reflecting acknowledged downward pressures from industry-wide pricing and component costs (IND_2). In stark contrast, the software-focused Services segment provided a more potent growth engine, with net sales increasing 14% to $109.2 billion, driven by higher transaction volumes and a different mix of services (IND_4). Crucially, this segment operates at a substantially higher gross margin of 75.4% (IND_14), bolstering the company's overall financial performance and demonstrating a more profitable growth trajectory. This robust financial engine enables an aggressive capital allocation strategy, exemplified by the repurchase of $89.3 billion in stock during 2025 (IND_7) under a program newly authorized for an additional $100 billion (IND_3), directly converting operational success from both business models into significant shareholder value.",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_2",
+          "indicator_name": "Gross Margin Volatility Drivers"
+        },
+        {
+          "indicator_id": "IND_3",
+          "indicator_name": "May 2025 Share Repurchase Program Authorization"
+        },
+        {
+          "indicator_id": "IND_4",
+          "indicator_name": "Services Revenue Drivers"
+        },
+        {
+          "indicator_id": "IND_7",
+          "indicator_name": "Capital Return Program Execution"
+        },
+        {
+          "indicator_id": "IND_13",
+          "indicator_name": "products_and_services_performance_table"
+        },
+        {
+          "indicator_id": "IND_14",
+          "indicator_name": "gross_margin_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Aggregate Market Value of Common Stock",
+        "IND_2": "Gross Margin Volatility Drivers",
+        "IND_3": "May 2025 Share Repurchase Program Authorization",
+        "IND_4": "Services Revenue Drivers",
+        "IND_5": "Product Gross Margin Influences",
+        "IND_6": "Liquidity and Cash Holdings",
+        "IND_7": "Capital Return Program Execution",
+        "IND_8": "Revenue Recognition Timing by Category",
+        "IND_9": "Effective Tax Rate",
+        "IND_10": "Share Repurchase Program Execution",
+        "IND_11": "share_repurchase_activity_table",
+        "IND_12": "segment_operating_performance_table",
+        "IND_13": "products_and_services_performance_table",
+        "IND_14": "gross_margin_table",
+        "IND_15": "operating_expenses_table"
+      }
+    },
+    {
+      "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+      "paragraph": "In terms of Global Risk Profile and External Environmental Vulnerabilities, Apple's hardware-centric model continues to drive financial growth, with product net sales increasing from $294.9 billion to $307.0 billion in fiscal 2025 (IND_11). However, this success is coupled with significant external risks inherent to a physical supply chain, as new products often rely on custom components available from only a single source, creating a high potential for supply disruption and price increases (IND_1). This vulnerability is magnified by a manufacturing footprint concentrated in regions like China, India, and Vietnam, which are directly impacted by geopolitical events (IND_2). The announcement of new U.S. tariffs in 2025 further exacerbates this risk, threatening to materially increase costs for hardware components imported from these key regions (IND_3). Ultimately, this dependence on a handful of outsourcing partners for the supply and manufacture of many critical components (IND_6) means that while the hardware model generates substantial revenue, it remains far more exposed to geopolitical trade disputes and logistical shocks than a software-centric business.",
+      "referenced_indicators": [
+        {
+          "indicator_id": "IND_1",
+          "indicator_name": "Single-Source Component Vulnerability"
+        },
+        {
+          "indicator_id": "IND_2",
+          "indicator_name": "Global Manufacturing Footprint"
+        },
+        {
+          "indicator_id": "IND_3",
+          "indicator_name": "U.S. Tariff Impacts (2025)"
+        },
+        {
+          "indicator_id": "IND_6",
+          "indicator_name": "Critical Component Supply Chain Concentration"
+        },
+        {
+          "indicator_id": "IND_11",
+          "indicator_name": "net_sales_table"
+        }
+      ],
+      "indicator_lookup": {
+        "IND_1": "Single-Source Component Vulnerability",
+        "IND_2": "Global Manufacturing Footprint",
+        "IND_3": "U.S. Tariff Impacts (2025)",
+        "IND_4": "Semiconductor Trade Investigation",
+        "IND_5": "Climate Change and Natural Disaster Risk",
+        "IND_6": "Critical Component Supply Chain Concentration",
+        "IND_7": "EU Regulatory Compliance Actions (DMA)",
+        "IND_8": "DOJ Antitrust Lawsuit for Monopolization",
+        "IND_9": "Macroeconomic Impact of Trade Disputes",
+        "IND_10": "Impact of International Trade Restrictions",
+        "IND_11": "net_sales_table",
+        "IND_12": "cost_of_sales_table",
+        "IND_13": "gross_margin_table",
+        "IND_14": "operating_results_table",
+        "IND_15": "unconditional_purchase_obligations_table"
+      }
+    }
+  ],
+  "stage3_global_synthesis": {
+    "synthesis_brief": [
+      {
+        "pillar_index": 0,
+        "pillar": "Strategic Business Operations and Product Ecosystem",
+        "paragraph": "In terms of Strategic Business Operations and Product Ecosystem, Apple’s hardware-centric model is primarily driven by its strategy of designing nearly the entire product solution, from hardware to the operating system and related services (IND_3). This vertically integrated approach underpins a business where Product sales, reaching $307 billion in 2025, constitute the vast majority of revenue, though the company acknowledges holding a minority market share across its key hardware segments (IND_4, IND_11). While iPhone sales grew 4% in 2025, demonstrating the continued dependence on this single category, the company's business development trajectory clearly shows a strategic pivot toward its more profitable Services segment (IND_7). This shift is highlighted by the 14% growth in Services net sales, a move likely motivated by its superior 75.4% gross margin compared to the 36.8% margin for Products (IND_8, IND_9). However, the hardware focus brings inherent operational risks, including vulnerability from single-sourcing for certain components and a heavy reliance on indirect distribution channels which account for 60% of net sales (IND_10, IND_5). Therefore, Apple’s model contrasts with a software-first approach by leveraging its premium, integrated hardware as a platform to cultivate a high-margin, growing services business, thereby mitigating the lower margins and supply chain risks of its physical product operations.",
+        "referenced_indicator_names": [
+          "Integrated Product Ecosystem Development",
+          "Market Share Positioning in Hardware",
+          "Distribution Channel Strategy",
+          "iPhone Revenue Growth Strategy",
+          "Services Revenue Drivers",
+          "Product Gross Margin Influences",
+          "Supply Chain Single-Sourcing Vulnerability",
+          "net_sales_table"
+        ],
+        "referenced_indicator_ids": [
+          "IND_3",
+          "IND_4",
+          "IND_5",
+          "IND_7",
+          "IND_8",
+          "IND_9",
+          "IND_10",
+          "IND_11"
+        ]
+      },
+      {
+        "pillar_index": 1,
+        "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+        "paragraph": "In terms of Financial Performance, Capital Allocation, and Shareholder Value, Apple's hybrid model demonstrates the strength of its hardware foundation being increasingly complemented by a high-growth, high-margin services segment. While the hardware-centric iPhone business remains the primary revenue driver, its net sales grew 4% to $209.6 billion in 2025, and Mac sales grew 12% to $33.7 billion (IND_13). However, this hardware focus faces profitability headwinds, as the overall Products gross margin percentage slightly declined to 36.8% (IND_14), reflecting acknowledged downward pressures from industry-wide pricing and component costs (IND_2). In stark contrast, the software-focused Services segment provided a more potent growth engine, with net sales increasing 14% to $109.2 billion, driven by higher transaction volumes and a different mix of services (IND_4). Crucially, this segment operates at a substantially higher gross margin of 75.4% (IND_14), bolstering the company's overall financial performance and demonstrating a more profitable growth trajectory. This robust financial engine enables an aggressive capital allocation strategy, exemplified by the repurchase of $89.3 billion in stock during 2025 (IND_7) under a program newly authorized for an additional $100 billion (IND_3), directly converting operational success from both business models into significant shareholder value.",
+        "referenced_indicator_names": [
+          "Gross Margin Volatility Drivers",
+          "May 2025 Share Repurchase Program Authorization",
+          "Services Revenue Drivers",
+          "Capital Return Program Execution",
+          "products_and_services_performance_table",
+          "gross_margin_table"
+        ],
+        "referenced_indicator_ids": [
+          "IND_2",
+          "IND_3",
+          "IND_4",
+          "IND_7",
+          "IND_13",
+          "IND_14"
+        ]
+      },
+      {
+        "pillar_index": 2,
+        "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+        "paragraph": "In terms of Global Risk Profile and External Environmental Vulnerabilities, Apple's hardware-centric model continues to drive financial growth, with product net sales increasing from $294.9 billion to $307.0 billion in fiscal 2025 (IND_11). However, this success is coupled with significant external risks inherent to a physical supply chain, as new products often rely on custom components available from only a single source, creating a high potential for supply disruption and price increases (IND_1). This vulnerability is magnified by a manufacturing footprint concentrated in regions like China, India, and Vietnam, which are directly impacted by geopolitical events (IND_2). The announcement of new U.S. tariffs in 2025 further exacerbates this risk, threatening to materially increase costs for hardware components imported from these key regions (IND_3). Ultimately, this dependence on a handful of outsourcing partners for the supply and manufacture of many critical components (IND_6) means that while the hardware model generates substantial revenue, it remains far more exposed to geopolitical trade disputes and logistical shocks than a software-centric business.",
+        "referenced_indicator_names": [
+          "Single-Source Component Vulnerability",
+          "Global Manufacturing Footprint",
+          "U.S. Tariff Impacts (2025)",
+          "Critical Component Supply Chain Concentration",
+          "net_sales_table"
+        ],
+        "referenced_indicator_ids": [
+          "IND_1",
+          "IND_2",
+          "IND_3",
+          "IND_6",
+          "IND_11"
+        ]
+      }
+    ],
+    "tree_graph": {
+      "root_id": "ROOT",
+      "nodes": [
+        {
+          "node_id": "ROOT",
+          "node_type": "root",
+          "label": "Global Conclusion Root",
+          "selected": true
+        },
+        {
+          "node_id": "PILLAR_1",
+          "node_type": "pillar",
+          "pillar": "Strategic Business Operations and Product Ecosystem",
+          "label": "Strategic Business Operations and Product Ecosystem",
+          "selected": true
+        },
+        {
+          "node_id": "PILLAR_2",
+          "node_type": "pillar",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "label": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "selected": true
+        },
+        {
+          "node_id": "N_2_1",
+          "node_type": "indicator_candidate",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "pillar_index": 1,
+          "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+          "indicator_id": "IND_13",
+          "indicator_name": "products_and_services_performance_table",
+          "selection_score": 4.95,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "products_and_services_performance_table",
+            "raw_indicator": {
+              "indicator_name": "products_and_services_performance_table",
+              "source_page": 29,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "iPhone",
+                  "factoid_question": "What was the total net sales for the iPhone in 2025?",
+                  "relevance_rationale": "As the primary revenue driver, iPhone sales define Apple's hardware-centric business and dictate its global market influence.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Category": "iPhone",
+                    "2025": "$ 209,586",
+                    "Change_2025_vs_2024": "4 %",
+                    "2024": "$ 201,183",
+                    "Change_2024_vs_2023": "— %",
+                    "2023": "$ 200,583"
+                  },
+                  "linked_text_evidence_id": "[P:29|ID:text_b5]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b5",
+                      "page": 64,
+                      "text": "Senior Vice President, Chief Financial Officer",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 42,
+                      "text": "2025 2024 2023 iPhone $ 209,586 $ 201,183 $ 200,583 Mac 33,708 29,984 29,357 iPad 28,023 26,694 28,300 Wearables, Home and Accessories 35,686 37,005 39,845 Services “) 109,158 96,169 85,200 Total net sales $ 416,161 §$ 391,035 $ 383,285 Portion of total net sales that was included in deferred revenue as of the beginning of the period $ 8,229 §$ 7,728 $ 8,169",
+                      "score": 0.7865042090415955,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 29,
+                      "text": "2025 Change 2024 Change 2023 iPhone $ 209,586 4% $ 201,183 —% §$ 200,583 Mac 33,708 12 % 29,984 2% 29,357 iPad 28,023 5% 26,694 (6) % 28,300 Wearables, Home and Accessories 35,686 (4) % 37,005 (7) % 39,845 Services “) 109,158 14 % 96,169 13 % 85,200 Total net sales $ 416,161 6% $ 391,035 2% §$ 383,285",
+                      "score": 0.768623411655426,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Mac",
+                  "factoid_question": "What was the net sales for Mac in 2025?",
+                  "relevance_rationale": "Mac sales track the performance of Apple's computing division, indicating resilience in the premium hardware sector.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Category": "Mac",
+                    "2025": "33,708",
+                    "Change_2025_vs_2024": "12 %",
+                    "2024": "29,984",
+                    "Change_2024_vs_2023": "2 %",
+                    "2023": "29,357"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b16]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b16",
+                      "page": 64,
+                      "text": "Name Title Date Chief Executive Officer and Director October 31, 2025 /s/ Timothy D. Cook (Principal Executive Officer) TIMOTHY D. COOK Senior Vice President, Chief Financial Officer October 31, 2025 /s/ Kevan Parekh (Principal Financial Officer) KEVAN PAREKH Senior Director of Corporate Accounting October 31, 2025 /s/ Chris Kondo (Principal Accounting Officer) CHRIS KONDO October 31, 2025 /s/ Wanda Austin Director WANDA AUSTIN October 31, 2025 /s/ Alex Gorsky Director ALEX GORSKY . October 31, 2025 /s/ Andrea Jung Director ANDREA JUNG October 31, 2025 /s/ Arthur D. Levinson Director and Chair of the Board",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b6",
+                      "page": 29,
+                      "text": "Mac Mac net sales increased during 2025 compared to 2024 primarily due to higher net sales of laptops and desktops.",
+                      "score": 0.8004782795906067,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 42,
+                      "text": "2025 2024 2023 iPhone $ 209,586 $ 201,183 $ 200,583 Mac 33,708 29,984 29,357 iPad 28,023 26,694 28,300 Wearables, Home and Accessories 35,686 37,005 39,845 Services “) 109,158 96,169 85,200 Total net sales $ 416,161 §$ 391,035 $ 383,285 Portion of total net sales that was included in deferred revenue as of the beginning of the period $ 8,229 §$ 7,728 $ 8,169",
+                      "score": 0.7613964080810547,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "iPad",
+                  "factoid_question": "How much was the net sales for the iPad in 2025?",
+                  "relevance_rationale": "iPad revenue reflects the tablets market dynamics and Apple's ability to maintain a leading position in diverse hardware categories.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Category": "iPad",
+                    "2025": "28,023",
+                    "Change_2025_vs_2024": "5 %",
+                    "2024": "26,694",
+                    "Change_2024_vs_2023": "(6) %",
+                    "2023": "28,300"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 61,
+                      "text": "4.13 Officer's Certificate of the Registrant, dated as of February 9, 2017, including forms of global notes 8-K 44 2/9/17 representing the Floating Rate Notes due 2019, Floating Rate Notes due 2020, Floating Rate Notes due 2022, 1.550% Notes due 2019, 1.900% Notes due 2020, 2.500% Notes due 2022 3.000% Notes due 2024, 3.350% Notes due 2027 and 4.250% Notes due 2047.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 42,
+                      "text": "2025 2024 2023 iPhone $ 209,586 $ 201,183 $ 200,583 Mac 33,708 29,984 29,357 iPad 28,023 26,694 28,300 Wearables, Home and Accessories 35,686 37,005 39,845 Services “) 109,158 96,169 85,200 Total net sales $ 416,161 §$ 391,035 $ 383,285 Portion of total net sales that was included in deferred revenue as of the beginning of the period $ 8,229 §$ 7,728 $ 8,169",
+                      "score": 0.7595032453536987,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 29,
+                      "text": "2025 Change 2024 Change 2023 iPhone $ 209,586 4% $ 201,183 —% §$ 200,583 Mac 33,708 12 % 29,984 2% 29,357 iPad 28,023 5% 26,694 (6) % 28,300 Wearables, Home and Accessories 35,686 (4) % 37,005 (7) % 39,845 Services “) 109,158 14 % 96,169 13 % 85,200 Total net sales $ 416,161 6% $ 391,035 2% §$ 383,285",
+                      "score": 0.753376841545105,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Wearables, Home and Accessories",
+                  "factoid_question": "What was the net sales for Wearables, Home and Accessories in 2025?",
+                  "relevance_rationale": "This segment captures auxiliary hardware sales, highlighting ecosystem lock-in and product cross-selling effectiveness.",
+                  "source_text_id": "table_0.row_3",
+                  "values": {
+                    "Category": "Wearables, Home and Accessories",
+                    "2025": "35,686",
+                    "Change_2025_vs_2024": "(4) %",
+                    "2024": "37,005",
+                    "Change_2024_vs_2023": "(7) %",
+                    "2023": "39,845"
+                  },
+                  "linked_text_evidence_id": "[P:29|ID:text_b8]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b8",
+                      "page": 64,
+                      "text": "Pursuant to the requirements of the Securities Exchange Act of 1934, this report has been signed below by the following persons on behalf of the Registrant and in the capacities and on the dates indicated:",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 42,
+                      "text": "2025 2024 2023 iPhone $ 209,586 $ 201,183 $ 200,583 Mac 33,708 29,984 29,357 iPad 28,023 26,694 28,300 Wearables, Home and Accessories 35,686 37,005 39,845 Services “) 109,158 96,169 85,200 Total net sales $ 416,161 §$ 391,035 $ 383,285 Portion of total net sales that was included in deferred revenue as of the beginning of the period $ 8,229 §$ 7,728 $ 8,169",
+                      "score": 0.7664632797241211,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 29,
+                      "text": "2025 Change 2024 Change 2023 iPhone $ 209,586 4% $ 201,183 —% §$ 200,583 Mac 33,708 12 % 29,984 2% 29,357 iPad 28,023 5% 26,694 (6) % 28,300 Wearables, Home and Accessories 35,686 (4) % 37,005 (7) % 39,845 Services “) 109,158 14 % 96,169 13 % 85,200 Total net sales $ 416,161 6% $ 391,035 2% §$ 383,285",
+                      "score": 0.7499179840087891,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Services (1)",
+                  "factoid_question": "What was the total net sales for the Services category in 2025?",
+                  "relevance_rationale": "Comparing Services to hardware categories is essential to analyze the shift toward a high-margin recurring revenue model.",
+                  "source_text_id": "table_0.row_4",
+                  "values": {
+                    "Category": "Services (1)",
+                    "2025": "109,158",
+                    "Change_2025_vs_2024": "14 %",
+                    "2024": "96,169",
+                    "Change_2024_vs_2023": "13 %",
+                    "2023": "85,200"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b9]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b9",
+                      "page": 63,
+                      "text": "Apple Inc. | 2025 Form 10-K | 57",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 29,
+                      "text": "The following table shows net sales by category for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.7700457572937012,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.7349981665611267,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total net sales",
+                  "factoid_question": "What was the consolidated total net sales in 2025?",
+                  "relevance_rationale": "This total aggregates all product and service streams, providing a consolidated view of top-line performance.",
+                  "source_text_id": "table_0.row_5",
+                  "values": {
+                    "Category": "Total net sales",
+                    "2025": "$ 416,161",
+                    "Change_2025_vs_2024": "6 %",
+                    "2024": "$ 391,035",
+                    "Change_2024_vs_2023": "2 %",
+                    "2023": "$ 383,285"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b13]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b13",
+                      "page": 61,
+                      "text": "4.16 Officer's Certificate of the Registrant, dated as of June 20, 2017, including form of global note 8-K 44 6/20/17 representing the 3.000% Notes due 2027.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.7788103818893433,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b4",
+                      "page": 35,
+                      "text": "September 27, September 28, September 30, 2025 2024 2023 Net sales: Products $ 307,003 $ 294,866 $ 298,085 Services 109,158 96,169 85,200 Total net sales 416,161 391,035 383,285 Cost of sales: Products 194,116 185,233 189,282 Services 26,844 25,119 24,855 Total cost of sales 220,960 210,352 214,137 Gross margin 195,201 180,683 169,148 Operating expenses: Research and development 34,550 31,370 29,915 Selling, general and administrative 27,601 26,097 24,932 Total operating expenses ~~ 62,151 57,467 54,847 Operating income 133,050 123,216 114,301 Other income/(expense), net (321) 269 (565) Income before provision for income taxes ~~ $32,729 123,485 113,736 Provision for income taxes 20,719 29,749 16,741 Net income $ 112,010 $ 93,736 $ 96,995 Earnings per share: Basic $ 749 § 6.11 §$ 6.16 Diluted $ 7.46 $ 6.08 $ 6.13 Shares used in computing earnings per share: Basic 14,948,500 15,343,783 15,744,231 Diluted 15,004,697 15,408,095 15,812,547",
+                      "score": 0.764502763748169,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Net Sales",
+                "comparison": "2025 vs 2024"
+              },
+              "trend_or_claim_sentence": "iPhone net sales increased to $209,586 million in 2025, representing a 4% growth over the previous year.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Higher unit sales and product mix improvements in the iPhone category",
+                  "source_hint": "text_b12"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+              "query_domain": "Apple’s hardware-focused model",
+              "document_entities": [
+                "iPhone",
+                "Americas",
+                "Greater China"
+              ],
+              "alignment_relation": "direct",
+              "confidence": 1.0,
+              "rationale": "iPhone represents the core component of Apple's hardware-focused revenue model."
+            },
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:products_and_services_performance_table|sub:iPhone",
+              "indicator_id": "IND_13",
+              "sentence": "iPhone net sales increased to $209,586 million in 2025, representing a 4% growth over the previous year. Because Higher unit sales and product mix improvements in the iPhone category.",
+              "score": 4.2
+            }
+          }
+        },
+        {
+          "node_id": "N_2_2",
+          "node_type": "indicator_candidate",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "pillar_index": 1,
+          "indicator_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+          "indicator_id": "IND_14",
+          "indicator_name": "gross_margin_table",
+          "selection_score": 3.5,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "gross_margin_table",
+            "raw_indicator": {
+              "indicator_name": "gross_margin_table",
+              "source_page": 30,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Products",
+                  "factoid_question": "What was the total gross margin for Products in 2025?",
+                  "relevance_rationale": "Product gross margin reflects the raw profitability of Apple's physical devices, a core component of its business model.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Gross margin": "Products",
+                    "2025": "$ 112,887",
+                    "2024": "$ 109,633",
+                    "2023": "$ 108,803"
+                  },
+                  "linked_text_evidence_id": "[P:31|ID:text_b17]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b17",
+                      "page": 64,
+                      "text": "ARTHUR D. LEVINSON",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.858924925327301,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 30,
+                      "text": "Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.7804399728775024,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Services",
+                  "factoid_question": "What was the total gross margin for Services in 2025?",
+                  "relevance_rationale": "Services gross margin is significantly higher than hardware, illustrating the profit shift as the software ecosystem expands.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Gross margin": "Services",
+                    "2025": "82,314",
+                    "2024": "71,050",
+                    "2023": "60,345"
+                  },
+                  "linked_text_evidence_id": "[P:31|ID:text_b6]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b6",
+                      "page": 64,
+                      "text": "Power of Attorney",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.8729509115219116,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 30,
+                      "text": "Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.7583593130111694,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total gross margin",
+                  "factoid_question": "How much was the total gross margin for the fiscal year 2025?",
+                  "relevance_rationale": "Total gross margin indicates the blended efficiency of the entire business portfolio across all categories.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Gross margin": "Total gross margin",
+                    "2025": "$ 195,201",
+                    "2024": "$ 180,683",
+                    "2023": "$ 169,148"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b10]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b10",
+                      "page": 61,
+                      "text": "4.13 Officer's Certificate of the Registrant, dated as of February 9, 2017, including forms of global notes 8-K 44 2/9/17 representing the Floating Rate Notes due 2019, Floating Rate Notes due 2020, Floating Rate Notes due 2022, 1.550% Notes due 2019, 1.900% Notes due 2020, 2.500% Notes due 2022 3.000% Notes due 2024, 3.350% Notes due 2027 and 4.250% Notes due 2047.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.7684619426727295,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b4",
+                      "page": 35,
+                      "text": "September 27, September 28, September 30, 2025 2024 2023 Net sales: Products $ 307,003 $ 294,866 $ 298,085 Services 109,158 96,169 85,200 Total net sales 416,161 391,035 383,285 Cost of sales: Products 194,116 185,233 189,282 Services 26,844 25,119 24,855 Total cost of sales 220,960 210,352 214,137 Gross margin 195,201 180,683 169,148 Operating expenses: Research and development 34,550 31,370 29,915 Selling, general and administrative 27,601 26,097 24,932 Total operating expenses ~~ 62,151 57,467 54,847 Operating income 133,050 123,216 114,301 Other income/(expense), net (321) 269 (565) Income before provision for income taxes ~~ $32,729 123,485 113,736 Provision for income taxes 20,719 29,749 16,741 Net income $ 112,010 $ 93,736 $ 96,995 Earnings per share: Basic $ 749 § 6.11 §$ 6.16 Diluted $ 7.46 $ 6.08 $ 6.13 Shares used in computing earnings per share: Basic 14,948,500 15,343,783 15,744,231 Diluted 15,004,697 15,408,095 15,812,547",
+                      "score": 0.7250961065292358,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Gross margin percentage: Products",
+                  "factoid_question": "What was the gross margin percentage for Products in 2025?",
+                  "relevance_rationale": "Percentage margins for products are critical for benchmarking Apple against other hardware manufacturers.",
+                  "source_text_id": "table_0.row_3",
+                  "values": {
+                    "Gross margin": "Gross margin percentage: Products",
+                    "2025": "36.8%",
+                    "2024": "37.2%",
+                    "2023": "36.5%"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b9]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b9",
+                      "page": 63,
+                      "text": "Apple Inc. | 2025 Form 10-K | 57",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.8349534273147583,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 30,
+                      "text": "Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.7796050310134888,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Gross margin percentage: Services",
+                  "factoid_question": "What was the gross margin percentage for Services in 2025?",
+                  "relevance_rationale": "High services margins highlight the software component's contribution to Apple's bottom line compared to hardware.",
+                  "source_text_id": "table_0.row_4",
+                  "values": {
+                    "Gross margin": "Gross margin percentage: Services",
+                    "2025": "75.4%",
+                    "2024": "73.9%",
+                    "2023": "70.8%"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b9]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b9",
+                      "page": 63,
+                      "text": "Apple Inc. | 2025 Form 10-K | 57",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.8498448133468628,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 30,
+                      "text": "Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.7606714367866516,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total gross margin percentage",
+                  "factoid_question": "What was the total gross margin percentage for the company in 2025?",
+                  "relevance_rationale": "Blended margin percentages reveal the overall pricing power and cost management success of the company.",
+                  "source_text_id": "table_0.row_5",
+                  "values": {
+                    "Gross margin": "Total gross margin percentage",
+                    "2025": "46.9%",
+                    "2024": "46.2%",
+                    "2023": "44.1%"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b9]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b9",
+                      "page": 63,
+                      "text": "Apple Inc. | 2025 Form 10-K | 57",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.8314388394355774,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 30,
+                      "text": "Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.7583194375038147,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "down",
+                "focus_metric": "Gross Margin %",
+                "comparison": "2025 vs 2024"
+              },
+              "trend_or_claim_sentence": "The gross margin percentage for Products declined slightly from 37.2% in 2024 to 36.8% in 2025.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Industry-wide global product pricing pressures and shifts in product mix",
+                  "source_hint": "text_b8"
+                },
+                {
+                  "cause_clause": "Potential increases in component costs and outside manufacturing services",
+                  "source_hint": "text_b8"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+              "indicator_id": "IND_14",
+              "sentence": "The gross margin percentage for Products declined slightly from 37.2% in 2024 to 36.8% in 2025. Because Industry-wide global product pricing pressures and shifts in product mix and Potential increases in component costs and outside manufacturing services.",
+              "score": 3.2
+            }
+          }
+        },
+        {
+          "node_id": "N_2_3",
+          "node_type": "indicator_candidate",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "pillar_index": 1,
+          "indicator_ref": "narrative:Services Revenue Drivers",
+          "indicator_id": "IND_4",
+          "indicator_name": "Services Revenue Drivers",
+          "selection_score": 2.35,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Services Revenue Drivers",
+            "raw_indicator": {
+              "indicator_name": "Services Revenue Drivers",
+              "factoid_question": "What were the primary components driving the increase in Services net sales during 2025?",
+              "source_text_id": "text_b9",
+              "source_page": 29,
+              "is_quantitative": false,
+              "rationale_from_extraction": "Specifies the components of the high-growth ecosystem-focused Services portfolio.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b12",
+                  "page": 28,
+                  "text": "Americas net sales increased during 2025 compared to 2024 primarily due to higher net sales of iPhone and Services. The weakness in foreign currencies relative to the U.S. dollar had an unfavorable year-over-year impact on Americas net sales during 2025.",
+                  "score": 0.6639180183410645,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b8",
+                  "page": 30,
+                  "text": "Services Gross Margin Services gross margin increased during 2025 compared to 2024 primarily due to higher Services net sales and a different mix of services.",
+                  "score": 0.638323962688446,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b21",
+                  "page": 28,
+                  "text": "Rest of Asia Pacific net sales increased during 2025 compared to 2024 primarily due to higher net sales of iPhone, Services and Mac.",
+                  "score": 0.6363142728805542,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Services Revenue Drivers",
+              "indicator_type": "narrative",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Services Net Sales",
+                "comparison": "2025 vs 2024"
+              },
+              "trend_or_claim_sentence": "Services net sales grew by 14% in 2025, reaching $109,158 million, driven by diverse service offerings.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Higher volume of transactions and a different mix of services offered",
+                  "source_hint": "text_b8"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Services Revenue Drivers",
+              "indicator_id": "IND_4",
+              "sentence": "Services net sales grew by 14% in 2025, reaching $109,158 million, driven by diverse service offerings. Because Higher volume of transactions and a different mix of services offered.",
+              "score": 2.2
+            }
+          }
+        },
+        {
+          "node_id": "N_2_4",
+          "node_type": "indicator_candidate",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "pillar_index": 1,
+          "indicator_ref": "table:operating_expenses_table|sub:Research and development",
+          "indicator_id": "IND_15",
+          "indicator_name": "operating_expenses_table",
+          "selection_score": 2.55,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "operating_expenses_table",
+            "raw_indicator": {
+              "indicator_name": "operating_expenses_table",
+              "source_page": 30,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Research and development",
+                  "factoid_question": "How much did Apple spend on Research and development in 2025?",
+                  "relevance_rationale": "R&D spending is fundamental to maintaining a competitive edge in hardware innovation and software integration.",
+                  "source_text_id": "table_1.row_0",
+                  "values": {
+                    "Operating expenses": "Research and development",
+                    "2025": "$ 34,550",
+                    "Change (2025 vs 2024)": "10 %",
+                    "2024": "$ 31,370",
+                    "Change (2024 vs 2023)": "5 %",
+                    "2023": "$ 29,915"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b14]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b14",
+                      "page": 61,
+                      "text": "4.17 Officer's Certificate of the Registrant, dated as of September 12, 2017, including forms of global 8-K 44 9/12/17 notes representing the 1.500% Notes due 2019, 2.100% Notes due 2022, 2.900% Notes due 2027 and 3.750% Notes due 2047. 4.18 Officer's Certificate of the Registrant, dated as of November 13, 2017, including forms of global 8-K 44 11/13/17",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 42,
+                      "text": "2025 2024 2023 iPhone $ 209,586 $ 201,183 $ 200,583 Mac 33,708 29,984 29,357 iPad 28,023 26,694 28,300 Wearables, Home and Accessories 35,686 37,005 39,845 Services “) 109,158 96,169 85,200 Total net sales $ 416,161 §$ 391,035 $ 383,285 Portion of total net sales that was included in deferred revenue as of the beginning of the period $ 8,229 §$ 7,728 $ 8,169",
+                      "score": 0.7166024446487427,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b3",
+                      "page": 29,
+                      "text": "2025 Change 2024 Change 2023 iPhone $ 209,586 4% $ 201,183 —% §$ 200,583 Mac 33,708 12 % 29,984 2% 29,357 iPad 28,023 5% 26,694 (6) % 28,300 Wearables, Home and Accessories 35,686 (4) % 37,005 (7) % 39,845 Services “) 109,158 14 % 96,169 13 % 85,200 Total net sales $ 416,161 6% $ 391,035 2% §$ 383,285",
+                      "score": 0.6914144158363342,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Percentage of total net sales",
+                  "factoid_question": "What percentage of net sales was R&D in 2025?",
+                  "relevance_rationale": "Measuring R&D as a percentage of sales tracks the efficiency of innovation relative to revenue generation.",
+                  "source_text_id": "table_1.row_1",
+                  "values": {
+                    "Operating expenses": "Percentage of total net sales",
+                    "2025": "8%",
+                    "Change (2025 vs 2024)": null,
+                    "2024": "8%",
+                    "Change (2024 vs 2023)": null,
+                    "2023": "8%"
+                  },
+                  "linked_text_evidence_id": "[P:31|ID:text_b12]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b12",
+                      "page": 61,
+                      "text": "4.15 Officer's Certificate of the Registrant, dated_as of May 24, 2017, including forms of global notes 8-K 44 5/24/17 representing the 0.875% Notes due 2025 and 1.375% Notes due 2029.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b13",
+                      "page": 30,
+                      "text": "2025 Change 2024 Change 2023 Research and development $ 34,550 10 % §$ 31,370 5 % §$ 29,915 Percentage of total net sales 8% 8% 8% Selling, general and administrative $ 27,601 6% §$ 26,097 5 % §$ 24,932 Percentage of total net sales 7% 7% 7% Total operating expenses $ 62,151 8% §$ 57,467 5 % §$ 54,847 Percentage of total net sales 15% 15% 14%",
+                      "score": 0.682892918586731,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.6629008054733276,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Selling, general and administrative",
+                  "factoid_question": "What was the total SG&A expense in 2025?",
+                  "relevance_rationale": "SG&A expenses reflect the costs of maintaining Apple's massive retail footprint and global marketing efforts.",
+                  "source_text_id": "table_1.row_2",
+                  "values": {
+                    "Operating expenses": "Selling, general and administrative",
+                    "2025": "$ 27,601",
+                    "Change (2025 vs 2024)": "6 %",
+                    "2024": "$ 26,097",
+                    "Change (2024 vs 2023)": "5 %",
+                    "2023": "$ 24,932"
+                  },
+                  "linked_text_evidence_id": "[P:30|ID:text_b16]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b16",
+                      "page": 64,
+                      "text": "Name Title Date Chief Executive Officer and Director October 31, 2025 /s/ Timothy D. Cook (Principal Executive Officer) TIMOTHY D. COOK Senior Vice President, Chief Financial Officer October 31, 2025 /s/ Kevan Parekh (Principal Financial Officer) KEVAN PAREKH Senior Director of Corporate Accounting October 31, 2025 /s/ Chris Kondo (Principal Accounting Officer) CHRIS KONDO October 31, 2025 /s/ Wanda Austin Director WANDA AUSTIN October 31, 2025 /s/ Alex Gorsky Director ALEX GORSKY . October 31, 2025 /s/ Andrea Jung Director ANDREA JUNG October 31, 2025 /s/ Arthur D. Levinson Director and Chair of the Board",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b13",
+                      "page": 30,
+                      "text": "2025 Change 2024 Change 2023 Research and development $ 34,550 10 % §$ 31,370 5 % §$ 29,915 Percentage of total net sales 8% 8% 8% Selling, general and administrative $ 27,601 6% §$ 26,097 5 % §$ 24,932 Percentage of total net sales 7% 7% 7% Total operating expenses $ 62,151 8% §$ 57,467 5 % §$ 54,847 Percentage of total net sales 15% 15% 14%",
+                      "score": 0.7186295390129089,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b12",
+                      "page": 30,
+                      "text": "Operating expenses for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.6809638738632202,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Percentage of total net sales",
+                  "factoid_question": "What percentage of net sales was SG&A in 2025?",
+                  "relevance_rationale": "This ratio indicates Apple's operational leverage and efficiency in managing non-production costs.",
+                  "source_text_id": "table_1.row_3",
+                  "values": {
+                    "Operating expenses": "Percentage of total net sales",
+                    "2025": "7%",
+                    "Change (2025 vs 2024)": null,
+                    "2024": "7%",
+                    "Change (2024 vs 2023)": null,
+                    "2023": "7%"
+                  },
+                  "linked_text_evidence_id": "[P:31|ID:text_b12]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b12",
+                      "page": 61,
+                      "text": "4.15 Officer's Certificate of the Registrant, dated_as of May 24, 2017, including forms of global notes 8-K 44 5/24/17 representing the 0.875% Notes due 2025 and 1.375% Notes due 2029.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b13",
+                      "page": 30,
+                      "text": "2025 Change 2024 Change 2023 Research and development $ 34,550 10 % §$ 31,370 5 % §$ 29,915 Percentage of total net sales 8% 8% 8% Selling, general and administrative $ 27,601 6% §$ 26,097 5 % §$ 24,932 Percentage of total net sales 7% 7% 7% Total operating expenses $ 62,151 8% §$ 57,467 5 % §$ 54,847 Percentage of total net sales 15% 15% 14%",
+                      "score": 0.7044323682785034,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 30,
+                      "text": "2025 2024 2023 Gross margin: _ Products $ 112,887 $ 109,633 $ 108,803 Services 82,314 71,050 60,345 Total gross margin $ 195,201 $ 180,683 $ 169,148 Gross margin percentage: Products 36.8% 37.2% 36.5% Services 75.4% 73.9% 70.8% Total gross margin percentage 46.9% 46.2% 44.1%",
+                      "score": 0.6939435601234436,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total operating expenses",
+                  "factoid_question": "What were the total operating expenses in 2025?",
+                  "relevance_rationale": "Consolidated operating expenses determine the operating margin and overall profitability from core business activities.",
+                  "source_text_id": "table_1.row_4",
+                  "values": {
+                    "Operating expenses": "Total operating expenses",
+                    "2025": "$ 62,151",
+                    "Change (2025 vs 2024)": "8 %",
+                    "2024": "$ 57,467",
+                    "Change (2024 vs 2023)": "5 %",
+                    "2023": "$ 54,847"
+                  },
+                  "linked_text_evidence_id": "[P:31|ID:text_b12]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b12",
+                      "page": 61,
+                      "text": "4.15 Officer's Certificate of the Registrant, dated_as of May 24, 2017, including forms of global notes 8-K 44 5/24/17 representing the 0.875% Notes due 2025 and 1.375% Notes due 2029.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b13",
+                      "page": 30,
+                      "text": "2025 Change 2024 Change 2023 Research and development $ 34,550 10 % §$ 31,370 5 % §$ 29,915 Percentage of total net sales 8% 8% 8% Selling, general and administrative $ 27,601 6% §$ 26,097 5 % §$ 24,932 Percentage of total net sales 7% 7% 7% Total operating expenses $ 62,151 8% §$ 57,467 5 % §$ 54,847 Percentage of total net sales 15% 15% 14%",
+                      "score": 0.7497953176498413,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b4",
+                      "page": 35,
+                      "text": "September 27, September 28, September 30, 2025 2024 2023 Net sales: Products $ 307,003 $ 294,866 $ 298,085 Services 109,158 96,169 85,200 Total net sales 416,161 391,035 383,285 Cost of sales: Products 194,116 185,233 189,282 Services 26,844 25,119 24,855 Total cost of sales 220,960 210,352 214,137 Gross margin 195,201 180,683 169,148 Operating expenses: Research and development 34,550 31,370 29,915 Selling, general and administrative 27,601 26,097 24,932 Total operating expenses ~~ 62,151 57,467 54,847 Operating income 133,050 123,216 114,301 Other income/(expense), net (321) 269 (565) Income before provision for income taxes ~~ $32,729 123,485 113,736 Provision for income taxes 20,719 29,749 16,741 Net income $ 112,010 $ 93,736 $ 96,995 Earnings per share: Basic $ 749 § 6.11 §$ 6.16 Diluted $ 7.46 $ 6.08 $ 6.13 Shares used in computing earnings per share: Basic 14,948,500 15,343,783 15,744,231 Diluted 15,004,697 15,408,095 15,812,547",
+                      "score": 0.7445391416549683,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Percentage of total net sales",
+                  "factoid_question": "What was the percentage of total operating expenses to net sales in 2025?",
+                  "relevance_rationale": "This final ratio summarizes the overall cost intensity of supporting the hardware and services platforms.",
+                  "source_text_id": "table_1.row_5",
+                  "values": {
+                    "Operating expenses": "Percentage of total net sales",
+                    "2025": "15%",
+                    "Change (2025 vs 2024)": null,
+                    "2024": "15%",
+                    "Change (2024 vs 2023)": null,
+                    "2023": "14%"
+                  },
+                  "linked_text_evidence_id": "[P:31|ID:text_b12]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b12",
+                      "page": 61,
+                      "text": "4.15 Officer's Certificate of the Registrant, dated_as of May 24, 2017, including forms of global notes 8-K 44 5/24/17 representing the 0.875% Notes due 2025 and 1.375% Notes due 2029.",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b13",
+                      "page": 30,
+                      "text": "2025 Change 2024 Change 2023 Research and development $ 34,550 10 % §$ 31,370 5 % §$ 29,915 Percentage of total net sales 8% 8% 8% Selling, general and administrative $ 27,601 6% §$ 26,097 5 % §$ 24,932 Percentage of total net sales 7% 7% 7% Total operating expenses $ 62,151 8% §$ 57,467 5 % §$ 54,847 Percentage of total net sales 15% 15% 14%",
+                      "score": 0.77823805809021,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b4",
+                      "page": 35,
+                      "text": "September 27, September 28, September 30, 2025 2024 2023 Net sales: Products $ 307,003 $ 294,866 $ 298,085 Services 109,158 96,169 85,200 Total net sales 416,161 391,035 383,285 Cost of sales: Products 194,116 185,233 189,282 Services 26,844 25,119 24,855 Total cost of sales 220,960 210,352 214,137 Gross margin 195,201 180,683 169,148 Operating expenses: Research and development 34,550 31,370 29,915 Selling, general and administrative 27,601 26,097 24,932 Total operating expenses ~~ 62,151 57,467 54,847 Operating income 133,050 123,216 114,301 Other income/(expense), net (321) 269 (565) Income before provision for income taxes ~~ $32,729 123,485 113,736 Provision for income taxes 20,719 29,749 16,741 Net income $ 112,010 $ 93,736 $ 96,995 Earnings per share: Basic $ 749 § 6.11 §$ 6.16 Diluted $ 7.46 $ 6.08 $ 6.13 Shares used in computing earnings per share: Basic 14,948,500 15,343,783 15,744,231 Diluted 15,004,697 15,408,095 15,812,547",
+                      "score": 0.7325211763381958,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:operating_expenses_table|sub:Research and development",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "R&D Spend",
+                "comparison": "2025 vs 2024"
+              },
+              "trend_or_claim_sentence": "Research and development spending increased by 10% to $34,550 million in 2025.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Increased headcount and related expenses to support technical innovation",
+                  "source_hint": "text_b8"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:operating_expenses_table|sub:Research and development",
+              "indicator_id": "IND_15",
+              "sentence": "Research and development spending increased by 10% to $34,550 million in 2025. Because Increased headcount and related expenses to support technical innovation.",
+              "score": 2.4
+            }
+          }
+        },
+        {
+          "node_id": "PILLAR_3",
+          "node_type": "pillar",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "label": "Global Risk Profile and External Environmental Vulnerabilities",
+          "selected": true
+        },
+        {
+          "node_id": "N_3_1",
+          "node_type": "indicator_candidate",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "pillar_index": 2,
+          "indicator_ref": "table:net_sales_table|sub:Products",
+          "indicator_id": "IND_11",
+          "indicator_name": "net_sales_table",
+          "selection_score": 4.95,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "net_sales_table",
+            "raw_indicator": {
+              "indicator_name": "net_sales_table",
+              "source_page": 35,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Products",
+                  "factoid_question": "What was the total net sales for Products on September 27, 2025?",
+                  "relevance_rationale": "Primary top-line metric for the hardware component of the business model.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Item": "Products",
+                    "September 27, 2025": "307,003",
+                    "September 28, 2024": "294,866",
+                    "September 30, 2023": "298,085"
+                  },
+                  "linked_text_evidence_id": "[P:35|ID:text_b4]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b4",
+                      "page": 64,
+                      "text": "By: /s/ Kevan Parekh Kevan Parekh",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.735730767250061,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 29,
+                      "text": "The following table shows net sales by category for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.7312419414520264,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Services",
+                  "factoid_question": "How much revenue was attributed to Services for the period ending September 27, 2025?",
+                  "relevance_rationale": "Tracks the growth of recurring digital revenue which balances the cyclicality of hardware launches.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Item": "Services",
+                    "September 27, 2025": "109,158",
+                    "September 28, 2024": "96,169",
+                    "September 30, 2023": "85,200"
+                  },
+                  "linked_text_evidence_id": "[P:35|ID:text_b4]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b4",
+                      "page": 64,
+                      "text": "By: /s/ Kevan Parekh Kevan Parekh",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b10",
+                      "page": 4,
+                      "text": "For the fiscal year endedSeptember 27, 2025",
+                      "score": 0.6752980351448059,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b12",
+                      "page": 30,
+                      "text": "Operating expenses for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.6543118953704834,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total net sales",
+                  "factoid_question": "What was the total net sales for the fiscal year ending in 2025?",
+                  "relevance_rationale": "The aggregate revenue figure against which all category performance is measured.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Item": "Total net sales",
+                    "September 27, 2025": "416,161",
+                    "September 28, 2024": "391,035",
+                    "September 30, 2023": "383,285"
+                  },
+                  "linked_text_evidence_id": "[P:35|ID:text_b4]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b4",
+                      "page": 64,
+                      "text": "By: /s/ Kevan Parekh Kevan Parekh",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.780462920665741,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b1",
+                      "page": 42,
+                      "text": "The following table shows disaggregated net sales, as well as the portion of total net sales that was previously deferred, for 2025, 2024 and 2023 (in millions):",
+                      "score": 0.7430394887924194,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:net_sales_table|sub:Products",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Net Sales",
+                "comparison": "fiscal 2025 vs 2024"
+              },
+              "trend_or_claim_sentence": "Hardware-driven product sales increased from $294.9 billion to $307.0 billion year-over-year.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Strong consumer demand for new product technologies and hardware iterations",
+                  "source_hint": "text_b11"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "table:net_sales_table|sub:Products",
+              "query_domain": "Apple’s hardware-focused model",
+              "document_entities": [
+                "Apple Inc.",
+                "Products"
+              ],
+              "alignment_relation": "direct",
+              "confidence": 1.0,
+              "rationale": "Directly quantifies the primary output of the hardware-focused business model mentioned in the query."
+            },
+            "narrative_relations": [],
+            "conflict_hits": [
+              {
+                "conflict_type": "causal",
+                "involved_indicator_refs": [
+                  "table:net_sales_table|sub:Products",
+                  "narrative:Macroeconomic Impact of Trade Disputes"
+                ],
+                "description": "Historical sales for hardware products show steady growth, whereas narrative indicators warn of shifts and reductions in consumer spending due to trade disputes.",
+                "resolution": "The historical financials reflect past demand, while the narrative indicators highlight emerging forward-looking risks from 2025 tariff announcements that have not yet fully impacted fiscal 2025 results."
+              }
+            ],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:net_sales_table|sub:Products",
+              "indicator_id": "IND_11",
+              "sentence": "Hardware-driven product sales increased from $294.9 billion to $307.0 billion year-over-year. Because Strong consumer demand for new product technologies and hardware iterations.",
+              "score": 4.2
+            }
+          }
+        },
+        {
+          "node_id": "N_3_2",
+          "node_type": "indicator_candidate",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "pillar_index": 2,
+          "indicator_ref": "table:net_sales_table|sub:Services",
+          "indicator_id": "IND_11",
+          "indicator_name": "net_sales_table",
+          "selection_score": 3.94,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "table",
+            "indicator_name": "net_sales_table",
+            "raw_indicator": {
+              "indicator_name": "net_sales_table",
+              "source_page": 35,
+              "sub_indicators": [
+                {
+                  "sub_indicator_name": "Products",
+                  "factoid_question": "What was the total net sales for Products on September 27, 2025?",
+                  "relevance_rationale": "Primary top-line metric for the hardware component of the business model.",
+                  "source_text_id": "table_0.row_0",
+                  "values": {
+                    "Item": "Products",
+                    "September 27, 2025": "307,003",
+                    "September 28, 2024": "294,866",
+                    "September 30, 2023": "298,085"
+                  },
+                  "linked_text_evidence_id": "[P:35|ID:text_b4]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b4",
+                      "page": 64,
+                      "text": "By: /s/ Kevan Parekh Kevan Parekh",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.735730767250061,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b2",
+                      "page": 29,
+                      "text": "The following table shows net sales by category for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.7312419414520264,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Services",
+                  "factoid_question": "How much revenue was attributed to Services for the period ending September 27, 2025?",
+                  "relevance_rationale": "Tracks the growth of recurring digital revenue which balances the cyclicality of hardware launches.",
+                  "source_text_id": "table_0.row_1",
+                  "values": {
+                    "Item": "Services",
+                    "September 27, 2025": "109,158",
+                    "September 28, 2024": "96,169",
+                    "September 30, 2023": "85,200"
+                  },
+                  "linked_text_evidence_id": "[P:35|ID:text_b4]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b4",
+                      "page": 64,
+                      "text": "By: /s/ Kevan Parekh Kevan Parekh",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b10",
+                      "page": 4,
+                      "text": "For the fiscal year endedSeptember 27, 2025",
+                      "score": 0.6752980351448059,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b12",
+                      "page": 30,
+                      "text": "Operating expenses for 2025, 2024 and 2023 were as follows (dollars in millions):",
+                      "score": 0.6543118953704834,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                },
+                {
+                  "sub_indicator_name": "Total net sales",
+                  "factoid_question": "What was the total net sales for the fiscal year ending in 2025?",
+                  "relevance_rationale": "The aggregate revenue figure against which all category performance is measured.",
+                  "source_text_id": "table_0.row_2",
+                  "values": {
+                    "Item": "Total net sales",
+                    "September 27, 2025": "416,161",
+                    "September 28, 2024": "391,035",
+                    "September 30, 2023": "383,285"
+                  },
+                  "linked_text_evidence_id": "[P:35|ID:text_b4]",
+                  "retrieved_evidence": [
+                    {
+                      "id": "text_b4",
+                      "page": 64,
+                      "text": "By: /s/ Kevan Parekh Kevan Parekh",
+                      "score": 1.0,
+                      "type": "text",
+                      "evidence_source": "linked"
+                    },
+                    {
+                      "id": "text_b5",
+                      "page": 28,
+                      "text": "The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+                      "score": 0.780462920665741,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    },
+                    {
+                      "id": "text_b1",
+                      "page": 42,
+                      "text": "The following table shows disaggregated net sales, as well as the portion of total net sales that was previously deferred, for 2025, 2024 and 2023 (in millions):",
+                      "score": 0.7430394887924194,
+                      "type": "text",
+                      "evidence_source": "retrieved"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "table:net_sales_table|sub:Services",
+              "indicator_type": "table",
+              "trend": {
+                "direction": "up",
+                "focus_metric": "Net Sales",
+                "comparison": "fiscal 2025 vs 2024"
+              },
+              "trend_or_claim_sentence": "Services revenue grew significantly to $109.2 billion, representing an expansion of the software-adjacent model.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Growth in digital content, cloud services, and advertising offerings",
+                  "source_hint": "table_indicators"
+                }
+              ]
+            },
+            "entity_alignment": {
+              "indicator_ref": "table:net_sales_table|sub:Services",
+              "query_domain": "Microsoft’s software-focused model",
+              "document_entities": [
+                "Apple Inc.",
+                "Services"
+              ],
+              "alignment_relation": "contextual",
+              "confidence": 0.85,
+              "rationale": "Services represent the software/recurring revenue component of Apple that is most comparable to Microsoft's software-centric model."
+            },
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "table:net_sales_table|sub:Services",
+              "indicator_id": "IND_11",
+              "sentence": "Services revenue grew significantly to $109.2 billion, representing an expansion of the software-adjacent model. Because Growth in digital content, cloud services, and advertising offerings.",
+              "score": 3.28
+            }
+          }
+        },
+        {
+          "node_id": "N_3_3",
+          "node_type": "indicator_candidate",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "pillar_index": 2,
+          "indicator_ref": "narrative:Single-Source Component Vulnerability",
+          "indicator_id": "IND_1",
+          "indicator_name": "Single-Source Component Vulnerability",
+          "selection_score": 3.3,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "Single-Source Component Vulnerability",
+            "raw_indicator": {
+              "indicator_name": "Single-Source Component Vulnerability",
+              "factoid_question": "From how many sources are certain custom components for new products often obtained?",
+              "source_text_id": "text_b4",
+              "source_page": 9,
+              "is_quantitative": false,
+              "rationale_from_extraction": "Highlights systemic risks related to supply chain concentration and dependency on limited suppliers.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b5",
+                  "page": 9,
+                  "text": "The Company uses some custom components that are not commonly used by its competitors, and new products introduced by the Company often utilize custom components available from only one source. When a component or product uses new technologies, initial capacity constraints may exist until the suppliers’ yields have matured or their manufacturing capacities have increased. The Company has entered into agreements for the supply of many components; however, the Company may not be able to extend or renew agreements for the supply of components on similar terms, or at all, and may not be successful in obtaining sufficient quantities from its suppliers or in a timely manner, or in identifying and obtaining sufficient quantities from an alternative source. In addition, component suppliers may fail, be subject to consolidation within a particular industry, or decide to concentrate on the production of common components instead of components customized to meet the Company’s requirements, further limiting the Company’s ability to obtain sufficient quantities of components on commercially reasonable terms, or at all.",
+                  "score": 0.546650767326355,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b9",
+                  "page": 52,
+                  "text": "The Company uses some custom components that are not commonly used by its competitors, and new products introduced by the Company often utilize custom components available from only one source. When a component or product uses new technologies, initial capacity constraints may exist until the suppliers’ yields have matured or their manufacturing capacities have increased. The Company has entered into agreements for the supply of many components; however, the Company may not be able to extend or renew agreements for the supply of components on similar terms, or at all, and may not be successful in obtaining sufficient quantities from its suppliers or in a timely manner, or in identifying and obtaining sufficient quantities from an alternative source. In addition, component suppliers may fail, be subject to consolidation within a particular industry, or decide to concentrate on the production of common components instead of components customized to meet the Company’s requirements, further limiting the Company’s ability to obtain sufficient quantities of components on commercially reasonable terms, or at all.",
+                  "score": 0.546650767326355,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b9",
+                  "page": 14,
+                  "text": "Additionally, the Company’s new products often utilize custom components available from only one source. When a component or product uses new technologies, initial capacity constraints may exist until the suppliers’ yields have matured or their manufacturing capacities have increased. The Company may not be able to extend or renew agreements for the supply of components on similar terms, or at all, and may not be successful in obtaining sufficient quantities from its suppliers in a timely manner, or in identifying and obtaining sufficient quantities from an alternative source. In addition, component suppliers may fail, be subject to consolidation within a particular industry, or decide to concentrate on the production of common components instead of components customized to meet the Company’s requirements, further limiting the Company’s ability to obtain sufficient quantities of components on commercially reasonable terms, or at all. Therefore, the Company remains subject to significant risks of supply shortages and price increases that can materially adversely affect its business, results of operations, financial condition and stock price.",
+                  "score": 0.5128586888313293,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:Single-Source Component Vulnerability",
+              "indicator_type": "narrative",
+              "trend": null,
+              "trend_or_claim_sentence": "The hardware model is exposed to supply disruptions because many new products utilize custom components available from only one source.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Initial capacity constraints and maturing supplier yields for new technologies",
+                  "source_hint": "text_b5"
+                },
+                {
+                  "cause_clause": "Supplier consolidation and shifts toward common instead of custom components",
+                  "source_hint": "text_b9"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [
+              {
+                "indicator_ref": "narrative:Single-Source Component Vulnerability",
+                "proposition": "Apple relies on single-source suppliers for custom components in new products",
+                "relation_type": "cause",
+                "connective": "consequently",
+                "composed_sentence": "Apple relies on single-source suppliers for custom components in new products; consequently, it faces significant risks of supply shortages and price increases."
+              }
+            ],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:Single-Source Component Vulnerability",
+              "indicator_id": "IND_1",
+              "sentence": "The hardware model is exposed to supply disruptions because many new products utilize custom components available from only one source. Because Initial capacity constraints and maturing supplier yields for new technologies and Supplier consolidation and shifts toward common instead of custom components.",
+              "score": 3.0
+            }
+          }
+        },
+        {
+          "node_id": "N_3_4",
+          "node_type": "indicator_candidate",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "pillar_index": 2,
+          "indicator_ref": "narrative:U.S. Tariff Impacts (2025)",
+          "indicator_id": "IND_3",
+          "indicator_name": "U.S. Tariff Impacts (2025)",
+          "selection_score": 2.35,
+          "selected": true,
+          "raw_source": {
+            "indicator_type": "narrative",
+            "indicator_name": "U.S. Tariff Impacts (2025)",
+            "raw_indicator": {
+              "indicator_name": "U.S. Tariff Impacts (2025)",
+              "factoid_question": "When were the new U.S. Tariffs on imports from regions like China and the EU announced?",
+              "source_text_id": "text_b3",
+              "source_page": 12,
+              "is_quantitative": false,
+              "rationale_from_extraction": "Direct evidence of geopolitical trade disputes and regulatory changes impacting the cost and availability of products.",
+              "retrieved_evidence": [
+                {
+                  "id": "text_b2",
+                  "page": 28,
+                  "text": "Beginning in the second quarter of 2025, new U.S. Tariffs were announced, including additional tariffs on imports from China, India, Japan, South Korea, Taiwan, Vietnam and the EU, among others. In response, several countries have imposed, or threatened to impose, reciprocal tariffs on imports from the U.S. and other retaliatory measures. Various modifications to the U.S. Tariffs have been announced and further changes could be made in the future, which may include additional sector-based tariffs or other measures. For example, the U.S. Department of Commerce has initiated an investigation under Section 232 of the Trade Expansion Act of 1962, as amended, into, among other things, imports of semiconductors, semiconductor manufacturing equipment, and their derivative products, including downstream products that contain semiconductors. Tariffs and other measures that are applied to the Company’s products or their components can have a material adverse impact on the Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations.",
+                  "score": 0.5858227014541626,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b1",
+                  "page": 28,
+                  "text": "Tariffs and Other Measures",
+                  "score": 0.5111287832260132,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                },
+                {
+                  "id": "text_b11",
+                  "page": 53,
+                  "text": "2025 Greater Rest of Americas Europe China Japan Asia Pacific Corporate Total Net sales $ 178,353 $ 111,032 $ 64,377 $ 28,703 $ 33,696 $ — $ 416,161 Cost of sales (95,699) (58,617) (35,141) (13,779) (17,724) _ (220,960) Research and development _ _ _ _ _ (34,550) (34,550) Selling and marketing (10,174) (4,676) (2,319) (969) (1,386) _ (19,524) General and administrative _ _ _ _ _ (8,077) (8,077) Operating income/(loss) $ 72,480 $ 47,739 $ 26,917 $§$ 13,955 $ 14,586 $ (42,627) $ 133,050 2024 Greater Rest of Americas Europe China Japan Asia Pacific Corporate Total Net sales $ 167,045 $ 101,328 $ 66,952 $§$ 25,052 §$ 30,658 $§$ — §$ 391,035 Cost of sales (89,587) (55,197) (37,519) (11,744) (16,305) _ (210,352) Research and development _ _ _ _ _ (31,370) (31,370) Selling and marketing (9,802) (4,341) (2,351) (854) (1,291) _ (18,639) General and administrative _ _ _ _ _ (7,458) (7,458) Operating income/(loss) $ 67,656 § 41,790 $ 27,082 $ 12,454 $ 13,062 $ (38,828) $ 123,216 2023 Greater Rest of Americas Europe China Japan Asia Pacific Corporate Total Net sales $ 162,560 $ 94,294 §$ 72,559 $§$ 24,257 $§$ 29,615 $§$ — $ 383,285 Cost of sales (92,394) (54,101) (39,787) (11,542) (16,313) _ (214,137) Research and development _ _ _ _ _ (29,915) (29,915) Selling and marketing (9,658) (4,095) (2,444) (827) (1,236) _ (18,260) General and administrative _ _ _ _ _ (6,672) (6,672)",
+                  "score": 0.3758130669593811,
+                  "type": "text",
+                  "evidence_source": "retrieved"
+                }
+              ]
+            }
+          },
+          "operator_source": {
+            "causal_anchoring": {
+              "indicator_ref": "narrative:U.S. Tariff Impacts (2025)",
+              "indicator_type": "narrative",
+              "trend": null,
+              "trend_or_claim_sentence": "New U.S. tariffs announced in 2025 threaten to increase the cost of goods sold for hardware imported from China and other regions.",
+              "candidate_causes": [
+                {
+                  "cause_clause": "Geopolitical trade disputes leading to reciprocal retaliatory measures by foreign governments",
+                  "source_hint": "text_b2"
+                }
+              ]
+            },
+            "entity_alignment": null,
+            "narrative_relations": [],
+            "conflict_hits": [],
+            "paragraph_plan_entry": {
+              "indicator_ref": "narrative:U.S. Tariff Impacts (2025)",
+              "indicator_id": "IND_3",
+              "sentence": "New U.S. tariffs announced in 2025 threaten to increase the cost of goods sold for hardware imported from China and other regions. Because Geopolitical trade disputes leading to reciprocal retaliatory measures by foreign governments.",
+              "score": 2.2
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "edge_id": "E_ROOT_1",
+          "from": "ROOT",
+          "to": "PILLAR_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "root_to_pillar"
+          }
+        },
+        {
+          "edge_id": "E_ROOT_2",
+          "from": "ROOT",
+          "to": "PILLAR_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "root_to_pillar"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_1",
+          "from": "PILLAR_2",
+          "to": "N_2_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_2",
+          "from": "PILLAR_2",
+          "to": "N_2_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_3",
+          "from": "PILLAR_2",
+          "to": "N_2_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_2_N_2_4",
+          "from": "PILLAR_2",
+          "to": "N_2_4",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_1_N_2_2",
+          "from": "N_2_1",
+          "to": "N_2_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:products_and_services_performance_table|sub:iPhone",
+            "to_ref": "table:gross_margin_table|sub:Gross margin percentage: Products"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_2_N_2_4",
+          "from": "N_2_2",
+          "to": "N_2_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+            "to_ref": "table:operating_expenses_table|sub:Research and development"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_4_N_2_3",
+          "from": "N_2_4",
+          "to": "N_2_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:operating_expenses_table|sub:Research and development",
+            "to_ref": "narrative:Services Revenue Drivers"
+          }
+        },
+        {
+          "edge_id": "E_ROOT_3",
+          "from": "ROOT",
+          "to": "PILLAR_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "root_to_pillar"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_1",
+          "from": "PILLAR_3",
+          "to": "N_3_1",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_2",
+          "from": "PILLAR_3",
+          "to": "N_3_2",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_3",
+          "from": "PILLAR_3",
+          "to": "N_3_3",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_PILLAR_3_N_3_4",
+          "from": "PILLAR_3",
+          "to": "N_3_4",
+          "relation_type": "hierarchy",
+          "weight": 1.0,
+          "evidence": {
+            "reason": "pillar_to_candidate"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_1_N_3_2",
+          "from": "N_3_1",
+          "to": "N_3_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:net_sales_table|sub:Products",
+            "to_ref": "table:net_sales_table|sub:Services"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_2_N_3_3",
+          "from": "N_3_2",
+          "to": "N_3_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:net_sales_table|sub:Services",
+            "to_ref": "narrative:Single-Source Component Vulnerability"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_3_N_3_4",
+          "from": "N_3_3",
+          "to": "N_3_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:Single-Source Component Vulnerability",
+            "to_ref": "narrative:U.S. Tariff Impacts (2025)"
+          }
+        },
+        {
+          "edge_id": "E_SUPPORT_N_2_1_N_3_1",
+          "from": "N_2_1",
+          "to": "N_3_1",
+          "relation_type": "cross_pillar_support",
+          "weight": 1.0,
+          "evidence": {
+            "shared_query_domain": "Apple’s hardware-focused model"
+          }
+        }
+      ],
+      "selection": {
+        "top_k_per_pillar": 5,
+        "candidate_node_ids": [
+          "N_2_1",
+          "N_2_2",
+          "N_2_3",
+          "N_2_4",
+          "N_3_1",
+          "N_3_2",
+          "N_3_3",
+          "N_3_4"
+        ],
+        "selected_node_ids": [
+          "N_2_1",
+          "N_2_2",
+          "N_2_4",
+          "N_2_3",
+          "N_3_1",
+          "N_3_2",
+          "N_3_3",
+          "N_3_4"
+        ],
+        "excluded_node_ids": [],
+        "candidate_count": 8,
+        "selected_count": 8
+      }
+    },
+    "planner_graph_payload": {
+      "nodes": [
+        {
+          "node_id": "N_2_1",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "indicator_id": "IND_13",
+          "indicator_name": "products_and_services_performance_table",
+          "selection_score": 4.95,
+          "trend_or_claim_sentence": "iPhone net sales increased to $209,586 million in 2025, representing a 4% growth over the previous year.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Higher unit sales and product mix improvements in the iPhone category",
+              "source_hint": "text_b12"
+            }
+          ],
+          "query_domain": "Apple’s hardware-focused model",
+          "alignment_relation": "direct",
+          "alignment_confidence": 1.0
+        },
+        {
+          "node_id": "N_2_2",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "indicator_id": "IND_14",
+          "indicator_name": "gross_margin_table",
+          "selection_score": 3.5,
+          "trend_or_claim_sentence": "The gross margin percentage for Products declined slightly from 37.2% in 2024 to 36.8% in 2025.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Industry-wide global product pricing pressures and shifts in product mix",
+              "source_hint": "text_b8"
+            },
+            {
+              "cause_clause": "Potential increases in component costs and outside manufacturing services",
+              "source_hint": "text_b8"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_2_4",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "indicator_id": "IND_15",
+          "indicator_name": "operating_expenses_table",
+          "selection_score": 2.55,
+          "trend_or_claim_sentence": "Research and development spending increased by 10% to $34,550 million in 2025.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Increased headcount and related expenses to support technical innovation",
+              "source_hint": "text_b8"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_2_3",
+          "pillar": "Financial Performance, Capital Allocation, and Shareholder Value",
+          "indicator_id": "IND_4",
+          "indicator_name": "Services Revenue Drivers",
+          "selection_score": 2.35,
+          "trend_or_claim_sentence": "Services net sales grew by 14% in 2025, reaching $109,158 million, driven by diverse service offerings.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Higher volume of transactions and a different mix of services offered",
+              "source_hint": "text_b8"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_3_1",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "indicator_id": "IND_11",
+          "indicator_name": "net_sales_table",
+          "selection_score": 4.95,
+          "trend_or_claim_sentence": "Hardware-driven product sales increased from $294.9 billion to $307.0 billion year-over-year.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Strong consumer demand for new product technologies and hardware iterations",
+              "source_hint": "text_b11"
+            }
+          ],
+          "query_domain": "Apple’s hardware-focused model",
+          "alignment_relation": "direct",
+          "alignment_confidence": 1.0
+        },
+        {
+          "node_id": "N_3_2",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "indicator_id": "IND_11",
+          "indicator_name": "net_sales_table",
+          "selection_score": 3.94,
+          "trend_or_claim_sentence": "Services revenue grew significantly to $109.2 billion, representing an expansion of the software-adjacent model.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Growth in digital content, cloud services, and advertising offerings",
+              "source_hint": "table_indicators"
+            }
+          ],
+          "query_domain": "Microsoft’s software-focused model",
+          "alignment_relation": "contextual",
+          "alignment_confidence": 0.85
+        },
+        {
+          "node_id": "N_3_3",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "indicator_id": "IND_1",
+          "indicator_name": "Single-Source Component Vulnerability",
+          "selection_score": 3.3,
+          "trend_or_claim_sentence": "The hardware model is exposed to supply disruptions because many new products utilize custom components available from only one source.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Initial capacity constraints and maturing supplier yields for new technologies",
+              "source_hint": "text_b5"
+            },
+            {
+              "cause_clause": "Supplier consolidation and shifts toward common instead of custom components",
+              "source_hint": "text_b9"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        },
+        {
+          "node_id": "N_3_4",
+          "pillar": "Global Risk Profile and External Environmental Vulnerabilities",
+          "indicator_id": "IND_3",
+          "indicator_name": "U.S. Tariff Impacts (2025)",
+          "selection_score": 2.35,
+          "trend_or_claim_sentence": "New U.S. tariffs announced in 2025 threaten to increase the cost of goods sold for hardware imported from China and other regions.",
+          "candidate_causes": [
+            {
+              "cause_clause": "Geopolitical trade disputes leading to reciprocal retaliatory measures by foreign governments",
+              "source_hint": "text_b2"
+            }
+          ],
+          "query_domain": null,
+          "alignment_relation": null,
+          "alignment_confidence": null
+        }
+      ],
+      "edges": [
+        {
+          "edge_id": "E_SEQ_N_2_1_N_2_2",
+          "from": "N_2_1",
+          "to": "N_2_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:products_and_services_performance_table|sub:iPhone",
+            "to_ref": "table:gross_margin_table|sub:Gross margin percentage: Products"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_2_N_2_4",
+          "from": "N_2_2",
+          "to": "N_2_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:gross_margin_table|sub:Gross margin percentage: Products",
+            "to_ref": "table:operating_expenses_table|sub:Research and development"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_2_4_N_2_3",
+          "from": "N_2_4",
+          "to": "N_2_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:operating_expenses_table|sub:Research and development",
+            "to_ref": "narrative:Services Revenue Drivers"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_1_N_3_2",
+          "from": "N_3_1",
+          "to": "N_3_2",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:net_sales_table|sub:Products",
+            "to_ref": "table:net_sales_table|sub:Services"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_2_N_3_3",
+          "from": "N_3_2",
+          "to": "N_3_3",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "table:net_sales_table|sub:Services",
+            "to_ref": "narrative:Single-Source Component Vulnerability"
+          }
+        },
+        {
+          "edge_id": "E_SEQ_N_3_3_N_3_4",
+          "from": "N_3_3",
+          "to": "N_3_4",
+          "relation_type": "intra_pillar_sequence",
+          "weight": 0.9,
+          "evidence": {
+            "reason": "paragraph_plan_evidence_chain",
+            "from_ref": "narrative:Single-Source Component Vulnerability",
+            "to_ref": "narrative:U.S. Tariff Impacts (2025)"
+          }
+        },
+        {
+          "edge_id": "E_SUPPORT_N_2_1_N_3_1",
+          "from": "N_2_1",
+          "to": "N_3_1",
+          "relation_type": "cross_pillar_support",
+          "weight": 1.0,
+          "evidence": {
+            "shared_query_domain": "Apple’s hardware-focused model"
+          }
+        }
+      ]
+    },
+    "candidate_paths": [
+      {
+        "path_id": "path_1",
+        "title": "The Hardware-Enabled Pivot to High-Margin Services",
+        "core_thesis": "Apple's hardware-focused model, while generating the bulk of its revenue, faces lower margins and significant supply chain risks. To counter this, Apple strategically leverages its integrated hardware ecosystem as a locked-in platform to cultivate a much more profitable and rapidly growing software-like Services business, effectively creating a hybrid model.",
+        "node_path": [
+          "N_3_1",
+          "N_2_2",
+          "N_2_3",
+          "N_3_3"
+        ],
+        "cross_pillar_links": [
+          "Connects hardware revenue scale (N_3_1, Pillar 2) with its declining profitability (N_2_2, Pillar 1).",
+          "Juxtaposes the low hardware margin with the high growth (N_2_3, Pillar 1) and superior 75.4% margin of the Services segment (Pillar 1, IND_14).",
+          "Frames the pivot to Services as a strategic mitigation of the hardware model's inherent supply chain vulnerabilities (N_3_3, Pillar 2)."
+        ],
+        "tensions_or_gaps": "The core tension is why Apple persists with a hardware model that has declining margins (36.8%) and high risk (single-sourcing, tariffs) compared to a pure software model. The model's success seems paradoxical.",
+        "resolution_logic": "The path resolves this by demonstrating that the hardware and software components are not in opposition but part of a single, symbiotic strategy. The hardware's primary role is to generate a massive, captive user base for the far more profitable Services segment (75.4% gross margin). This high-margin services revenue stream provides the financial stability to offset the volatility and risks of the physical hardware business.",
+        "coverage_score": 0.95,
+        "coherence_score": 1,
+        "faithfulness_score": 1,
+        "why_it_wins": "This path provides the most comprehensive synthesis by directly connecting financial performance (Pillar 1) with strategic operations (Pillar 0) and global risks (Pillar 2). It constructs a clear, evidence-based narrative of a strategic pivot that is explicitly mentioned in the source material ('strategic pivot toward its more profitable Services segment' - Pillar 0), resolving the core tension between hardware scale and software-like profitability."
+      },
+      {
+        "path_id": "path_2",
+        "title": "Hardware Risk Profile vs. Software Profitability",
+        "core_thesis": "Apple's hardware-centric model is defined by a trade-off: it generates immense revenue but is fundamentally exposed to geopolitical and supply chain risks that a software-focused model avoids. The company's software-adjacent services business, while smaller, showcases a much more stable and profitable profile, highlighting the inherent vulnerabilities of a business built on physical goods.",
+        "node_path": [
+          "N_3_1",
+          "N_3_3",
+          "N_3_4",
+          "N_3_2"
+        ],
+        "cross_pillar_links": [
+          "Links the high hardware revenue (N_3_1, Pillar 2) directly to its inherent risks, such as single-source component vulnerability (N_3_3, Pillar 2) and tariff impacts (N_3_4, Pillar 2).",
+          "Contrasts the risk-laden hardware model with the growth of the less physically-exposed software-adjacent services model (N_3_2, Pillar 2).",
+          "Uses the margin differential between Products (N_2_2, 36.8%) and Services (Pillar 1, 75.4%) to financially quantify the risk-reward trade-off."
+        ],
+        "tensions_or_gaps": "This path highlights the stark differences in risk and profitability between Apple's hardware and services segments but doesn't fully integrate them into a singular corporate strategy. It presents them more as two separate businesses operating under one roof.",
+        "resolution_logic": "The path's logic focuses on comparison by contrast. It resolves the question by showing that Apple's model is a tale of two businesses: one (hardware) that drives scale but is high-risk and low-margin, and another (software/services) that drives profitability and is low-risk. The comparison to Microsoft's model is made by isolating Apple's services segment as its 'software-focused' analogue.",
+        "coverage_score": 0.8,
+        "coherence_score": 0.9,
+        "faithfulness_score": 1,
+        "why_it_wins": null
+      },
+      {
+        "path_id": "path_3",
+        "title": "The Integrated Ecosystem Flywheel",
+        "core_thesis": "Comparing Apple's hardware-focused model to a software-focused one is a category error; Apple's true model is a vertically integrated ecosystem where hardware sales are the entry point to a virtuous cycle. The hardware platform enables high-margin software/service sales, which in turn fund the R&D and capital returns that reinforce the premium hardware's appeal and market position.",
+        "node_path": [
+          "N_3_1",
+          "N_2_3",
+          "N_2_2",
+          "N_2_4"
+        ],
+        "cross_pillar_links": [
+          "Connects the hardware sales base (N_3_1, Pillar 2) to the growth of the Services business it enables (N_2_3, Pillar 1).",
+          "Uses the margin difference between Products (N_2_2) and Services (Pillar 1, IND_14) to explain the strategic financial incentive for this ecosystem model.",
+          "Links the profits from this model to increased R&D spending (N_2_4, Pillar 1), which fuels future product innovation and perpetuates the cycle."
+        ],
+        "tensions_or_gaps": "This path is more conceptual and relies on interpreting the strategic intent ('virtuous cycle') rather than just presenting the raw data. It also downplays the significant risks detailed in Pillar 2 by framing them as a necessary cost of the ecosystem.",
+        "resolution_logic": "The path resolves the comparison by reframing Apple as a unique third category: an 'ecosystem' company. It argues the hardware is not just a product line but the foundation of a flywheel. The lower margins and risks of hardware are accepted because they are the cost of acquiring and retaining customers for the highly profitable services that the ecosystem supports. This combined financial engine funds the innovation that keeps the flywheel spinning.",
+        "coverage_score": 0.85,
+        "coherence_score": 0.95,
+        "faithfulness_score": 0.9,
+        "why_it_wins": null
+      }
+    ],
+    "selected_path_id": "path_1",
+    "selected_path": {
+      "path_id": "path_1",
+      "title": "The Hardware-Enabled Pivot to High-Margin Services",
+      "core_thesis": "Apple's hardware-focused model, while generating the bulk of its revenue, faces lower margins and significant supply chain risks. To counter this, Apple strategically leverages its integrated hardware ecosystem as a locked-in platform to cultivate a much more profitable and rapidly growing software-like Services business, effectively creating a hybrid model.",
+      "node_path": [
+        "N_3_1",
+        "N_2_2",
+        "N_2_3",
+        "N_3_3"
+      ],
+      "cross_pillar_links": [
+        "Connects hardware revenue scale (N_3_1, Pillar 2) with its declining profitability (N_2_2, Pillar 1).",
+        "Juxtaposes the low hardware margin with the high growth (N_2_3, Pillar 1) and superior 75.4% margin of the Services segment (Pillar 1, IND_14).",
+        "Frames the pivot to Services as a strategic mitigation of the hardware model's inherent supply chain vulnerabilities (N_3_3, Pillar 2)."
+      ],
+      "tensions_or_gaps": "The core tension is why Apple persists with a hardware model that has declining margins (36.8%) and high risk (single-sourcing, tariffs) compared to a pure software model. The model's success seems paradoxical.",
+      "resolution_logic": "The path resolves this by demonstrating that the hardware and software components are not in opposition but part of a single, symbiotic strategy. The hardware's primary role is to generate a massive, captive user base for the far more profitable Services segment (75.4% gross margin). This high-margin services revenue stream provides the financial stability to offset the volatility and risks of the physical hardware business.",
+      "coverage_score": 0.95,
+      "coherence_score": 1,
+      "faithfulness_score": 1,
+      "why_it_wins": "This path provides the most comprehensive synthesis by directly connecting financial performance (Pillar 1) with strategic operations (Pillar 0) and global risks (Pillar 2). It constructs a clear, evidence-based narrative of a strategic pivot that is explicitly mentioned in the source material ('strategic pivot toward its more profitable Services segment' - Pillar 0), resolving the core tension between hardware scale and software-like profitability."
+    }
+  }
+}
