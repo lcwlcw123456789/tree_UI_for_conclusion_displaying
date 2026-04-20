@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import type { Stage3GlobalSynthesis, Stage3Path, Stage3TreeEdge, Stage3TreeNode } from '../../types/conclusion'
+import PillarBoardLayer from '../GraphShared/PillarBoardLayer.vue'
+import NodeBubbleLayer from '../GraphShared/NodeBubbleLayer.vue'
+import { buildPillarRegions } from '../GraphShared/layout'
 
 type FocusMode = 'path' | 'node' | 'edge'
 type DetailValue = { kind: 'text'; text: string } | { kind: 'list'; items: string[] } | { kind: 'json'; text: string } | { kind: 'empty' }
@@ -36,30 +39,19 @@ const nodeById = computed<Record<string, Stage3TreeNode>>(() => {
   return map
 })
 
-const canvasWidth = computed(() => Math.max(size.width, 1200))
-const canvasHeight = computed(() => Math.max(size.height, 720))
+const canvasWidth = computed(() => Math.max(size.width, 1))
+const canvasHeight = computed(() => Math.max(size.height, 1))
 
 const regionLayouts = computed(() => {
-  if (!pillarNodes.value.length) return [] as Array<{ key: string; title: string; x: number; y: number; width: number; height: number; innerLeft: number; innerRight: number; innerTop: number; innerBottom: number }>
-  const pad = 16
-  const gap = 16
-  const top = 76
-  const regionWidth = (canvasWidth.value - pad * 2 - gap * (pillarNodes.value.length - 1)) / pillarNodes.value.length
-  const regionHeight = Math.max(canvasHeight.value - top - 16, 420)
-  return pillarNodes.value.map((p, i) => {
-    const x = pad + i * (regionWidth + gap)
-    return {
-      key: p.pillar || p.label || p.node_id,
-      title: p.label || p.pillar || p.node_id,
-      x,
-      y: top,
-      width: regionWidth,
-      height: regionHeight,
-      innerLeft: x + 18,
-      innerRight: x + regionWidth - 18,
-      innerTop: top + 56,
-      innerBottom: top + regionHeight - 16,
-    }
+  const pillars = pillarNodes.value.map((p) => ({ key: p.pillar || p.label || p.node_id, title: p.label || p.pillar || p.node_id }))
+  return buildPillarRegions(pillars, canvasWidth.value, canvasHeight.value, {
+    top: 70,
+    pad: 12,
+    gap: 12,
+    bottom: 12,
+    headerSpace: 52,
+    innerPadX: 16,
+    innerPadBottom: 14,
   })
 })
 
@@ -318,8 +310,46 @@ const detailRows = computed<Row[]>(() => {
   ]
 })
 
-function regionStyle(_region: (typeof regionLayouts.value)[number]) {
-  return {}
+const renderRegions = computed(() => regionLayouts.value.map((r) => {
+  const cls = regionClass(r)
+  return {
+    ...r,
+    muted: cls.muted,
+    final: cls.final,
+    candidate: cls.candidate,
+  }
+}))
+
+const renderNodes = computed(() => indicatorNodes.value.map((node) => {
+  const pos = nodePositions.value[node.node_id] || { x: 0, y: 0, r: 20 }
+  const cls = nodeClass(node)
+  return {
+    id: node.node_id,
+    label: indicatorBadge(node),
+    score: node.selection_score,
+    x: pos.x,
+    y: pos.y,
+    r: pos.r,
+    active: cls.active,
+    hovered: cls.hovered,
+    path: cls.path,
+    final: cls.final,
+    candidate: cls.candidate,
+  }
+}))
+
+function onSharedNodeClick(id: string) {
+  const target = indicatorNodes.value.find((n) => n.node_id === id)
+  if (target) focusNode(target)
+}
+
+function onSharedNodeEnter(id: string) {
+  const target = indicatorNodes.value.find((n) => n.node_id === id)
+  hoveredNodeId.value = target?.node_id || null
+}
+
+function onSharedNodeLeave() {
+  hoveredNodeId.value = null
 }
 
 function measure() {
@@ -467,40 +497,14 @@ watch(
               </g>
             </svg>
 
-            <div
-              v-for="region in regionLayouts"
-              :key="region.key"
-              class="region"
-              :class="regionClass(region)"
-              :style="{ left: `${region.x}px`, top: `${region.y}px`, width: `${region.width}px`, height: `${region.height}px`, ...regionStyle(region) }"
-            >
-              <div class="region-head">
-                <span class="kicker tiny">pillar</span>
-                <strong>{{ region.title }}</strong>
-              </div>
-            </div>
+            <PillarBoardLayer :regions="renderRegions" />
 
-            <div class="node-layer">
-              <button
-                v-for="node in indicatorNodes"
-                :key="node.node_id"
-                class="graph-node indicator-card"
-                :class="nodeClass(node)"
-                type="button"
-                :style="{
-                  left: `${nodePositions[node.node_id]?.x || 0}px`,
-                  top: `${nodePositions[node.node_id]?.y || 0}px`,
-                  width: `${Math.round((nodePositions[node.node_id]?.r || 20) * 2)}px`,
-                  height: `${Math.round((nodePositions[node.node_id]?.r || 20) * 2)}px`,
-                }"
-                @click.stop="focusNode(node)"
-                @mouseenter="hoveredNodeId = node.node_id"
-                @mouseleave="hoveredNodeId = null"
-              >
-                <span class="node-kicker">{{ indicatorBadge(node) }}</span>
-                <span v-if="node.selection_score != null" class="score">{{ node.selection_score.toFixed(2) }}</span>
-              </button>
-            </div>
+            <NodeBubbleLayer
+              :nodes="renderNodes"
+              @node-click="onSharedNodeClick"
+              @node-enter="onSharedNodeEnter"
+              @node-leave="onSharedNodeLeave"
+            />
           </template>
         </div>
       </section>
@@ -572,17 +576,17 @@ watch(
 </template>
 
 <style scoped>
-.page-shell { position: relative; width: 100%; height: 100%; min-height: 640px; display: flex; flex-direction: column; background: linear-gradient(180deg, #f8fafc, #ffffff); }
-.page-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1rem 1.2rem .85rem; border-bottom: 1px solid rgba(148,163,184,.2); background: rgba(255,255,255,.96); }
+.page-shell { position: relative; width: 100%; height: 100%; min-height: 640px; display: flex; flex-direction: column; background: linear-gradient(180deg, #fff7fb, #ece7f2); }
+.page-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1rem 1.2rem .85rem; border-bottom: 1px solid #d0d1e6; background: #ece7f2; }
 .header-left { display: flex; align-items: flex-start; gap: .8rem; }
 .page-header h3 { margin: .18rem 0 0; font-size: 1.08rem; }
 .page-header p { margin: .24rem 0 0; color: #64748b; font-size: .8rem; line-height: 1.45; }
-.kicker { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: .18rem .56rem; background: rgba(226,232,240,.95); color: #475569; font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.kicker { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: .18rem .56rem; background: #d0d1e6; color: #034e7b; font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .kicker.small { margin-bottom: .5rem; }
 .kicker.tiny { margin-bottom: .3rem; }
 .close-btn, .back-btn { border: none; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
-.close-btn { width: 40px; height: 40px; border-radius: 12px; background: rgba(241,245,249,.92); color: #334155; font-size: 1rem; }
-.back-btn { padding: .52rem .78rem; border-radius: 12px; background: rgba(219,234,254,.82); color: #1d4ed8; font-size: .78rem; white-space: nowrap; }
+.close-btn { width: 40px; height: 40px; border-radius: 12px; background: #d0d1e6; color: #034e7b; font-size: 1rem; }
+.back-btn { padding: .52rem .78rem; border-radius: 12px; background: #a6bddb; color: #034e7b; font-size: .78rem; white-space: nowrap; }
 .top-back { align-self: center; }
 .close-btn:hover, .back-btn:hover, .path-tab:hover, .graph-node:hover, .score-table tbody tr:hover { transform: translateY(-1px); }
 .page-body { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 2.25fr) minmax(320px, .75fr); gap: .75rem; padding: .8rem; }
@@ -590,19 +594,19 @@ watch(
 .toolbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: .8rem; }
 .toolbar-left { min-width: 0; display: flex; flex-direction: column; gap: .55rem; }
 .path-tabs { display: flex; gap: .6rem; flex-wrap: wrap; }
-.path-tab { min-width: 118px; border-radius: 12px; padding: .42rem .5rem; border: 1px solid rgba(148,163,184,.22); background: rgba(255,255,255,.96); cursor: pointer; text-align: left; display: flex; flex-direction: column; gap: .2rem; box-shadow: 0 6px 18px rgba(15,23,42,.05); }
-.path-tab.selected { border-color: rgba(245,158,11,.42); background: linear-gradient(180deg, rgba(255,247,237,.98), rgba(255,251,235,.98)); box-shadow: 0 0 0 1px rgba(245,158,11,.18), 0 12px 28px rgba(245,158,11,.12); }
-.path-tab.active { box-shadow: 0 0 0 1px rgba(59,130,246,.18), 0 14px 30px rgba(59,130,246,.12); }
+.path-tab { min-width: 118px; border-radius: 12px; padding: .42rem .5rem; border: 1px solid #a6bddb; background: #fff7fb; cursor: pointer; text-align: left; display: flex; flex-direction: column; gap: .2rem; box-shadow: 0 6px 18px rgba(3,78,123,.08); }
+.path-tab.selected { border-color: #0570b0; background: #d0d1e6; box-shadow: 0 0 0 1px rgba(5,112,176,.2), 0 12px 28px rgba(5,112,176,.16); }
+.path-tab.active { box-shadow: 0 0 0 1px rgba(3,78,123,.22), 0 14px 30px rgba(3,78,123,.16); }
 .path-tab.hovered { box-shadow: 0 0 0 1px rgba(59,130,246,.18), 0 0 0 4px rgba(59,130,246,.08); }
 .path-tab strong { font-size: .74rem; line-height: 1.25; color: #0f172a; }
 .path-tab span { display: flex; justify-content: space-between; gap: .35rem; color: #64748b; font-size: .66rem; }
 .legend { display: flex; align-items: center; gap: .85rem; flex-wrap: wrap; color: #475569; font-size: .72rem; }
 .legend span { display: inline-flex; align-items: center; gap: .4rem; }
 .dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; }
-.dot.selected { background: #f59e0b; box-shadow: 0 0 0 4px rgba(245,158,11,.14); }
-.dot.candidate { background: #8b5cf6; box-shadow: 0 0 0 4px rgba(139,92,246,.12); }
-.dot.neutral { background: #94a3b8; }
-.surface { position: relative; flex: 1; min-height: 0; overflow: hidden; border-radius: 18px; border: 1px solid rgba(148,163,184,.18); background: linear-gradient(90deg, rgba(241,245,249,.55) 1px, transparent 1px), linear-gradient(180deg, rgba(241,245,249,.55) 1px, transparent 1px), linear-gradient(180deg, rgba(248,250,252,.98), rgba(255,255,255,.98)); background-size: 56px 56px, 56px 56px, auto; }
+.dot.selected { background: #0570b0; box-shadow: 0 0 0 4px rgba(5,112,176,.2); }
+.dot.candidate { background: #3690c0; box-shadow: 0 0 0 4px rgba(54,144,192,.16); }
+.dot.neutral { background: #74a9cf; }
+.surface { position: relative; flex: 1; min-height: 0; overflow: hidden; border-radius: 18px; border: 1px solid #a6bddb; background: linear-gradient(90deg, rgba(166,189,219,.3) 1px, transparent 1px), linear-gradient(180deg, rgba(166,189,219,.3) 1px, transparent 1px), linear-gradient(180deg, #fff7fb, #ece7f2); background-size: 56px 56px, 56px 56px, auto; }
 .empty { position: absolute; inset: 0; display: grid; place-items: center; gap: .4rem; text-align: center; color: #64748b; }
 .empty strong { color: #0f172a; }
 .edge-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; pointer-events: auto; }
@@ -624,7 +628,7 @@ watch(
 .path-main.candidate { stroke: #a855f7; stroke-width: 2.6; stroke-dasharray: 10 8; animation: flow-candidate 3s linear infinite; filter: drop-shadow(0 0 10px rgba(168,85,247,.25)); }
 @keyframes flow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -128; } }
 @keyframes flow-candidate { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -116; } }
-.region { position: absolute; border-radius: 20px; border: 1px solid rgba(148,163,184,.2); overflow: hidden; transition: border-color .18s ease, box-shadow .18s ease, opacity .18s ease; z-index: 1; pointer-events: none; }
+.region { position: absolute; border-radius: 20px; border: 1px solid #a6bddb; overflow: hidden; transition: border-color .18s ease, box-shadow .18s ease, opacity .18s ease; z-index: 1; pointer-events: none; }
 .region::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.35), transparent 34%); pointer-events: none; }
 .region.final { border-color: rgba(245,158,11,.36); box-shadow: 0 0 0 1px rgba(245,158,11,.14), 0 18px 40px rgba(245,158,11,.08); }
 .region.candidate { border-color: rgba(139,92,246,.32); box-shadow: 0 0 0 1px rgba(139,92,246,.12), 0 18px 40px rgba(139,92,246,.08); }
@@ -632,22 +636,22 @@ watch(
 .region-head { position: absolute; left: 10px; top: 8px; right: 10px; display: flex; flex-direction: column; gap: .2rem; z-index: 2; pointer-events: none; }
 .region-head strong { color: #0f172a; font-size: .73rem; line-height: 1.2; }
 .node-layer { position: absolute; inset: 0; z-index: 8; pointer-events: none; }
-.graph-node { border: 1px solid rgba(148,163,184,.24); background: rgba(255,255,255,.96); color: #0f172a; box-shadow: 0 10px 28px rgba(15,23,42,.08); cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease, opacity .18s ease; }
+.graph-node { border: 1px solid #74a9cf; background: #fff7fb; color: #034e7b; box-shadow: 0 10px 28px rgba(3,78,123,.12); cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease, opacity .18s ease; }
 .graph-node:hover { box-shadow: 0 16px 32px rgba(15,23,42,.12); }
 .indicator-card { position: absolute; border-radius: 999px; padding: .2rem; display: flex; flex-direction: column; gap: .08rem; align-items: center; justify-content: center; z-index: 6; transform: translate(-50%, -50%); pointer-events: auto; }
 .node-kicker { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: .12rem .42rem; background: rgba(241,245,249,.95); color: #475569; font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .indicator-card .node-kicker { font-size: .52rem; padding: 0; background: transparent; color: #1e293b; letter-spacing: 0; text-transform: none; line-height: 1; }
 .indicator-card .score { font-size: .52rem; font-weight: 700; color: #334155; line-height: 1; align-self: center; }
-.graph-node.active { border-color: rgba(59,130,246,.46); box-shadow: 0 0 0 1px rgba(59,130,246,.18), 0 18px 38px rgba(59,130,246,.16); }
+.graph-node.active { border-color: #0570b0; box-shadow: 0 0 0 1px rgba(5,112,176,.2), 0 18px 38px rgba(5,112,176,.18); }
 .graph-node.hovered { border-color: rgba(14,165,233,.45); box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 10px 22px rgba(14,116,144,.15); transform: translate(-50%, -50%) scale(1.05); }
 .graph-node.path.final { border-color: rgba(245,158,11,.56); box-shadow: 0 0 0 1px rgba(245,158,11,.22), 0 10px 20px rgba(245,158,11,.12); }
 .graph-node.path.candidate { border-color: rgba(168,85,247,.48); box-shadow: 0 0 0 1px rgba(168,85,247,.2), 0 10px 20px rgba(168,85,247,.12); }
-.detail-panel { border-left: 1px solid rgba(148,163,184,.18); padding-left: .1rem; }
+.detail-panel { border-left: 1px solid #d0d1e6; padding-left: .1rem; }
 .detail-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: .05rem 0 .25rem .25rem; }
 .detail-head h4 { margin: .16rem 0 0; font-size: .98rem; }
 .detail-head p { margin: .18rem 0 0; color: #64748b; font-size: .76rem; }
 .detail-scroll { min-height: 0; overflow: auto; padding-right: .2rem; display: flex; flex-direction: column; gap: .85rem; scrollbar-gutter: stable both-edges; }
-.summary, .score-table-card, .row { border: 1px solid rgba(148,163,184,.18); border-radius: 16px; background: rgba(255,255,255,.95); box-shadow: 0 10px 26px rgba(15,23,42,.05); }
+.summary, .score-table-card, .row { border: 1px solid #a6bddb; border-radius: 16px; background: #fff7fb; box-shadow: 0 10px 26px rgba(3,78,123,.08); }
 .summary { padding: .92rem; }
 .summary.selected { border-color: rgba(245,158,11,.28); background: linear-gradient(180deg, rgba(255,247,237,.84), rgba(255,255,255,.95)); }
 .summary-top { display: flex; justify-content: space-between; gap: .75rem; align-items: flex-start; }
@@ -680,7 +684,7 @@ watch(
 .score-table tbody tr.active { background: rgba(239,246,255,.92); }
 .name { display: flex; flex-direction: column; gap: .12rem; }
 .name small { color: #64748b; }
-@media (max-width: 1400px) { .page-body { grid-template-columns: 1fr; } .detail-panel { border-left: none; border-top: 1px solid rgba(148,163,184,.18); padding-top: 1rem; } .surface { min-height: 720px; } }
+@media (max-width: 1400px) { .page-body { grid-template-columns: 1fr; } .detail-panel { border-left: none; border-top: 1px solid #d0d1e6; padding-top: 1rem; } .surface { min-height: 720px; } }
 </style>
 <!--
 <script setup lang="ts">
@@ -1461,4 +1465,5 @@ void backToPath
 .name small { color: #64748b; }
 @media (max-width: 1400px) { .modal-body { grid-template-columns: 1fr; } .detail-panel { border-left: none; border-top: 1px solid rgba(148,163,184,.18); padding-top: 1rem; } .surface { min-height: 720px; } }
 </style>
+-->
 -->

@@ -8,6 +8,8 @@ import type { IndicatorKey } from '../composables/useIndicatorLink'
 import TreePanel from './TreePanel/TreePanel.vue'
 import ConclusionPanel from './ConclusionPanel/ConclusionPanel.vue'
 
+type GraphTab = 'operator' | 'stage3'
+
 const props = defineProps<{
   intermediate: IntermediateResult
   conclusion: FinalConclusion
@@ -28,6 +30,8 @@ const {
 } = useIndicatorLink(intermediateData, conclusionData)
 
 const indicatorToExpand = ref<IndicatorKey | null>(null)
+const showGraphWorkspace = ref(false)
+const activeGraphTab = ref<GraphTab>('operator')
 
 function handleAnnotationHover(pillarIndex: number, indicatorIds: string[]) {
   hoverOnConclusion(pillarIndex, indicatorIds)
@@ -63,6 +67,19 @@ function handleTreeIndicatorHover(key: IndicatorKey) {
 function handleTreeIndicatorUnhover() {
   hoverOffTree()
 }
+
+function openGraphWorkspace(tab: GraphTab = 'operator') {
+  activeGraphTab.value = tab
+  showGraphWorkspace.value = true
+}
+
+function closeGraphWorkspace() {
+  showGraphWorkspace.value = false
+}
+
+function switchGraphTab(tab: GraphTab) {
+  activeGraphTab.value = tab
+}
 </script>
 
 <template>
@@ -75,15 +92,23 @@ function handleTreeIndicatorUnhover() {
         :is-indicator-hovered="isTreeIndicatorHovered"
         @indicator-hover="handleTreeIndicatorHover"
         @indicator-unhover="handleTreeIndicatorUnhover"
+        @open-graph-workspace="openGraphWorkspace('operator')"
       />
     </aside>
     <main class="conclusion-main">
       <ConclusionPanel
         :data="conclusionData"
+        :intermediate="intermediateData"
+        :operator-view="props.operatorView || null"
+        :graph-workspace-visible="showGraphWorkspace"
+        :active-graph-tab="activeGraphTab"
         :is-annotation-highlighted="isAnnotationHighlighted"
         @annotation-hover="handleAnnotationHover"
         @annotation-unhover="handleAnnotationUnhover"
         @annotation-click="handleAnnotationClick"
+        @open-graph-workspace="openGraphWorkspace"
+        @close-graph-workspace="closeGraphWorkspace"
+        @switch-graph-tab="switchGraphTab"
       />
     </main>
   </div>

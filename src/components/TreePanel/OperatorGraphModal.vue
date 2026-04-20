@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { IntermediateResult, NarrativeTask, TableStructuredTask } from '../../types/intermediate'
 import type { ConflictItem, OperatorPillarResult, OperatorView } from '../../types/operator'
+import PillarBoardLayer from '../GraphShared/PillarBoardLayer.vue'
+import { buildPillarRegions } from '../GraphShared/layout'
 
 type GraphNode = {
   id: string
@@ -35,8 +37,10 @@ const emit = defineEmits<{
 }>()
 
 const svgRef = ref<SVGSVGElement | null>(null)
-const width = 980
-const height = 640
+const graphPaneRef = ref<HTMLElement | null>(null)
+const width = ref(980)
+const height = ref(640)
+let resizeObserver: ResizeObserver | null = null
 
 const nodes = ref<GraphNode[]>([])
 const edges = ref<GraphEdge[]>([])
@@ -118,9 +122,51 @@ const infoTitle = computed(() => {
 })
 
 const edgeColor = {
-  causal_anchoring: '#0ea5e9',
-  conflict_audit: '#ef4444',
-  narrative_relations: '#a855f7',
+  causal_anchoring: '#1565c0',
+  conflict_audit: '#c62828',
+  narrative_relations: '#ff8f00',
+}
+
+function edgeStroke(type: GraphEdge['type']) {
+  return edgeColor[type] || '#ff8c42'
+}
+
+const pillarKeys = computed(() => (props.intermediate?.results || []).map((p) => p.pillar))
+
+const pillarRegions = computed(() => buildPillarRegions(
+  pillarKeys.value.map((name) => ({ key: name, title: name })),
+  width.value,
+  height.value,
+  {
+    top: 70,
+    pad: 12,
+    gap: 12,
+    bottom: 12,
+    headerSpace: 52,
+    innerPadX: 16,
+    innerPadBottom: 14,
+  },
+))
+
+function pillarBoundsByName(pillar: string) {
+  const r = pillarRegions.value.find((x) => x.key === pillar)
+  if (r) return r
+  const x = 12
+  const y = 70
+  const w = Math.max(width.value - 24, 120)
+  const h = Math.max(height.value - 82, 120)
+  return {
+    key: 'fallback',
+    title: 'fallback',
+    x,
+    y,
+    width: w,
+    height: h,
+    innerLeft: x + 16,
+    innerRight: x + w - 16,
+    innerTop: y + 52,
+    innerBottom: y + h - 14,
+  }
 }
 
 function relTypeLabel(t: GraphEdge['type']) {
@@ -226,6 +272,7 @@ function buildGraph() {
   const nodeIdByRef = new Map<string, string>()
 
   inter.results.forEach((pillar, pi) => {
+    const bounds = pillarBoundsByName(pillar.pillar)
     pillar.narrative_tasks.forEach((t, ni) => {
       const ref = `narrative:${t.indicator_name}`
       const id = `P${pi}_N${ni}`
@@ -236,8 +283,8 @@ function buildGraph() {
         indicatorName: t.indicator_name,
         indicatorType: 'narrative',
         indicatorRef: ref,
-        x: 120 + (pi * 280) + Math.random() * 80,
-        y: 80 + ni * 50 + Math.random() * 30,
+        x: bounds.x + 28 + Math.random() * Math.max(bounds.width - 56, 24),
+        y: bounds.y + 30 + ni * 52 + Math.random() * 26,
         vx: 0,
         vy: 0,
         radius: 16,
@@ -254,8 +301,8 @@ function buildGraph() {
         indicatorName: t.indicator_name,
         indicatorType: 'table',
         indicatorRef: ref,
-        x: 180 + (pi * 280) + Math.random() * 80,
-        y: 140 + ti * 70 + Math.random() * 30,
+        x: bounds.x + 28 + Math.random() * Math.max(bounds.width - 56, 24),
+        y: bounds.y + 96 + ti * 64 + Math.random() * 28,
         vx: 0,
         vy: 0,
         radius: 18,
@@ -391,8 +438,15 @@ function tick() {
     return
   }
 
-  const centerX = width / 2
-  const centerY = height / 2
+  const centerX = width.value / 2
+  const centerY = height.value / 2
+  const repulsionStrength = 4600
+  const edgeDesiredDistance = 190
+  const edgeSpring = 0.0045
+  const centerPull = 0.00055
+  const anchorPullX = 0.0013
+  const anchorPullY = 0.0009
+  const boundaryPadding = 8
 
   for (let i = 0; i < ns.length; i++) {
     for (let j = i + 1; j < ns.length; j++) {
@@ -404,7 +458,7 @@ function tick() {
       let d2 = dx * dx + dy * dy
       if (d2 < 1) d2 = 1
       const d = Math.sqrt(d2)
-      const f = 2400 / d2
+      const f = repulsionStrength / d2
       dx /= d
       dy /= d
       a.vx -= dx * f
@@ -422,8 +476,8 @@ function tick() {
     let dy = b.y - a.y
     let d = Math.sqrt(dx * dx + dy * dy)
     if (d < 1) d = 1
-    const desired = e.source === e.target ? 28 : 140
-    const k = 0.006
+    const desired = e.source === e.target ? 32 : edgeDesiredDistance
+    const k = edgeSpring
     const force = (d - desired) * k
     dx /= d
     dy /= d
@@ -435,14 +489,19 @@ function tick() {
 
   for (const n of ns) {
     if (dragNodeId === n.id) continue
-    n.vx += (centerX - n.x) * 0.0009
-    n.vy += (centerY - n.y) * 0.0009
+    const bounds = pillarBoundsByName(n.pillar)
+    const anchorX = bounds.x + bounds.width / 2
+    const anchorY = bounds.y + bounds.height / 2
+    n.vx += (centerX - n.x) * centerPull
+    n.vy += (centerY - n.y) * centerPull
+    n.vx += (anchorX - n.x) * anchorPullX
+    n.vy += (anchorY - n.y) * anchorPullY
     n.vx *= 0.92
     n.vy *= 0.92
     n.x += n.vx
     n.y += n.vy
-    n.x = Math.max(30, Math.min(width - 30, n.x))
-    n.y = Math.max(30, Math.min(height - 30, n.y))
+    n.x = Math.max(bounds.x + n.radius + boundaryPadding, Math.min(bounds.x + bounds.width - n.radius - boundaryPadding, n.x))
+    n.y = Math.max(bounds.y + n.radius + boundaryPadding, Math.min(bounds.y + bounds.height - n.radius - boundaryPadding, n.y))
   }
 
   rafId = requestAnimationFrame(tick)
@@ -457,14 +516,8 @@ function findNode(id: string) {
   return nodes.value.find((n) => n.id === id)
 }
 
-function onNodeMouseDown(nodeId: string, ev: MouseEvent) {
-  ev.stopPropagation()
+function onNodeMouseDown(nodeId: string) {
   dragNodeId = nodeId
-  const onUp = () => {
-    dragNodeId = null
-    window.removeEventListener('mouseup', onUp)
-  }
-  window.addEventListener('mouseup', onUp)
 }
 
 function svgPoint(ev: MouseEvent) {
@@ -484,16 +537,38 @@ function onSvgMouseMove(ev: MouseEvent) {
   if (!p) return
   const n = findNode(dragNodeId)
   if (!n) return
-  n.x = p.x
-  n.y = p.y
+  const bounds = pillarBoundsByName(n.pillar)
+  n.x = Math.max(bounds.x + n.radius + 4, Math.min(bounds.x + bounds.width - n.radius - 4, p.x))
+  n.y = Math.max(bounds.y + n.radius + 4, Math.min(bounds.y + bounds.height - n.radius - 4, p.y))
   n.vx = 0
   n.vy = 0
 }
+
+function onSvgMouseUp() {
+  dragNodeId = null
+}
+
+function measurePane() {
+  const el = graphPaneRef.value
+  if (!el) return
+  const rect = el.getBoundingClientRect()
+  width.value = Math.max(Math.floor(rect.width), 640)
+  height.value = Math.max(Math.floor(rect.height), 420)
+}
+
+onMounted(() => {
+  measurePane()
+  if (typeof ResizeObserver !== 'undefined' && graphPaneRef.value) {
+    resizeObserver = new ResizeObserver(() => measurePane())
+    resizeObserver.observe(graphPaneRef.value)
+  }
+})
 
 watch(
   () => props.visible,
   (v) => {
     if (v) {
+      measurePane()
       buildGraph()
       startSimulation()
     } else {
@@ -517,6 +592,11 @@ watch(
 
 onBeforeUnmount(() => {
   stopSimulation()
+  if (resizeObserver && graphPaneRef.value) {
+    resizeObserver.unobserve(graphPaneRef.value)
+    resizeObserver.disconnect()
+  }
+  resizeObserver = null
 })
 </script>
 
@@ -540,14 +620,19 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="modal-body">
-        <section class="graph-pane">
+        <section ref="graphPaneRef" class="graph-pane">
+          <PillarBoardLayer :regions="pillarRegions" />
+
           <svg
             ref="svgRef"
             :viewBox="`0 0 ${width} ${height}`"
+            preserveAspectRatio="none"
             class="graph-svg"
             @mousemove="onSvgMouseMove"
+            @mouseup="onSvgMouseUp"
+            @mouseleave="onSvgMouseUp"
           >
-            <g>
+            <g class="edges-layer">
               <line
                 v-for="e in edges"
                 :key="e.id"
@@ -555,46 +640,58 @@ onBeforeUnmount(() => {
                 :y1="findNode(e.source)?.y || 0"
                 :x2="findNode(e.target)?.x || 0"
                 :y2="findNode(e.target)?.y || 0"
-                :stroke="edgeColor[e.type]"
+                :stroke="edgeStroke(e.type)"
                 :stroke-width="activeEdge?.id === e.id ? 3.4 : 2.1"
                 :stroke-dasharray="e.source === e.target ? '2 2' : undefined"
                 class="edge"
-                :class="{ pinned: pinnedEdgeId === e.id }"
+                :class="[`edge-${e.type}`, { pinned: pinnedEdgeId === e.id }]"
+                :style="{ stroke: edgeStroke(e.type) }"
                 @click.stop="pinEdge(e.id)"
                 @mouseenter="hoveredEdgeId = e.id"
                 @mouseleave="hoveredEdgeId = null"
               />
             </g>
 
-            <g v-for="n in nodes" :key="n.id" class="node-group">
+            <g class="nodes-layer">
               <circle
-                v-if="n.indicatorType === 'narrative'"
+                v-for="n in nodes.filter((x) => x.indicatorType !== 'table')"
+                :key="n.id"
                 :cx="n.x"
                 :cy="n.y"
                 :r="n.radius"
-                class="node narrative"
-                :class="{ active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id }"
-                @mousedown="onNodeMouseDown(n.id, $event)"
-                @click.stop="pinNode(n.id)"
-                @mouseenter="hoveredNodeId = n.id"
-                @mouseleave="hoveredNodeId = null"
-              />
-              <rect
-                v-else
-                :x="n.x - n.radius"
-                :y="n.y - n.radius"
-                :width="n.radius * 2"
-                :height="n.radius * 2"
-                rx="5"
-                class="node table"
-                :class="{ active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id }"
-                @mousedown="onNodeMouseDown(n.id, $event)"
+                class="node"
+                :class="['narrative', { active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id }]"
+                @mousedown="onNodeMouseDown(n.id)"
                 @click.stop="pinNode(n.id)"
                 @mouseenter="hoveredNodeId = n.id"
                 @mouseleave="hoveredNodeId = null"
               />
 
-              <text :x="n.x" :y="n.y + n.radius + 12" class="node-label">{{ n.indicatorName }}</text>
+              <rect
+                v-for="n in nodes.filter((x) => x.indicatorType === 'table')"
+                :key="`${n.id}-table`"
+                :x="n.x - n.radius"
+                :y="n.y - n.radius"
+                :width="n.radius * 2"
+                :height="n.radius * 2"
+                :rx="4"
+                class="node node-square table"
+                :class="{ active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id }"
+                @mousedown="onNodeMouseDown(n.id)"
+                @click.stop="pinNode(n.id)"
+                @mouseenter="hoveredNodeId = n.id"
+                @mouseleave="hoveredNodeId = null"
+              />
+              <text
+                v-for="n in nodes"
+                :key="`${n.id}-label`"
+                :x="n.x"
+                :y="n.y + n.radius + 10"
+                class="node-label"
+                pointer-events="none"
+              >
+                {{ n.indicatorName }}
+              </text>
             </g>
           </svg>
         </section>
@@ -763,7 +860,7 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 100%;
   min-height: 640px;
-  background: transparent;
+  background: #fff7fb;
   display: flex;
 }
 
@@ -771,7 +868,7 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 100%;
   border-radius: 0;
-  background: #fff;
+  background: #fff7fb;
   border: none;
   overflow: hidden;
   display: flex;
@@ -783,7 +880,8 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: space-between;
   padding: 0.7rem 1rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #d0d1e6;
+  background: #ece7f2;
 }
 
 .header-left {
@@ -796,8 +894,8 @@ onBeforeUnmount(() => {
   border: none;
   border-radius: 10px;
   padding: 0.42rem 0.68rem;
-  background: rgba(219, 234, 254, 0.85);
-  color: #1d4ed8;
+  background: #d0d1e6;
+  color: #034e7b;
   cursor: pointer;
   font-size: 0.78rem;
 }
@@ -807,6 +905,7 @@ onBeforeUnmount(() => {
   background: transparent;
   cursor: pointer;
   font-size: 1rem;
+  color: #034e7b;
 }
 
 .legend {
@@ -814,7 +913,8 @@ onBeforeUnmount(() => {
   gap: 0.8rem;
   flex-wrap: wrap;
   padding: 0.55rem 1rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #d0d1e6;
+  background: #ece7f2;
 }
 
 .legend-item {
@@ -822,7 +922,7 @@ onBeforeUnmount(() => {
   align-items: center;
   gap: 0.35rem;
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: #034e7b;
 }
 
 .dot {
@@ -833,31 +933,31 @@ onBeforeUnmount(() => {
 }
 
 .dot.narrative {
-  background: #0ea5e9;
+  background: #0570b0;
 }
 
 .dot.table {
   border-radius: 2px;
-  background: #0f766e;
+  background: #3690c0;
 }
 
 .line {
   width: 14px;
   height: 0;
-  border-top: 2px solid #94a3b8;
+  border-top: 2px solid #74a9cf;
   display: inline-block;
 }
 
 .line.causal {
-  border-color: #0ea5e9;
+  border-color: #1565c0;
 }
 
 .line.conflict {
-  border-color: #ef4444;
+  border-color: #c62828;
 }
 
 .line.relation {
-  border-color: #a855f7;
+  border-color: #ff8f00;
 }
 
 .modal-body {
@@ -868,19 +968,48 @@ onBeforeUnmount(() => {
 }
 
 .graph-pane {
-  border-right: 1px solid var(--color-border);
-  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid #d0d1e6;
+  background: #fff7fb;
+}
+
+.pillar-rect {
+  fill: #ece7f2;
+  stroke: #a6bddb;
+  stroke-width: 1.2;
+  rx: 14;
+}
+
+.pillar-label {
+  fill: #034e7b;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .graph-svg {
   width: 100%;
   height: 100%;
   user-select: none;
+  position: relative;
+  z-index: 2;
 }
 
 .edge {
   cursor: pointer;
   opacity: 0.9;
+}
+
+.edge-causal_anchoring {
+  stroke: #1565c0 !important;
+}
+
+.edge-conflict_audit {
+  stroke: #c62828 !important;
+}
+
+.edge-narrative_relations {
+  stroke: #ff8f00 !important;
 }
 
 .edge.pinned {
@@ -899,11 +1028,11 @@ onBeforeUnmount(() => {
 }
 
 .node.narrative {
-  fill: #e0f2fe;
+  fill: #d0d1e6;
 }
 
 .node.table {
-  fill: #ccfbf1;
+  fill: #a6bddb;
   stroke-dasharray: 3 2;
 }
 
@@ -912,14 +1041,19 @@ onBeforeUnmount(() => {
 }
 
 .node.pinned {
-  stroke: #f59e0b;
+  stroke: #034e7b;
   stroke-width: 2.4;
 }
 
 .node-label {
   text-anchor: middle;
-  font-size: 10px;
-  fill: #0f172a;
+  dominant-baseline: hanging;
+  font-size: 9px;
+  font-weight: 600;
+  fill: #034e7b;
+  stroke: #fff7fb;
+  stroke-width: 2.2px;
+  paint-order: stroke;
   pointer-events: none;
 }
 
@@ -928,6 +1062,7 @@ onBeforeUnmount(() => {
   overflow: auto;
   scrollbar-gutter: stable;
   min-width: 0;
+  background: #fff7fb;
 }
 
 .info-head-row {

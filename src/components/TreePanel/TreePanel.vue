@@ -5,7 +5,6 @@ import type { IntermediateResult } from '../../types/intermediate'
 import type { IndicatorKey } from '../../composables/useIndicatorLink'
 import type { OperatorView, OperatorPillarResult } from '../../types/operator'
 import TreeNode from './TreeNode.vue'
-import OperatorGraphModal from './OperatorGraphModal.vue'
 
 const props = defineProps<{
   data: IntermediateResult | null
@@ -17,18 +16,13 @@ const props = defineProps<{
 const emit = defineEmits<{
   indicatorHover: [key: IndicatorKey]
   indicatorUnhover: []
+  openGraphWorkspace: []
 }>()
-
-const showOperatorGraph = ref(false)
 
 function openOperatorGraph() {
   if (props.operatorView?.operator_results?.length) {
-    showOperatorGraph.value = true
+    emit('openGraphWorkspace')
   }
-}
-
-function closeOperatorGraph() {
-  showOperatorGraph.value = false
 }
 
 watch(
@@ -58,48 +52,38 @@ const operatorByPillar = computed(() => {
 
 <template>
   <div class="tree-panel">
-    <template v-if="showOperatorGraph">
-      <OperatorGraphModal
-        :visible="true"
-        :intermediate="data"
-        :operator-view="operatorView || null"
-        @close="closeOperatorGraph"
-      />
-    </template>
-    <template v-else>
-      <div class="tree-header">
-        <button
-          type="button"
-          class="tree-title-btn"
-          :disabled="!operatorView?.operator_results?.length"
-          @click="openOperatorGraph"
-          :title="operatorView?.operator_results?.length ? '点击查看算子关系图' : '暂无算子文件数据'"
-        >
-          推理结构
-        </button>
-        <p v-if="data" class="tree-query">{{ data.query }}</p>
-        <p v-if="operatorView?.operator_results?.length" class="operator-hint">
-          已加载算子视图：{{ operatorView.operator_results.length }} 个 pillar
-        </p>
-      </div>
-      <div v-if="data" class="tree-content">
-        <div class="query-root">
-          <div class="pillars-list">
-            <TreeNode
-              v-for="(pillar, i) in data.results"
-              :key="i"
-              :pillar="pillar"
-              :pillar-index="i"
-              :operator-item="operatorByPillar.get(pillar.pillar) || null"
-              :indicator-to-expand="indicatorToExpand"
-              :is-indicator-hovered="isIndicatorHovered"
-              @indicator-hover="(k) => emit('indicatorHover', k)"
-              @indicator-unhover="emit('indicatorUnhover')"
-            />
-          </div>
+    <div class="tree-header">
+      <button
+        type="button"
+        class="tree-title-btn"
+        :disabled="!operatorView?.operator_results?.length"
+        @click="openOperatorGraph"
+        :title="operatorView?.operator_results?.length ? '点击查看统一图视图' : '暂无算子文件数据'"
+      >
+        推理结构
+      </button>
+      <p v-if="data" class="tree-query">{{ data.query }}</p>
+      <p v-if="operatorView?.operator_results?.length" class="operator-hint">
+        已加载算子视图：{{ operatorView.operator_results.length }} 个 pillar
+      </p>
+    </div>
+    <div v-if="data" class="tree-content">
+      <div class="query-root">
+        <div class="pillars-list">
+          <TreeNode
+            v-for="(pillar, i) in data.results"
+            :key="i"
+            :pillar="pillar"
+            :pillar-index="i"
+            :operator-item="operatorByPillar.get(pillar.pillar) || null"
+            :indicator-to-expand="indicatorToExpand"
+            :is-indicator-hovered="isIndicatorHovered"
+            @indicator-hover="(k) => emit('indicatorHover', k)"
+            @indicator-unhover="emit('indicatorUnhover')"
+          />
         </div>
       </div>
-    </template>
+    </div>
   </div>
 </template>
 
