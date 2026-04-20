@@ -41,34 +41,37 @@ function closeStage3Modal() {
 
 <template>
   <div class="conclusion-panel">
-    <div class="conclusion-header">
-      <h2 class="conclusion-title">结论展示</h2>
-    </div>
-    <div v-if="data" class="conclusion-content">
-      <FinalAnswer
-        :text="data.final_answer"
-        :can-open-tree="!!data.stage3_global_synthesis?.tree_graph"
-        @open-tree="openStage3Modal"
+    <template v-if="stage3ModalVisible">
+      <Stage3GraphModal
+        :visible="true"
+        :stage3="data?.stage3_global_synthesis"
+        :original-question="data?.original_question"
+        :final-answer="data?.final_answer"
+        @close="closeStage3Modal"
       />
-      <PillarSection
-        v-for="(analysis, i) in data.pillar_analysis"
-        :key="i"
-        :analysis="analysis"
-        :pillar-index="i"
-        :is-annotation-highlighted="isAnnotationHighlighted"
-        @annotation-hover="(ids) => onAnnotationHover(i, ids)"
-        @annotation-unhover="onAnnotationUnhover"
-        @annotation-click="(ids) => onAnnotationClick(i, ids)"
-      />
-    </div>
-
-    <Stage3GraphModal
-      :visible="stage3ModalVisible"
-      :stage3="data?.stage3_global_synthesis"
-      :original-question="data?.original_question"
-      :final-answer="data?.final_answer"
-      @close="closeStage3Modal"
-    />
+    </template>
+    <template v-else>
+      <div class="conclusion-header">
+        <h2 class="conclusion-title">结论展示</h2>
+      </div>
+      <div v-if="data" class="conclusion-content">
+        <FinalAnswer
+          :text="data.final_answer"
+          :can-open-tree="!!data.stage3_global_synthesis?.tree_graph"
+          @open-tree="openStage3Modal"
+        />
+        <PillarSection
+          v-for="(analysis, i) in data.pillar_analysis"
+          :key="i"
+          :analysis="analysis"
+          :pillar-index="i"
+          :is-annotation-highlighted="isAnnotationHighlighted"
+          @annotation-hover="(ids) => onAnnotationHover(i, ids)"
+          @annotation-unhover="onAnnotationUnhover"
+          @annotation-click="(ids) => onAnnotationClick(i, ids)"
+        />
+      </div>
+    </template>
   </div>
 </template>
 

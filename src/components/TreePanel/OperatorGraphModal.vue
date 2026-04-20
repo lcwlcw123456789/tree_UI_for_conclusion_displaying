@@ -521,10 +521,13 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-if="visible" class="modal-mask" @click.self="closeModal">
+  <div v-if="visible" class="modal-mask">
     <div class="modal-card">
       <header class="modal-header">
-        <h3>算子关系图（无向图）</h3>
+        <div class="header-left">
+          <button class="back-btn" type="button" @click="closeModal">← 返回</button>
+          <h3>算子关系图（无向图）</h3>
+        </div>
         <button class="close-btn" type="button" @click="closeModal">✕</button>
       </header>
 
@@ -756,20 +759,20 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .modal-mask {
-  position: fixed;
-  inset: 0;
-  z-index: 1100;
-  background: rgba(2, 6, 23, 0.52);
-  display: grid;
-  place-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  background: transparent;
+  display: flex;
 }
 
 .modal-card {
-  width: min(1380px, 96vw);
-  height: min(88vh, 920px);
-  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
   background: #fff;
-  border: 1px solid var(--color-border);
+  border: none;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -781,6 +784,22 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--color-border);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.back-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.42rem 0.68rem;
+  background: rgba(219, 234, 254, 0.85);
+  color: #1d4ed8;
+  cursor: pointer;
+  font-size: 0.78rem;
 }
 
 .close-btn {

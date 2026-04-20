@@ -58,49 +58,48 @@ const operatorByPillar = computed(() => {
 
 <template>
   <div class="tree-panel">
-    <div class="tree-header">
-      <button
-        type="button"
-        class="tree-title-btn"
-        :disabled="!operatorView?.operator_results?.length"
-        @click="openOperatorGraph"
-        :title="operatorView?.operator_results?.length ? '点击查看算子关系图' : '暂无算子文件数据'"
-      >
-        推理结构
-      </button>
-      <p v-if="data" class="tree-query">{{ data.query }}</p>
-      <p v-if="operatorView?.operator_results?.length" class="operator-hint">
-        已加载算子视图：{{ operatorView.operator_results.length }} 个 pillar
-      </p>
-    </div>
-    <div v-if="data" class="tree-content">
-      <div class="query-root">
-        <!-- <div class="query-node">
-          <span class="query-label">原始问题</span>
-          <span class="query-text">{{ data.query }}</span>
-        </div> -->
-        <div class="pillars-list">
-          <TreeNode
-            v-for="(pillar, i) in data.results"
-            :key="i"
-            :pillar="pillar"
-            :pillar-index="i"
-            :operator-item="operatorByPillar.get(pillar.pillar) || null"
-            :indicator-to-expand="indicatorToExpand"
-            :is-indicator-hovered="isIndicatorHovered"
-            @indicator-hover="(k) => emit('indicatorHover', k)"
-            @indicator-unhover="emit('indicatorUnhover')"
-          />
+    <template v-if="showOperatorGraph">
+      <OperatorGraphModal
+        :visible="true"
+        :intermediate="data"
+        :operator-view="operatorView || null"
+        @close="closeOperatorGraph"
+      />
+    </template>
+    <template v-else>
+      <div class="tree-header">
+        <button
+          type="button"
+          class="tree-title-btn"
+          :disabled="!operatorView?.operator_results?.length"
+          @click="openOperatorGraph"
+          :title="operatorView?.operator_results?.length ? '点击查看算子关系图' : '暂无算子文件数据'"
+        >
+          推理结构
+        </button>
+        <p v-if="data" class="tree-query">{{ data.query }}</p>
+        <p v-if="operatorView?.operator_results?.length" class="operator-hint">
+          已加载算子视图：{{ operatorView.operator_results.length }} 个 pillar
+        </p>
+      </div>
+      <div v-if="data" class="tree-content">
+        <div class="query-root">
+          <div class="pillars-list">
+            <TreeNode
+              v-for="(pillar, i) in data.results"
+              :key="i"
+              :pillar="pillar"
+              :pillar-index="i"
+              :operator-item="operatorByPillar.get(pillar.pillar) || null"
+              :indicator-to-expand="indicatorToExpand"
+              :is-indicator-hovered="isIndicatorHovered"
+              @indicator-hover="(k) => emit('indicatorHover', k)"
+              @indicator-unhover="emit('indicatorUnhover')"
+            />
+          </div>
         </div>
       </div>
-    </div>
-
-    <OperatorGraphModal
-      :visible="showOperatorGraph"
-      :intermediate="data"
-      :operator-view="operatorView || null"
-      @close="closeOperatorGraph"
-    />
+    </template>
   </div>
 </template>
 
