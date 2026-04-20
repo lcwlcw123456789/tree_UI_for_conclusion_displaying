@@ -78,6 +78,8 @@ let lastMeasuredHeight = 0
 const graph = computed<Stage3TreeGraph | null>(() => props.stage3?.tree_graph || null)
 const paths = computed<Stage3Path[]>(() => props.stage3?.candidate_paths || [])
 const selectedPathId = computed(() => props.stage3?.selected_path_id || props.stage3?.selected_path?.path_id || '')
+const canvasWidth = computed(() => (size.width > 0 ? size.width : 1200))
+const canvasHeight = computed(() => (size.height > 0 ? size.height : 720))
 const selectedPath = computed<Stage3Path | null>(() => {
   const list = paths.value
   if (!list.length) return props.stage3?.selected_path || null
@@ -119,8 +121,8 @@ const indicatorScoreRange = computed(() => {
 })
 
 const regionLayouts = computed<RegionLayout[]>(() => {
-  const width = Math.max(size.width || 0, 1200)
-  const height = Math.max(size.height || 0, 720)
+  const width = canvasWidth.value
+  const height = canvasHeight.value
   const list = pillarNodes.value
   if (!list.length) return []
   const gap = 16
@@ -446,8 +448,8 @@ function stateForNode(nodeId: string) {
   const node = nodeById.value[nodeId]
   const region = node ? getRegion(node) : null
   return {
-    x: region?.centerX || size.width / 2,
-    y: region?.y || size.height / 2,
+    x: region?.centerX || canvasWidth.value / 2,
+    y: region?.y || canvasHeight.value / 2,
     vx: 0,
     vy: 0,
     ax: 0,
@@ -460,14 +462,14 @@ function stateForNode(nodeId: string) {
 
 function nodeBounds(node: Stage3TreeNode) {
   const region = getRegion(node)
-  if (!region) return { minX: 0, maxX: Math.max(size.width, 1200), minY: 0, maxY: Math.max(size.height, 720) }
+  if (!region) return { minX: 0, maxX: canvasWidth.value, minY: 0, maxY: canvasHeight.value }
   if (node.node_type === 'pillar') return { minX: region.innerLeft, maxX: region.innerRight, minY: region.y + 26, maxY: region.y + 74 }
   return { minX: region.innerLeft, maxX: region.innerRight, minY: region.innerTop, maxY: region.innerBottom }
 }
 
 function initStates() {
-  const width = Math.max(size.width || 0, 1200)
-  const height = Math.max(size.height || 0, 720)
+  const width = canvasWidth.value
+  const height = canvasHeight.value
   for (const key of Object.keys(stateMap)) delete stateMap[key]
   const rootNode = root.value
   if (rootNode) {
@@ -829,7 +831,7 @@ void backToPath
             </div>
 
             <template v-else>
-              <svg class="edge-svg" :viewBox="`0 0 ${Math.max(size.width, 1200)} ${Math.max(size.height, 720)}`" preserveAspectRatio="none">
+              <svg class="edge-svg" :viewBox="`0 0 ${canvasWidth} ${canvasHeight}`" preserveAspectRatio="none">
                 <defs>
                   <marker id="arrow-neutral" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
                     <path d="M 0 0 L 7 3.5 L 0 7 z" fill="rgba(148,163,184,.9)" />
