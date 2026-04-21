@@ -24,16 +24,32 @@ type GraphEdge = {
   target: string
   type: 'causal_anchoring' | 'conflict_audit' | 'narrative_relations'
   details: any[]
+  operatorKeys: string[]
 }
+
+type OperatorType = 'causal_anchoring' | 'conflict_audit' | 'narrative_relations' | 'entity_alignment'
+type SelectableOperator = {
+  key: string
+  pillar: string
+  type: OperatorType
+  label: string
+  selectable: boolean
+  indicatorRefs: string[]
+}
+
+type WorkflowPhase = 'operator_select' | 'path_select' | 'final'
 
 const props = defineProps<{
   visible: boolean
   intermediate: IntermediateResult | null
   operatorView: OperatorView | null
+  workflowPhase?: WorkflowPhase
+  submittingOperator?: boolean
 }>()
 
 const emit = defineEmits<{
   close: []
+  submitOperators: [keys: string[]]
 }>()
 
 const svgRef = ref<SVGSVGElement | null>(null)
@@ -49,6 +65,11 @@ const hoveredNodeId = ref<string | null>(null)
 const hoveredEdgeId = ref<string | null>(null)
 const pinnedNodeId = ref<string | null>(null)
 const pinnedEdgeId = ref<string | null>(null)
+
+const selectedOperatorKeys = ref<Set<string>>(new Set())
+const selectedNodeIds = ref<Set<string>>(new Set())
+const selectedEdgeIds = ref<Set<string>>(new Set())
+const showOperatorSelectModal = ref(false)
 
 let rafId: number | null = null
 let dragNodeId: string | null = null
@@ -198,8 +219,167 @@ function stopSimulation() {
 
 function normalizeRef(indicatorRef?: string) {
   if (!indicatorRef) return ''
-  if (indicatorRef.includes('|sub:')) return indicatorRef.split('|sub:')[0]
+  if (indicatorRef.includes('|sub:')) return indicatorRef.split('|sub:')[0] ?? ''
   return indicatorRef
+}
+
+function normalizeTypeLabel(type: OperatorType) {
+  if (type === 'causal_anchoring') return '因果锚定'
+  if (type === 'conflict_audit') return '矛盾审计'
+  if (type === 'narrative_relations') return '叙事关系'
+  return '实体对齐'
+}
+
+const workflowPhase = computed(() => props.workflowPhase ?? 'final')
+
+const selectableOperators = computed<SelectableOperator[]>(() => {
+  const list: SelectableOperator[] = []
+  const results = props.operatorView?.operator_results || []
+
+  results.forEach((pillarResult, pillarIdx) => {
+    const pillar = pillarResult?.pillar || `pillar_${pillarIdx}`
+    const ops = pillarResult?.operators || {}
+
+    ;(ops.causal_anchoring || []).forEach((item, idx) => {
+      const key = item.operator_key || `${pillarIdx}|${pillar}|causal_anchoring|${idx}`
+      list.push({
+        key,
+        pillar,
+        type: 'causal_anchoring',
+        label: item.trend_or_claim_sentence || item.indicator_ref || key,
+        selectable: true,
+        indicatorRefs: [normalizeRef(item.indicator_ref)],
+      })
+    })
+
+    ;(ops.narrative_relations || []).forEach((item, idx) => {
+      const key = item.operator_key || `${pillarIdx}|${pillar}|narrative_relations|${idx}`
+      list.push({
+        key,
+        pillar,
+        type: 'narrative_relations',
+        label: item.composed_sentence || item.proposition || item.indicator_ref || key,
+        selectable: true,
+        indicatorRefs: [normalizeRef(item.indicator_ref)],
+      })
+    })
+
+    ;(ops.conflict_audit?.conflicts || []).forEach((item, idx) => {
+      const key = item.operator_key || `${pillarIdx}|${pillar}|conflict_audit|${idx}`
+      list.push({
+        key,
+        pillar,
+        type: 'conflict_audit',
+        label: item.description || item.conflict_type || key,
+        selectable: true,
+        indicatorRefs: (item.involved_indicator_refs || []).map((x) => normalizeRef(x)),
+      })
+    })
+
+    ;(ops.entity_alignment || []).forEach((item, idx) => {
+      const key = item.operator_key || `${pillarIdx}|${pillar}|entity_alignment|${idx}`
+      list.push({
+        key,
+        pillar,
+        type: 'entity_alignment',
+        label: item.indicator_ref || key,
+        selectable: false,
+        indicatorRefs: [normalizeRef(item.indicator_ref)],
+      })
+    })
+  })
+
+  return list
+})
+
+const operatorByKey = computed(() => {
+  const m = new Map<string, SelectableOperator>()
+  selectableOperators.value.forEach((item) => m.set(item.key, item))
+  return m
+})
+
+function initializeSelection() {
+  const next = new Set<string>()
+  selectableOperators.value.forEach((item) => {
+    if (!item.selectable) next.add(item.key)
+  })
+  selectedOperatorKeys.value = next
+}
+
+function selectAllOperators() {
+  if (workflowPhase.value !== 'operator_select') return
+  const next = new Set<string>()
+  selectableOperators.value.forEach((item) => {
+    next.add(item.key)
+  })
+  selectedOperatorKeys.value = next
+}
+
+function toggleOperatorSelection(key: string) {
+  const item = operatorByKey.value.get(key)
+  if (!item || !item.selectable) return
+  if (workflowPhase.value !== 'operator_select') return
+  const next = new Set(selectedOperatorKeys.value)
+  if (next.has(key)) next.delete(key)
+  else next.add(key)
+  selectedOperatorKeys.value = next
+}
+
+function keysForNode(node: GraphNode): string[] {
+  const ref = normalizeRef(node.indicatorRef)
+  if (!ref) return []
+  return selectableOperators.value
+    .filter((item) => item.indicatorRefs.includes(ref))
+    .map((item) => item.key)
+}
+
+function keysForEdge(edge: GraphEdge): string[] {
+  if (edge.operatorKeys?.length) return edge.operatorKeys
+
+  const keys = new Set<string>()
+  for (const d of edge.details || []) {
+    if (d && typeof d === 'object' && typeof d.operator_key === 'string' && d.operator_key) {
+      keys.add(d.operator_key)
+    }
+  }
+  if (keys.size) return Array.from(keys)
+
+  const source = findNode(edge.source)
+  const target = findNode(edge.target)
+  const sKeys = source ? keysForNode(source) : []
+  const tKeys = target ? keysForNode(target) : []
+  const sSet = new Set(sKeys)
+  tKeys.forEach((k) => {
+    if (sSet.has(k)) keys.add(k)
+  })
+  if (!keys.size) {
+    sKeys.forEach((k) => keys.add(k))
+    tKeys.forEach((k) => keys.add(k))
+  }
+  return Array.from(keys)
+}
+
+function toggleByKeys(keys: string[]) {
+  if (workflowPhase.value !== 'operator_select') return
+  const selectable = keys.filter((k) => operatorByKey.value.get(k)?.selectable)
+  if (!selectable.length) return
+  const next = new Set(selectedOperatorKeys.value)
+  const allSelected = selectable.every((k) => next.has(k))
+  if (allSelected) selectable.forEach((k) => next.delete(k))
+  else selectable.forEach((k) => next.add(k))
+  selectedOperatorKeys.value = next
+}
+
+function isSelectedKey(key: string) {
+  return selectedOperatorKeys.value.has(key)
+}
+
+function isNodeSelected(node: GraphNode) {
+  return selectedNodeIds.value.has(node.id)
+}
+
+function isEdgeSelected(edge: GraphEdge) {
+  return selectedEdgeIds.value.has(edge.id)
 }
 
 function closeModal() {
@@ -217,9 +397,31 @@ function pinNode(nodeId: string) {
   hoveredEdgeId.value = null
 }
 
+function handleNodeClick(nodeId: string) {
+  pinNode(nodeId)
+  const node = findNode(nodeId)
+  if (!node) return
+  const next = new Set(selectedNodeIds.value)
+  if (next.has(nodeId)) next.delete(nodeId)
+  else next.add(nodeId)
+  selectedNodeIds.value = next
+  toggleByKeys(keysForNode(node))
+}
+
 function pinEdge(edgeId: string) {
   pinnedEdgeId.value = pinnedEdgeId.value === edgeId ? null : edgeId
   pinnedNodeId.value = null
+}
+
+function handleEdgeClick(edgeId: string) {
+  pinEdge(edgeId)
+  const edge = edges.value.find((e) => e.id === edgeId)
+  if (!edge) return
+  const next = new Set(selectedEdgeIds.value)
+  if (next.has(edgeId)) next.delete(edgeId)
+  else next.add(edgeId)
+  selectedEdgeIds.value = next
+  toggleByKeys(keysForEdge(edge))
 }
 
 function clearPinned() {
@@ -328,9 +530,15 @@ function buildGraph() {
         target: t,
         type,
         details: [],
+        operatorKeys: [],
       })
     }
-    edgeMap.get(key)!.details.push(detail)
+    const edge = edgeMap.get(key)!
+    edge.details.push(detail)
+    const opKey = detail?.operator_key
+    if (typeof opKey === 'string' && opKey && !edge.operatorKeys.includes(opKey)) {
+      edge.operatorKeys.push(opKey)
+    }
   }
 
   op.operator_results.forEach((opPillar: OperatorPillarResult) => {
@@ -357,6 +565,7 @@ function buildGraph() {
       if (matchedTargets.size) {
         for (const tid of matchedTargets) {
           addEdge(srcId, tid, 'causal_anchoring', {
+            operator_key: item.operator_key,
             indicator_ref: item.indicator_ref,
             trend_or_claim_sentence: item.trend_or_claim_sentence,
             candidate_causes: item.candidate_causes || [],
@@ -365,6 +574,7 @@ function buildGraph() {
         }
       } else {
         addEdge(srcId, srcId, 'causal_anchoring', {
+          operator_key: item.operator_key,
           indicator_ref: item.indicator_ref,
           trend_or_claim_sentence: item.trend_or_claim_sentence,
           candidate_causes: item.candidate_causes || [],
@@ -383,11 +593,17 @@ function buildGraph() {
       if (refs.length >= 2) {
         for (let i = 0; i < refs.length; i++) {
           for (let j = i + 1; j < refs.length; j++) {
-            addEdge(refs[i], refs[j], 'conflict_audit', c as ConflictItem)
+            addEdge(refs[i], refs[j], 'conflict_audit', {
+              ...(c as ConflictItem),
+              operator_key: (c as any).operator_key,
+            })
           }
         }
       } else if (refs.length === 1) {
-        addEdge(refs[0], refs[0], 'conflict_audit', c as ConflictItem)
+        addEdge(refs[0], refs[0], 'conflict_audit', {
+          ...(c as ConflictItem),
+          operator_key: (c as any).operator_key,
+        })
       }
     }
 
@@ -401,10 +617,17 @@ function buildGraph() {
     if (relIds.length >= 2) {
       for (let i = 0; i < relIds.length - 1; i++) {
         const rel = ops.narrative_relations?.[i]
-        addEdge(relIds[i], relIds[i + 1], 'narrative_relations', rel || {})
+        addEdge(relIds[i], relIds[i + 1], 'narrative_relations', {
+          ...(rel || {}),
+          operator_key: (rel as any)?.operator_key,
+        })
       }
     } else if (relIds.length === 1) {
-      addEdge(relIds[0], relIds[0], 'narrative_relations', ops.narrative_relations?.[0] || {})
+      const rel = ops.narrative_relations?.[0]
+      addEdge(relIds[0], relIds[0], 'narrative_relations', {
+        ...(rel || {}),
+        operator_key: (rel as any)?.operator_key,
+      })
     }
   })
 
@@ -421,10 +644,12 @@ function buildGraph() {
   )
 
   if (pinnedNodeId.value && !connectedNodeIds.has(pinnedNodeId.value)) pinnedNodeId.value = null
+  selectedNodeIds.value = new Set(Array.from(selectedNodeIds.value).filter((id) => connectedNodeIds.has(id)))
   if (hoveredNodeId.value && !connectedNodeIds.has(hoveredNodeId.value)) hoveredNodeId.value = null
   if (pinnedEdgeId.value && !edges.value.some((e) => e.id === pinnedEdgeId.value)) {
     pinnedEdgeId.value = null
   }
+  selectedEdgeIds.value = new Set(Array.from(selectedEdgeIds.value).filter((id) => edges.value.some((e) => e.id === id)))
   if (hoveredEdgeId.value && !edges.value.some((e) => e.id === hoveredEdgeId.value)) {
     hoveredEdgeId.value = null
   }
@@ -576,6 +801,8 @@ watch(
       dragNodeId = null
       pinnedNodeId.value = null
       pinnedEdgeId.value = null
+      selectedNodeIds.value = new Set()
+      selectedEdgeIds.value = new Set()
       hoveredNodeId.value = null
       hoveredEdgeId.value = null
     }
@@ -588,6 +815,15 @@ watch(
   () => {
     if (props.visible) buildGraph()
   },
+)
+
+watch(
+  () => [props.operatorView, props.visible],
+  () => {
+    if (!props.visible) return
+    initializeSelection()
+  },
+  { immediate: true },
 )
 
 onBeforeUnmount(() => {
@@ -644,9 +880,9 @@ onBeforeUnmount(() => {
                 :stroke-width="activeEdge?.id === e.id ? 3.4 : 2.1"
                 :stroke-dasharray="e.source === e.target ? '2 2' : undefined"
                 class="edge"
-                :class="[`edge-${e.type}`, { pinned: pinnedEdgeId === e.id }]"
+                :class="[`edge-${e.type}`, { pinned: pinnedEdgeId === e.id, selected: isEdgeSelected(e) }]"
                 :style="{ stroke: edgeStroke(e.type) }"
-                @click.stop="pinEdge(e.id)"
+                @click.stop="handleEdgeClick(e.id)"
                 @mouseenter="hoveredEdgeId = e.id"
                 @mouseleave="hoveredEdgeId = null"
               />
@@ -660,9 +896,9 @@ onBeforeUnmount(() => {
                 :cy="n.y"
                 :r="n.radius"
                 class="node"
-                :class="['narrative', { active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id }]"
+                :class="['narrative', { active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id, selected: isNodeSelected(n) }]"
                 @mousedown="onNodeMouseDown(n.id)"
-                @click.stop="pinNode(n.id)"
+                @click.stop="handleNodeClick(n.id)"
                 @mouseenter="hoveredNodeId = n.id"
                 @mouseleave="hoveredNodeId = null"
               />
@@ -676,9 +912,9 @@ onBeforeUnmount(() => {
                 :height="n.radius * 2"
                 :rx="4"
                 class="node node-square table"
-                :class="{ active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id }"
+                :class="{ active: activeNode?.id === n.id, pinned: pinnedNodeId === n.id, selected: isNodeSelected(n) }"
                 @mousedown="onNodeMouseDown(n.id)"
-                @click.stop="pinNode(n.id)"
+                @click.stop="handleNodeClick(n.id)"
                 @mouseenter="hoveredNodeId = n.id"
                 @mouseleave="hoveredNodeId = null"
               />
@@ -697,6 +933,44 @@ onBeforeUnmount(() => {
         </section>
 
         <aside class="info-pane">
+          <div class="operator-select-list" v-if="selectableOperators.length">
+            <div class="operator-select-head">
+              <h4>算子选择</h4>
+              <div class="operator-select-actions">
+                <span>{{ selectedOperatorKeys.size }}/{{ selectableOperators.length }}</span>
+                <button
+                  type="button"
+                  class="select-all-btn"
+                  :disabled="workflowPhase !== 'operator_select'"
+                  @click="selectAllOperators"
+                >
+                  全选
+                </button>
+              </div>
+            </div>
+            <div class="operator-select-body">
+              <label
+                v-for="item in selectableOperators"
+                :key="item.key"
+                class="operator-item"
+                :class="{ readonly: !item.selectable || workflowPhase !== 'operator_select' }"
+              >
+                <input
+                  type="checkbox"
+                  :checked="isSelectedKey(item.key)"
+                  :disabled="!item.selectable || workflowPhase !== 'operator_select'"
+                  @change="toggleOperatorSelection(item.key)"
+                />
+                <div class="operator-item-main">
+                  <span class="operator-type">{{ normalizeTypeLabel(item.type) }}</span>
+                  <span class="operator-pillar">{{ item.pillar }}</span>
+                  <span class="operator-label">{{ item.label }}</span>
+                </div>
+              </label>
+            </div>
+            <p class="entity-tip">实体对齐（entity_alignment）默认且仅支持全选。</p>
+          </div>
+
           <div class="info-head-row">
             <h4>{{ infoTitle }}</h4>
             <button v-if="pinnedNodeId || pinnedEdgeId" type="button" class="pin-btn" @click="clearPinned">
@@ -849,6 +1123,38 @@ onBeforeUnmount(() => {
             </div>
           </template>
         </aside>
+      </div>
+
+      <div v-if="workflowPhase === 'operator_select'" class="operator-action-bar">
+        <div class="operator-selection-summary">
+          <span>已选算子：<b>{{ selectedOperatorKeys.size }}</b> 个</span>
+          <button type="button" class="view-selected-btn" @click="showOperatorSelectModal = true">查看已选</button>
+        </div>
+        <button 
+          type="button"
+          class="submit-operator-btn"
+          :disabled="selectedOperatorKeys.size === 0 || props.submittingOperator"
+          @click="() => emit('submitOperators', Array.from(selectedOperatorKeys))"
+        >
+          {{ props.submittingOperator ? '提交中...' : '确认选择的算子' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="showOperatorSelectModal && workflowPhase === 'operator_select'" class="operator-modal-overlay" @click="showOperatorSelectModal = false">
+    <div class="operator-modal" @click.stop>
+      <div class="operator-modal-head">
+        <h3>已选算子（{{ selectedOperatorKeys.size }}）</h3>
+        <button type="button" class="close-btn" @click="showOperatorSelectModal = false">✕</button>
+      </div>
+      <div class="operator-modal-body">
+        <p v-if="selectedOperatorKeys.size === 0" class="empty">暂无已选算子</p>
+        <ul v-else class="operator-list">
+          <li v-for="key in Array.from(selectedOperatorKeys).sort()" :key="key">
+            <code>{{ key }}</code>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1017,6 +1323,12 @@ onBeforeUnmount(() => {
   stroke-width: 3.6;
 }
 
+.edge.selected {
+  opacity: 1;
+  stroke-width: 3.8;
+  filter: drop-shadow(0 0 4px rgba(15, 23, 42, 0.25));
+}
+
 .node {
   cursor: grab;
   stroke: #0f172a;
@@ -1045,6 +1357,12 @@ onBeforeUnmount(() => {
   stroke-width: 2.4;
 }
 
+.node.selected {
+  stroke: #b45309;
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
+}
+
 .node-label {
   text-anchor: middle;
   dominant-baseline: hanging;
@@ -1063,6 +1381,113 @@ onBeforeUnmount(() => {
   scrollbar-gutter: stable;
   min-width: 0;
   background: #fff7fb;
+}
+
+.operator-select-list {
+  border: 1px solid #d0d1e6;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 0.55rem;
+}
+
+.operator-select-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid #ece7f2;
+}
+
+.operator-select-head h4 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.operator-select-head span {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.operator-select-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.select-all-btn {
+  border: 1px solid #b3bfce;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.select-all-btn:hover:not(:disabled) {
+  border-color: #005fcc;
+  color: #005fcc;
+}
+
+.select-all-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.operator-select-body {
+  max-height: 240px;
+  overflow: auto;
+  padding: 0.45rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.operator-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.45rem;
+  align-items: start;
+  padding: 0.4rem 0.45rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.operator-item.readonly {
+  background: #f1f5f9;
+  opacity: 0.85;
+}
+
+.operator-item-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.operator-type {
+  font-size: 0.7rem;
+  color: #0369a1;
+  font-weight: 700;
+}
+
+.operator-pillar {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.operator-label {
+  font-size: 0.76rem;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.entity-tip {
+  margin: 0;
+  padding: 0.35rem 0.6rem 0.55rem;
+  font-size: 0.72rem;
+  color: #64748b;
 }
 
 .info-head-row {
@@ -1197,5 +1622,152 @@ onBeforeUnmount(() => {
   font-size: 0.78rem;
   color: var(--color-text-muted);
   margin: 0.25rem 0;
+}
+
+.operator-action-bar {
+  flex-shrink: 0;
+  border-top: 1px solid #d0d1e6;
+  background: #f5f1fa;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.operator-selection-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.view-selected-btn {
+  border: 1px solid #a6bddb;
+  background: #fff;
+  color: #034e7b;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.18s ease;
+}
+
+.view-selected-btn:hover {
+  background: #efe9f6;
+  border-color: #8b9dc3;
+}
+
+.submit-operator-btn {
+  border: 1px solid #0570b0;
+  background: #0570b0;
+  color: #fff;
+  padding: 0.48rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: all 0.18s ease;
+}
+
+.submit-operator-btn:hover:not(:disabled) {
+  background: #034e7b;
+  border-color: #034e7b;
+  box-shadow: 0 6px 16px rgba(5, 112, 176, 0.25);
+}
+
+.submit-operator-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.operator-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.operator-modal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 56px rgba(15, 23, 42, 0.25);
+  width: 90%;
+  max-width: 500px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.operator-modal-head {
+  flex-shrink: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.operator-modal-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.operator-modal-head .close-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.operator-modal-head .close-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.operator-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.operator-modal-body .empty {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.operator-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.operator-list li {
+  padding: 0.7rem 0.85rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  border-left: 3px solid #0570b0;
+}
+
+.operator-list code {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.75rem;
+  color: #034e7b;
+  word-break: break-all;
 }
 </style>

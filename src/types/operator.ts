@@ -8,6 +8,7 @@ export interface CausalAnchoringItem {
   indicator_type: 'table' | 'narrative' | string
   trend_or_claim_sentence?: string
   candidate_causes?: CandidateCause[]
+  operator_key?: string
 }
 
 export interface EntityAlignmentItem {
@@ -16,6 +17,7 @@ export interface EntityAlignmentItem {
   alignment_relation?: 'direct' | 'indirect' | 'contextual' | string
   confidence?: number
   rationale?: string
+  operator_key?: string
 }
 
 export interface ConflictItem {
@@ -23,6 +25,7 @@ export interface ConflictItem {
   involved_indicator_refs?: string[]
   description?: string
   resolution?: string
+  operator_key?: string
 }
 
 export interface NarrativeRelationItem {
@@ -31,6 +34,7 @@ export interface NarrativeRelationItem {
   connective?: string
   proposition?: string
   composed_sentence?: string
+  operator_key?: string
 }
 
 export interface OperatorBundle {
@@ -66,4 +70,12 @@ export interface OperatorPillarResult {
 export interface OperatorView {
   original_question?: string
   operator_results: OperatorPillarResult[]
+}
+
+export interface OperatorSelectableItem {
+  key: string
+  pillar: string
+  type: 'causal_anchoring' | 'conflict_audit' | 'narrative_relations' | 'entity_alignment'
+  label: string
+  selectable: boolean
 }

@@ -12,7 +12,14 @@ const props = defineProps<{
 const emit = defineEmits<{
   back: []
   openLastResult: []
-  questionComplete: [payload: { intermediate: any; conclusion: any; operatorView?: any; logs?: string[] }]
+  questionComplete: [payload: {
+    intermediate: any
+    conclusion: any
+    operatorView?: any
+    logs?: string[]
+    qaSessionId?: string | null
+    workflowPhase?: 'operator_select' | 'path_select' | 'final'
+  }]
 }>()
 
 const { get, postJsonWithSignal, buildUrl } = useBackend()
@@ -281,6 +288,8 @@ async function sendQuestion() {
         conclusion: conclusionResult.data,
         operatorView,
         logs: askLogs.value,
+        qaSessionId: `static-${idx}`,
+        workflowPhase: 'operator_select',
       })
     } catch (e: any) {
       error.value = e?.message || '加载示例结果失败'
@@ -319,6 +328,8 @@ async function sendQuestion() {
       conclusion: res.conclusion,
       operatorView: res.pillar_operator_view ?? null,
       logs: res.logs,
+      qaSessionId: res.qa_session_id ?? null,
+      workflowPhase: res.workflow_phase ?? 'operator_select',
     })
   } catch (e: any) {
     if (e?.name === 'AbortError') {

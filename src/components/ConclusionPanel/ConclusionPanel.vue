@@ -9,6 +9,7 @@ import Stage3GraphModal from './Stage3GraphModal.vue'
 import OperatorGraphModal from '../TreePanel/OperatorGraphModal.vue'
 
 type GraphTab = 'operator' | 'stage3'
+type WorkflowPhase = 'operator_select' | 'path_select' | 'final'
 
 const props = defineProps<{
   data: FinalConclusion | null
@@ -16,6 +17,9 @@ const props = defineProps<{
   operatorView: OperatorView | null
   graphWorkspaceVisible: boolean
   activeGraphTab: GraphTab
+  workflowPhase?: WorkflowPhase
+  submittingOperator?: boolean
+  submittingPath?: boolean
   isAnnotationHighlighted: (pillarIndex: number, id: string) => boolean
 }>()
 
@@ -26,6 +30,9 @@ const emit = defineEmits<{
   openGraphWorkspace: [tab: GraphTab]
   closeGraphWorkspace: []
   switchGraphTab: [tab: GraphTab]
+  submitOperators: [selectedOperatorKeys: string[]]
+  submitPath: [selectedPathId: string]
+  openSelectedOperatorsPopup: [items: any[]]
 }>()
 
 function onAnnotationHover(pillarIndex: number, indicatorIds: string[]) {
@@ -65,7 +72,10 @@ const canOpenGraph = computed(() => !!props.operatorView?.operator_results?.leng
           :visible="true"
           :intermediate="intermediate"
           :operator-view="operatorView"
+          :workflow-phase="workflowPhase || 'final'"
+          :submitting-operator="submittingOperator || false"
           @close="closeWorkspace"
+          @submit-operators="(keys) => emit('submitOperators', keys)"
         />
 
         <Stage3GraphModal
@@ -74,7 +84,10 @@ const canOpenGraph = computed(() => !!props.operatorView?.operator_results?.leng
           :stage3="data?.stage3_global_synthesis"
           :original-question="data?.original_question"
           :final-answer="data?.final_answer"
+          :workflow-phase="workflowPhase || 'final'"
+          :submitting-path="submittingPath || false"
           @close="closeWorkspace"
+          @submit-path="(pathId) => emit('submitPath', pathId)"
         />
       </div>
     </template>

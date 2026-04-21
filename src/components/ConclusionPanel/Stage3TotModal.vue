@@ -856,11 +856,11 @@ onBeforeUnmount(() => {
               </div>
             </div>
 
-            <div class="legend">
+            <!-- <div class="legend">
               <span><i class="legend-node final"></i>最终选中路径</span>
               <span><i class="legend-node candidate"></i>未选中路径</span>
               <span><i class="legend-node neutral"></i>普通节点/边</span>
-            </div>
+            </div> -->
           </div>
 
           <div ref="graphSurfaceRef" class="graph-surface">

@@ -18,6 +18,8 @@ const qaIntermediate = ref<IntermediateResult | null>(null)
 const qaConclusion = ref<FinalConclusion | null>(null)
 const qaOperatorView = ref<OperatorView | null>(null)
 const qaLogs = ref<string[]>([])
+const qaSessionId = ref<string | null>(null)
+const qaWorkflowPhase = ref<'operator_select' | 'path_select' | 'final'>('final')
 
 const stepIndex = computed(() => {
   switch (currentStep.value) {
@@ -57,11 +59,15 @@ function handleQuestionComplete(payload: {
   conclusion: FinalConclusion
   operatorView?: OperatorView | null
   logs?: string[]
+  qaSessionId?: string | null
+  workflowPhase?: 'operator_select' | 'path_select' | 'final'
 }) {
   qaIntermediate.value = payload.intermediate
   qaConclusion.value = payload.conclusion
   qaOperatorView.value = payload.operatorView ?? null
   qaLogs.value = payload.logs ?? []
+  qaSessionId.value = payload.qaSessionId ?? null
+  qaWorkflowPhase.value = payload.workflowPhase ?? 'final'
   currentStep.value = 'result'
 }
 
@@ -147,6 +153,8 @@ function backToLastResult() {
           :intermediate="qaIntermediate"
           :conclusion="qaConclusion"
           :operator-view="qaOperatorView"
+          :qa-session-id="qaSessionId"
+          :workflow-phase="qaWorkflowPhase"
         />
       </section>
     </main>
