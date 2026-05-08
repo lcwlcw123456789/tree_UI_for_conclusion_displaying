@@ -17,7 +17,10 @@ export interface IndicatorKey {
 
 export function useIndicatorLink(
   intermediateData: { value: IntermediateResult | null },
-  conclusionData: { value: FinalConclusion | null }
+  conclusionData: { value: FinalConclusion | null },
+  options?: {
+    onNavigateToAtomic?: (target: { pillarIndex: number; indicatorIds: string[] }) => void
+  }
 ) {
   const hoveredIndicator = ref<IndicatorKey | null>(null)
 
@@ -142,6 +145,70 @@ export function useIndicatorLink(
     highlightedAnnotations.value = null
   }
 
+  interface NavigationTarget {
+    pillarIndex: number
+    indicatorIds: string[]
+  }
+
+  /**
+   * Compute the atomic-fact target (pillarIndex + indicatorIds) for a tree indicator key.
+   * Returns null if no matching conclusion pillar or ids found.
+   */
+  function getAtomicTargetForKey(key: IndicatorKey): NavigationTarget | null {
+    const concl = conclusionData.value
+    if (!concl) return null
+
+    const conclPillarIndex = concl.pillar_analysis.findIndex(
+      (pa) => pa.pillar === key.pillarName
+    )
+    if (conclPillarIndex < 0) return null
+
+    const analysis = concl.pillar_analysis[conclPillarIndex]
+    if (!analysis) return null
+
+    const ids: string[] = []
+    for (const [id, name] of Object.entries(analysis.indicator_lookup)) {
+      if (name === key.indicatorName) ids.push(id)
+    }
+
+    return {
+      pillarIndex: conclPillarIndex,
+      indicatorIds: ids,
+    }
+  }
+
+  /**
+   * Trigger navigation to the atomic-fact pane for the given tree key.
+   * If an `onNavigateToAtomic` callback was provided in options it will be called,
+   * otherwise a `CustomEvent('navigateToAtomicFacts')` will be dispatched on window.
+   */
+  function navigateToAtomicFacts(key: IndicatorKey): void {
+    const target = getAtomicTargetForKey(key)
+    if (!target) return
+
+    if (options && typeof options.onNavigateToAtomic === 'function') {
+      options.onNavigateToAtomic(target)
+      return
+    }
+
+    // Fallback: emit a CustomEvent so consuming components can listen globally
+    try {
+      const ev = new CustomEvent('navigateToAtomicFacts', { detail: target })
+      window.dispatchEvent(ev)
+    } catch (e) {
+      // ignore if no window (server-side), or dispatch fails
+    }
+  }
+
+  /**
+   * Combined click handler for a tree node: set hover/highlight, then navigate.
+   * Components can call this instead of manually wiring hover + navigate.
+   */
+  function handleNodeClick(key: IndicatorKey): void {
+    hoverOnTree(key)
+    navigateToAtomicFacts(key)
+  }
+
   /** 仅当 pillarIndex 和 indicatorId 都匹配时才高亮 */
   function isAnnotationHighlighted(
     pillarIndex: number,
@@ -171,6 +238,9 @@ export function useIndicatorLink(
     hoverOffConclusion,
     hoverOnTree,
     hoverOffTree,
+    handleNodeClick,
+    getAtomicTargetForKey,
+    navigateToAtomicFacts,
     isAnnotationHighlighted,
     isTreeIndicatorHovered,
   }

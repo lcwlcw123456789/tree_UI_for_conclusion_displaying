@@ -60,11 +60,11 @@ const operatorByPillar = computed(() => {
         @click="openOperatorGraph"
         :title="operatorView?.operator_results?.length ? '点击查看统一图视图' : '暂无算子文件数据'"
       >
-        推理结构
+        原子性事实
       </button>
       <p v-if="data" class="tree-query">{{ data.query }}</p>
       <p v-if="operatorView?.operator_results?.length" class="operator-hint">
-        已加载算子视图：{{ operatorView.operator_results.length }} 个 pillar
+        算子视图：{{ operatorView.operator_results.length }} 个 pillar
       </p>
     </div>
     <div v-if="data" class="tree-content">
@@ -96,7 +96,7 @@ const operatorByPillar = computed(() => {
 }
 
 .tree-header {
-  padding: 1rem;
+  padding: 0.75rem 1rem 0.85rem;
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
 }
@@ -108,8 +108,8 @@ const operatorByPillar = computed(() => {
 }
 
 .tree-title-btn {
-  margin: 0 0 0.5rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
   font-weight: 700;
   border: none;
   background: transparent;
@@ -130,13 +130,13 @@ const operatorByPillar = computed(() => {
 
 .tree-query {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   color: var(--color-text-muted);
 }
 
 .operator-hint {
-  margin: 0.3rem 0 0;
-  font-size: 0.78rem;
+  margin: 0.22rem 0 0;
+  font-size: 0.72rem;
   color: var(--color-primary);
 }
 

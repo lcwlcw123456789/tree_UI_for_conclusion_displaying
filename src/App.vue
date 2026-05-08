@@ -95,7 +95,7 @@ function backToLastResult() {
     <header class="app-header">
       <div class="app-title-block">
         <h1 class="app-title">Cross-Modal Document Insight</h1>
-        <p class="app-subtitle">跨模态文档洞察与问答系统</p>
+        <p class="app-subtitle">文档洞察与问答</p>
       </div>
       <div class="stepper">
         <div class="step" :class="{ active: stepIndex >= 1 }">
@@ -105,7 +105,7 @@ function backToLastResult() {
         <div class="step-line" :class="{ active: stepIndex >= 2 }" />
         <div class="step" :class="{ active: stepIndex >= 2 }">
           <span class="step-index">2</span>
-          <span class="step-label">文档与指标浏览</span>
+          <span class="step-label">文档与原子性事实浏览</span>
         </div>
         <div class="step-line" :class="{ active: stepIndex >= 3 }" />
         <div class="step" :class="{ active: stepIndex >= 3 }">
@@ -170,16 +170,18 @@ function backToLastResult() {
 }
 
 .app-header {
-  padding: 0.9rem 1.5rem 1.4rem;
+  position: relative;
+  padding: 0.7rem 1.15rem 1.05rem;
   border-bottom: 1px solid var(--color-border);
   background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 55%),
     radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 50%),
     rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(18px);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 0.85rem 1.25rem;
 }
 
 .app-title-block {
@@ -190,20 +192,22 @@ function backToLastResult() {
 
 .app-title {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .app-subtitle {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   color: var(--color-text-muted);
 }
 
 .stepper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
+  flex-wrap: wrap;
 }
 
 .step {
@@ -211,7 +215,7 @@ function backToLastResult() {
   align-items: center;
   gap: 0.5rem;
   color: var(--color-text-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .step-index {
@@ -311,5 +315,56 @@ function backToLastResult() {
 .logs-summary {
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+@media (max-width: 1080px) {
+  .app-header {
+    align-items: flex-start;
+    padding: 0.65rem 0.95rem 0.9rem;
+  }
+
+  .app-title-block {
+    gap: 0.08rem;
+  }
+
+  .stepper {
+    width: 100%;
+  }
+
+  .step-line {
+    display: none;
+  }
+
+  .step {
+    padding: 0.2rem 0;
+  }
+
+  .header-progress {
+    padding: 0 0.95rem 0.2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-title {
+    font-size: 0.98rem;
+  }
+
+  .app-subtitle {
+    display: none;
+  }
+
+  .step {
+    gap: 0.35rem;
+    font-size: 0.74rem;
+  }
+
+  .step-label {
+    white-space: normal;
+  }
+
+  .step-index {
+    width: 18px;
+    height: 18px;
+  }
 }
 </style>

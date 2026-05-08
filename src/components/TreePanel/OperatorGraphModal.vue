@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import type { IntermediateResult, NarrativeTask, TableStructuredTask } from '../../types/intermediate'
+import type { IntermediateResult } from '../../types/intermediate'
 import type { ConflictItem, OperatorPillarResult, OperatorView } from '../../types/operator'
 import PillarBoardLayer from '../GraphShared/PillarBoardLayer.vue'
 import { buildPillarRegions } from '../GraphShared/layout'
@@ -10,6 +10,7 @@ type GraphNode = {
   pillar: string
   indicatorName: string
   indicatorType: 'narrative' | 'table'
+  indicatorIndex: number
   indicatorRef: string
   x: number
   y: number
@@ -50,6 +51,13 @@ const props = defineProps<{
 const emit = defineEmits<{
   close: []
   submitOperators: [keys: string[]]
+  nodeNavigate: [key: {
+    pillarIndex: number
+    pillarName: string
+    indicatorName: string
+    indicatorType: 'narrative' | 'table'
+    indicatorIndex: number
+  }]
 }>()
 
 const svgRef = ref<SVGSVGElement | null>(null)
@@ -94,46 +102,6 @@ const activeEdge = computed(() => {
   if (pinnedEdgeId.value) return edges.value.find((e) => e.id === pinnedEdgeId.value) || null
   if (pinnedNodeId.value) return null
   return hoveredEdge.value
-})
-
-type NarrativeContent = {
-  kind: 'narrative'
-  task: NarrativeTask
-}
-
-type TableContent = {
-  kind: 'table'
-  task: TableStructuredTask
-  columns: string[]
-}
-
-const activeNodeContent = computed<NarrativeContent | TableContent | null>(() => {
-  const n = activeNode.value
-  const inter = props.intermediate
-  if (!n || !inter) return null
-
-  const pillar = inter.results.find((p) => p.pillar === n.pillar)
-  if (!pillar) return null
-
-  if (n.indicatorType === 'narrative') {
-    const task = pillar.narrative_tasks.find((t) => t.indicator_name === n.indicatorName)
-    return task ? { kind: 'narrative', task } : null
-  }
-
-  const task = pillar.table_structured_tasks.find((t) => t.indicator_name === n.indicatorName)
-  if (!task) return null
-
-  const colSet = new Set<string>()
-  for (const sub of task.sub_indicators || []) {
-    Object.keys(sub.values || {}).forEach((k) => colSet.add(k))
-  }
-  const columns = Array.from(colSet).sort((a, b) => {
-    if (a === 'Item') return -1
-    if (b === 'Item') return 1
-    return a.localeCompare(b)
-  })
-
-  return { kind: 'table', task, columns }
 })
 
 const infoTitle = computed(() => {
@@ -234,60 +202,33 @@ const workflowPhase = computed(() => props.workflowPhase ?? 'final')
 
 const selectableOperators = computed<SelectableOperator[]>(() => {
   const list: SelectableOperator[] = []
-  const results = props.operatorView?.operator_results || []
+  for (const edge of edges.value) {
+    const source = findNode(edge.source)
+    const target = findNode(edge.target)
+    const pillar = source?.pillar || target?.pillar || 'unknown_pillar'
+    const first = edge.details[0] as Record<string, unknown> | undefined
+    const primaryLabel =
+      edge.type === 'causal_anchoring'
+        ? (typeof first?.trend_or_claim_sentence === 'string' && first.trend_or_claim_sentence) ||
+          (typeof first?.indicator_ref === 'string' && first.indicator_ref) ||
+          `${edge.source} → ${edge.target}`
+        : edge.type === 'narrative_relations'
+          ? (typeof first?.composed_sentence === 'string' && first.composed_sentence) ||
+            (typeof first?.proposition === 'string' && first.proposition) ||
+            `${edge.source} → ${edge.target}`
+          : (typeof first?.description === 'string' && first.description) ||
+            (typeof first?.conflict_type === 'string' && first.conflict_type) ||
+            `${edge.source} ↔ ${edge.target}`
 
-  results.forEach((pillarResult, pillarIdx) => {
-    const pillar = pillarResult?.pillar || `pillar_${pillarIdx}`
-    const ops = pillarResult?.operators || {}
-
-    ;(ops.causal_anchoring || []).forEach((item, idx) => {
-      const key = item.operator_key || `${pillarIdx}|${pillar}|causal_anchoring|${idx}`
-      list.push({
-        key,
-        pillar,
-        type: 'causal_anchoring',
-        label: item.trend_or_claim_sentence || item.indicator_ref || key,
-        selectable: true,
-        indicatorRefs: [normalizeRef(item.indicator_ref)],
-      })
+    list.push({
+      key: edge.id,
+      pillar,
+      type: edge.type,
+      label: primaryLabel,
+      selectable: true,
+      indicatorRefs: [normalizeRef(source?.indicatorRef), normalizeRef(target?.indicatorRef)],
     })
-
-    ;(ops.narrative_relations || []).forEach((item, idx) => {
-      const key = item.operator_key || `${pillarIdx}|${pillar}|narrative_relations|${idx}`
-      list.push({
-        key,
-        pillar,
-        type: 'narrative_relations',
-        label: item.composed_sentence || item.proposition || item.indicator_ref || key,
-        selectable: true,
-        indicatorRefs: [normalizeRef(item.indicator_ref)],
-      })
-    })
-
-    ;(ops.conflict_audit?.conflicts || []).forEach((item, idx) => {
-      const key = item.operator_key || `${pillarIdx}|${pillar}|conflict_audit|${idx}`
-      list.push({
-        key,
-        pillar,
-        type: 'conflict_audit',
-        label: item.description || item.conflict_type || key,
-        selectable: true,
-        indicatorRefs: (item.involved_indicator_refs || []).map((x) => normalizeRef(x)),
-      })
-    })
-
-    ;(ops.entity_alignment || []).forEach((item, idx) => {
-      const key = item.operator_key || `${pillarIdx}|${pillar}|entity_alignment|${idx}`
-      list.push({
-        key,
-        pillar,
-        type: 'entity_alignment',
-        label: item.indicator_ref || key,
-        selectable: false,
-        indicatorRefs: [normalizeRef(item.indicator_ref)],
-      })
-    })
-  })
+  }
 
   return list
 })
@@ -299,20 +240,16 @@ const operatorByKey = computed(() => {
 })
 
 function initializeSelection() {
-  const next = new Set<string>()
-  selectableOperators.value.forEach((item) => {
-    if (!item.selectable) next.add(item.key)
-  })
-  selectedOperatorKeys.value = next
+  selectedOperatorKeys.value = new Set()
+  selectedEdgeIds.value = new Set()
+  selectedNodeIds.value = new Set()
 }
 
 function selectAllOperators() {
   if (workflowPhase.value !== 'operator_select') return
-  const next = new Set<string>()
-  selectableOperators.value.forEach((item) => {
-    next.add(item.key)
-  })
+  const next = new Set<string>(edges.value.map((edge) => edge.id))
   selectedOperatorKeys.value = next
+  selectedEdgeIds.value = new Set(next)
 }
 
 function toggleOperatorSelection(key: string) {
@@ -323,51 +260,7 @@ function toggleOperatorSelection(key: string) {
   if (next.has(key)) next.delete(key)
   else next.add(key)
   selectedOperatorKeys.value = next
-}
-
-function keysForNode(node: GraphNode): string[] {
-  const ref = normalizeRef(node.indicatorRef)
-  if (!ref) return []
-  return selectableOperators.value
-    .filter((item) => item.indicatorRefs.includes(ref))
-    .map((item) => item.key)
-}
-
-function keysForEdge(edge: GraphEdge): string[] {
-  if (edge.operatorKeys?.length) return edge.operatorKeys
-
-  const keys = new Set<string>()
-  for (const d of edge.details || []) {
-    if (d && typeof d === 'object' && typeof d.operator_key === 'string' && d.operator_key) {
-      keys.add(d.operator_key)
-    }
-  }
-  if (keys.size) return Array.from(keys)
-
-  const source = findNode(edge.source)
-  const target = findNode(edge.target)
-  const sKeys = source ? keysForNode(source) : []
-  const tKeys = target ? keysForNode(target) : []
-  const sSet = new Set(sKeys)
-  tKeys.forEach((k) => {
-    if (sSet.has(k)) keys.add(k)
-  })
-  if (!keys.size) {
-    sKeys.forEach((k) => keys.add(k))
-    tKeys.forEach((k) => keys.add(k))
-  }
-  return Array.from(keys)
-}
-
-function toggleByKeys(keys: string[]) {
-  if (workflowPhase.value !== 'operator_select') return
-  const selectable = keys.filter((k) => operatorByKey.value.get(k)?.selectable)
-  if (!selectable.length) return
-  const next = new Set(selectedOperatorKeys.value)
-  const allSelected = selectable.every((k) => next.has(k))
-  if (allSelected) selectable.forEach((k) => next.delete(k))
-  else selectable.forEach((k) => next.add(k))
-  selectedOperatorKeys.value = next
+  selectedEdgeIds.value = new Set(next)
 }
 
 function isSelectedKey(key: string) {
@@ -401,11 +294,22 @@ function handleNodeClick(nodeId: string) {
   pinNode(nodeId)
   const node = findNode(nodeId)
   if (!node) return
+
+  const pillarIndex = props.intermediate?.results.findIndex((p) => p.pillar === node.pillar) ?? -1
+  if (pillarIndex >= 0) {
+    emit('nodeNavigate', {
+      pillarIndex,
+      pillarName: node.pillar,
+      indicatorName: node.indicatorName,
+      indicatorType: node.indicatorType,
+      indicatorIndex: node.indicatorIndex,
+    })
+  }
+
   const next = new Set(selectedNodeIds.value)
   if (next.has(nodeId)) next.delete(nodeId)
   else next.add(nodeId)
   selectedNodeIds.value = next
-  toggleByKeys(keysForNode(node))
 }
 
 function pinEdge(edgeId: string) {
@@ -415,13 +319,11 @@ function pinEdge(edgeId: string) {
 
 function handleEdgeClick(edgeId: string) {
   pinEdge(edgeId)
-  const edge = edges.value.find((e) => e.id === edgeId)
-  if (!edge) return
   const next = new Set(selectedEdgeIds.value)
   if (next.has(edgeId)) next.delete(edgeId)
   else next.add(edgeId)
   selectedEdgeIds.value = next
-  toggleByKeys(keysForEdge(edge))
+  selectedOperatorKeys.value = new Set(next)
 }
 
 function clearPinned() {
@@ -484,6 +386,7 @@ function buildGraph() {
         pillar: pillar.pillar,
         indicatorName: t.indicator_name,
         indicatorType: 'narrative',
+        indicatorIndex: ni,
         indicatorRef: ref,
         x: bounds.x + 28 + Math.random() * Math.max(bounds.width - 56, 24),
         y: bounds.y + 30 + ni * 52 + Math.random() * 26,
@@ -502,6 +405,7 @@ function buildGraph() {
         pillar: pillar.pillar,
         indicatorName: t.indicator_name,
         indicatorType: 'table',
+        indicatorIndex: ti,
         indicatorRef: ref,
         x: bounds.x + 28 + Math.random() * Math.max(bounds.width - 56, 24),
         y: bounds.y + 96 + ti * 64 + Math.random() * 28,
@@ -935,7 +839,7 @@ onBeforeUnmount(() => {
         <aside class="info-pane">
           <div class="operator-select-list" v-if="selectableOperators.length">
             <div class="operator-select-head">
-              <h4>算子选择</h4>
+              <h4>边选择</h4>
               <div class="operator-select-actions">
                 <span>{{ selectedOperatorKeys.size }}/{{ selectableOperators.length }}</span>
                 <button
@@ -968,7 +872,7 @@ onBeforeUnmount(() => {
                 </div>
               </label>
             </div>
-            <p class="entity-tip">实体对齐（entity_alignment）默认且仅支持全选。</p>
+            <p class="entity-tip">当前列表按后端生成的边逐条展示，勾选只会影响对应的单条边。</p>
           </div>
 
           <div class="info-head-row">
@@ -986,68 +890,9 @@ onBeforeUnmount(() => {
                 <span>类型</span><b>{{ activeNode.indicatorType === 'table' ? '表格' : '文本' }}</b>
               </div>
               <div class="kv-row"><span>引用</span><b>{{ activeNode.indicatorRef }}</b></div>
-              <div class="kv-row" v-if="pinnedNodeId"><span>状态</span><b>已固定（点击节点可切换）</b></div>
+              <div class="kv-row"><span>交互</span><b>点击节点后，原子事实面板会自动跳转并展开</b></div>
+              <div class="kv-row" v-if="pinnedNodeId"><span>状态</span><b>已固定（再次点击可取消）</b></div>
             </div>
-
-            <details class="info-section" open>
-              <summary>节点本体内容</summary>
-
-              <template v-if="activeNodeContent?.kind === 'narrative'">
-                <div class="card">
-                  <div class="kv-row"><span>factoid_question</span><b>{{ activeNodeContent.task.factoid_question || '-' }}</b></div>
-                  <div class="kv-row"><span>source_text_id</span><b>{{ activeNodeContent.task.source_text_id || '-' }}</b></div>
-                  <div class="kv-row"><span>source_page</span><b>{{ activeNodeContent.task.source_page ?? '-' }}</b></div>
-                  <div class="desc"><b>rationale:</b> {{ activeNodeContent.task.rationale_from_extraction || '-' }}</div>
-                </div>
-
-                <details class="card" open>
-                  <summary>retrieved_evidence（{{ activeNodeContent.task.retrieved_evidence?.length || 0 }}）</summary>
-                  <ul v-if="activeNodeContent.task.retrieved_evidence?.length">
-                    <li v-for="(ev, i) in activeNodeContent.task.retrieved_evidence" :key="i">
-                      <b>{{ ev.id }}</b> / p.{{ ev.page }} / score={{ ev.score }}
-                      <div class="desc">{{ ev.text }}</div>
-                    </li>
-                  </ul>
-                  <div v-else class="empty-text">无检索证据</div>
-                </details>
-              </template>
-
-              <template v-else-if="activeNodeContent?.kind === 'table'">
-                <div class="card">
-                  <div class="kv-row"><span>source_page</span><b>{{ activeNodeContent.task.source_page ?? '-' }}</b></div>
-                </div>
-
-                <details
-                  v-for="(sub, i) in activeNodeContent.task.sub_indicators"
-                  :key="i"
-                  class="card"
-                  :open="i === 0"
-                >
-                  <summary>{{ sub.sub_indicator_name }}</summary>
-                  <div class="kv-row"><span>factoid_question</span><b>{{ sub.factoid_question || '-' }}</b></div>
-                  <div class="desc"><b>relevance:</b> {{ sub.relevance_rationale || '-' }}</div>
-                  <div class="kv-row"><span>source_text_id</span><b>{{ sub.source_text_id || '-' }}</b></div>
-
-                  <div class="table-wrap" v-if="activeNodeContent.columns.length">
-                    <table class="mini-table">
-                      <thead>
-                        <tr>
-                          <th v-for="col in activeNodeContent.columns" :key="col">{{ col }}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td v-for="col in activeNodeContent.columns" :key="col">{{ sub.values?.[col] ?? '-' }}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </details>
-              </template>
-
-              <div v-else class="empty-text">未找到该节点的中间结果内容。</div>
-            </details>
-
           </template>
 
           <template v-else-if="activeEdge">
@@ -1117,8 +962,8 @@ onBeforeUnmount(() => {
 
           <template v-else>
             <div class="info-section">
-              <p class="empty-text">悬停节点可查看节点自身内容（文本、检索证据、表格内容）。</p>
-              <p class="empty-text">点击节点可固定节点详情；点击边可固定算子详情。</p>
+              <p class="empty-text">点击节点后，原子事实面板会跳转并展开对应条目。</p>
+              <p class="empty-text">边详情仍在本面板展示（用于核查算子关系）。</p>
               <p class="empty-text">算子文件信息仅在边详情中展示。</p>
             </div>
           </template>
@@ -1127,7 +972,7 @@ onBeforeUnmount(() => {
 
       <div v-if="workflowPhase === 'operator_select'" class="operator-action-bar">
         <div class="operator-selection-summary">
-          <span>已选算子：<b>{{ selectedOperatorKeys.size }}</b> 个</span>
+          <span>已选边：<b>{{ selectedOperatorKeys.size }}</b> 个</span>
           <button type="button" class="view-selected-btn" @click="showOperatorSelectModal = true">查看已选</button>
         </div>
         <button 
@@ -1136,7 +981,7 @@ onBeforeUnmount(() => {
           :disabled="selectedOperatorKeys.size === 0 || props.submittingOperator"
           @click="() => emit('submitOperators', Array.from(selectedOperatorKeys))"
         >
-          {{ props.submittingOperator ? '提交中...' : '确认选择的算子' }}
+          {{ props.submittingOperator ? '提交中...' : '确认选择的边' }}
         </button>
       </div>
     </div>
@@ -1325,8 +1170,8 @@ onBeforeUnmount(() => {
 
 .edge.selected {
   opacity: 1;
-  stroke-width: 3.8;
-  filter: drop-shadow(0 0 4px rgba(15, 23, 42, 0.25));
+  stroke-width: 4.6;
+  filter: drop-shadow(0 0 6px rgba(0, 95, 204, 0.35));
 }
 
 .node {
@@ -1358,9 +1203,9 @@ onBeforeUnmount(() => {
 }
 
 .node.selected {
-  stroke: #b45309;
+  stroke: #005fcc;
   stroke-width: 2.2;
-  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
+  filter: drop-shadow(0 0 5px rgba(0, 95, 204, 0.28));
 }
 
 .node-label {

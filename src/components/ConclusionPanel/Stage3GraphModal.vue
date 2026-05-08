@@ -105,9 +105,17 @@ const nodePositions = computed<Record<string, Point>>(() => {
 
   indicatorNodes.value.forEach((node, i) => {
     if (map[node.node_id]) return
+    // 为未分配的节点计算备用位置，按总节点数自适应分布到可视区域内
+    const totalNodes = Math.max(indicatorNodes.value.length, 1)
+    const fallbackCols = Math.max(Math.min(Math.ceil(Math.sqrt(totalNodes)), 4), 2)
+    const fallbackRows = Math.max(Math.ceil(totalNodes / fallbackCols), 1)
+    const col = i % fallbackCols
+    const row = Math.floor(i / fallbackCols)
+    const cellWidth = canvasWidth.value / (fallbackCols + 1)
+    const cellHeight = canvasHeight.value / (fallbackRows + 1)
     map[node.node_id] = {
-      x: canvasWidth.value / 2 + (i % 5) * 60 - 120,
-      y: canvasHeight.value / 2 + Math.floor(i / 5) * 58,
+      x: cellWidth * (col + 1),
+      y: cellHeight * (row + 1),
       r: 20,
     }
   })
@@ -171,7 +179,8 @@ const pathSegments = computed(() => {
     const ex = b.x - ux * (b.r + 2)
     const ey = b.y - uy * (b.r + 2)
     const mx = (sx + ex) / 2
-    const my = (sy + ey) / 2 - (activePathSelected.value ? 74 : 58)
+    const lift = Math.min(activePathSelected.value ? 74 : 58, Math.max(24, canvasHeight.value * 0.08))
+    const my = (sy + ey) / 2 - lift
     segments.push({ from: list[i] as string, to: list[i + 1] as string, d: `M ${sx} ${sy} C ${mx} ${my}, ${mx} ${my}, ${ex} ${ey}` })
   }
   return segments
@@ -191,7 +200,8 @@ function edgePath(edge: Stage3TreeEdge) {
   const endX = t.x - ux * (t.r + 2)
   const endY = t.y - uy * (t.r + 2)
   const mx = (startX + endX) / 2
-  const my = (startY + endY) / 2 - 44
+  const lift = Math.min(44, Math.max(20, canvasHeight.value * 0.06))
+  const my = (startY + endY) / 2 - lift
   return `M ${startX} ${startY} C ${mx} ${my}, ${mx} ${my}, ${endX} ${endY}`
 }
 
@@ -540,7 +550,7 @@ watch(
                   <path d="M 0 0 L 7 3.5 L 0 7 z" fill="rgba(239,68,68,.95)" />
                 </marker>
                 <marker id="arrow-final" markerWidth="8" markerHeight="8" refX="6.6" refY="4" orient="auto" markerUnits="strokeWidth">
-                  <path d="M 0 0 L 8 4 L 0 8 z" fill="rgba(250,204,21,.98)" />
+                  <path d="M 0 0 L 8 4 L 0 8 z" fill="rgba(0,95,204,.98)" />
                 </marker>
                 <marker id="arrow-candidate" markerWidth="8" markerHeight="8" refX="6.6" refY="4" orient="auto" markerUnits="strokeWidth">
                   <path d="M 0 0 L 8 4 L 0 8 z" fill="rgba(168,85,247,.95)" />
@@ -701,21 +711,21 @@ watch(
 .edge-base.sequence { stroke: rgba(100,116,139,.82); }
 .edge-base.conflict { stroke: rgba(239,68,68,.88); stroke-dasharray: 10 7; }
 .edge-base.active, .edge-base.hovered, .edge-hit:hover .edge-base { stroke-width: 3.2; opacity: 1; filter: drop-shadow(0 0 5px rgba(15,23,42,.35)); animation: edge-hover-pulse 1s ease-in-out infinite; }
-.edge-base.path.final { stroke: rgba(245,158,11,.28); }
+.edge-base.path.final { stroke: rgba(0,95,204,.28); }
 .edge-base.path.candidate { stroke: rgba(139,92,246,.26); }
 .path-overlay { pointer-events: none; }
 .path-glow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.path-glow.final { stroke: rgba(250,204,21,.14); stroke-width: 9; }
+.path-glow.final { stroke: rgba(0,95,204,.14); stroke-width: 9; }
 .path-glow.candidate { stroke: rgba(168,85,247,.12); stroke-width: 6; }
 .path-main { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.path-main.final { stroke: #005fcc; stroke-width: 3.2; stroke-dasharray: 14 10; }
-.path-main.candidate { stroke: #8a3ffc; stroke-width: 2.3; stroke-dasharray: 10 8; }
+.path-main.final { stroke: #005fcc; stroke-width: 3.2; stroke-dasharray: 14 10; animation: flow 1.1s linear infinite; }
+.path-main.candidate { stroke: #8a3ffc; stroke-width: 2.3; stroke-dasharray: 10 8; animation: flow-candidate 1.3s linear infinite; }
 @keyframes edge-hover-pulse { 0% { stroke-width: 2.2; } 50% { stroke-width: 3.6; } 100% { stroke-width: 2.2; } }
 @keyframes flow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -128; } }
 @keyframes flow-candidate { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -116; } }
 .region { position: absolute; border-radius: 20px; border: 1px solid #a6bddb; overflow: hidden; transition: border-color .18s ease, box-shadow .18s ease, opacity .18s ease; z-index: 1; pointer-events: none; }
 .region::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.35), transparent 34%); pointer-events: none; }
-.region.final { border-color: rgba(245,158,11,.36); box-shadow: 0 0 0 1px rgba(245,158,11,.14), 0 18px 40px rgba(245,158,11,.08); }
+.region.final { border-color: rgba(0,95,204,.36); box-shadow: 0 0 0 1px rgba(0,95,204,.14), 0 18px 40px rgba(0,95,204,.08); }
 .region.candidate { border-color: rgba(139,92,246,.32); box-shadow: 0 0 0 1px rgba(139,92,246,.12), 0 18px 40px rgba(139,92,246,.08); }
 .region.muted { opacity: .58; filter: saturate(.84); }
 .region-head { position: absolute; left: 10px; top: 8px; right: 10px; display: flex; flex-direction: column; gap: .2rem; z-index: 2; pointer-events: none; }
@@ -729,7 +739,7 @@ watch(
 .indicator-card .score { font-size: .52rem; font-weight: 700; color: #334155; line-height: 1; align-self: center; }
 .graph-node.active { border-color: #0570b0; box-shadow: 0 0 0 1px rgba(5,112,176,.2), 0 18px 38px rgba(5,112,176,.18); }
 .graph-node.hovered { border-color: rgba(14,165,233,.45); box-shadow: 0 0 0 2px rgba(56,189,248,.2), 0 10px 22px rgba(14,116,144,.15); transform: translate(-50%, -50%) scale(1.05); }
-.graph-node.path.final { border-color: rgba(245,158,11,.56); box-shadow: 0 0 0 1px rgba(245,158,11,.22), 0 10px 20px rgba(245,158,11,.12); }
+.graph-node.path.final { border-color: rgba(0,95,204,.56); box-shadow: 0 0 0 1px rgba(0,95,204,.22), 0 10px 20px rgba(0,95,204,.12); }
 .graph-node.path.candidate { border-color: rgba(168,85,247,.48); box-shadow: 0 0 0 1px rgba(168,85,247,.2), 0 10px 20px rgba(168,85,247,.12); }
 .detail-panel { border-left: none; padding: .75rem 1rem; background: #f7f9fc; }
 .detail-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: .05rem 0 .25rem .25rem; }
@@ -738,7 +748,7 @@ watch(
 .detail-scroll { min-height: 0; overflow: auto; padding-right: .2rem; display: flex; flex-direction: column; gap: .85rem; scrollbar-gutter: stable both-edges; }
 .summary, .score-table-card, .row { border: 1px solid #b3bfce; border-radius: 16px; background: #ffffff; box-shadow: 0 10px 26px rgba(15,23,42,.08); }
 .summary { padding: .92rem; }
-.summary.selected { border-color: rgba(245,158,11,.28); background: linear-gradient(180deg, rgba(255,247,237,.84), rgba(255,255,255,.95)); }
+.summary.selected { border-color: rgba(0,95,204,.28); background: linear-gradient(180deg, rgba(219,234,254,.84), rgba(255,255,255,.95)); }
 .summary-top { display: flex; justify-content: space-between; gap: .75rem; align-items: flex-start; }
 .summary-top h5 { margin: .28rem 0 0; font-size: .92rem; line-height: 1.45; }
 .pill { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: .18rem .45rem; font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #92400e; background: rgba(253,230,138,.82); }
@@ -795,5 +805,61 @@ watch(
   box-shadow: none;
 }
 @media (max-width: 1400px) { .page-body { grid-template-columns: 1fr; } .detail-panel { border-left: none; border-top: 1px solid #d0d1e6; padding-top: 1rem; } .surface { min-height: 720px; } }
+
+@media (max-width: 980px) {
+  .page-header,
+  .toolbar,
+  .detail-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-actions {
+    justify-content: space-between;
+  }
+
+  .path-tabs {
+    gap: 0.45rem;
+  }
+
+  .path-tab {
+    min-width: 160px;
+    flex: 1 1 160px;
+  }
+
+  .surface {
+    min-height: 620px;
+  }
+
+  .detail-scroll {
+    scrollbar-gutter: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-header,
+  .toolbar,
+  .detail-panel {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+
+  .page-header p,
+  .detail-head p {
+    font-size: 0.72rem;
+  }
+
+  .path-tab {
+    min-width: 100%;
+  }
+
+  .surface {
+    min-height: 540px;
+  }
+
+  .detail-head h4 {
+    font-size: 0.9rem;
+  }
+}
 </style>
 

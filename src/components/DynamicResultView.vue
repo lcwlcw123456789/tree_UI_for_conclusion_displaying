@@ -119,6 +119,11 @@ function handleTreeIndicatorUnhover() {
   hoverOffTree()
 }
 
+function handleGraphNodeNavigate(key: IndicatorKey) {
+  indicatorToExpand.value = key
+  hoverOnTree(key)
+}
+
 function openGraphWorkspace(tab: GraphTab = 'operator') {
   activeGraphTab.value = tab
   showGraphWorkspace.value = true
@@ -248,6 +253,7 @@ function handleOpenSelectedOpsPopup(items: OperatorSelectableItem[]) {
         @annotation-hover="handleAnnotationHover"
         @annotation-unhover="handleAnnotationUnhover"
         @annotation-click="handleAnnotationClick"
+        @graph-node-navigate="handleGraphNodeNavigate"
         @open-graph-workspace="openGraphWorkspace"
         @close-graph-workspace="closeGraphWorkspace"
         @switch-graph-tab="switchGraphTab"

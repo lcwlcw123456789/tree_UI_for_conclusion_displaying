@@ -94,7 +94,7 @@ function onMouseLeave() {
     <div class="indicator-header" @click="collapsed = !collapsed">
       <span class="collapse-icon">{{ collapsed ? '▶' : '▼' }}</span>
       <span class="indicator-name">{{ task.indicator_name }}</span>
-      <span v-if="task.is_quantitative" class="badge quantitative">定量</span>
+      <span v-if="task.is_quantitative" class="badge quantitative">statistic</span>
       <span class="type-thumb" title="文本">文</span>
     </div>
     <div v-if="!collapsed" class="indicator-body">

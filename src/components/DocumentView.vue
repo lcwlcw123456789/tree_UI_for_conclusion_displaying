@@ -433,7 +433,7 @@ function handleKeydown(e: KeyboardEvent) {
         </div>
 
         <div class="panel pillar-panel">
-          <h3 class="panel-title">分析 Pillar</h3>
+          <h3 class="panel-title">分析视角集合</h3>
           <div class="panel-body pillar-list">
             <button
               v-for="p in pillars"
@@ -449,14 +449,14 @@ function handleKeydown(e: KeyboardEvent) {
               <div class="pillar-def">{{ p.definition }}</div>
               <div class="pillar-meta">
                 <span>关联页码：{{ p.associated_pages.join(', ') }}</span>
-                <span>指标数：{{ p.indicator_count }}</span>
+                <span>原子性事实数：{{ p.indicator_count }}</span>
               </div>
             </button>
           </div>
         </div>
 
         <div class="panel indicator-panel">
-          <h3 class="panel-title">对应 Indicator</h3>
+          <h3 class="panel-title">对应原子性事实</h3>
           <div class="panel-body indicator-list">
             <template v-if="indicatorsForActivePillar.length">
               <div
@@ -539,7 +539,7 @@ function handleKeydown(e: KeyboardEvent) {
               </div>
             </template>
             <p v-else class="hint-text">
-              该 Pillar 下暂未匹配到文本 indicator，或仅包含表格型指标。
+              该 Pillar 下暂未匹配到文本原子性事实，或仅包含表格型事实。
             </p>
           </div>
         </div>
@@ -590,10 +590,10 @@ function handleKeydown(e: KeyboardEvent) {
 
       <div class="qa-panel">
         <div class="qa-header">
-          <div class="qa-title-block">
+          <!-- <div class="qa-title-block">
             <h3>就当前文档提问</h3>
             <p class="hint-text">问题可以是复杂的非事实性问题，系统会自动拆分并检索证据。</p>
-          </div>
+          </div> -->
           <div class="qa-status" v-if="asking">
             <div class="spinner" />
             <span>后端正在运行问答管线…</span>
@@ -604,7 +604,7 @@ function handleKeydown(e: KeyboardEvent) {
             v-model="question"
             class="qa-input"
             rows="2"
-            placeholder="例如：总结本公司未来三年的关键增长驱动，并分点分析主要风险。按 Enter 发送，Shift+Enter 换行。输入 0~4 可直接查看不同公司的示例结果。"
+            placeholder="按 Enter 发送，Shift+Enter 换行。"
             @keydown="handleKeydown"
           />
           <button

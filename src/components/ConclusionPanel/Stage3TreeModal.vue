@@ -146,7 +146,7 @@ function closeModal() {
 
 .path-lane { border: 1px solid #dbe3ed; border-radius: 12px; background: #fff; padding: .65rem .75rem; }
 .path-lane.muted { opacity: .62; }
-.path-lane.selected { border-color: #f59e0b; box-shadow: 0 8px 18px rgba(245, 158, 11, .18); }
+.path-lane.selected { border-color: #005fcc; box-shadow: 0 8px 18px rgba(0, 95, 204, .18); }
 .path-lane.linked { box-shadow: 0 0 0 2px rgba(37, 99, 235, .18), 0 10px 22px rgba(37, 99, 235, .15); }
 .lane-head { display: flex; justify-content: space-between; align-items: center; gap: .7rem; margin-bottom: .4rem; }
 .lane-head b { font-size: .82rem; color: #0f172a; }
@@ -155,12 +155,12 @@ function closeModal() {
 .flow-row { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem; margin-bottom: .45rem; }
 .flow-node { font-size: .74rem; padding: .14rem .45rem; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; }
 .flow-seg { width: 26px; height: 2px; border-radius: 2px; background: repeating-linear-gradient(90deg, #94a3b8 0 8px, transparent 8px 12px); }
-.path-lane.selected .flow-seg { background: linear-gradient(90deg, #f59e0b, #fde68a, #f59e0b); background-size: 220% 100%; animation: flow 1.15s linear infinite; }
+.path-lane.selected .flow-seg { background: linear-gradient(90deg, #005fcc, #0e7490, #005fcc); background-size: 220% 100%; animation: flow 1.15s linear infinite; }
 
 .thesis { margin: 0; font-size: .76rem; color: #334155; line-height: 1.42; }
-.wins-box { margin-top: .5rem; border-left: 3px solid #f59e0b; background: #fff7ed; padding: .4rem .5rem; border-radius: 6px; }
-.wins-label { display: inline-block; margin-bottom: .2rem; font-size: .72rem; color: #9a3412; font-weight: 700; }
-.wins-box p { margin: 0; font-size: .74rem; color: #7c2d12; line-height: 1.38; }
+.wins-box { margin-top: .5rem; border-left: 3px solid #005fcc; background: #f0f9ff; padding: .4rem .5rem; border-radius: 6px; }
+.wins-label { display: inline-block; margin-bottom: .2rem; font-size: .72rem; color: #1d4ed8; font-weight: 700; }
+.wins-box p { margin: 0; font-size: .74rem; color: #1e40af; line-height: 1.38; }
 .back-link { margin-top: .35rem; font-size: .72rem; color: #1d4ed8; font-weight: 600; }
 .hint { margin-top: .55rem; font-size: .74rem; color: #64748b; }
 .empty { color: #64748b; font-size: .8rem; }
@@ -594,7 +594,7 @@ onBeforeUnmount(() => stopSim())
           <svg class="graph-svg" :viewBox="`0 0 ${width} ${height}`" @mousemove="onSvgMouseMove">
             <defs>
               <marker id="path-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-                <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b" />
+                <path d="M0,0 L0,6 L8,3 z" fill="#005fcc" />
               </marker>
             </defs>
 
@@ -712,11 +712,11 @@ onBeforeUnmount(() => stopSim())
 .pillar-region rect { stroke: #cbd5e1; stroke-dasharray: 5 4; opacity: .62; }
 .pillar-title { font-size: 11px; font-weight: 700; fill: #334155; pointer-events: none; }
 .edge { opacity: .86; }
-.path-edge { stroke: #f59e0b; stroke-width: 4.2; stroke-dasharray: 10 7; animation: pathFlow 1.1s linear infinite; filter: drop-shadow(0 0 4px rgba(245,158,11,.35)); }
+.path-edge { stroke: #005fcc; stroke-width: 4.2; stroke-dasharray: 10 7; animation: pathFlow 1.1s linear infinite; filter: drop-shadow(0 0 4px rgba(0,95,204,.35)); }
 @keyframes pathFlow { to { stroke-dashoffset: -17; } }
 .node { stroke: #0f172a; stroke-width: .9; cursor: grab; transition: .18s; }
 .node:active { cursor: grabbing; }
-.node.path { stroke: #f59e0b; stroke-width: 3; filter: drop-shadow(0 0 6px rgba(245,158,11,.4)); }
+.node.path { stroke: #005fcc; stroke-width: 3; filter: drop-shadow(0 0 6px rgba(0,95,204,.4)); }
 .node.pinned { stroke: #2563eb; stroke-width: 3.1; }
 .node.expanded { stroke-width: 2.4; }
 .node-label { text-anchor: middle; font-size: 10px; fill: #0f172a; pointer-events: none; }
@@ -1251,7 +1251,7 @@ function closeModal() {
 }
 
 .edge.path {
-  stroke: #f59e0b !important;
+  stroke: #005fcc !important;
   stroke-width: 3.2;
   stroke-dasharray: 9 7;
   animation: pathFlow 1.2s linear infinite;
@@ -1296,9 +1296,9 @@ function closeModal() {
 }
 
 .node-circle.path {
-  stroke: #f59e0b;
+  stroke: #005fcc;
   stroke-width: 2.6;
-  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.3));
+  filter: drop-shadow(0 0 6px rgba(0, 95, 204, 0.3));
 }
 
 .node-circle.expanded {

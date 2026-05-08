@@ -879,7 +879,7 @@ onBeforeUnmount(() => {
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(239, 68, 68, 0.9)" />
                   </marker>
                   <marker id="arrow-selected" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="strokeWidth">
-                    <path d="M 0 0 L 12 6 L 0 12 z" fill="rgba(250, 204, 21, 0.98)" />
+                    <path d="M 0 0 L 12 6 L 0 12 z" fill="rgba(0, 95, 204, 0.98)" />
                   </marker>
                   <marker id="arrow-candidate" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="strokeWidth">
                     <path d="M 0 0 L 12 6 L 0 12 z" fill="rgba(168, 85, 247, 0.92)" />
@@ -1253,9 +1253,9 @@ onBeforeUnmount(() => {
 }
 
 .path-tab.selected {
-  border-color: rgba(245, 158, 11, 0.42);
-  background: linear-gradient(180deg, rgba(255, 247, 237, 0.98), rgba(255, 251, 235, 0.98));
-  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.18), 0 12px 28px rgba(245, 158, 11, 0.12);
+  border-color: rgba(0, 95, 204, 0.42);
+  background: linear-gradient(180deg, rgba(219, 234, 254, 0.98), rgba(239, 246, 255, 0.98));
+  box-shadow: 0 0 0 1px rgba(0, 95, 204, 0.18), 0 12px 28px rgba(0, 95, 204, 0.12);
 }
 
 .path-tab.candidate {
@@ -1267,7 +1267,7 @@ onBeforeUnmount(() => {
 }
 
 .path-tab.selected.active {
-  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.25), 0 14px 34px rgba(245, 158, 11, 0.16);
+  box-shadow: 0 0 0 1px rgba(0, 95, 204, 0.25), 0 14px 34px rgba(0, 95, 204, 0.16);
 }
 
 .path-tab-top,
@@ -1300,8 +1300,8 @@ onBeforeUnmount(() => {
 }
 
 .selected-chip {
-  color: #92400e;
-  background: rgba(253, 230, 138, 0.82);
+  color: #1d4ed8;
+  background: rgba(219, 234, 254, 0.88);
 }
 
 .candidate-chip {
@@ -1332,8 +1332,8 @@ onBeforeUnmount(() => {
 }
 
 .legend-node.final {
-  background: #f59e0b;
-  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+  background: #005fcc;
+  box-shadow: 0 0 0 4px rgba(0, 95, 204, 0.14);
 }
 
 .legend-node.candidate {
@@ -1422,7 +1422,7 @@ onBeforeUnmount(() => {
 }
 
 .base-edge.path-edge.final-path-edge {
-  stroke: rgba(245, 158, 11, 0.25);
+  stroke: rgba(0, 95, 204, 0.25);
 }
 
 .base-edge.path-edge.candidate-path-edge {
@@ -1447,7 +1447,7 @@ onBeforeUnmount(() => {
 }
 
 .path-overlay-shadow.selected {
-  stroke: rgba(250, 204, 21, 0.2);
+  stroke: rgba(0, 95, 204, 0.2);
   stroke-width: 13;
   filter: blur(9px);
 }
@@ -1459,11 +1459,11 @@ onBeforeUnmount(() => {
 }
 
 .path-overlay-main.selected {
-  stroke: #facc15;
+  stroke: #005fcc;
   stroke-width: 3.8;
   stroke-dasharray: 14 10;
   animation: dashFlow 2.4s linear infinite;
-  filter: drop-shadow(0 0 14px rgba(250, 204, 21, 0.32));
+  filter: drop-shadow(0 0 14px rgba(0, 95, 204, 0.32));
 }
 
 .path-overlay-main.candidate {
@@ -1916,7 +1916,7 @@ onBeforeUnmount(() => {
 }
 
 .root-node-wrap.selected .root-node {
-  border-color: rgba(245, 158, 11, 0.35);
+  border-color: rgba(0, 95, 204, 0.35);
 }
 
 @media (max-width: 1400px) {
@@ -1932,6 +1932,70 @@ onBeforeUnmount(() => {
 
   .graph-surface {
     min-height: 720px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .modal-header,
+  .panel-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-actions {
+    justify-content: space-between;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-surface {
+    min-height: 620px;
+  }
+
+  .path-tab {
+    min-width: 180px;
+    flex: 1 1 180px;
+  }
+}
+
+@media (max-width: 760px) {
+  .modal-card {
+    width: min(100vw, 100%);
+    height: min(100vh, 100vh);
+    border-radius: 0;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .header-title-block p,
+  .detail-head p {
+    font-size: 0.72rem;
+  }
+
+  .path-tabs {
+    gap: 0.45rem;
+  }
+
+  .path-tab {
+    min-width: 100%;
+  }
+
+  .graph-surface {
+    min-height: 520px;
+  }
+
+  .summary-score-grid {
+    flex-direction: column;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
   }
 }
 </style><script setup lang="ts">
@@ -2451,11 +2515,11 @@ function closeModal() {
 }
 
 .path-lane.selected .node-chip {
-  border-color: rgba(245, 158, 11, 0.55);
+  border-color: rgba(0, 95, 204, 0.55);
 }
 
 .path-lane.selected .node-chip {
-  background: linear-gradient(90deg, rgba(245, 158, 11, 0.12), rgba(253, 230, 138, 0.18), rgba(245, 158, 11, 0.12));
+  background: linear-gradient(90deg, rgba(0, 95, 204, 0.12), rgba(219, 234, 254, 0.18), rgba(0, 95, 204, 0.12));
   background-size: 200% 100%;
   animation: chipFlow 1.2s linear infinite;
 }
@@ -2513,8 +2577,8 @@ function closeModal() {
 }
 
 .path-lane.selected .lane-foot span {
-  background: rgba(245, 158, 11, 0.1);
-  color: #92400e;
+  background: rgba(0, 95, 204, 0.1);
+  color: #1d4ed8;
 }
 
 .path-lane.selected .branch-line::after {
@@ -2524,7 +2588,7 @@ function closeModal() {
   right: 0;
   top: 0;
   height: 2px;
-  background: linear-gradient(90deg, #f59e0b, #fde68a, #f59e0b);
+  background: linear-gradient(90deg, #005fcc, #93c5fd, #005fcc);
   background-size: 220% 100%;
   animation: flow 1.15s linear infinite;
 }

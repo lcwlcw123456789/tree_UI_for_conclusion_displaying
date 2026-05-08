@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { FinalConclusion } from '../../types/conclusion'
 import type { IntermediateResult } from '../../types/intermediate'
 import type { OperatorView } from '../../types/operator'
+import type { IndicatorKey } from '../../composables/useIndicatorLink'
 import FinalAnswer from './FinalAnswer.vue'
 import PillarSection from './PillarSection.vue'
 import Stage3GraphModal from './Stage3GraphModal.vue'
@@ -27,6 +27,7 @@ const emit = defineEmits<{
   annotationHover: [pillarIndex: number, indicatorIds: string[]]
   annotationUnhover: []
   annotationClick: [pillarIndex: number, indicatorIds: string[]]
+  graphNodeNavigate: [key: IndicatorKey]
   openGraphWorkspace: [tab: GraphTab]
   closeGraphWorkspace: []
   switchGraphTab: [tab: GraphTab]
@@ -47,15 +48,9 @@ function onAnnotationClick(pillarIndex: number, indicatorIds: string[]) {
   emit('annotationClick', pillarIndex, indicatorIds)
 }
 
-function openStage3Modal() {
-  // 仅保留点击推理结构（TreePanel）进入的入口
-}
-
 function closeWorkspace() {
   emit('closeGraphWorkspace')
 }
-
-const canOpenGraph = computed(() => !!props.operatorView?.operator_results?.length || !!props.data?.stage3_global_synthesis?.tree_graph)
 </script>
 
 <template>
@@ -75,6 +70,7 @@ const canOpenGraph = computed(() => !!props.operatorView?.operator_results?.leng
           :workflow-phase="workflowPhase || 'final'"
           :submitting-operator="submittingOperator || false"
           @close="closeWorkspace"
+          @node-navigate="(key) => emit('graphNodeNavigate', key)"
           @submit-operators="(keys) => emit('submitOperators', keys)"
         />
 
